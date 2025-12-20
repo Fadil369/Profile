@@ -1,81 +1,85 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: BrainSAIT LINC Agent
+description: Enterprise bilingual AI agent for healthcare operations
 img: assets/img/3.jpg
 importance: 2
-category: work
-giscus_comments: true
+category: healthcare
+github: https://github.com/Fadil369/brainsait-linc-docs
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**BrainSAIT LINC Agent** is an enterprise-grade, bilingual (Arabic/English) AI agent specifically designed for healthcare operations. Built on the Qwen3-8B Healthcare model with clinical optimizations, LINC streamlines documentation, medical coding, claims processing, and patient triage.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Core Capabilities
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+### Bilingual Healthcare AI
+- **Arabic & English Support**: Seamless processing of both languages with medical terminology
+- **Code-Switching**: Handles mixed-language clinical documentation
+- **Cultural Adaptation**: Optimized for Middle Eastern healthcare contexts
+- **Regional Compliance**: Adapts to local healthcare regulations and practices
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Medical Coding Excellence
+- **ICD-10 Automation**: Accurate diagnostic code assignment
+- **SNOMED CT Integration**: Comprehensive clinical terminology support
+- **CPT Coding**: Procedural coding with validation
+- **Cross-Reference Validation**: Ensures coding consistency and accuracy
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+### Claims Processing
+- **NPHIES Compliance**: Full support for Saudi Arabia's healthcare exchange
+- **Pre-submission Validation**: Identifies and prevents claim rejections
+- **Eligibility Verification**: Real-time insurance eligibility checks
+- **Denial Management**: AI-powered analysis of claim denials
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Patient Triage & Documentation
+- **Intelligent Triage**: AI-powered patient prioritization
+- **Clinical Documentation**: Automated note generation from encounters
+- **Symptom Analysis**: Pattern recognition for diagnostic support
+- **Follow-up Scheduling**: Automated patient care coordination
 
-{% raw %}
+## Technical Architecture
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+### AI Model
+- **Base Model**: Qwen3-8B with healthcare fine-tuning
+- **Extended Context**: 32K token context window for complex cases
+- **Domain Optimization**: Trained on Arabic/English medical datasets
+- **Continuous Learning**: Regular updates with clinical feedback
 
-{% endraw %}
+### Integration
+- **API-First Design**: RESTful and WebSocket APIs
+- **HL7 FHIR**: Standard-compliant data exchange
+- **EHR Integration**: Connects with major EHR systems
+- **Workflow Automation**: Integrates with n8n, Jira, and other tools
+
+## Performance Metrics
+
+The LINC Agent delivers measurable improvements:
+- **95% coding accuracy** (validated against human coders)
+- **70% reduction** in documentation time
+- **40% faster** claims processing
+- **85% accuracy** in triage prioritization
+
+## Use Cases
+
+### Hospital Systems
+- Emergency department triage
+- Inpatient documentation automation
+- Discharge summary generation
+
+### Clinics & Practices
+- Outpatient visit documentation
+- Referral letter generation
+- Patient communication templates
+
+### Insurance Operations
+- Claims review automation
+- Medical necessity determination
+- Utilization management
+
+## Learn More
+
+- [GitHub Repository](https://github.com/Fadil369/brainsait-linc-docs)
+- [Hugging Face Models](https://huggingface.co/Mohamedfadil369/brainsait)
+- [LM Studio Integration](https://lmstudio.ai/fadil369)
+- [API Documentation](https://github.com/Fadil369/brainsait-linc-docs#api)

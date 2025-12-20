@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Fadil369
 
-repo_description_lines_max: 2
+repo_description_lines_max: 3
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Fadil369/brainsait-healthcare-ai
+  - Fadil369/brainsait-linc-docs
+  - Fadil369/brainsait-suite
+  - BrainSAIT-LTD/brainsait

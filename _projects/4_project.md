@@ -1,80 +1,69 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: PyHeart & PyBrain
+description: Open-source Python packages for healthcare AI
+img: assets/img/9.jpg
+importance: 4
+category: open-source
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**PyHeart** and **PyBrain** are open-source Python packages published on PyPI, providing tools for cardiac analysis and neural intelligence frameworks specifically designed for healthcare applications.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## PyHeart - Cardiac AI Analysis
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+### Features
+- **ECG Signal Processing**: Advanced algorithms for cardiac waveform analysis
+- **AI-Powered Diagnostics**: Machine learning models for cardiac condition detection
+- **Medical Device Integration**: Connect with various ECG devices and monitors
+- **Real-time Analysis**: Process cardiac data in real-time for immediate insights
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Applications
+- Cardiac arrhythmia detection
+- Heart rate variability analysis
+- QT interval measurement
+- Clinical research and validation
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+### Installation
+```bash
+pip install brainsait-pyheart
 ```
 
-{% endraw %}
+## PyBrain - Neural Intelligence Framework
+
+### Features
+- **Pre-trained Models**: Healthcare-specific neural architectures
+- **Clinical Data Processing**: Tools for medical data preprocessing and augmentation
+- **Model Fine-tuning**: Utilities for adapting models to specific clinical tasks
+- **Transfer Learning**: Leverage existing medical AI models
+
+### Applications
+- Medical image analysis
+- Clinical text processing
+- Diagnostic prediction
+- Healthcare operations optimization
+
+### Installation
+```bash
+pip install brainsait-pybrain
+```
+
+## Technical Details
+
+Both packages are built with:
+- **Python 3.8+**: Modern Python features
+- **NumPy & SciPy**: Numerical computing
+- **TensorFlow/PyTorch**: Deep learning frameworks
+- **Medical Standards**: Compliance with healthcare data formats
+
+## Open Source
+
+These projects are open-source and welcoming contributions from the healthcare AI community. They provide researchers and developers with tools to accelerate medical AI development.
+
+## Learn More
+
+- [PyHeart on PyPI](https://pypi.org/project/brainsait-pyheart/)
+- [PyBrain on PyPI](https://pypi.org/project/brainsait-pybrain/)
+- [Documentation](https://github.com/Fadil369/portfolio)
+- [GitHub Profile](https://github.com/Fadil369)

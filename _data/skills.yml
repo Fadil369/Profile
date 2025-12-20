@@ -1,0 +1,153 @@
+categories:
+  - name: Healthcare AI & Clinical Intelligence
+    skills:
+      - name: Clinical Decision Support Systems
+        level: Expert
+      - name: Medical Coding (ICD-10, SNOMED CT, CPT)
+        level: Expert
+      - name: HL7 FHIR R4 Standards
+        level: Expert
+      - name: Healthcare Interoperability
+        level: Expert
+      - name: Ambient AI Documentation
+        level: Advanced
+      - name: Clinical NLP
+        level: Advanced
+      - name: Medical Image Analysis
+        level: Advanced
+
+  - name: AI & Machine Learning
+    skills:
+      - name: Large Language Models (LLMs)
+        level: Expert
+      - name: OpenAI GPT Integration
+        level: Expert
+      - name: RAG (Retrieval-Augmented Generation)
+        level: Expert
+      - name: Fine-tuning Healthcare Models
+        level: Advanced
+      - name: NVIDIA AI Solutions
+        level: Advanced
+      - name: Google Gemini
+        level: Advanced
+      - name: PyTorch & TensorFlow
+        level: Advanced
+      - name: Reinforcement Learning
+        level: Intermediate
+
+  - name: Programming & Development
+    skills:
+      - name: Python
+        level: Expert
+      - name: FastAPI
+        level: Expert
+      - name: React & Node.js
+        level: Advanced
+      - name: JavaScript/TypeScript
+        level: Advanced
+      - name: RESTful APIs
+        level: Expert
+      - name: WebSocket
+        level: Advanced
+      - name: Docker & Kubernetes
+        level: Advanced
+      - name: Git & GitHub
+        level: Expert
+
+  - name: Healthcare Compliance & Standards
+    skills:
+      - name: HIPAA Compliance
+        level: Expert
+      - name: NPHIES (Saudi Arabia)
+        level: Expert
+      - name: PDPL (Privacy Regulations)
+        level: Advanced
+      - name: Medical Device Regulations (SaMD)
+        level: Advanced
+      - name: Clinical Audit & Logging
+        level: Advanced
+      - name: Healthcare Security Standards
+        level: Advanced
+
+  - name: Data & Databases
+    skills:
+      - name: Vector Databases
+        level: Advanced
+      - name: PostgreSQL
+        level: Advanced
+      - name: MongoDB
+        level: Advanced
+      - name: Redis
+        level: Intermediate
+      - name: Data Pipeline Engineering
+        level: Advanced
+      - name: ETL Processes
+        level: Advanced
+
+  - name: Cloud & DevOps
+    skills:
+      - name: AWS
+        level: Advanced
+      - name: Google Cloud Platform
+        level: Advanced
+      - name: CI/CD Pipelines
+        level: Advanced
+      - name: Docker Compose
+        level: Expert
+      - name: GitHub Actions
+        level: Advanced
+      - name: Infrastructure as Code
+        level: Intermediate
+
+  - name: Languages
+    skills:
+      - name: Arabic
+        level: Native
+      - name: English
+        level: Fluent
+      - name: Medical Terminology
+        level: Expert
+
+  - name: Domain Expertise
+    skills:
+      - name: Healthcare Operations
+        level: Expert
+      - name: Clinical Workflows
+        level: Expert
+      - name: Medical Claims Processing
+        level: Expert
+      - name: Patient Care Coordination
+        level: Advanced
+      - name: Healthcare Analytics
+        level: Advanced
+      - name: Medical Education
+        level: Advanced
+
+certifications:
+  - name: Healthcare AI Specialist
+    issuer: Self-developed expertise
+    year: 2023
+  - name: FHIR Implementation
+    issuer: HL7 Standards
+    year: 2023
+  - name: Medical Device Software (SaMD)
+    issuer: Regulatory Compliance
+    year: 2024
+
+publications:
+  - title: BrainSAIT LINC Agent - Enterprise Healthcare AI
+    platform: GitHub
+    year: 2024
+    url: https://github.com/Fadil369/brainsait-linc-docs
+  - title: Healthcare AI Platform Documentation
+    platform: GitHub
+    year: 2024
+    url: https://github.com/Fadil369/brainsait-healthcare-ai
+  - title: PyHeart - Cardiac Analysis Framework
+    platform: PyPI
+    year: 2023
+    url: https://pypi.org/project/brainsait-pyheart/
+  - title: PyBrain - Neural Intelligence for Healthcare
+    platform: PyPI
+    year: 2023
+    url: https://pypi.org/project/brainsait-pybrain/
