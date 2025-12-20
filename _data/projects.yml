@@ -1,0 +1,155 @@
+- name: BrainSAIT Healthcare AI Platform
+  description: >
+    Comprehensive AI-powered healthcare platform featuring intelligent workflows for clinical decision support, 
+    automated medical claims validation for Saudi Arabia's NPHIES, full HL7 FHIR R4 integration, and secure audit logging for compliance.
+  technologies:
+    - Python
+    - OpenAI GPT
+    - NVIDIA RAG
+    - HL7 FHIR R4
+    - HIPAA/NPHIES Compliance
+  features:
+    - Clinical decision support with AI-powered recommendations
+    - Automated medical claims validation and processing
+    - Full HL7 FHIR R4 interoperability
+    - Secure audit logging and compliance tracking
+    - Ambient healthcare agents for documentation automation
+  github: https://github.com/Fadil369/brainsait-healthcare-ai
+  status: Active
+  year: 2023-2024
+
+- name: BrainSAIT LINC Agent
+  description: >
+    Enterprise-grade bilingual (Arabic/English) AI agent for healthcare operations. Streamlines documentation, 
+    medical coding, claims processing, and patient triage with enhanced AI models optimized for clinical use.
+  technologies:
+    - Qwen3-8B Healthcare
+    - PyTorch
+    - Transformers
+    - Arabic NLP
+    - Clinical NLP
+  features:
+    - Bilingual Arabic/English support
+    - Medical coding automation (ICD-10, SNOMED CT, CPT)
+    - Claims processing optimization
+    - Patient triage and prioritization
+    - Extended context understanding for complex cases
+  github: https://github.com/Fadil369/brainsait-linc-docs
+  huggingface: https://huggingface.co/Mohamedfadil369/brainsait
+  status: Active
+  year: 2024
+
+- name: Neural Cloud Portal
+  description: >
+    Modern, bilingual, audio-ready portal for clinics featuring real-time voice support and seamless integration 
+    with backend AI and clinical workflows. Designed for optimal user experience in healthcare settings.
+  technologies:
+    - React
+    - Node.js
+    - Web Audio API
+    - WebRTC
+    - REST APIs
+  features:
+    - Real-time voice support for hands-free operation
+    - Bilingual Arabic/English interface
+    - Integration with clinical AI backends
+    - Responsive design for all devices
+    - Accessibility-first approach
+  website: https://elfadil.com/
+  status: Active
+  year: 2024
+
+- name: AFHAM AI Studio & BrainSAIT Suite
+  description: >
+    Comprehensive AI tools suite for healthcare providers, featuring file search with Retrieval-Augmented Generation (RAG) 
+    built on Google Gemini for clinical analytics, medical knowledge base querying, and eligibility validation.
+  technologies:
+    - Google Gemini
+    - RAG (Retrieval-Augmented Generation)
+    - Vector Databases
+    - FastAPI
+    - React
+  features:
+    - Advanced file search with RAG technology
+    - Clinical analytics and insights
+    - Medical knowledge base querying
+    - Eligibility validation automation
+    - Multi-modal document processing
+  github: https://github.com/Fadil369/brainsait-suite
+  status: Active
+  year: 2024
+
+- name: PyHeart - Cardiac AI Analysis
+  description: >
+    Python package for cardiac data analysis and AI-powered diagnostic support. 
+    Published on PyPI for healthcare developers and researchers.
+  technologies:
+    - Python
+    - NumPy
+    - SciPy
+    - Machine Learning
+    - Medical Imaging
+  features:
+    - Cardiac waveform analysis
+    - AI-powered diagnostic suggestions
+    - ECG signal processing
+    - Integration with medical devices
+  pypi: https://pypi.org/project/brainsait-pyheart/
+  status: Maintained
+  year: 2023
+
+- name: PyBrain - Neural Intelligence Framework
+  description: >
+    Advanced neural intelligence framework for healthcare AI applications. 
+    Provides tools for medical data processing and clinical decision support.
+  technologies:
+    - Python
+    - TensorFlow
+    - Keras
+    - Medical Data Processing
+  features:
+    - Pre-trained medical AI models
+    - Clinical data preprocessing
+    - Model fine-tuning utilities
+    - Healthcare-specific neural architectures
+  pypi: https://pypi.org/project/brainsait-pybrain/
+  status: Maintained
+  year: 2023
+
+- name: Healthcare Interoperability Solutions
+  description: >
+    Enterprise solutions for healthcare data interoperability focusing on FHIR/HL7 standards, 
+    NPHIES compliance for Saudi Arabia, and secure data exchange.
+  technologies:
+    - HL7 FHIR R4
+    - NPHIES
+    - HIPAA Compliance
+    - OAuth2
+    - JWT
+  features:
+    - Full FHIR R4 implementation
+    - NPHIES integration for Saudi market
+    - Secure authentication and authorization
+    - Audit logging and compliance tracking
+    - Data transformation and mapping
+  status: Enterprise
+  year: 2023-2024
+
+- name: Clinical Documentation Automation
+  description: >
+    AI-powered solution for automating clinical documentation, reducing physician burnout, 
+    and improving documentation quality with ambient AI technology.
+  technologies:
+    - OpenAI Whisper
+    - GPT-4
+    - Python
+    - FastAPI
+    - WebSocket
+  features:
+    - Ambient AI listening and transcription
+    - Automatic note generation
+    - Medical terminology recognition
+    - Multi-specialty support
+    - Real-time processing
+  status: Active
+  year: 2024
