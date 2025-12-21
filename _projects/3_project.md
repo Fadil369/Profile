@@ -15,24 +15,28 @@ website: https://elfadil.com/
 ## Key Features
 
 ### Voice-Enabled Interface
+
 - **Hands-Free Operation**: Real-time voice support for busy clinical environments
 - **Ambient Listening**: Captures physician-patient conversations for documentation
 - **Speech Recognition**: Supports Arabic and English medical terminology
 - **Voice Commands**: Navigate the interface without touching the screen
 
 ### Bilingual Design
+
 - **Arabic/English Support**: Seamless language switching
 - **RTL Support**: Proper right-to-left layout for Arabic
 - **Medical Terminology**: Accurate translation of clinical terms
 - **Cultural Sensitivity**: Designed for Middle Eastern healthcare context
 
 ### Clinical Integration
+
 - **EHR Connectivity**: Real-time data sync with electronic health records
 - **AI Backend**: Connects to BrainSAIT AI services
 - **FHIR Compliance**: Standard-compliant data exchange
 - **Workflow Automation**: Integrates with clinical workflows
 
 ### Modern User Experience
+
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Progressive Web App**: Install as native app on any device
 - **Offline Support**: Continue working without internet connection

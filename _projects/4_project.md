@@ -14,18 +14,21 @@ category: open-source
 ## PyHeart - Cardiac AI Analysis
 
 ### Features
+
 - **ECG Signal Processing**: Advanced algorithms for cardiac waveform analysis
 - **AI-Powered Diagnostics**: Machine learning models for cardiac condition detection
 - **Medical Device Integration**: Connect with various ECG devices and monitors
 - **Real-time Analysis**: Process cardiac data in real-time for immediate insights
 
 ### Applications
+
 - Cardiac arrhythmia detection
 - Heart rate variability analysis
 - QT interval measurement
 - Clinical research and validation
 
 ### Installation
+
 ```bash
 pip install brainsait-pyheart
 ```
@@ -33,18 +36,21 @@ pip install brainsait-pyheart
 ## PyBrain - Neural Intelligence Framework
 
 ### Features
+
 - **Pre-trained Models**: Healthcare-specific neural architectures
 - **Clinical Data Processing**: Tools for medical data preprocessing and augmentation
 - **Model Fine-tuning**: Utilities for adapting models to specific clinical tasks
 - **Transfer Learning**: Leverage existing medical AI models
 
 ### Applications
+
 - Medical image analysis
 - Clinical text processing
 - Diagnostic prediction
 - Healthcare operations optimization
 
 ### Installation
+
 ```bash
 pip install brainsait-pybrain
 ```
@@ -52,6 +58,7 @@ pip install brainsait-pybrain
 ## Technical Details
 
 Both packages are built with:
+
 - **Python 3.8+**: Modern Python features
 - **NumPy & SciPy**: Numerical computing
 - **TensorFlow/PyTorch**: Deep learning frameworks

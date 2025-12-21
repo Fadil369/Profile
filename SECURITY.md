@@ -11,7 +11,7 @@ This is a static portfolio website. The main, deployed version at `https://elfad
 If you believe you have found a security issue in this portfolio's code, build configuration, or deployed site, please report it responsibly.
 
 1.  **Contact:** Please email the details to `fadil369@hotmail.com`.
-    *   *Tip: Consider using an email like `security@elfadil.com` if available [citation:7].*
+    - _Tip: Consider using an email like `security@elfadil.com` if available [citation:7]._
 2.  **Information to Include:** Please provide a clear description of the issue, the steps to reproduce it, and any potential impact.
 3.  **Response:** You can expect an acknowledgment of your report within **48 hours**. We will work with you to understand and address the issue promptly.
 
@@ -24,9 +24,10 @@ For the security of third-party services or themes (like the **al-folio Jekyll t
 ## Security Considerations for This Project
 
 As a static site, this project prioritizes the following:
-*   **Dependency Security:** Keeping Jekyll, Ruby gems, and Node.js dependencies updated via Dependabot alerts [citation:2][citation:4].
-*   **Secret Management:** Ensuring no API keys, tokens, or personal credentials are committed to the repository. GitHub's secret scanning and push protection features are recommended [citation:2][citation:4].
-*   **Build Integrity:** Using protected branches and required status checks for the `main` branch to prevent unauthorized changes [citation:7].
+
+- **Dependency Security:** Keeping Jekyll, Ruby gems, and Node.js dependencies updated via Dependabot alerts [citation:2][citation:4].
+- **Secret Management:** Ensuring no API keys, tokens, or personal credentials are committed to the repository. GitHub's secret scanning and push protection features are recommended [citation:2][citation:4].
+- **Build Integrity:** Using protected branches and required status checks for the `main` branch to prevent unauthorized changes [citation:7].
 
 ## Security Updates
 
