@@ -16,6 +16,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Global Health Organizations
 
 ### World Health Organization (WHO)
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>AI Integration in Healthcare Initiative</h4>
@@ -29,6 +30,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 </div>
 
 ### NHS Trust Development Team
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Healthcare Delivery Innovation</h4>
@@ -46,6 +48,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Technology & Standards Organizations
 
 ### International Telecommunication Union (ITU)
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Digital Health Infrastructure</h4>
@@ -59,6 +62,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 </div>
 
 ### ICANN (Internet Corporation for Assigned Names and Numbers)
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Healthcare Domain Standards</h4>
@@ -72,6 +76,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 </div>
 
 ### Health Informatics Society
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Clinical Informatics Standards</h4>
@@ -89,6 +94,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Regional Healthcare Authorities
 
 ### Saudi Health Council
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Vision 2030 Digital Health Transformation</h4>
@@ -103,6 +109,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 </div>
 
 ### Healthcare Financial Management Association (HFMA)
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Revenue Cycle Excellence</h4>
@@ -120,6 +127,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Academic & Research Collaborations
 
 ### Healthcare AI Research Initiatives
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <p>Collaborating with academic institutions on healthcare AI research, clinical validation studies, and medical education innovation.</p>
@@ -133,6 +141,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 </div>
 
 ### Institute for Healthcare Improvement (IHI), Boston, USA
+
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Healthcare Quality Improvement</h4>
@@ -150,16 +159,19 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Technology Partners
 
 ### Cloud & Infrastructure
+
 - **Amazon Web Services (AWS)**: Cloud infrastructure, AI/ML services
 - **Microsoft Azure**: Enterprise healthcare solutions
 - **Google Cloud**: Healthcare AI APIs
 
 ### AI & Machine Learning
+
 - **OpenAI**: GPT integration for clinical applications
 - **Hugging Face**: Open-source NLP models
 - **NVIDIA**: Healthcare AI acceleration
 
 ### Healthcare Technology
+
 - **Epic Systems**: EMR integration partner
 - **Cerner**: Healthcare interoperability
 - **Allscripts**: EHR connectivity
@@ -169,6 +181,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 ## Partnership Benefits
 
 ### For Healthcare Organizations
+
 - Access to cutting-edge AI technology
 - FHIR/HL7 interoperability expertise
 - Implementation support and training
@@ -176,6 +189,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 - Regulatory compliance assistance
 
 ### For Technology Partners
+
 - Real-world healthcare validation
 - Clinical expertise and insights
 - Middle East market access
@@ -183,6 +197,7 @@ BrainSAIT collaborates with leading international organizations to advance healt
 - Reference implementations
 
 ### For Standards Bodies
+
 - Practical implementation feedback
 - Use case development
 - Testing and validation
@@ -198,24 +213,28 @@ We're always looking for strategic partners who share our vision of transforming
 ### Partnership Opportunities
 
 **Healthcare Providers**
+
 - Early adopter programs
 - Co-development initiatives
 - Clinical validation studies
 - Training and certification
 
 **Technology Companies**
+
 - Integration partnerships
 - Co-marketing opportunities
 - Reseller programs
 - Technology exchange
 
 **Academic Institutions**
+
 - Research collaborations
 - Student internships
 - Guest lectures and workshops
 - Joint publications
 
 **International Organizations**
+
 - Policy development
 - Standards contribution
 - Global health initiatives
@@ -248,4 +267,4 @@ Our partnerships are guided by these core principles:
 
 ---
 
-*Together, we're building the future of intelligent healthcare.*
+_Together, we're building the future of intelligent healthcare._

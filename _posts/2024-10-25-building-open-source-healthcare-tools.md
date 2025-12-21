@@ -16,6 +16,7 @@ This is the story of that journey - the decisions, challenges, and lessons learn
 ### The Problem That Started It All
 
 As a physician building healthcare AI systems, I repeatedly encountered the same problems:
+
 - Every project reinvented FHIR parsing
 - HL7 message handling code was copied and pasted
 - Clinical NLP required weeks of setup
@@ -51,6 +52,7 @@ I'm a physician first. My goal is to improve healthcare, not just build a busine
 **Core Design Principles:**
 
 **1. Standards-First Approach**
+
 ```python
 # We don't create our own formats
 # We implement standards faithfully
@@ -89,7 +91,7 @@ class Patient(BaseModel):
     id: str
     birthDate: date
     gender: str
-    
+
     @validator('gender')
     def validate_gender(cls, v):
         if v not in ['male', 'female', 'other', 'unknown']:
@@ -195,7 +197,7 @@ def test_patient_validation():
         gender="male"
     )
     assert patient.is_valid()
-    
+
     # Invalid patient
     with pytest.raises(ValidationError):
         Patient(
@@ -212,6 +214,7 @@ def test_patient_search():
 
 **2. Continuous Integration**
 Every commit runs:
+
 - Unit tests (pytest)
 - Integration tests (against FHIR test servers)
 - Type checking (mypy)
@@ -221,6 +224,7 @@ Every commit runs:
 
 **3. Semantic Versioning**
 Healthcare systems need stability:
+
 - Major version: Breaking changes
 - Minor version: New features
 - Patch version: Bug fixes
@@ -228,6 +232,7 @@ Healthcare systems need stability:
 ### Publishing to PyPI
 
 **Step 1: Package Structure**
+
 ```
 brainsait-pyheart/
 ├── brainsait_pyheart/
@@ -244,6 +249,7 @@ brainsait-pyheart/
 ```
 
 **Step 2: Configuration**
+
 ```toml
 # pyproject.toml
 [tool.poetry]
@@ -263,6 +269,7 @@ httpx = "^0.24"
 
 **Step 3: Documentation**
 Good docs are critical:
+
 - README with quick start
 - API reference (Sphinx)
 - Tutorial notebooks
@@ -270,6 +277,7 @@ Good docs are critical:
 - Contributing guidelines
 
 **Step 4: Release**
+
 ```bash
 # Build package
 poetry build
@@ -290,7 +298,8 @@ poetry publish
 
 **Problem**: Healthcare is incredibly complex with hundreds of standards, terminologies, and edge cases.
 
-**Solution**: 
+**Solution**:
+
 - Start with core use cases
 - Implement 80% of needs well
 - Make extension points clear
@@ -301,6 +310,7 @@ poetry publish
 **Problem**: Healthcare data is highly sensitive.
 
 **Solution**:
+
 - Never log sensitive data
 - Encrypt everything in transit and at rest
 - Provide clear security guidelines
@@ -312,6 +322,7 @@ poetry publish
 **Problem**: Healthcare systems are slow to upgrade.
 
 **Solution**:
+
 - Support Python 3.8+ (not just latest)
 - Conservative dependency requirements
 - Long-term support for major versions
@@ -322,10 +333,11 @@ poetry publish
 **Problem**: Healthcare systems handle millions of records.
 
 **Solution**:
+
 ```python
 # Batch operations
 results = await client.batch([
-    {"method": "GET", "url": f"Patient/{id}"} 
+    {"method": "GET", "url": f"Patient/{id}"}
     for id in patient_ids
 ])
 
@@ -345,6 +357,7 @@ client = FHIRClient(
 **Problem**: Healthcare developers are scattered, busy, and often work in silos.
 
 **Solution**:
+
 - Excellent documentation
 - Responsive issue tracking
 - Regular releases
@@ -355,12 +368,14 @@ client = FHIRClient(
 ### Impact and Adoption
 
 **Download Statistics:**
+
 - 10,000+ downloads in first 6 months
 - Used in 15+ countries
 - Contributors from 5 continents
 - Featured in healthcare IT conferences
 
 **Real-World Use Cases:**
+
 - Hospital EMR integrations
 - Insurance claim processing
 - Public health reporting
@@ -368,6 +383,7 @@ client = FHIRClient(
 - Telemedicine platforms
 
 **Community Contributions:**
+
 - 50+ GitHub issues resolved
 - 20+ pull requests merged
 - 5 new features from community
@@ -403,17 +419,20 @@ Your users become your advocates, contributors, and friends. Nurture the communi
 I get this question a lot. Here's my approach:
 
 **Open Source Core:**
+
 - brainsait-pyheart (interoperability)
 - brainsait-pybrain (intelligence)
 - Free forever, MIT licensed
 
 **Commercial Products:**
+
 - BrainSAIT Healthcare Platform (enterprise features)
 - GIVC Platform (managed service)
 - ClaimLinc, PolicyLinc, DocsLinc (AI agents)
 - Professional services and support
 
 **Benefits:**
+
 - Open source builds trust and community
 - Commercial products provide sustainability
 - Both benefit from shared innovation
@@ -422,18 +441,21 @@ I get this question a lot. Here's my approach:
 ### Future Roadmap
 
 **brainsait-pyheart v2.0:**
+
 - FHIR R5 support
 - GraphQL API
 - Real-time subscriptions
 - Enhanced bulk data operations
 
 **brainsait-pybrain v2.0:**
+
 - More pre-trained models
 - Multimodal AI (text + images)
 - Explainable AI features
 - AutoML for healthcare
 
 **Community Goals:**
+
 - 100,000+ downloads
 - 1,000+ GitHub stars
 - 50+ contributors
@@ -444,18 +466,21 @@ I get this question a lot. Here's my approach:
 Want to contribute? Here's how:
 
 **For Users:**
+
 - Try the packages: `pip install brainsait-pyheart brainsait-pybrain`
 - Report bugs and request features
 - Share your use cases
 - Star on GitHub
 
 **For Contributors:**
+
 - Check "good first issue" labels
 - Improve documentation
 - Add examples and tutorials
 - Review pull requests
 
 **For Organizations:**
+
 - Sponsor development
 - Contribute code
 - Share use cases
@@ -468,6 +493,7 @@ Building open source healthcare tools has been one of the most rewarding experie
 Healthcare technology should not be locked behind proprietary walls. The challenges we face - interoperability, AI adoption, quality improvement - require collective effort and shared innovation.
 
 If you're thinking about building open source healthcare tools:
+
 - Start now
 - Start small
 - Stay committed
@@ -479,16 +505,18 @@ The future of healthcare depends on open, accessible, collaborative technology. 
 ---
 
 **Get Started:**
+
 - Install: `pip install brainsait-pyheart brainsait-pybrain`
 - GitHub: [github.com/Fadil369](https://github.com/Fadil369)
 - PyPI: [pypi.org/project/brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/)
 - Docs: [brainsait.io/docs](https://brainsait.io/docs)
 
 **Connect:**
+
 - Email: Fadil369@hotmail.com
 - LinkedIn: [linkedin.com/in/thefadil](https://linkedin.com/in/thefadil)
 - Twitter: [@TheFadil](https://twitter.com/TheFadil)
 
 ---
 
-*Open source healthcare tools, built with ❤️ and ☕ in Riyadh, Saudi Arabia.*
+_Open source healthcare tools, built with ❤️ and ☕ in Riyadh, Saudi Arabia._

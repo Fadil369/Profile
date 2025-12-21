@@ -16,6 +16,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ## Core Healthcare Platform
 
 ### BrainSAIT Healthcare Platform
+
 **Complete AI-Powered Healthcare Management System**
 
 <div class="row mt-3">
@@ -27,6 +28,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 #### Key Features
 
 **Clinical Intelligence**
+
 - AI-powered diagnostic support
 - Real-time clinical decision recommendations
 - Evidence-based treatment suggestions
@@ -35,6 +37,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Risk stratification and alerts
 
 **Patient Management**
+
 - Comprehensive electronic health records
 - Patient portal with mobile app
 - Appointment scheduling and reminders
@@ -43,6 +46,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Care plan management
 
 **Documentation & Coding**
+
 - Ambient clinical documentation
 - AI-powered medical coding
 - Automated charge capture
@@ -51,6 +55,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Audit trail management
 
 **Revenue Cycle Management**
+
 - Automated claims generation
 - Eligibility verification
 - Pre-authorization management
@@ -59,6 +64,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Financial analytics dashboard
 
 **Interoperability**
+
 - HL7 FHIR R4 compliant
 - HL7 v2.x support
 - NPHIES integration (Saudi Arabia)
@@ -71,6 +77,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ## AI-Powered Agents
 
 ### ClaimLinc Agent
+
 **Intelligent Claims Processing Automation**
 
 <div class="row mt-3">
@@ -103,6 +110,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ---
 
 ### PolicyLinc Agent
+
 **Insurance Policy Intelligence Engine**
 
 <div class="row mt-3">
@@ -135,6 +143,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ---
 
 ### DocsLinc Agent
+
 **Ambient Clinical Documentation Assistant**
 
 <div class="row mt-3">
@@ -169,6 +178,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ## Specialized Solutions
 
 ### GP Portal
+
 **General Practice Management System**
 
 <div class="row mt-3">
@@ -178,6 +188,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 </div>
 
 **Key Features**
+
 - Patient registration and demographics
 - Appointment scheduling with reminders
 - Electronic prescribing
@@ -190,6 +201,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Practice analytics
 
 **Ideal For**
+
 - Solo practitioners
 - Small group practices
 - Primary care clinics
@@ -201,6 +213,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ---
 
 ### Voice2Care
+
 **Voice-Enabled Clinical Assistant**
 
 <div class="row mt-3">
@@ -210,6 +223,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 </div>
 
 **Capabilities**
+
 - Voice commands for navigation
 - Dictation for clinical notes
 - Medication ordering by voice
@@ -220,6 +234,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - HIPAA-compliant recording
 
 **Use Cases**
+
 - Surgical documentation
 - Emergency department
 - ICU rounds
@@ -232,6 +247,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ---
 
 ### GIVC Platform
+
 **Global Intelligent Virtual Care**
 
 <div class="row mt-3">
@@ -243,6 +259,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 **Platform Features**
 
 **For Patients**
+
 - HD video consultations
 - Symptom checker and triage
 - Electronic prescriptions
@@ -252,6 +269,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Wearable device integration
 
 **For Providers**
+
 - Virtual waiting room
 - Patient queue management
 - Multi-platform access (web, mobile, tablet)
@@ -261,6 +279,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - Billing integration
 
 **For Organizations**
+
 - Provider scheduling
 - Analytics dashboard
 - Quality metrics tracking
@@ -269,6 +288,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 - API access
 
 **Pricing Tiers**
+
 - **Starter**: $99/month (up to 50 consultations)
 - **Professional**: $299/month (up to 200 consultations)
 - **Enterprise**: Custom pricing (unlimited)
@@ -278,6 +298,7 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 ## Open Source Tools
 
 ### brainsait-pyheart
+
 **Healthcare Interoperability Engine**
 
 ```bash
@@ -285,6 +306,7 @@ pip install brainsait-pyheart
 ```
 
 **Features**
+
 - FHIR R4 resource handling
 - HL7 v2.x message processing
 - Event-driven workflow engine
@@ -293,6 +315,7 @@ pip install brainsait-pyheart
 - Extensive documentation
 
 **Use Cases**
+
 - EMR integration
 - Lab interface development
 - Insurance connectivity
@@ -305,6 +328,7 @@ pip install brainsait-pyheart
 ---
 
 ### brainsait-pybrain
+
 **Healthcare Intelligence Platform**
 
 ```bash
@@ -312,6 +336,7 @@ pip install brainsait-pybrain
 ```
 
 **Features**
+
 - Clinical NLP engine
 - Medical entity recognition
 - ICD/CPT code suggestion
@@ -320,6 +345,7 @@ pip install brainsait-pybrain
 - Pre-trained clinical models
 
 **Use Cases**
+
 - Clinical decision support
 - Medical coding automation
 - Research analytics
@@ -334,15 +360,18 @@ pip install brainsait-pybrain
 ## Education Platform
 
 ### GIVC Academy
+
 **Healthcare Professional Training**
 
 **Certification Programs**
+
 - Certified Medical Coder (CMC)
 - Healthcare AI Specialist (HAIS)
 - NPHIES Integration Expert (NIE)
 - FHIR Implementation Specialist (FIS)
 
 **Features**
+
 - Online, self-paced learning
 - Live instructor sessions
 - Hands-on practice labs
@@ -357,6 +386,7 @@ pip install brainsait-pybrain
 ## Technology Stack
 
 ### Backend Technologies
+
 - Python, FastAPI, Node.js
 - PostgreSQL, MongoDB, Redis
 - RabbitMQ, Kafka
@@ -364,6 +394,7 @@ pip install brainsait-pybrain
 - AWS cloud infrastructure
 
 ### AI & Machine Learning
+
 - OpenAI GPT-4
 - Hugging Face Transformers
 - Custom medical LLMs
@@ -371,6 +402,7 @@ pip install brainsait-pybrain
 - Clinical BERT models
 
 ### Healthcare Standards
+
 - HL7 FHIR R4
 - HL7 v2.x
 - DICOM
@@ -378,6 +410,7 @@ pip install brainsait-pybrain
 - SNOMED CT, LOINC, ICD-10
 
 ### Security & Compliance
+
 - HIPAA compliant
 - GDPR ready
 - NPHIES certified
@@ -391,6 +424,7 @@ pip install brainsait-pybrain
 ## Integration Capabilities
 
 **EMR/EHR Systems**
+
 - Epic
 - Cerner
 - Allscripts
@@ -398,21 +432,25 @@ pip install brainsait-pybrain
 - Custom systems via FHIR
 
 **Laboratory Systems**
+
 - Bi-directional interfaces
 - Real-time result delivery
 - Automated order placement
 
 **Imaging Systems**
+
 - DICOM integration
 - PACS connectivity
 - Radiology reporting
 
 **Pharmacy Systems**
+
 - E-prescribing
 - Medication history
 - Drug database integration
 
 **Insurance Payers**
+
 - Real-time eligibility
 - Claims submission
 - ERA/EOP processing
@@ -423,6 +461,7 @@ pip install brainsait-pybrain
 ## Deployment Options
 
 ### Cloud-Hosted (SaaS)
+
 - Fastest deployment
 - Automatic updates
 - Scalable infrastructure
@@ -430,6 +469,7 @@ pip install brainsait-pybrain
 - Included backup/disaster recovery
 
 ### On-Premises
+
 - Full data control
 - Custom security policies
 - Regulatory compliance
@@ -437,6 +477,7 @@ pip install brainsait-pybrain
 - Annual maintenance
 
 ### Hybrid
+
 - Sensitive data on-premises
 - Processing in cloud
 - Best of both worlds
@@ -447,6 +488,7 @@ pip install brainsait-pybrain
 ## Support & Services
 
 ### Implementation Services
+
 - Project management
 - System configuration
 - Data migration
@@ -455,6 +497,7 @@ pip install brainsait-pybrain
 - Go-live support
 
 ### Ongoing Support
+
 - 24/7 technical support
 - Dedicated account manager
 - Regular system updates
@@ -463,6 +506,7 @@ pip install brainsait-pybrain
 - Compliance updates
 
 ### Professional Services
+
 - Custom development
 - Integration consulting
 - Workflow optimization
@@ -488,19 +532,23 @@ We believe in transparent, value-based pricing:
 ## Get Started
 
 ### Schedule a Demo
+
 See our products in action with a personalized demonstration.
 
 ### Free Trial
+
 Try risk-free for 30 days with full feature access.
 
 ### Request Pricing
+
 Get custom pricing for your organization's needs.
 
 ### Contact Sales
+
 **Email**: sales@brainsait.io  
 **Phone**: +966-510-010-991  
 **Website**: [https://brainsait.io](https://brainsait.io)
 
 ---
 
-*Transforming healthcare operations through intelligent automation.*
+_Transforming healthcare operations through intelligent automation._

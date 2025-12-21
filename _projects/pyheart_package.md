@@ -21,24 +21,28 @@ pip install brainsait-pyheart
 ## Key Features
 
 ### Healthcare Interoperability
+
 - **FHIR R4 Support**: Complete implementation of HL7 FHIR R4 resources
 - **HL7 v2.x Processing**: Parse, validate, and generate HL7 v2.x messages
 - **Data Transformation**: Convert between different healthcare data formats
 - **Validation Engine**: Ensure data compliance with healthcare standards
 
 ### Event-Driven Architecture
+
 - **Async Processing**: High-performance asynchronous message handling
 - **Event Bus**: Pub/sub pattern for healthcare workflow automation
 - **Workflow Engine**: Define and execute complex healthcare workflows
 - **Message Queue Integration**: Support for RabbitMQ, Redis, and Kafka
 
 ### Security & Compliance
+
 - **HIPAA Compliance**: Built-in safeguards for protected health information
 - **Encryption**: End-to-end encryption for data in transit and at rest
 - **Audit Logging**: Comprehensive audit trails for regulatory compliance
 - **Access Control**: Role-based access control (RBAC) implementation
 
 ### Integration Capabilities
+
 - **REST API Client**: Easy integration with FHIR-enabled systems
 - **Webhook Support**: Event notifications for external systems
 - **Batch Processing**: Handle large-scale data migrations
@@ -47,18 +51,21 @@ pip install brainsait-pyheart
 ## Use Cases
 
 **Hospital Information Systems**
+
 - Integration between EMR/EHR systems
 - Lab result processing and distribution
 - Radiology report management
 - Pharmacy order routing
 
 **Insurance & Claims**
+
 - Eligibility verification
 - Claims submission and tracking
 - Pre-authorization workflows
 - EOB (Explanation of Benefits) processing
 
 **Public Health**
+
 - Disease surveillance reporting
 - Immunization registries
 - Syndromic surveillance
@@ -83,10 +90,10 @@ event_bus = EventBus()
 async def patient_admission(patient_data):
     # Create patient resource
     patient = await client.create_patient(patient_data)
-    
+
     # Trigger downstream events
     await event_bus.publish("patient.admitted", patient)
-    
+
     return patient
 ```
 
@@ -123,4 +130,4 @@ MIT License - Free for commercial and personal use
 
 ---
 
-*Empowering healthcare interoperability through open-source innovation.*
+_Empowering healthcare interoperability through open-source innovation._

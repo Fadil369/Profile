@@ -31,7 +31,7 @@ latest_posts:
 
 **Dr. Mohamed El Fadil** is a visionary Physician and **Healthcare AI Architect** fusing clinical wisdom with computational intelligence. As the Founder & CEO of **[BrainSAIT](https://www.brainsait.io)**, he is pioneering the "Original Intelligence" (OI) movement—empowering doctors with AI copilots rather than replacing them.
 
-> *"The future of medicine isn't about AI replacing doctors. It's about doctors who use AI replacing those who don't. We are building the second brain for the healthcare ecosystem."*
+> _"The future of medicine isn't about AI replacing doctors. It's about doctors who use AI replacing those who don't. We are building the second brain for the healthcare ecosystem."_
 
 ---
 
@@ -80,9 +80,9 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 
 ## <i class="fas fa-trophy gradient-text"></i> Milestones
 
-*   **BrainSAIT Ecosystem**: An end-to-end AI platform for hospitals in Saudi Arabia & Sudan.
-*   **Open Source**: Creator of `brainsait-pyheart` (Interoperability) & `brainsait-pybrain` (AI utils).
-*   **Thought Leadership**: Author of "OI vs AI", redefining the physician-computer relationship.
+- **BrainSAIT Ecosystem**: An end-to-end AI platform for hospitals in Saudi Arabia & Sudan.
+- **Open Source**: Creator of `brainsait-pyheart` (Interoperability) & `brainsait-pybrain` (AI utils).
+- **Thought Leadership**: Author of "OI vs AI", redefining the physician-computer relationship.
 
 ---
 
@@ -91,4 +91,3 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 I work with **Vision 2030** entities, Healthcare Facilities, and Tech Innovators.
 <br>
 <a href="mailto:Fadil369@hotmail.com" class="btn btn-primary z-depth-1" style="border-radius: 30px; padding: 10px 25px;">Start a Conversation</a>
-

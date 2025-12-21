@@ -21,6 +21,7 @@ pip install brainsait-pybrain
 ## Key Features
 
 ### Clinical Natural Language Processing
+
 - **Medical Entity Recognition**: Extract clinical entities from unstructured text
 - **Clinical Text Classification**: Categorize medical documents and notes
 - **Symptom Extraction**: Identify symptoms from patient narratives
@@ -28,6 +29,7 @@ pip install brainsait-pybrain
 - **Medical Coding Suggestions**: AI-powered ICD-10, SNOMED CT, CPT code recommendations
 
 ### AI-Powered Data Harmonization
+
 - **Multi-source Integration**: Combine data from disparate healthcare systems
 - **Semantic Mapping**: Intelligent mapping between different coding systems
 - **Quality Scoring**: Assess data quality and completeness
@@ -35,6 +37,7 @@ pip install brainsait-pybrain
 - **Data Enrichment**: Enhance clinical data with external knowledge bases
 
 ### Federated Learning Framework
+
 - **Privacy-Preserving ML**: Train models without sharing raw patient data
 - **Distributed Training**: Coordinate model training across multiple sites
 - **Secure Aggregation**: Combine model updates securely
@@ -42,6 +45,7 @@ pip install brainsait-pybrain
 - **Model Monitoring**: Track performance across federated nodes
 
 ### Clinical Analytics
+
 - **Predictive Models**: Risk stratification and outcome prediction
 - **Population Health**: Analyze trends across patient populations
 - **Quality Metrics**: Calculate and track quality measures
@@ -51,6 +55,7 @@ pip install brainsait-pybrain
 ## Use Cases
 
 **Clinical Decision Support**
+
 - Early warning systems for patient deterioration
 - Diagnosis assistance and differential diagnosis
 - Treatment recommendation engines
@@ -58,6 +63,7 @@ pip install brainsait-pybrain
 - Care pathway optimization
 
 **Research & Analytics**
+
 - Clinical trial patient matching
 - Real-world evidence generation
 - Pharmacovigilance signal detection
@@ -65,6 +71,7 @@ pip install brainsait-pybrain
 - Biomarker discovery
 
 **Quality Improvement**
+
 - Sepsis prediction and prevention
 - Readmission risk assessment
 - Length of stay optimization
@@ -138,6 +145,7 @@ brainsait-pybrain includes several pre-trained clinical models:
 ## Clinical Validation
 
 All models undergo rigorous clinical validation:
+
 - Retrospective chart review
 - Prospective clinical trials
 - External validation cohorts
@@ -147,6 +155,7 @@ All models undergo rigorous clinical validation:
 ## Contributing
 
 Join our mission to democratize healthcare AI! We welcome contributions from:
+
 - Data scientists and ML engineers
 - Clinical informaticists
 - Healthcare practitioners
@@ -158,4 +167,4 @@ MIT License - Open for research and commercial use
 
 ---
 
-*Advancing healthcare intelligence through open-source AI innovation.*
+_Advancing healthcare intelligence through open-source AI innovation._

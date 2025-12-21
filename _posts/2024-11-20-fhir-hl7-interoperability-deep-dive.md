@@ -14,6 +14,7 @@ Healthcare interoperability remains one of the industry's most persistent challe
 ### Why Healthcare Interoperability Matters
 
 Every day, critical health information is trapped in silos:
+
 - Lab results delayed because systems can't communicate
 - Duplicate tests ordered due to missing historical data
 - Medication errors from incomplete medication lists
@@ -34,6 +35,7 @@ PID|1||12345^^^MRN||DOE^JOHN||19800115|M|||123 MAIN ST^^RIYADH^^12345^SA||+96650
 ```
 
 **Key Components:**
+
 - **MSH**: Message Header - routing and metadata
 - **EVN**: Event Type - what triggered this message
 - **PID**: Patient Identification - demographics
@@ -50,6 +52,7 @@ PID|1||12345^^^MRN||DOE^JOHN||19800115|M|||123 MAIN ST^^RIYADH^^12345^SA||+96650
 #### Why HL7 v2.x Endures
 
 **Strengths:**
+
 - Battle-tested in production for 30+ years
 - Wide vendor support
 - Real-time messaging capability
@@ -57,6 +60,7 @@ PID|1||12345^^^MRN||DOE^JOHN||19800115|M|||123 MAIN ST^^RIYADH^^12345^SA||+96650
 - Well-understood by integration teams
 
 **Challenges:**
+
 - Inconsistent implementation across vendors
 - Limited semantic standardization
 - Complex parsing requirements
@@ -76,27 +80,35 @@ FHIR defines 150+ resource types representing clinical and administrative concep
 {
   "resourceType": "Patient",
   "id": "example",
-  "identifier": [{
-    "system": "http://hospital.example.org/mrn",
-    "value": "12345"
-  }],
-  "name": [{
-    "family": "Doe",
-    "given": ["John"]
-  }],
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "12345"
+    }
+  ],
+  "name": [
+    {
+      "family": "Doe",
+      "given": ["John"]
+    }
+  ],
   "birthDate": "1980-01-15",
   "gender": "male",
-  "address": [{
-    "line": ["123 Main St"],
-    "city": "Riyadh",
-    "postalCode": "12345",
-    "country": "SA"
-  }],
-  "telecom": [{
-    "system": "phone",
-    "value": "+966501234567",
-    "use": "mobile"
-  }]
+  "address": [
+    {
+      "line": ["123 Main St"],
+      "city": "Riyadh",
+      "postalCode": "12345",
+      "country": "SA"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+966501234567",
+      "use": "mobile"
+    }
+  ]
 }
 ```
 
@@ -151,14 +163,18 @@ Customize resources for specific use cases:
   "type": "Patient",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
   "differential": {
-    "element": [{
-      "path": "Patient.extension",
-      "sliceName": "nationalId",
-      "type": [{
-        "code": "Extension",
-        "profile": ["http://example.org/StructureDefinition/saudi-national-id"]
-      }]
-    }]
+    "element": [
+      {
+        "path": "Patient.extension",
+        "sliceName": "nationalId",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": ["http://example.org/StructureDefinition/saudi-national-id"]
+          }
+        ]
+      }
+    ]
   }
 }
 ```
@@ -217,11 +233,13 @@ Traditional hospital interfaces:
 ```
 
 **Pros:**
+
 - Reliable, real-time
 - Well-understood
 - Vendor-supported
 
 **Cons:**
+
 - Difficult to scale
 - Each interface requires custom configuration
 - Brittle to changes
@@ -235,12 +253,14 @@ Modern approach using FHIR:
 ```
 
 **Pros:**
+
 - Scalable architecture
 - Standards-based
 - Self-documenting APIs
 - Easy to add new consumers
 
 **Cons:**
+
 - Requires infrastructure investment
 - May need transformation layer for legacy systems
 
@@ -359,7 +379,7 @@ for patient_id in patient_ids:
 
 # Good: 1 batch request
 bundle = await client.batch([
-    {"method": "GET", "url": f"Patient/{pid}"} 
+    {"method": "GET", "url": f"Patient/{pid}"}
     for pid in patient_ids
 ])
 ```
@@ -439,7 +459,7 @@ Test resource validation:
 def test_patient_validation():
     patient = Patient(name=[{"family": "Doe"}])
     assert patient.is_valid()
-    
+
     invalid_patient = Patient()  # Missing required fields
     assert not invalid_patient.is_valid()
 ```
@@ -453,16 +473,16 @@ async def test_patient_crud():
     # Create
     patient = await client.create(test_patient)
     assert patient.id is not None
-    
+
     # Read
     retrieved = await client.read("Patient", patient.id)
     assert retrieved.name[0].family == "Doe"
-    
+
     # Update
     retrieved.telecom = [{"system": "phone", "value": "+966501234567"}]
     updated = await client.update(retrieved)
     assert len(updated.telecom) == 1
-    
+
     # Delete
     await client.delete("Patient", patient.id)
 ```
@@ -476,20 +496,24 @@ Validate against official FHIR test suites
 #### Emerging Trends
 
 **1. FHIR R5 and Beyond**
+
 - Enhanced subscription mechanisms
 - Better support for clinical workflows
 - Improved bulk data export
 
 **2. FHIRPath and CQL**
+
 - Query language for FHIR resources
 - Clinical Quality Language for decision support
 
 **3. FHIR Bulk Data**
+
 - Efficient export of large datasets
 - Population health analytics
 - Research use cases
 
 **4. International Patient Summary (IPS)**
+
 - Global standard for patient summaries
 - Cross-border healthcare
 
@@ -498,6 +522,7 @@ Validate against official FHIR test suites
 Healthcare interoperability isn't just about technology - it's about saving lives through better information sharing. Whether you're using HL7 v2.x, FHIR, or a hybrid approach, the goal remains the same: getting the right information to the right person at the right time.
 
 After years of implementation experience, my advice is:
+
 1. Start with standards, customize only when necessary
 2. Build for maintainability, not just immediate needs
 3. Test thoroughly against real-world scenarios
@@ -509,11 +534,13 @@ The future of healthcare depends on our ability to share information seamlessly.
 ---
 
 **Technical Resources:**
+
 - [FHIR R4 Specification](http://hl7.org/fhir/R4/)
 - [brainsait-pyheart on PyPI](https://pypi.org/project/brainsait-pyheart/)
 - [HL7 International](https://www.hl7.org/)
 - [NPHIES Technical Documentation](https://nphies.sa/)
 
 **Connect:**
+
 - GitHub: [github.com/Fadil369](https://github.com/Fadil369)
 - LinkedIn: [linkedin.com/in/thefadil](https://linkedin.com/in/thefadil)

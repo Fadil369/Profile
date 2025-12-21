@@ -46,6 +46,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 #### Curriculum
 
 **Module 1: Foundations of Medical Coding** (4 weeks)
+
 - Healthcare delivery systems
 - Medical terminology mastery
 - Anatomy and physiology review
@@ -54,6 +55,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - HIPAA compliance
 
 **Module 2: ICD-10-CM Coding** (6 weeks)
+
 - ICD-10-CM structure and conventions
 - Chapter-by-chapter code assignment
 - Multiple coding scenarios
@@ -62,6 +64,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Common coding errors and prevention
 
 **Module 3: ICD-10-PCS Coding** (4 weeks)
+
 - PCS coding structure
 - Root operations mastery
 - Body part/approach coding
@@ -70,6 +73,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Complex case scenarios
 
 **Module 4: CPT & HCPCS Coding** (6 weeks)
+
 - CPT structure and guidelines
 - E&M coding mastery
 - Surgery section coding
@@ -78,6 +82,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Modifiers and bundling
 
 **Module 5: Specialized Coding** (3 weeks)
+
 - Anesthesia coding
 - Radiology coding
 - Laboratory coding
@@ -86,6 +91,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Emergency department coding
 
 **Module 6: Revenue Cycle & Compliance** (3 weeks)
+
 - Revenue cycle overview
 - Claims submission process
 - Denial management
@@ -94,6 +100,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Quality assurance
 
 #### Hands-On Practice
+
 - 500+ real-world coding scenarios
 - Interactive coding simulations
 - AI-powered coding feedback
@@ -134,6 +141,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 #### Curriculum
 
 **Module 1: AI Fundamentals for Healthcare** (3 weeks)
+
 - Machine learning basics
 - Healthcare data types and structures
 - Clinical data privacy (HIPAA/GDPR)
@@ -141,6 +149,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Bias detection and mitigation
 
 **Module 2: Clinical Natural Language Processing** (4 weeks)
+
 - Medical text processing
 - Named entity recognition
 - Clinical document classification
@@ -148,6 +157,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Sentiment analysis in healthcare
 
 **Module 3: Medical Imaging AI** (4 weeks)
+
 - Image preprocessing
 - Convolutional neural networks
 - Object detection in medical images
@@ -155,6 +165,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Radiology AI applications
 
 **Module 4: Predictive Analytics** (3 weeks)
+
 - Risk stratification models
 - Readmission prediction
 - Disease progression modeling
@@ -162,6 +173,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Population health analytics
 
 **Module 5: Clinical Decision Support Systems** (3 weeks)
+
 - CDSS architecture
 - Integration with EMR systems
 - Alert fatigue prevention
@@ -169,6 +181,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Measuring CDSS impact
 
 **Module 6: Implementation & Deployment** (3 weeks)
+
 - Model validation and testing
 - Regulatory considerations (FDA, CE Mark)
 - Change management
@@ -208,6 +221,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 #### Curriculum
 
 **Module 1: NPHIES Overview** (2 weeks)
+
 - Saudi healthcare system overview
 - NPHIES mandate and timeline
 - Platform architecture
@@ -215,6 +229,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Compliance requirements
 
 **Module 2: Technical Integration** (4 weeks)
+
 - FHIR R4 for NPHIES
 - API authentication
 - Endpoint configuration
@@ -222,6 +237,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Error handling
 
 **Module 3: Claims Processing** (3 weeks)
+
 - Claims submission workflows
 - Pre-authorization requests
 - Eligibility verification
@@ -229,6 +245,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Payment reconciliation
 
 **Module 4: Testing & Validation** (2 weeks)
+
 - Test environment setup
 - Test scenarios execution
 - Validation requirements
@@ -236,6 +253,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Production readiness
 
 **Module 5: Go-Live & Support** (2 weeks)
+
 - Cutover planning
 - Data migration
 - User training
@@ -275,6 +293,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 #### Curriculum
 
 **Module 1: FHIR Foundations** (4 weeks)
+
 - Healthcare data exchange history
 - FHIR philosophy and design
 - RESTful principles
@@ -282,6 +301,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Data types and formats
 
 **Module 2: Core FHIR Resources** (6 weeks)
+
 - Patient, Practitioner, Organization
 - Encounter, Condition, Procedure
 - Observation, DiagnosticReport
@@ -289,6 +309,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - CarePlan and Goal
 
 **Module 3: Advanced FHIR Concepts** (4 weeks)
+
 - Profiles and extensions
 - Terminology services
 - Search parameters
@@ -296,6 +317,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Subscription and messaging
 
 **Module 4: Security & Privacy** (3 weeks)
+
 - OAuth 2.0 / OpenID Connect
 - SMART on FHIR
 - Audit logging
@@ -303,6 +325,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Consent management
 
 **Module 5: Implementation Patterns** (4 weeks)
+
 - EMR integration strategies
 - Mobile health applications
 - Population health queries
@@ -310,6 +333,7 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 - Patient portals
 
 **Module 6: Testing & Validation** (3 weeks)
+
 - Conformance testing
 - Validation tools
 - Performance testing
@@ -325,17 +349,20 @@ GIVC Academy is the educational arm of BrainSAIT, offering world-class training 
 We offer customized training programs for healthcare organizations:
 
 **On-Site Training**
+
 - Delivered at your facility
 - Customized to your workflows
 - Hands-on with your systems
 - Flexible scheduling
 
 **Group Rates**
+
 - 10+ participants: 15% discount
 - 20+ participants: 25% discount
 - 50+ participants: Custom pricing
 
 **Topics Available**
+
 - Medical coding refreshers
 - AI tool adoption
 - FHIR/HL7 implementation
@@ -348,13 +375,16 @@ We offer customized training programs for healthcare organizations:
 ## Free Resources
 
 ### Webinar Series
+
 Monthly webinars on healthcare AI and interoperability topics:
+
 - Healthcare AI trends
 - Coding tips and updates
 - NPHIES implementation guidance
 - FHIR best practices
 
 ### Open Educational Content
+
 - Medical coding practice questions
 - AI in healthcare blog series
 - YouTube tutorial videos
@@ -375,6 +405,7 @@ Monthly webinars on healthcare AI and interoperability topics:
 ## Instructors
 
 Our courses are taught by industry experts:
+
 - **Dr. Mohamed El Fadil**: Founder, practicing physician and AI innovator
 - **Certified Medical Coders**: 15+ years experience
 - **Healthcare IT Specialists**: Real-world implementation expertise
@@ -413,4 +444,4 @@ A: Yes, contact us for a trial week in any course.
 
 ---
 
-*Empowering healthcare professionals through world-class education.*
+_Empowering healthcare professionals through world-class education._

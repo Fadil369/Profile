@@ -110,32 +110,15 @@
   "skills": [
     {
       "name": "Healthcare AI & Interoperability",
-      "keywords": [
-        "FHIR R4",
-        "HL7 v2.x",
-        "Clinical NLP",
-        "HIPAA/GDPR Compliance",
-        "Federated Learning"
-      ]
+      "keywords": ["FHIR R4", "HL7 v2.x", "Clinical NLP", "HIPAA/GDPR Compliance", "Federated Learning"]
     },
     {
       "name": "Software Development",
-      "keywords": [
-        "Python",
-        "PyPI Packages",
-        "FastAPI",
-        "Flask/Django",
-        "React/Next.js"
-      ]
+      "keywords": ["Python", "PyPI Packages", "FastAPI", "Flask/Django", "React/Next.js"]
     },
     {
       "name": "Clinical Expertise",
-      "keywords": [
-        "Critical Care",
-        "Emergency Medicine",
-        "Neurosurgery",
-        "Clinical Decision Support"
-      ]
+      "keywords": ["Critical Care", "Emergency Medicine", "Neurosurgery", "Clinical Decision Support"]
     }
   ],
   "languages": [
