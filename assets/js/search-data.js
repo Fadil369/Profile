@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/Profile/projects/";
           },
+        },{id: "nav-products",
+          title: "products",
+          description: "Comprehensive healthcare AI solutions and platforms",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Profile/products/";
+          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "Open-source projects and contributions on GitHub",
@@ -25,10 +32,24 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Professional curriculum vitae - Physician, Healthcare AI Architect, and Innovator",
           section: "Navigation",
           handler: () => {
             window.location.href = "/Profile/cv/";
+          },
+        },{id: "nav-courses",
+          title: "courses",
+          description: "Professional healthcare education and certification programs",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Profile/courses/";
+          },
+        },{id: "nav-partnerships",
+          title: "partnerships",
+          description: "Strategic collaborations advancing global healthcare innovation",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Profile/partnerships/";
           },
         },{id: "nav-people",
           title: "people",
@@ -62,6 +83,17 @@ ninja.data = [{
             window.location.href = "/Profile/blog/2025/plotly/";
           
         },
+      },{id: "post-healthcare-ai-in-saudi-arabia-aligning-with-vision-2030",
+        
+          title: "Healthcare AI in Saudi Arabia - Aligning with Vision 2030",
+        
+        description: "Exploring how AI-powered healthcare solutions are driving Saudi Arabia&#39;s Vision 2030 digital health transformation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Profile/blog/2024/healthcare-ai-saudi-vision-2030/";
+          
+        },
       },{id: "post-a-post-with-image-galleries",
         
           title: "a post with image galleries",
@@ -71,6 +103,39 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/Profile/blog/2024/photo-gallery/";
+          
+        },
+      },{id: "post-fhir-and-hl7-interoperability-a-technical-deep-dive",
+        
+          title: "FHIR and HL7 Interoperability - A Technical Deep Dive",
+        
+        description: "Understanding healthcare interoperability standards and implementing FHIR R4 in production environments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Profile/blog/2024/fhir-hl7-interoperability-deep-dive/";
+          
+        },
+      },{id: "post-building-open-source-healthcare-tools-the-journey-of-brainsait-pyheart-and-brainsait-pybrain",
+        
+          title: "Building Open Source Healthcare Tools - The Journey of brainsait-pyheart and brainsait-pybrain",
+        
+        description: "Lessons learned from developing and publishing open-source healthcare packages on PyPI",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Profile/blog/2024/building-open-source-healthcare-tools/";
+          
+        },
+      },{id: "post-the-future-of-medical-coding-with-ai-transforming-revenue-cycle-management",
+        
+          title: "The Future of Medical Coding with AI - Transforming Revenue Cycle Management",
+        
+        description: "How artificial intelligence is revolutionizing medical coding, claims processing, and healthcare revenue optimization",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Profile/blog/2024/future-medical-coding-ai/";
           
         },
       },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -430,6 +495,21 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
+          section: "News",},{id: "news-published-oi-vs-ai-original-intelligence-vs-artificial-intelligence-exploring-the-synergy-between-human-clinical-expertise-and-ai-in-healthcare-available-now",
+          title: '📚 Published: “OI vs AI: Original Intelligence vs Artificial Intelligence” - exploring the...',
+          description: "",
+          section: "News",},{id: "news-brainsait-healthcare-platform-successfully-deployed-in-major-hospital-system-in-riyadh-achieving-95-first-pass-claim-acceptance-with-nphies-integration-transforming-healthcare-operations",
+          title: '🚀 BrainSAIT Healthcare Platform successfully deployed in major hospital system in Riyadh, achieving...',
+          description: "",
+          section: "News",},{id: "news-brainsait-pybrain-v1-0-is-now-available-on-pypi-healthcare-intelligence-platform-with-clinical-nlp-medical-coding-automation-and-federated-learning-get-started-pip-install-brainsait-pybrain",
+          title: '📦 brainsait-pybrain v1.0 is now available on PyPI! Healthcare intelligence platform with Clinical...',
+          description: "",
+          section: "News",},{id: "news-excited-to-announce-the-release-of-brainsait-pyheart-v1-0-on-pypi-open-source-healthcare-interoperability-engine-with-fhir-r4-and-hl7-v2-x-support-install-now-pip-install-brainsait-pyheart-rocket",
+          title: '🎉 Excited to announce the release of brainsait-pyheart v1.0 on PyPI! Open-source healthcare...',
+          description: "",
+          section: "News",},{id: "news-proud-to-collaborate-with-who-on-ai-integration-in-healthcare-initiative-contributing-real-world-insights-from-middle-east-implementations-to-shape-global-ai-healthcare-guidelines",
+          title: '🌍 Proud to collaborate with WHO on AI integration in healthcare initiative. Contributing...',
+          description: "",
           section: "News",},{id: "projects-brainsait-healthcare-ai-platform",
           title: 'BrainSAIT Healthcare AI Platform',
           description: "Comprehensive AI-powered clinical decision support system",
@@ -450,6 +530,31 @@ ninja.data = [{
           description: "Open-source Python packages for healthcare AI",
           section: "Projects",handler: () => {
               window.location.href = "/Profile/projects/4_project/";
+            },},{id: "projects-brainsait-bot",
+          title: 'BrainSAIT BOT',
+          description: "AI-Powered Revenue Cycle Management &amp; Medical Coding Automation",
+          section: "Projects",handler: () => {
+              window.location.href = "/Profile/projects/brainsait_bot/";
+            },},{id: "projects-givc-platform",
+          title: 'GIVC Platform',
+          description: "Global Intelligent Virtual Care - Comprehensive telemedicine ecosystem",
+          section: "Projects",handler: () => {
+              window.location.href = "/Profile/projects/givc_platform/";
+            },},{id: "projects-oi-vs-ai-book",
+          title: 'OI vs AI Book',
+          description: "Original Intelligence vs Artificial Intelligence in Healthcare",
+          section: "Projects",handler: () => {
+              window.location.href = "/Profile/projects/oi_vs_ai_book/";
+            },},{id: "projects-brainsait-pybrain",
+          title: 'brainsait-pybrain',
+          description: "Unified Healthcare Intelligence Platform with AI-powered analytics",
+          section: "Projects",handler: () => {
+              window.location.href = "/Profile/projects/pybrain_package/";
+            },},{id: "projects-brainsait-pyheart",
+          title: 'brainsait-pyheart',
+          description: "Open-source Healthcare Interoperability &amp; Workflow Engine",
+          section: "Projects",handler: () => {
+              window.location.href = "/Profile/projects/pyheart_package/";
             },},{
         id: 'social-email',
         title: 'email',
