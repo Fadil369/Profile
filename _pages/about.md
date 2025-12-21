@@ -2,50 +2,115 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.brainsait.io'>BrainSAIT LTD</a> - Healthcare AI Innovation
+subtitle: <a href='https://www.brainsait.io'>BrainSAIT</a> - Transforming Healthcare Through AI Innovation
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Healthcare AI Innovator</p>
-    <p>Physician Entrepreneur</p>
-    <p>Sudan / Saudi Arabia</p>
+    <p>Physician & Healthcare AI Architect</p>
+    <p>Founder & CEO, BrainSAIT</p>
+    <p>Riyadh, Saudi Arabia</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Dr. Mohamed El Fadil is a physician entrepreneur and healthcare AI innovator, dedicated to transforming healthcare through intelligent automation. As the founder of [BrainSAIT LTD](https://www.brainsait.io), he leads the development of cutting-edge AI solutions for clinical decision support, medical coding, and healthcare interoperability.
+**Dr. Mohamed El Fadil** is a physician and healthcare AI architect with over 10 years of comprehensive experience spanning clinical practice, healthcare AI innovation, and interoperability systems. As the Founder and CEO of [BrainSAIT](https://www.brainsait.io), he leads the development of cutting-edge AI solutions that transform healthcare delivery across the Middle East and beyond.
 
-With a unique combination of clinical expertise and advanced software engineering skills, Dr. El Fadil has built enterprise-grade healthcare AI systems deployed across Sudan and Saudi Arabia. His work focuses on reducing physician burnout, improving patient outcomes, and streamlining healthcare operations through ambient AI documentation, automated claims processing, and intelligent workflow optimization.
+## Vision & Mission
+
+Dr. El Fadil's work bridges the gap between clinical expertise and technological innovation, creating intelligent healthcare systems that enhance patient care, reduce physician burnout, and streamline healthcare operations. His philosophy centers on the concept of **Original Intelligence (OI) + Artificial Intelligence (AI)** - combining human clinical judgment with advanced AI capabilities.
 
 ## Core Expertise
 
-- **Clinical AI**: Large language models fine-tuned for medical applications, clinical decision support systems, and ambient documentation
-- **Healthcare Interoperability**: HL7 FHIR R4 implementation, NPHIES compliance, and secure healthcare data exchange
-- **Medical Coding**: Automated ICD-10, SNOMED CT, and CPT coding with AI-powered validation
-- **Bilingual Solutions**: Arabic/English healthcare AI systems optimized for Middle Eastern markets
-- **Regulatory Compliance**: HIPAA, NPHIES (Saudi Arabia), and PDPL privacy standards
+**Healthcare AI & Interoperability**
+- FHIR R4 and HL7 v2.x standards implementation
+- Clinical Natural Language Processing (NLP)
+- Healthcare data harmonization and federated learning
+- HIPAA/GDPR compliance frameworks
+- NPHIES (Saudi Arabia) regulatory alignment
 
-## Notable Projects
+**Software Engineering**
+- Published PyPI packages: [brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/) & [brainsait-pybrain](https://pypi.org/project/brainsait-pybrain/)
+- Full-stack development: Python, FastAPI, React, Next.js
+- Cloud architecture: AWS, Docker, Kubernetes
+- Event-driven architecture and microservices
 
-Dr. El Fadil's portfolio includes several groundbreaking projects:
+**Clinical Background**
+- Critical Care & ICU Medicine
+- Emergency Medicine
+- Neurosurgery support
+- Clinical decision support systems
 
-- **BrainSAIT Healthcare AI Platform**: Comprehensive clinical intelligence system with decision support, claims automation, and full FHIR integration
-- **BrainSAIT LINC Agent**: Enterprise bilingual AI agent for healthcare operations, built on Qwen3-8B with clinical optimizations
-- **Neural Cloud Portal**: Modern, voice-enabled clinical portal with real-time AI integration
-- **PyHeart & PyBrain**: Open-source Python packages for cardiac analysis and neural intelligence (published on PyPI)
+## Key Achievements
 
-Explore the [Projects](/Profile/projects/) page to learn more about these innovations, or visit [GitHub](https://github.com/Fadil369) to see the code behind the transformation.
+🎯 **Published Open-Source Healthcare Tools** - Created and published two PyPI packages for healthcare interoperability and intelligence, available to the global developer community.
+
+🏥 **BrainSAIT Healthcare Platform** - Built comprehensive AI-powered platform serving hospitals and clinics across Sudan and Saudi Arabia.
+
+🌍 **GIVC Platform** - Developed Global Intelligent Virtual Care platform for telemedicine and remote patient monitoring.
+
+📚 **Author** - Published "OI vs AI: Original Intelligence vs Artificial Intelligence" exploring the synergy between human expertise and AI in healthcare.
+
+💼 **Healthcare Innovation** - Pioneered AI-powered medical coding, revenue cycle management, and clinical documentation solutions.
+
+## Technology Stack
+
+<div class="row mt-3">
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <strong>AI & ML</strong>
+        <ul>
+            <li>OpenAI GPT</li>
+            <li>Clinical NLP</li>
+            <li>Federated Learning</li>
+            <li>Custom Medical LLMs</li>
+        </ul>
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <strong>Backend</strong>
+        <ul>
+            <li>Python / FastAPI</li>
+            <li>Flask / Django</li>
+            <li>PostgreSQL</li>
+            <li>Redis / Celery</li>
+        </ul>
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <strong>Standards</strong>
+        <ul>
+            <li>FHIR R4</li>
+            <li>HL7 v2.x</li>
+            <li>NPHIES</li>
+            <li>HIPAA/GDPR</li>
+        </ul>
+    </div>
+</div>
+
+## Strategic Partnerships
+
+Dr. El Fadil collaborates with leading international organizations to advance healthcare AI:
+- World Health Organization (WHO) - AI Integration in Healthcare
+- NHS Trust Development Team
+- International Telecommunication Union (ITU)
+- Health Informatics Society
+- Saudi Health Council (Vision 2030 alignment)
+
+## Get in Touch
+
+Interested in healthcare AI collaboration, consulting, or partnerships? Explore my [projects](/Profile/projects/), check out the [open-source repositories](https://github.com/Fadil369), or reach out directly at **Fadil369@hotmail.com**.
+
+---
+
+*"The future of healthcare lies not in replacing physicians with AI, but in empowering them with intelligent tools that enhance their Original Intelligence."* - Dr. Mohamed El Fadil
