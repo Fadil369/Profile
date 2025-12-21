@@ -42,6 +42,6 @@ Specialized clinical practice with a focus on surgical data analytics and precis
 
 ## Select Publications & Projects
 
-- *OI vs AI: Original Intelligence vs Artificial Intelligence* (Book, 2019)
+- _OI vs AI: Original Intelligence vs Artificial Intelligence_ (Book, 2019)
 - `brainsait-pyheart`: Healthcare Interoperability Framework (PyPI)
 - `brainsait-pybrain`: Clinical Intelligence Engine (PyPI)

@@ -38,17 +38,20 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 ## Expertise
 
 **Healthcare AI & Interoperability**
+
 - FHIR R4 and HL7 v2.x standards implementation
 - Clinical Natural Language Processing (NLP)
 - Healthcare data harmonization
 - NPHIES (Saudi Arabia) regulatory alignment
 
 **Software Engineering**
+
 - Published PyPI packages: [brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/) & [brainsait-pybrain](https://pypi.org/project/brainsait-pybrain/)
 - Full-stack development: Python, FastAPI, React, Next.js
 - Cloud architecture: AWS, Docker, Kubernetes
 
 **Clinical Background**
+
 - Critical Care & ICU Medicine
 - Emergency Medicine
 - Clinical decision support systems
@@ -95,6 +98,7 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 ## Global Impact
 
 My initiatives have reached healthcare providers across continents, focus on emerging markets in the Middle East and Africa:
+
 - 🇸🇦 **Saudi Arabia**: Full NPHIES compliance and AI-RCM integration for major hospitals.
 - 🇸🇩 **Sudan**: Deployment of the GIVC Platform for telemedicine in underserved regions.
 - 🇬🇧 **UK-Collaborations**: Strategic advisory for NHS trust development teams on interoperability.
@@ -102,24 +106,26 @@ My initiatives have reached healthcare providers across continents, focus on eme
 
 ## Timeline of Innovation
 
-| Year | Milestone | Description |
-| :--- | :--- | :--- |
-| **2024** | **BrainSAIT Horizon** | Launch of 2nd Gen AI-Ambient Scribe for ICU settings. |
-| **2023** | **Open Source Pivot** | Released `brainsait-pyheart` to standardize FHIR integration. |
-| **2021** | **Founder & CEO** | Founded BrainSAIT to bridge clinical medicine and AI. |
-| **2019** | **Author** | Published *"OI vs AI"*, establishing the Original Intelligence framework. |
-| **2018** | **Clinical Shift** | Moved into Neurosurgery and Critical Care, identifying tech gaps. |
+| Year     | Milestone             | Description                                                               |
+| :------- | :-------------------- | :------------------------------------------------------------------------ |
+| **2024** | **BrainSAIT Horizon** | Launch of 2nd Gen AI-Ambient Scribe for ICU settings.                     |
+| **2023** | **Open Source Pivot** | Released `brainsait-pyheart` to standardize FHIR integration.             |
+| **2021** | **Founder & CEO**     | Founded BrainSAIT to bridge clinical medicine and AI.                     |
+| **2019** | **Author**            | Published _"OI vs AI"_, establishing the Original Intelligence framework. |
+| **2018** | **Clinical Shift**    | Moved into Neurosurgery and Critical Care, identifying tech gaps.         |
 
 ## Speaking & Advisory
 
 I speak at global conferences about the future of Healthcare AI and Interoperability:
-- **Global Health Exhibition (Riyadh)** — *AI in RCM Optimization*
-- **HIMSS Middle East** — *FHIR Interoperability & NPHIES Integration*
-- **WHO Digital Health Advisory** — *Telemedicine in Emerging Markets*
+
+- **Global Health Exhibition (Riyadh)** — _AI in RCM Optimization_
+- **HIMSS Middle East** — _FHIR Interoperability & NPHIES Integration_
+- **WHO Digital Health Advisory** — _Telemedicine in Emerging Markets_
 
 ## Partnerships
 
 I collaborate with leading organizations to advance healthcare AI:
+
 - World Health Organization (WHO)
 - NHS Trust Development Team
 - Saudi Health Council (Vision 2030)
