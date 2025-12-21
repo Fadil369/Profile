@@ -1,212 +1,667 @@
 /* =========================================
-   STUNNING PREMIUM ENHANCEMENTS (v2)
+   PREMIUM PROFESSIONAL DESIGN SYSTEM (v3)
    ========================================= */
 
-/* 1. ANIMATIONS */
+/* ===========================================
+   1. GLOBAL TYPOGRAPHY - BIGGER & CLEARER
+   =========================================== */
+
+// Import Google Fonts for premium look
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap");
+
+:root {
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --base-font-size: 19px;
+  --line-height: 1.75;
+
+  // Premium Color Palette
+  --premium-primary: #0a1628;
+  --premium-accent: #3b82f6;
+  --premium-accent-light: #60a5fa;
+  --premium-gold: #f59e0b;
+  --premium-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+html {
+  font-size: var(--base-font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: var(--line-height);
+  letter-spacing: -0.01em;
+}
+
+/* Headings - Much Bigger & Bolder */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem !important;
+}
+h2 {
+  font-size: 2.5rem !important;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-size: 1.75rem !important;
+}
+
+/* Paragraphs - Bigger & Better Readability */
+p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================================
+   2. ANIMATIONS - SMOOTH & PREMIUM
+   =========================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 40px, 0);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
+    transform: translateY(-8px);
   }
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px rgba(17, 74, 177, 0.2);
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
   50% {
-    box-shadow:
-      0 0 20px rgba(17, 74, 177, 0.6),
-      0 0 10px rgba(103, 147, 172, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(17, 74, 177, 0.2);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
   }
 }
 
-/* Apply animations to page elements */
-.post-title {
+/* ===========================================
+   3. HERO SECTION - BIG & IMPACTFUL
+   =========================================== */
+
+.post-header {
+  padding: 3rem 0 2rem 0;
   animation: fadeInUp 0.8s ease-out;
 }
 
-.desc {
-  animation: fadeInUp 1s ease-out;
-  animation-fill-mode: both;
-  animation-delay: 0.2s;
-}
-
-.profile {
-  animation: fadeInUp 1.2s ease-out;
-  animation-fill-mode: both;
-  animation-delay: 0.4s;
-}
-
-.content {
-  animation: fadeInUp 1.4s ease-out;
-  animation-fill-mode: both;
-  animation-delay: 0.6s;
-}
-
-/* 2. HERO & TYPOGRAPHY */
 .post-title {
+  font-family: var(--font-primary) !important;
+  font-size: 3.5rem !important;
   font-weight: 900 !important;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, $brainsait-dark 0%, $brainsait-primary 50%, $brainsait-secondary 100%);
+  letter-spacing: -0.04em;
+  line-height: 1.1 !important;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent; /* Fallback */
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  color: transparent;
+  margin-bottom: 1rem !important;
 }
 
 html[data-theme="dark"] .post-title {
-  background: linear-gradient(135deg, #ffffff 0%, $brainsait-light 50%, $brainsait-secondary 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Subtitle / Description */
 .desc {
-  font-size: 1.35rem;
-  font-weight: 300;
-  color: $grey-color;
+  font-size: 1.5rem !important;
+  font-weight: 400;
+  color: #64748b;
   margin-bottom: 2rem;
-  border-left: 4px solid $brainsait-accent;
-  padding-left: 1rem;
+  padding: 0;
+  border: none;
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-/* 3. PROFILE IMAGE ENHANCEMENTS */
+.desc .gradient-text {
+  background: linear-gradient(90deg, #f59e0b, #ef4444, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .desc {
+  color: #94a3b8;
+}
+
+/* ===========================================
+   4. PROFILE SECTION - PREMIUM POLISH
+   =========================================== */
+
+.profile {
+  animation: fadeInUp 1.2s ease-out 0.4s both;
+}
+
+.profile img.z-depth-1,
+.profile img.rounded-circle {
+  border: 5px solid transparent !important;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) border-box;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="dark"] .profile img.z-depth-1,
+html[data-theme="dark"] .profile img.rounded-circle {
+  background: linear-gradient(#1c1c1d, #1c1c1d) padding-box,
+    linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6) border-box;
+}
+
+.profile img.z-depth-1:hover,
+.profile img.rounded-circle:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow:
+    0 30px 60px -15px rgba(59, 130, 246, 0.35),
+    0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Profile Info */
+.profile .more-info {
+  font-family: var(--font-primary) !important;
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-top: 1.5rem;
+
+  p {
+    display: block !important;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    color: #475569;
+  }
+}
+
+html[data-theme="dark"] .profile .more-info p {
+  color: #cbd5e1;
+}
+
+/* Company Logo in Profile */
 .profile .more-info img {
-  /* BrainSAIT Logo */
-  border-radius: 8px;
+  max-width: 120px !important;
+  height: auto !important;
+  margin-top: 1rem;
+  border-radius: 12px;
   animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
 }
 
-.profile img.z-depth-1 {
-  /* Profile Picture */
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  animation: glow 4s infinite alternate;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* ===========================================
+   5. CONTENT AREA - CLEAR & SPACIOUS
+   =========================================== */
+
+article {
+  animation: fadeInUp 1.4s ease-out 0.6s both;
 }
 
-.profile img.z-depth-1:hover {
-  transform: scale(1.08) rotate(2deg);
+article .clearfix {
+  font-size: 1.15rem;
+  line-height: 1.9;
 }
 
-/* 4. TECH BADGES (New Feature) */
+article .clearfix > p:first-of-type {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+html[data-theme="dark"] article .clearfix > p:first-of-type {
+  color: #e2e8f0;
+}
+
+/* Section Headers with Icons */
+article h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem !important;
+  font-weight: 800;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent) 1;
+}
+
+article h2 i {
+  font-size: 1.5rem;
+}
+
+article h3 {
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e40af;
+}
+
+html[data-theme="dark"] article h3 {
+  color: #93c5fd;
+}
+
+/* ===========================================
+   6. TECH BADGES - PREMIUM PILLS
+   =========================================== */
+
 .tech-badge-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 1rem;
+  gap: 10px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-badge {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 8px 16px;
-  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: $brainsait-dark;
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between icon and text if we add icons */
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  color: #1e40af;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 html[data-theme="dark"] .tech-badge {
-  background: rgba(255, 255, 255, 0.05); /* Dark mode glass */
-  color: $brainsait-light;
-  border-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.2);
 }
 
 .tech-badge:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, $brainsait-primary, $brainsait-secondary);
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   color: white;
-  box-shadow: 0 6px 15px rgba(17, 74, 177, 0.3);
   border-color: transparent;
+  box-shadow: 0 12px 24px -8px rgba(59, 130, 246, 0.4);
 }
 
-/* 5. NEWS & LATEST POSTS TABLES */
-.news .table,
-.table-borderless {
-  background: transparent !important;
-}
+/* ===========================================
+   7. BLOCKQUOTE - PREMIUM CALLOUT
+   =========================================== */
 
-.news tr {
-  transition: background-color 0.2s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-html[data-theme="dark"] .news tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.news tr:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-}
-html[data-theme="dark"] .news tr:hover {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.news th {
-  font-weight: 600;
-  color: $brainsait-secondary;
-}
-
-/* 6. BLOCKQUOTE STYLING */
 blockquote {
-  border-left: 5px solid $brainsait-accent;
-  background: linear-gradient(to right, rgba(239, 204, 0, 0.05), transparent);
-  padding: 1.5rem;
+  position: relative;
+  margin: 3rem 0;
+  padding: 2rem 2.5rem;
+  font-size: 1.35rem !important;
   font-style: italic;
-  font-size: 1.2rem;
-  border-radius: 0 10px 10px 0;
-  margin: 2rem 0;
-  color: $grey-color-dark;
+  line-height: 1.7;
+  color: #334155;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  border: none;
+  border-left: 5px solid;
+  border-image: linear-gradient(180deg, #3b82f6, #8b5cf6) 1;
+  border-radius: 0 16px 16px 0;
+
+  &::before {
+    content: """;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    color: rgba(59, 130, 246, 0.15);
+    line-height: 1;
+  }
 }
 
 html[data-theme="dark"] blockquote {
-  color: #e0e0e0;
-  background: linear-gradient(to right, rgba(239, 204, 0, 0.1), transparent);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+  color: #e2e8f0;
+
+  &::before {
+    color: rgba(147, 197, 253, 0.2);
+  }
 }
 
-/* 7. SOCIAL ICONS - BIGGER & FLOATING */
-.social .contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
+/* ===========================================
+   8. LISTS - CLEANER & BIGGER
+   =========================================== */
+
+article ul,
+article ol {
+  font-size: 1.1rem;
+  line-height: 2;
   margin-bottom: 2rem;
 }
 
+article ul li,
+article ol li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+article ul li strong {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+html[data-theme="dark"] article ul li strong {
+  color: #93c5fd;
+}
+
+/* ===========================================
+   9. BUTTONS - PREMIUM CTA
+   =========================================== */
+
+.btn-primary,
+a.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 8px 24px -8px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+}
+
+.btn-primary:hover,
+a.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(59, 130, 246, 0.6);
+}
+
+/* ===========================================
+   10. NEWS & POSTS - PREMIUM CARDS
+   =========================================== */
+
+.news {
+  margin-top: 2rem;
+}
+
+.news .table {
+  font-size: 1.05rem;
+}
+
+.news tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.news tr:hover {
+  background: rgba(59, 130, 246, 0.03);
+}
+
+html[data-theme="dark"] .news tr {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .news tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.news th {
+  font-weight: 700;
+  color: #3b82f6;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.news-title {
+  font-weight: 600;
+  font-size: 1.1rem !important;
+}
+
+/* ===========================================
+   11. SOCIAL ICONS - BIG & BOLD
+   =========================================== */
+
+.social {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .social {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.social .contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 .social .contact-icons a {
-  font-size: 2rem; /* Much bigger */
-  color: $grey-color;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 1.75rem;
+  color: #64748b;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="dark"] .social .contact-icons a {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
 }
 
 .social .contact-icons a:hover {
-  color: $brainsait-accent;
-  transform: translateY(-8px) scale(1.2);
-  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 24px -8px rgba(59, 130, 246, 0.4);
+}
+
+.social .contact-note {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   12. CARDS & PROJECTS - GLASSMORPHISM
+   =========================================== */
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.card .card-title {
+  font-size: 1.35rem !important;
+  font-weight: 700;
+}
+
+.card .card-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+html[data-theme="dark"] .card {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme="dark"] .card .card-text {
+  color: #94a3b8;
+}
+
+/* ===========================================
+   13. HORIZONTAL RULES - PREMIUM DIVIDERS
+   =========================================== */
+
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  margin: 4rem 0;
+}
+
+/* ===========================================
+   14. MOBILE RESPONSIVENESS
+   =========================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --base-font-size: 17px;
+  }
+
+  .post-title {
+    font-size: 2.5rem !important;
+  }
+
+  .desc {
+    font-size: 1.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.35rem !important;
+  }
+
+  .profile {
+    float: none !important;
+    width: 100% !important;
+    text-align: center;
+    margin: 0 0 3rem 0 !important;
+  }
+
+  .profile img.z-depth-1,
+  .profile img.rounded-circle {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .tech-badge {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  blockquote {
+    padding: 1.5rem;
+    font-size: 1.15rem !important;
+  }
+
+  .social .contact-icons {
+    gap: 1rem;
+  }
+
+  .social .contact-icons a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+/* ===========================================
+   15. CONTAINER WIDTH - MORE SPACE
+   =========================================== */
+
+.container {
+  max-width: 1100px !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+/* ===========================================
+   16. NAVBAR - CLEANER & PROFESSIONAL
+   =========================================== */
+
+.navbar {
+  padding: 1rem 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+/* ===========================================
+   17. FOOTER - PREMIUM POLISH
+   =========================================== */
+
+footer.fixed-bottom {
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+footer.sticky-bottom {
+  font-size: 1rem;
 }
