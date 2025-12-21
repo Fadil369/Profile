@@ -1,13 +1,28 @@
 ---
 layout: book-shelf
-title: bookshelf
+title: Reading List
 permalink: /books/
-nav: false
+nav: true
+nav_order: 6
 collection: books
 ---
 
-> What an astonishing thing a book is. It's a flat object made from a tree with flexible parts on which are imprinted lots of funny dark squiggles. But one glance at it and you're inside the mind of another person, maybe somebody dead for thousands of years. Across the millennia, an author is speaking clearly and silently inside your head, directly to you. Writing is perhaps the greatest of human inventions, binding together people who never knew each other, citizens of distant epochs. Books break the shackles of time. A book is proof that humans are capable of working magic.
+> What an astonishing thing a book is. It's a flat object made from a tree with flexible parts on which are imprinted lots of funny dark squiggles. But one glance at it and you're inside the mind of another person, maybe somebody dead for thousands of years.
 >
-> -- Carl Sagan, Cosmos, Part 11: The Persistence of Memory (1980)
+> -- Carl Sagan, Cosmos
 
-## Books that I am reading, have read, or will read
+## Recommended Reading
+
+Explore my curated digital library and reading insights on my dedicated platform:
+
+<div class="row mt-3 text-center">
+    <div class="col-sm-12">
+        <a href="https://read.thefadil.site" target="_blank" class="btn btn-primary">
+            <i class="fas fa-book-reader mr-2"></i> Visit Digital Bookshelf (read.thefadil.site)
+        </a>
+    </div>
+</div>
+
+<br>
+
+## Featured Collection

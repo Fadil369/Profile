@@ -1,6 +1,14 @@
 {
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "1.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "3.1.1"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,css,md,html,json,scss}": "prettier --write"
   }
 }
