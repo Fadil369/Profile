@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ideally, you would use a proxy server or Netlify/Cloudflare Functions to hide the key.
     // For this personal profile demo (static site), we are using a direct call pattern.
     // If you have a key, replace 'YOUR_GEMINI_API_KEY' with it.
-    const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY'; 
+    const GEMINI_API_KEY = 'AIzaSyCVkd9n87f9JZcPbgj37lFVpqRaSN5KoGQ'; 
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
   
     // --- Elements ---
