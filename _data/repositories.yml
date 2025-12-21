@@ -4,6 +4,9 @@ github_users:
 repo_description_lines_max: 3
 
 github_repos:
+  - Fadil369/brainsait-pyheart
+  - Fadil369/brainsait-pybrain
+  - Fadil369/Profile
   - Fadil369/brainsait-healthcare-ai
   - Fadil369/brainsait-linc-docs
   - Fadil369/brainsait-suite
