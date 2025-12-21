@@ -44,6 +44,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/Profile/cv/";
           },
+        },{id: "nav-reading-list",
+          title: "Reading List",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Profile/books/";
+          },
         },{id: "nav-courses",
           title: "courses",
           description: "Professional healthcare education and certification programs",
