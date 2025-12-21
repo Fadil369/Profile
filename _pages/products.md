@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /products/
-title: products
+title: Products
 description: Comprehensive healthcare AI solutions and platforms
 nav: true
 nav_order: 4

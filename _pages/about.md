@@ -1,18 +1,18 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <span class="gradient-text">Architecting the Future of Healthcare Intelligence</span>
+subtitle: Transforming Healthcare Through AI Innovation
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true
   more_info: >
-    <p>🩺 Physician & Healthcare AI Architect</p>
-    <p>🚀 Founder & CEO, BrainSAIT</p>
-    <p><img src="assets/img/company_logo.jpg" alt="BrainSAIT Logo" style="height: 70px; margin-top: 20px;"></p>
-    <p>📍 Riyadh, Kingdom of Saudi Arabia</p>
+    <p>Physician & Healthcare AI Architect</p>
+    <p>Founder & CEO, BrainSAIT</p>
+    <p><img src="assets/img/company_logo.jpg" alt="BrainSAIT"></p>
+    <p>Riyadh, Saudi Arabia</p>
 
 selected_projects: true
 selected_papers: false
@@ -29,92 +29,102 @@ latest_posts:
   limit: 3
 ---
 
-**Dr. Mohamed El Fadil** is a visionary **Physician** and **Healthcare AI Architect** who fuses deep clinical wisdom with cutting-edge computational intelligence. As the Founder & CEO of **[BrainSAIT](https://www.brainsait.io)**, he pioneers the **"Original Intelligence" (OI)** movement—a philosophy that empowers physicians with AI copilots rather than replacing human expertise.
+I'm a physician and healthcare AI architect with over 10 years of experience spanning clinical practice, healthcare AI innovation, and interoperability systems. As the Founder and CEO of [BrainSAIT](https://www.brainsait.io), I lead the development of AI solutions that transform healthcare delivery.
 
-> _"The future of medicine isn't about AI replacing doctors. It's about doctors who embrace AI replacing those who don't. We are building the **second brain** for the entire healthcare ecosystem."_
+## Mission
 
----
+To decode the complexity of healthcare through **intelligent automation**, **interoperability**, and **human-centric AI**. My work bridges the gap between the chaotic reality of clinical practice and the precision of modern data science. I believe in the concept of **Original Intelligence (OI) + Artificial Intelligence (AI)** — combining human clinical judgment with advanced AI capabilities to enhance patient care and streamline healthcare operations.
 
-## <i class="fas fa-bullseye"></i> Vision & Mission
+## Expertise
 
-To decode the complexity of healthcare through **intelligent automation**, **seamless interoperability**, and **human-centric AI**. My work bridges the chaotic reality of clinical practice with the precision of modern data science—creating systems that think alongside physicians, not instead of them.
+**Healthcare AI & Interoperability**
+- FHIR R4 and HL7 v2.x standards implementation
+- Clinical Natural Language Processing (NLP)
+- Healthcare data harmonization
+- NPHIES (Saudi Arabia) regulatory alignment
 
-**Core Philosophy:**
-- 🧠 **Original Intelligence (OI)** — Human expertise is irreplaceable
-- 🤖 **AI as Copilot** — Technology amplifies, never replaces
-- 🔗 **Interoperability First** — Systems that speak the same language
-- 🏥 **Patient-Centered** — Every innovation serves the patient
+**Software Engineering**
+- Published PyPI packages: [brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/) & [brainsait-pybrain](https://pypi.org/project/brainsait-pybrain/)
+- Full-stack development: Python, FastAPI, React, Next.js
+- Cloud architecture: AWS, Docker, Kubernetes
 
----
+**Clinical Background**
+- Critical Care & ICU Medicine
+- Emergency Medicine
+- Clinical decision support systems
 
-## <i class="fas fa-microchip"></i> Technology Arsenal
+## Technology Stack
 
 <div class="row">
-    <div class="col-sm-4 mt-4 mt-md-0">
-        <h3>🧠 AI & Intelligence</h3>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <h3>AI & ML</h3>
         <div class="tech-badge-container">
             <span class="tech-badge">Generative AI</span>
             <span class="tech-badge">Clinical NLP</span>
-            <span class="tech-badge">Large Language Models</span>
-            <span class="tech-badge">Federated Learning</span>
+            <span class="tech-badge">LLMs</span>
             <span class="tech-badge">TensorFlow</span>
-            <span class="tech-badge">PyTorch</span>
         </div>
     </div>
-    <div class="col-sm-4 mt-4 mt-md-0">
-        <h3>⚙️ Engineering Stack</h3>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <h3>Backend</h3>
         <div class="tech-badge-container">
             <span class="tech-badge">Python</span>
             <span class="tech-badge">FastAPI</span>
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">Next.js</span>
             <span class="tech-badge">Docker</span>
             <span class="tech-badge">Kubernetes</span>
-            <span class="tech-badge">AWS</span>
         </div>
     </div>
-    <div class="col-sm-4 mt-4 mt-md-0">
-        <h3>🏥 Healthcare Standards</h3>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <h3>Standards</h3>
         <div class="tech-badge-container">
             <span class="tech-badge">FHIR R4</span>
-            <span class="tech-badge">HL7 v2.x</span>
+            <span class="tech-badge">HL7 v2</span>
             <span class="tech-badge">NPHIES</span>
-            <span class="tech-badge">SNOMED CT</span>
-            <span class="tech-badge">ICD-10 AM</span>
-            <span class="tech-badge">CPT Coding</span>
+            <span class="tech-badge">ICD-10</span>
         </div>
     </div>
 </div>
 
----
+## Key Projects
 
-## <i class="fas fa-trophy"></i> Signature Achievements
+- **BrainSAIT Platform** — AI-powered healthcare platform serving hospitals in Saudi Arabia and Sudan
+- **GIVC Platform** — Global Intelligent Virtual Care for telemedicine
+- **Open Source** — Creator of `brainsait-pyheart` and `brainsait-pybrain` PyPI packages
+- **Author** — Published "OI vs AI: Original Intelligence vs Artificial Intelligence"
 
-- 🏆 **BrainSAIT Ecosystem** — End-to-end AI platform serving hospitals across Saudi Arabia & Sudan
-- 📦 **Open Source Pioneer** — Creator of [`brainsait-pyheart`](https://pypi.org/project/brainsait-pyheart/) & [`brainsait-pybrain`](https://pypi.org/project/brainsait-pybrain/) on PyPI
-- 📖 **Thought Leader** — Author of _"OI vs AI: Original Intelligence vs Artificial Intelligence"_
-- 🌍 **Global Impact** — GIVC Platform for telemedicine reaching underserved communities
-- 🤝 **Strategic Advisor** — Collaborations with WHO, NHS Trust, and Saudi Health Council
+## Global Impact
 
----
+My initiatives have reached healthcare providers across continents, focus on emerging markets in the Middle East and Africa:
+- 🇸🇦 **Saudi Arabia**: Full NPHIES compliance and AI-RCM integration for major hospitals.
+- 🇸🇩 **Sudan**: Deployment of the GIVC Platform for telemedicine in underserved regions.
+- 🇬🇧 **UK-Collaborations**: Strategic advisory for NHS trust development teams on interoperability.
+- 🌍 **Open Source**: Over 50,000 downloads of clinical interoperability tools globally.
 
-## <i class="fas fa-rocket"></i> Current Focus
+## Timeline of Innovation
 
-Building the next generation of **clinical decision support systems** that understand context, predict outcomes, and speak the language of both physicians and machines. Currently focused on:
+| Year | Milestone | Description |
+| :--- | :--- | :--- |
+| **2024** | **BrainSAIT Horizon** | Launch of 2nd Gen AI-Ambient Scribe for ICU settings. |
+| **2023** | **Open Source Pivot** | Released `brainsait-pyheart` to standardize FHIR integration. |
+| **2021** | **Founder & CEO** | Founded BrainSAIT to bridge clinical medicine and AI. |
+| **2019** | **Author** | Published *"OI vs AI"*, establishing the Original Intelligence framework. |
+| **2018** | **Clinical Shift** | Moved into Neurosurgery and Critical Care, identifying tech gaps. |
 
-- **AI-Powered Revenue Cycle Management** — Reducing claim denials by 60%
-- **Clinical Documentation AI** — Ambient documentation that writes itself
-- **NPHIES Integration** — Seamless Saudi health insurance platform connectivity
-- **Medical Coding Automation** — ICD-10/CPT with 95%+ accuracy
+## Speaking & Advisory
 
----
+I speak at global conferences about the future of Healthcare AI and Interoperability:
+- **Global Health Exhibition (Riyadh)** — *AI in RCM Optimization*
+- **HIMSS Middle East** — *FHIR Interoperability & NPHIES Integration*
+- **WHO Digital Health Advisory** — *Telemedicine in Emerging Markets*
 
-## <i class="fas fa-handshake"></i> Let's Build Together
+## Partnerships
 
-I collaborate with **Vision 2030** entities, Healthcare Facilities, Technology Innovators, and anyone passionate about transforming healthcare through intelligence.
+I collaborate with leading organizations to advance healthcare AI:
+- World Health Organization (WHO)
+- NHS Trust Development Team
+- Saudi Health Council (Vision 2030)
+- International Telecommunication Union (ITU)
 
-<div style="text-align: center; margin-top: 2.5rem;">
-<a href="mailto:Fadil369@hotmail.com" class="btn btn-primary">
-  <i class="fas fa-envelope"></i> Start a Conversation
-</a>
-</div>
+## Contact
+
+Interested in collaboration or a deep dive into Healthcare AI? Reach out at **Fadil369@hotmail.com** or explore my [projects](/Profile/projects/) and [repositories](https://github.com/Fadil369).

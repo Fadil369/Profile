@@ -50,7 +50,12 @@
     <!-- Footer -->
     {% include footer.liquid %}
 
+    <!-- AI Chatbot Widget -->
+    {% include chatbot.liquid %}
+
     <!-- JavaScripts -->
     {% include scripts.liquid %}
+    <script src="{{ '/assets/js/chatbot.js' | relative_url }}"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>
