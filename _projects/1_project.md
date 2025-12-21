@@ -15,18 +15,21 @@ The **BrainSAIT Healthcare AI Platform** is a comprehensive, enterprise-grade so
 ## Key Features
 
 ### Clinical Decision Support
+
 - **AI-Powered Recommendations**: Leverages OpenAI GPT and custom-trained models for clinical insights
 - **Ambient Documentation**: Automatically generates clinical notes from physician-patient interactions
 - **Real-time Analytics**: Provides instant clinical intelligence and decision support
 - **Multi-specialty Support**: Adapts to various medical specialties and workflows
 
 ### Healthcare Interoperability
+
 - **HL7 FHIR R4**: Full implementation of FHIR standards for seamless data exchange
 - **NPHIES Integration**: Complete compliance with Saudi Arabia's National Platform for Health Insurance Exchange Services
 - **Secure Data Exchange**: End-to-end encryption and secure authentication protocols
 - **Audit Logging**: Comprehensive tracking for regulatory compliance
 
 ### Medical Claims Automation
+
 - **Automated Validation**: AI-powered validation of medical claims before submission
 - **Coding Assistance**: Intelligent ICD-10, SNOMED CT, and CPT code suggestions
 - **Error Detection**: Identifies potential claim rejections before submission
@@ -43,6 +46,7 @@ The **BrainSAIT Healthcare AI Platform** is a comprehensive, enterprise-grade so
 ## Impact
 
 The platform has significantly improved healthcare operations:
+
 - **50% reduction** in claim rejection rates
 - **3x faster** clinical documentation
 - **80% decrease** in coding errors

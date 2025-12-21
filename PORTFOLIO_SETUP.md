@@ -5,7 +5,9 @@ This portfolio showcases Dr. Mohamed El Fadil's work in Healthcare AI, built usi
 ## 🎨 Design Features
 
 ### BrainSAIT Color Scheme
+
 The portfolio uses a professional healthcare AI color palette:
+
 - **Primary Blue** (#114AB1): Trust & Intelligence
 - **Teal Blue** (#6793AC): Innovation
 - **Orange** (#FF6B01): Energy & Action
@@ -13,6 +15,7 @@ The portfolio uses a professional healthcare AI color palette:
 - **Light Blue** (#B3DEEF): Clarity
 
 ### Visual Effects
+
 - **Glassmorphism**: Frosted glass effect on cards and navigation
 - **Mesh Gradient**: Dynamic multi-color gradient background
 - **Smooth Animations**: Hover effects and transitions throughout
@@ -20,23 +23,27 @@ The portfolio uses a professional healthcare AI color palette:
 ## 🚀 Local Development
 
 ### Prerequisites
+
 - Docker and Docker Compose
 - Git
 
 ### Running Locally with Docker
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Fadil369/Profile.git
    cd Profile
    ```
 
 2. **Start the development server**
+
    ```bash
    docker compose up
    ```
 
 3. **Access the site**
+
    - Open http://localhost:8080 in your browser
    - Live reload is enabled - changes will reflect automatically
 
@@ -46,7 +53,9 @@ The portfolio uses a professional healthcare AI color palette:
    ```
 
 ### Using Docker Slim (Faster)
+
 For faster builds without optional features:
+
 ```bash
 docker compose -f docker-compose-slim.yml up
 ```
@@ -84,6 +93,7 @@ Profile/
 ### Adding a New Project
 
 1. **Create project data** in `_data/projects.yml`:
+
    ```yaml
    - name: Project Name
      description: Brief description
@@ -99,6 +109,7 @@ Profile/
    ```
 
 2. **Create project page** in `_projects/`:
+
    ```markdown
    ---
    layout: page
@@ -109,13 +120,14 @@ Profile/
    category: healthcare
    github: https://github.com/username/repo
    ---
-   
+
    ## Project details here
    ```
 
 ### Updating Skills
 
 Edit `_data/skills.yml`:
+
 ```yaml
 categories:
   - name: Category Name
@@ -127,11 +139,13 @@ categories:
 ### Modifying Personal Information
 
 1. **Basic Info**: Edit `_config.yml`
+
    - Name, title, description
    - URL and baseurl
    - Contact information
 
 2. **CV/Resume**: Edit `_data/cv.yml`
+
    - Experience
    - Education
    - Awards
@@ -147,11 +161,13 @@ categories:
 The portfolio automatically deploys when you push to the `main` or `master` branch.
 
 1. **Ensure GitHub Pages is enabled** in repository settings:
+
    - Go to Settings > Pages
    - Source: GitHub Actions
    - The deploy.yml workflow will handle the build
 
 2. **Push changes**:
+
    ```bash
    git add .
    git commit -m "Update portfolio"
@@ -165,11 +181,13 @@ The portfolio automatically deploys when you push to the `main` or `master` bran
 ### Custom Domain Setup
 
 1. **Add CNAME file** to the root:
+
    ```bash
    echo "yourdomain.com" > CNAME
    ```
 
 2. **Configure DNS** at your domain provider:
+
    - Add A records pointing to GitHub Pages IPs:
      - 185.199.108.153
      - 185.199.109.153
@@ -177,7 +195,8 @@ The portfolio automatically deploys when you push to the `main` or `master` bran
      - 185.199.111.153
    - Or add CNAME record: `fadil369.github.io`
 
-3. **Update _config.yml**:
+3. **Update \_config.yml**:
+
    ```yaml
    url: https://yourdomain.com
    baseurl: ""
@@ -190,19 +209,21 @@ The portfolio automatically deploys when you push to the `main` or `master` bran
 ### Changing Colors
 
 Edit `_sass/_custom.scss` to modify the color scheme:
+
 ```scss
-$brainsait-primary: #114AB1;      // Your primary color
-$brainsait-secondary: #6793AC;    // Your secondary color
-$brainsait-accent: #FF6B01;       // Accent color
+$brainsait-primary: #114ab1; // Your primary color
+$brainsait-secondary: #6793ac; // Your secondary color
+$brainsait-accent: #ff6b01; // Accent color
 ```
 
 ### Modifying Glassmorphism Effect
 
 Adjust the glassmorphism mixin in `_sass/_custom.scss`:
+
 ```scss
 @mixin glassmorphism {
-  background: rgba(255, 255, 255, 0.1);  // Transparency
-  backdrop-filter: blur(10px);            // Blur amount
+  background: rgba(255, 255, 255, 0.1); // Transparency
+  backdrop-filter: blur(10px); // Blur amount
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 ```
@@ -210,12 +231,12 @@ Adjust the glassmorphism mixin in `_sass/_custom.scss`:
 ### Changing Mesh Gradient
 
 Modify the mesh gradient in `_sass/_custom.scss`:
+
 ```scss
 body::before {
-  opacity: 0.05;  // Adjust visibility
-  background: 
-    radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
-    // Add or remove gradients...
+  opacity: 0.05; // Adjust visibility
+  background: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%);
+  // Add or remove gradients...
 }
 ```
 
@@ -224,12 +245,14 @@ body::before {
 ### Updating Dependencies
 
 1. **Update Docker image**:
+
    ```yaml
    # In docker-compose.yml
-   image: amirpourmand/al-folio:v0.14.7  # Update version
+   image: amirpourmand/al-folio:v0.14.7 # Update version
    ```
 
 2. **Update Ruby gems**:
+
    ```bash
    docker compose run jekyll bundle update
    ```
@@ -242,16 +265,19 @@ body::before {
 ### Troubleshooting
 
 **Problem**: Site not building
+
 - Check GitHub Actions logs in the Actions tab
 - Ensure all YAML files are valid
 - Verify all image paths exist
 
 **Problem**: Styles not applying
+
 - Clear browser cache
 - Check `assets/css/main.scss` imports `_custom`
 - Verify SCSS syntax in custom files
 
 **Problem**: Docker container fails
+
 - Check Docker logs: `docker compose logs`
 - Ensure ports 8080 and 35729 are available
 - Try rebuilding: `docker compose build --no-cache`
@@ -270,6 +296,7 @@ This portfolio is built on the [al-folio](https://github.com/alshedivat/al-folio
 ## 🤝 Contributing
 
 This is a personal portfolio, but suggestions for improvements are welcome! Feel free to:
+
 - Open an issue for bugs or suggestions
 - Submit a pull request for improvements
 - Share your own al-folio customizations
