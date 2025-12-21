@@ -4,20 +4,27 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/Profile/";
     },
-  },{id: "nav-projects",
-          title: "projects",
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Profile/blog/";
+          },
+        },{id: "nav-projects",
+          title: "Projects",
           description: "Healthcare AI innovations transforming clinical operations and patient care.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/Profile/projects/";
           },
         },{id: "nav-products",
-          title: "products",
+          title: "Products",
           description: "Comprehensive healthcare AI solutions and platforms",
           section: "Navigation",
           handler: () => {
@@ -31,7 +38,7 @@ ninja.data = [{
             window.location.href = "/Profile/repositories/";
           },
         },{id: "nav-cv",
-          title: "cv",
+          title: "CV",
           description: "Professional curriculum vitae - Physician, Healthcare AI Architect, and Innovator",
           section: "Navigation",
           handler: () => {
