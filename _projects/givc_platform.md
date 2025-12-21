@@ -5,6 +5,7 @@ description: Global Intelligent Virtual Care - Comprehensive telemedicine ecosys
 img: assets/img/12.jpg
 importance: 4
 category: healthcare
+selected: true
 related_publications: false
 ---
 

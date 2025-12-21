@@ -5,6 +5,7 @@ description: AI-Powered Revenue Cycle Management & Medical Coding Automation
 img: assets/img/12.jpg
 importance: 6
 category: business
+selected: true
 ---
 
 ## BrainSAIT BOT: Intelligent Revenue Cycle Management
