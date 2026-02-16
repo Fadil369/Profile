@@ -240,7 +240,7 @@ a {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), var(--brainsait-secondary));
+    background: var(--gradient-horizontal);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
