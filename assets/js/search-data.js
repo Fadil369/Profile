@@ -79,7 +79,73 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/Profile/blog/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-health-innovation-in-sudan",
+        
+          title: 'Health Innovation in Sudan <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Innovations in healthcare delivery and medical technology in Sudan",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://sudan369.blogspot.com/2025/12/blog-post_27.html", "_blank");
+          
+        },
+      },{id: "post-digital-health-transformation-in-sudan",
+        
+          title: 'Digital Health Transformation in Sudan <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Digital health transformation efforts and technology adoption in Sudan&#39;s healthcare sector",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://sudan369.blogspot.com/2025/12/blog-post_70.html", "_blank");
+          
+        },
+      },{id: "post-healthcare-initiatives-in-sudan",
+        
+          title: 'Healthcare Initiatives in Sudan <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Exploring healthcare innovation and digital health initiatives in Sudan",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://sudan369.blogspot.com/2025/12/blog-post_99.html", "_blank");
+          
+        },
+      },{id: "post-brainsait-revolutionizing-healthcare-with-ai",
+        
+          title: 'BrainSAIT: Revolutionizing Healthcare with AI <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "An introduction to BrainSAIT - transforming healthcare through intelligent automation and AI",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://brainsait369.blogspot.com/2025/12/brainsait.html", "_blank");
+          
+        },
+      },{id: "post-oid-brainsait-healthcare-object-identifiers",
+        
+          title: 'OID BrainSAIT: Healthcare Object Identifiers <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Understanding OID (Object Identifier) systems in BrainSAIT healthcare platform",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://brainsait369.blogspot.com/2025/12/oid-brainsait.html", "_blank");
+          
+        },
+      },{id: "post-brainsait-enterprise-ai-powered-healthcare-platform",
+        
+          title: 'BrainSAIT Enterprise: AI-Powered Healthcare Platform <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Exploring BrainSAIT&#39;s enterprise-grade healthcare AI platform for digital health transformation",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://brainsait369.blogspot.com/2025/12/brainsait-enterprise.html", "_blank");
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
