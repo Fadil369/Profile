@@ -22,6 +22,10 @@
   --brainsait-primary: #114ab1;
   --brainsait-secondary: #6793ac;
   --brainsait-accent: #ff6b01;
+  
+  /* Common gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+  --gradient-horizontal: linear-gradient(90deg, var(--color-accent), var(--brainsait-secondary));
 
   /* Consistent spacing scale */
   --spacing-xs: 4px;
@@ -209,7 +213,7 @@ a {
   cursor: default;
   
   &:hover {
-    background: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+    background: var(--gradient-primary);
     color: white;
     border-color: var(--color-accent);
     transform: translateY(-2px);
@@ -462,7 +466,7 @@ table {
 }
 
 #chat-toggle {
-  background: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 2rem;
@@ -522,7 +526,7 @@ table {
 }
 
 #chat-header {
-  background: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+  background: var(--gradient-primary);
   padding: 1.25rem;
   border-bottom: none;
   display: flex;
@@ -633,7 +637,7 @@ table {
 }
 
 .user-msg {
-  background: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+  background: var(--gradient-primary);
   color: white;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
@@ -701,7 +705,7 @@ html[data-theme="dark"] .ai-msg {
 }
 
 #chat-send {
-  background: linear-gradient(135deg, var(--color-accent), var(--brainsait-secondary));
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 8px;

@@ -6,7 +6,9 @@
 (function() {
   'use strict';
 
-  // Intersection Observer for scroll animations
+  // Intersection Observer Configuration
+  // - threshold: 0.1 means element is considered visible when 10% enters viewport
+  // - rootMargin: Adds padding to viewport detection zone (negative value = wait until element is 50px in)
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
