@@ -1,33 +1,15 @@
-// BrainSAIT Custom Styles
-// Healthcare AI Professional Color Palette
+/*******************************************************************************
+ * BrainSAIT Custom Brand Styles
+ * Healthcare AI Professional Design System
+ ******************************************************************************/
 
 // Primary BrainSAIT Colors
-$brainsait-primary: #114ab1; // Deep Blue - Trust & Intelligence
-$brainsait-secondary: #6793ac; // Teal Blue - Innovation
-$brainsait-accent: #ff6b01; // Orange - Energy & Action
-$brainsait-gold: #ecc232; // Gold - Excellence
-$brainsait-dark: #1a237e; // Dark Blue - Depth
-$brainsait-light: #b3deef; // Light Blue - Clarity
-$brainsait-purple: #8b5cf6; // Purple - Innovation accent
+$brainsait-primary: #114ab1;
+$brainsait-secondary: #6793ac;
+$brainsait-accent: #ff6b01;
+$brainsait-gold: #ecc232;
 
-// Glassmorphism Effect
-@mixin glassmorphism {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-}
-
-@mixin glassmorphism-dark {
-  background: rgba(26, 35, 126, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(103, 147, 172, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(17, 74, 177, 0.15);
-}
-
-// Mesh Gradient Background
+// Subtle Mesh Gradient Background
 body {
   position: relative;
 
@@ -39,210 +21,21 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.05;
+    opacity: 0.03;
+    pointer-events: none;
     background: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
       radial-gradient(at 97% 21%, hsla(197, 49%, 65%, 0.1) 0px, transparent 50%),
       radial-gradient(at 52% 99%, hsla(24, 100%, 50%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 10% 29%, hsla(46, 80%, 56%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 97% 96%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 33% 50%, hsla(197, 49%, 65%, 0.1) 0px, transparent 50%),
       radial-gradient(at 79% 53%, hsla(268, 75%, 65%, 0.1) 0px, transparent 50%);
   }
 }
 
-// Dark mode mesh gradient
 html[data-theme="dark"] body::before {
-  opacity: 0.15;
-  background: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.2) 0px, transparent 50%),
-    radial-gradient(at 97% 21%, hsla(197, 49%, 65%, 0.2) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(24, 100%, 50%, 0.15) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(46, 80%, 56%, 0.15) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(215, 98%, 61%, 0.2) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(197, 49%, 65%, 0.2) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(268, 75%, 65%, 0.15) 0px, transparent 50%);
+  opacity: 0.08;
+  background: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 97% 21%, hsla(197, 49%, 65%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(24, 100%, 50%, 0.12) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(268, 75%, 65%, 0.12) 0px, transparent 50%);
 }
 
-// Apply glassmorphism to cards and project tiles
-.card,
-.project {
-  @include glassmorphism;
-  border-radius: 15px;
-  transition: all 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 48px 0 rgba(17, 74, 177, 0.25);
-  }
-}
-
-html[data-theme="dark"] {
-  .card,
-  .project {
-    @include glassmorphism-dark;
-  }
-}
-
-// Profile image with glassmorphism border
-.profile {
-  img {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(17, 74, 177, 0.2);
-  }
-}
-
-// Custom accent colors for links and buttons
-a {
-  &:hover {
-    color: $brainsait-accent;
-  }
-}
-
-.btn-primary,
-.button-primary {
-  background: linear-gradient(135deg, $brainsait-primary 0%, $brainsait-secondary 100%);
-  border: none;
-  box-shadow: 0 4px 15px 0 rgba(17, 74, 177, 0.3);
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 6px 20px 0 rgba(17, 74, 177, 0.4);
-    transform: translateY(-2px);
-  }
-}
-
-// Navigation bar glassmorphism
-.navbar {
-  @include glassmorphism;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-html[data-theme="dark"] .navbar {
-  @include glassmorphism-dark;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-// Project cards with enhanced glassmorphism
-.project-card {
-  @include glassmorphism;
-  border-radius: 20px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px 0 rgba(17, 74, 177, 0.3);
-  }
-
-  .project-title {
-    color: $brainsait-primary;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .project-description {
-    color: #555;
-    line-height: 1.6;
-  }
-}
-
-html[data-theme="dark"] .project-card {
-  @include glassmorphism-dark;
-
-  .project-title {
-    color: $brainsait-light;
-  }
-
-  .project-description {
-    color: #ccc;
-  }
-}
-
-// Skills section styling
-.skills-section {
-  .skill-badge {
-    @include glassmorphism;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: linear-gradient(135deg, $brainsait-primary 0%, $brainsait-secondary 100%);
-      color: white;
-      transform: scale(1.1);
-    }
-  }
-}
-
-html[data-theme="dark"] .skills-section {
-  .skill-badge {
-    @include glassmorphism-dark;
-  }
-}
-
-// Hero section with gradient overlay
-.hero-section {
-  position: relative;
-  padding: 4rem 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(17, 74, 177, 0.05) 0%, rgba(103, 147, 172, 0.05) 50%, rgba(255, 107, 1, 0.05) 100%);
-    z-index: -1;
-    border-radius: 20px;
-  }
-}
-
-// Section headers with accent underline
-.section-header {
-  position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, $brainsait-accent 0%, $brainsait-gold 100%);
-    border-radius: 2px;
-  }
-}
-
-// Animated gradient text for emphasis
-.gradient-text {
-  background: linear-gradient(135deg, $brainsait-primary 0%, $brainsait-secondary 50%, $brainsait-accent 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-// Smooth transitions for interactive elements
-a,
-button,
-.btn,
-.card,
-.project,
-.skill-badge,
-input,
-textarea,
-select {
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
