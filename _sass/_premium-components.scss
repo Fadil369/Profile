@@ -304,3 +304,201 @@ html[data-theme="dark"] .badge {
   }
 }
 
+
+// ---------------------------------------------------------------------------
+// 10. ELEGANT ORANGE — Playfair Display accent elements
+// ---------------------------------------------------------------------------
+
+// Blockquotes: elegant serif, warm orange left border
+blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--brand-orange);
+  border-left: 3px solid var(--brand-orange);
+  background: var(--brand-orange-pale);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--sp-4) var(--sp-6);
+  margin: var(--sp-8) 0;
+
+  p { margin-bottom: 0; color: inherit; }
+
+  &::before {
+    content: '\201C';
+    font-size: 3rem;
+    line-height: 0;
+    vertical-align: -.6em;
+    margin-right: .15em;
+    color: var(--brand-orange);
+    opacity: .4;
+    font-family: var(--font-elegant);
+  }
+}
+html[data-theme="dark"] blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
+  color: var(--brand-orange-soft);
+  border-left-color: var(--brand-orange-soft);
+  background: rgba(255,139,101,.08);
+  &::before { color: var(--brand-orange-soft); }
+}
+
+// Callout: orange elegant pull-quote card
+.callout-elegant {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--brand-orange);
+  border-left: 4px solid var(--brand-orange);
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--brand-orange-pale);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: var(--sp-8) 0;
+  position: relative;
+}
+html[data-theme="dark"] .callout-elegant {
+  color: var(--brand-orange-soft);
+  border-left-color: var(--brand-orange-soft);
+  background: rgba(255,139,101,.08);
+}
+
+// Orange section heading variant
+.section-heading-orange {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  color: var(--brand-orange);
+}
+
+
+// ---------------------------------------------------------------------------
+// 11. PLATFORM GRID — Digital presence cards
+// ---------------------------------------------------------------------------
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-6) 0 var(--sp-10);
+}
+
+.platform-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none !important;
+  }
+
+  &__icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: var(--trans-fast);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--global-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__url {
+    font-size: .75rem;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Orange variant (BrainSAIT)
+  &--orange {
+    border-color: rgba(247,105,53,.2);
+    .platform-card__icon {
+      background: rgba(247,105,53,.1);
+      color: var(--brand-orange);
+    }
+    &:hover {
+      border-color: var(--brand-orange);
+      .platform-card__icon {
+        background: var(--brand-orange);
+        color: #fff;
+      }
+    }
+  }
+
+  // Blue variant (Profile/Portal)
+  &--blue {
+    border-color: rgba(59,95,192,.2);
+    .platform-card__icon {
+      background: rgba(59,95,192,.1);
+      color: var(--brand-blue);
+    }
+    &:hover {
+      border-color: var(--brand-blue);
+      .platform-card__icon {
+        background: var(--brand-blue);
+        color: #fff;
+      }
+    }
+  }
+
+  // Green variant (Work)
+  &--green {
+    border-color: rgba(26,184,126,.2);
+    .platform-card__icon {
+      background: rgba(26,184,126,.1);
+      color: var(--brand-green);
+    }
+    &:hover {
+      border-color: var(--brand-green);
+      .platform-card__icon {
+        background: var(--brand-green);
+        color: #fff;
+      }
+    }
+  }
+}
+
+html[data-theme="dark"] .platform-card {
+  &--orange { border-color: rgba(255,139,101,.15); }
+  &--blue   { border-color: rgba(107,138,247,.15); }
+  &--green  { border-color: rgba(45,212,160,.15); }
+}
+
+
+// ---------------------------------------------------------------------------
+// 12. CUSTOM SOCIAL ICON — span-based emoji fallback
+// ---------------------------------------------------------------------------
+
+.custom-social-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -96,19 +96,38 @@
       <a href="https://youtube.com/@{{ social[1] }}" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
     {% when 'zotero_username' %}
       <a href="https://www.zotero.org/{{ social[1] }}" title="Zotero"><i class="ai ai-zotero"></i></a>
+    {% when 'custom_social' %}
+      {% for item in social[1] %}
+        <a href="{{ item.url }}" title="{{ item.title }}" target="_blank" rel="noopener noreferrer">
+          {% if item.logo contains 'fa-' %}
+            <i class="{{ item.logo }}"></i>
+          {% else %}
+            {% assign file_ext = item.logo | split: '.' | last %}
+            {% if file_ext == 'svg' %}
+              <svg><image xlink:href="{% if item.logo contains '://' %}{{ item.logo }}{% else %}{{ item.logo | relative_url }}{% endif %}" /></svg>
+            {% elsif item.logo contains '.' %}
+              <img src="{% if item.logo contains '://' %}{{ item.logo }}{% else %}{{ item.logo | relative_url }}{% endif %}" alt="{{ item.title }}">
+            {% else %}
+              <span class="custom-social-icon" aria-label="{{ item.title }}">{{ item.logo }}</span>
+            {% endif %}
+          {% endif %}
+        </a>
+      {% endfor %}
     {% else %}
-      <a href="{{ social[1].url }}" title="{{ social[1].title }}">
-        {% assign file_ext = social[1].logo | split: '.' | last %}
-        {% if file_ext == 'svg' %}
-          <svg>
-            <image xlink:href="{% if social[1].logo contains '://' %}{{ social[1].logo }}{% else %}{{ social[1].logo | relative_url }}{% endif %}" />
-          </svg>
-        {% else %}
-          <img
-            src="{% if social[1].logo contains '://' %}{{ social[1].logo }}{% else %}{{ social[1].logo | relative_url }}{% endif %}"
-            alt="{{ social[1].title }}"
-          >
-        {% endif %}
-      </a>
+      {% if social[1].url %}
+        <a href="{{ social[1].url }}" title="{{ social[1].title }}">
+          {% assign file_ext = social[1].logo | split: '.' | last %}
+          {% if file_ext == 'svg' %}
+            <svg>
+              <image xlink:href="{% if social[1].logo contains '://' %}{{ social[1].logo }}{% else %}{{ social[1].logo | relative_url }}{% endif %}" />
+            </svg>
+          {% else %}
+            <img
+              src="{% if social[1].logo contains '://' %}{{ social[1].logo }}{% else %}{{ social[1].logo | relative_url }}{% endif %}"
+              alt="{{ social[1].title }}"
+            >
+          {% endif %}
+        </a>
+      {% endif %}
   {% endcase %}
 {% endfor %}

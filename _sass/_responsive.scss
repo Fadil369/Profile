@@ -260,3 +260,34 @@ body   { font-size: var(--fs-base); }
   .post-title { -webkit-text-fill-color: #000 !important; color: #000 !important; }
 }
 
+
+// ---------------------------------------------------------------------------
+// PLATFORM GRID — responsive breakpoints
+// ---------------------------------------------------------------------------
+
+// Full 3-col grid on tablets+
+@media (min-width: 768px) {
+  .platform-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// 2-col on small tablets
+@media (min-width: 480px) and (max-width: 767px) {
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Single column on phones
+@media (max-width: 479px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+  .platform-card {
+    padding: var(--sp-3) var(--sp-4);
+    &__icon { width: 36px; height: 36px; font-size: 1.2rem; }
+  }
+}
+

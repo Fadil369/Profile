@@ -137,4 +137,49 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **Fa
 
 ---
 
-🌐 **Personal Profile**: Visit [dr.elfadil.com](https://dr.elfadil.com) for a comprehensive overview of my clinical and AI work.
+## Digital Platforms
+
+<div class="platform-grid">
+  <a href="https://www.brainsait.io" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-brain platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT App</span>
+      <span class="platform-card__url">brainsait.io</span>
+    </div>
+  </a>
+  <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-globe platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Org</span>
+      <span class="platform-card__url">brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://dr.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-user-doctor platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Clinical Profile</span>
+      <span class="platform-card__url">dr.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://portal.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-door-open platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Portal</span>
+      <span class="platform-card__url">portal.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://work.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
+    <i class="fa-solid fa-briefcase platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Work &amp; Portfolio</span>
+      <span class="platform-card__url">work.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
+    <i class="fa-solid fa-house platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Personal Site</span>
+      <span class="platform-card__url">elfadil.com</span>
+    </div>
+  </a>
+</div>

@@ -10,9 +10,18 @@ cv_pdf: /assets/pdf/cv.pdf # path to your CV PDF file
 # scholar_userid: # your Google Scholar ID
 rss_icon: true # comment this line to hide the RSS icon
 custom_social:
-  - logo: 🧠
-    title: BrainSAIT
+  - logo: "fa-solid fa-brain"
+    title: BrainSAIT App
     url: https://www.brainsait.io/
-  - logo: 👨‍⚕️
+  - logo: "fa-solid fa-globe"
+    title: brainsait.org
+    url: https://brainsait.org
+  - logo: "fa-solid fa-user-doctor"
     title: Profile
     url: https://dr.elfadil.com
+  - logo: "fa-solid fa-door-open"
+    title: Portal
+    url: https://portal.elfadil.com
+  - logo: "fa-solid fa-briefcase"
+    title: Work
+    url: https://work.elfadil.com

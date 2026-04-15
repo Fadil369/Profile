@@ -14,16 +14,23 @@
   --brand-blue:       #3b5fc0;      // AI precision blue
   --brand-blue-soft:  #5b7ae8;
   --brand-blue-muted: #8ea5f0;
-  --brand-orange:     #f76935;      // BrainSAIT energy orange
+  --brand-orange:     #f76935;      // BrainSAIT energy orange (second accent)
   --brand-orange-soft:#ff8f65;
+  --brand-orange-pale:rgba(247,105,53,.10);
   --brand-green:      #1ab87e;      // Healthcare success green
   --brand-navy:       #0f1324;      // Deep authority navy
+
+  // Fonts
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-elegant: 'Playfair Display', Georgia, 'Times New Roman', serif; // orange accent
 
   // Gradients
   --grad-brand:     linear-gradient(135deg, var(--brand-blue) 0%, #6b4fd8 100%);
   --grad-hero:      linear-gradient(145deg, #0f1324 0%, #1a2550 60%, #0d1e3d 100%);
   --grad-accent:    linear-gradient(90deg, var(--brand-blue), var(--brand-green));
   --grad-warm:      linear-gradient(90deg, var(--brand-orange), #f7b731);
+  --grad-orange:    linear-gradient(135deg, var(--brand-orange) 0%, #f7b731 100%);
 
   // Shadows (elevation scale)
   --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
@@ -88,7 +95,7 @@ html[data-theme="dark"] {
 // ---------------------------------------------------------------------------
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--global-bg-color);
   color: var(--global-text-color);
   line-height: 1.7;
@@ -98,7 +105,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-family: var(--font-display);
   color: var(--global-text-color);
   font-weight: 600;
   letter-spacing: -.01em;
@@ -129,8 +136,9 @@ body::before {
   opacity: .045;
   background:
     radial-gradient(ellipse 60% 50% at 20% 10%, #3b5fc0, transparent),
-    radial-gradient(ellipse 50% 40% at 80% 80%, #6b4fd8, transparent),
-    radial-gradient(ellipse 40% 35% at 60% 40%, #1ab87e, transparent);
+    radial-gradient(ellipse 40% 35% at 80% 75%, #f76935, transparent),
+    radial-gradient(ellipse 50% 40% at 75% 15%, #6b4fd8, transparent),
+    radial-gradient(ellipse 40% 35% at 50% 50%, #1ab87e, transparent);
 }
 html[data-theme="dark"] body::before { opacity: .12; }
 
@@ -155,7 +163,7 @@ html[data-theme="dark"] .navbar {
 }
 
 .navbar-brand {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 700 !important;
   font-size: 1.05rem !important;
   letter-spacing: -.02em !important;
@@ -214,22 +222,26 @@ html[data-theme="dark"] .post-title {
 }
 
 .post-header .desc {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-elegant);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
-  color: var(--global-text-color-light);
+  color: var(--brand-orange);
   font-weight: 400;
+  font-style: italic;
   letter-spacing: .01em;
   margin-bottom: 0;
-  // Accent underline bar
+  // Accent underline bar — warm orange gradient
   &::after {
     content: '';
     display: block;
     width: 48px;
     height: 3px;
-    background: var(--grad-accent);
+    background: var(--grad-warm);
     border-radius: 99px;
     margin-top: var(--sp-4);
   }
+}
+html[data-theme="dark"] .post-header .desc {
+  color: var(--brand-orange-soft);
 }
 
 
