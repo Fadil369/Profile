@@ -133,4 +133,8 @@ I collaborate with leading organizations to advance healthcare AI:
 
 ## Contact
 
-Interested in collaboration or a deep dive into Healthcare AI? Reach out at **Fadil369@hotmail.com** or explore my [projects](/Profile/projects/) and [repositories](https://github.com/Fadil369).
+Interested in collaboration or a deep dive into Healthcare AI? Reach out at **Fadil369@hotmail.com** or explore my [projects](/projects/) and [repositories](https://github.com/Fadil369).
+
+---
+
+🌐 **Personal Profile**: Visit [dr.elfadil.com](https://dr.elfadil.com) for a comprehensive overview of my clinical and AI work.
