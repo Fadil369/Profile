@@ -39,3 +39,134 @@ html[data-theme="dark"] body::before {
 }
 
 
+// =============================================================================
+// Bilingual AR/EN Support
+// =============================================================================
+
+// Language toggle button
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: var(--global-hover-color);
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  .lang-label {
+    display: inline-block;
+  }
+}
+
+// Arabic content block
+.ar-content {
+  display: none;
+  direction: rtl;
+  text-align: right;
+  font-family: "Noto Sans Arabic", "Segoe UI", "Arial", sans-serif;
+  line-height: 1.8;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Sans Arabic", "Segoe UI", sans-serif;
+    font-weight: 700;
+  }
+
+  ul, ol {
+    padding-right: 1.5rem;
+    padding-left: 0;
+  }
+
+  .tech-badge-container {
+    direction: rtl;
+  }
+
+  table {
+    direction: rtl;
+    text-align: right;
+  }
+
+  th, td {
+    text-align: right;
+  }
+}
+
+// English content block
+.en-content {
+  display: block;
+}
+
+// When Arabic is active
+html[lang="ar"] {
+  .ar-content {
+    display: block;
+  }
+  .en-content {
+    display: none;
+  }
+
+  // Global RTL fixes
+  .navbar-nav {
+    padding-right: 0;
+  }
+
+  .profile {
+    float: left !important;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+}
+
+// RTL-aware platform cards
+html[lang="ar"] .platform-grid {
+  direction: rtl;
+}
+
+html[lang="ar"] .platform-card__body {
+  text-align: right;
+}
+
+// RTL table fix
+html[lang="ar"] table {
+  direction: rtl;
+}
+
+html[lang="ar"] th,
+html[lang="ar"] td {
+  text-align: right;
+}
+
+// Timeline RTL
+html[lang="ar"] .timeline {
+  direction: rtl;
+}
+
+// Inline bilingual spans for news items
+span.ar-content,
+span.en-content {
+  display: inline;
+}
+
+html[lang="ar"] span.ar-content {
+  display: inline !important;
+}
+
+html[lang="ar"] span.en-content {
+  display: none !important;
+}
+
+html[lang="en"] span.ar-content,
+html:not([lang="ar"]) span.ar-content {
+  display: none !important;
+}

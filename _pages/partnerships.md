@@ -1,11 +1,13 @@
 ---
 layout: page
 permalink: /partnerships/
-title: partnerships
-description: Strategic collaborations advancing global healthcare innovation
+title: Partnerships
+description: Strategic collaborations advancing global healthcare innovation | شراكات استراتيجية لتعزيز الابتكار الصحي العالمي
 nav: true
 nav_order: 7
 ---
+
+<div class="en-content">
 
 ## Strategic Partnerships & Affiliations
 
@@ -17,31 +19,23 @@ BrainSAIT collaborates with leading international organizations to advance healt
 
 ### World Health Organization (WHO)
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>AI Integration in Healthcare Initiative</h4>
-        <p>Collaborating with WHO on ethical AI deployment in healthcare settings, contributing to global guidelines for AI integration in clinical practice, and supporting WHO's digital health strategy.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: AI ethics, clinical validation standards, global health equity</li>
-            <li><strong>Contribution</strong>: Real-world implementation insights from Middle East deployments</li>
-            <li><strong>Impact</strong>: Influencing global AI healthcare policy</li>
-        </ul>
-    </div>
-</div>
+#### AI Integration in Healthcare Initiative
+
+Collaborating with WHO on ethical AI deployment in healthcare settings, contributing to global guidelines for AI integration in clinical practice, and supporting WHO's digital health strategy.
+
+- **Focus Areas**: AI ethics, clinical validation standards, global health equity
+- **Contribution**: Real-world implementation insights from Middle East and Africa deployments
+- **Impact**: Influencing global AI healthcare policy and standards
 
 ### NHS Trust Development Team
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Healthcare Delivery Innovation</h4>
-        <p>Working with NHS Trust on clinical workflow optimization, AI-powered diagnostic tools, and healthcare interoperability standards for the UK healthcare system.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: Clinical decision support, FHIR implementation, patient safety</li>
-            <li><strong>Contribution</strong>: AI diagnostic journey simulator, interoperability frameworks</li>
-            <li><strong>Impact</strong>: Improving NHS digital health infrastructure</li>
-        </ul>
-    </div>
-</div>
+#### Healthcare Delivery Innovation
+
+Working with NHS Trust on clinical workflow optimization, AI-powered diagnostic tools, and healthcare interoperability standards for the UK healthcare system.
+
+- **Focus Areas**: Clinical decision support, FHIR implementation, patient safety
+- **Contribution**: AI diagnostic journey simulator, interoperability frameworks
+- **Impact**: Improving NHS digital health infrastructure
 
 ---
 
@@ -49,222 +43,221 @@ BrainSAIT collaborates with leading international organizations to advance healt
 
 ### International Telecommunication Union (ITU)
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Digital Health Infrastructure</h4>
-        <p>Partnering with ITU on telecommunications infrastructure for digital health, telemedicine connectivity, and bridging the digital divide in healthcare access.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: Telemedicine infrastructure, connectivity standards, rural health access</li>
-            <li><strong>Contribution</strong>: GIVC platform architecture for low-bandwidth environments</li>
-            <li><strong>Impact</strong>: Expanding telemedicine to underserved regions</li>
-        </ul>
-    </div>
-</div>
+#### Digital Health Infrastructure
 
-### ICANN (Internet Corporation for Assigned Names and Numbers)
+Partnering with ITU on telecommunications infrastructure for digital health, telemedicine connectivity, and bridging the digital divide in healthcare access.
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Healthcare Domain Standards</h4>
-        <p>Collaboration on secure healthcare domain standards, DNS security for health systems, and identity management for healthcare applications.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: Healthcare domain security, identity verification, trust frameworks</li>
-            <li><strong>Contribution</strong>: Healthcare-specific DNS security recommendations</li>
-            <li><strong>Impact</strong>: Improved security for global health systems</li>
-        </ul>
-    </div>
-</div>
+- **Focus Areas**: Telemedicine infrastructure, connectivity standards, rural health access
+- **Contribution**: GIVC platform architecture for low-bandwidth environments
+- **Impact**: Expanding telemedicine to underserved regions across Africa and the Middle East
+
+### ICANN
+
+#### Healthcare Domain Standards
+
+Collaboration on secure healthcare domain standards, DNS security for health systems, and identity management for healthcare applications.
+
+- **Focus Areas**: Healthcare domain security, identity verification, trust frameworks
+- **Contribution**: Healthcare-specific DNS security recommendations
+- **Impact**: Improved security for global health systems
 
 ### Health Informatics Society
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Clinical Informatics Standards</h4>
-        <p>Active member contributing to health informatics standards, clinical data models, and interoperability frameworks for the healthcare industry.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: FHIR standards, terminology services, clinical documentation</li>
-            <li><strong>Contribution</strong>: Practical implementation experience, use case development</li>
-            <li><strong>Impact</strong>: Advancing healthcare data exchange standards</li>
-        </ul>
-    </div>
-</div>
+#### Clinical Informatics Standards
+
+Active member contributing to health informatics standards, clinical data models, and interoperability frameworks for the healthcare industry.
+
+- **Focus Areas**: FHIR standards, terminology services, clinical documentation
+- **Contribution**: Practical implementation experience, use case development
+- **Impact**: Advancing healthcare data exchange standards
 
 ---
 
 ## Regional Healthcare Authorities
 
-### Saudi Health Council
+### Saudi Health Council — Vision 2030
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Vision 2030 Digital Health Transformation</h4>
-        <p>Aligned with Saudi Arabia's Vision 2030 healthcare transformation goals, contributing to NPHIES implementation, digital health strategy, and healthcare quality improvement initiatives.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: NPHIES compliance, healthcare quality metrics, AI governance</li>
-            <li><strong>Contribution</strong>: NPHIES-compliant platform development, implementation expertise</li>
-            <li><strong>Impact</strong>: Supporting Saudi Arabia's digital health transformation</li>
-            <li><strong>Alignment</strong>: Vision 2030 healthcare sector goals</li>
-        </ul>
-    </div>
-</div>
+Aligned with Saudi Arabia's Vision 2030 healthcare transformation goals, contributing to NPHIES implementation, digital health strategy, and healthcare quality improvement initiatives.
+
+- **Focus Areas**: NPHIES compliance, healthcare quality metrics, AI governance
+- **Contribution**: NPHIES-compliant platform development, implementation expertise
+- **Impact**: Supporting Saudi Arabia's digital health transformation
+- **Alignment**: Vision 2030 healthcare sector goals
 
 ### Healthcare Financial Management Association (HFMA)
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Revenue Cycle Excellence</h4>
-        <p>Partnership focused on healthcare financial operations, revenue cycle optimization, and AI-powered billing automation.</p>
-        <ul>
-            <li><strong>Focus Areas</strong>: Revenue cycle management, claims processing, financial analytics</li>
-            <li><strong>Contribution</strong>: AI automation case studies, ROI metrics</li>
-            <li><strong>Impact</strong>: Advancing revenue cycle best practices</li>
-        </ul>
-    </div>
-</div>
+Partnership focused on healthcare financial operations, revenue cycle optimization, and AI-powered billing automation.
+
+- **Focus Areas**: Revenue cycle management, claims processing, financial analytics
+- **Contribution**: AI automation case studies and ROI metrics
+- **Impact**: Advancing revenue cycle best practices
 
 ---
 
 ## Academic & Research Collaborations
 
+### Institute for Healthcare Improvement (IHI) — Boston, USA
+
+Professional development and collaboration on healthcare quality improvement methodologies, patient safety initiatives, and quality measurement frameworks.
+
+- **Training**: Completed professional development program
+- **Focus**: Quality improvement, patient safety, process optimization
+- **Application**: Integrating quality frameworks into AI systems
+
 ### Healthcare AI Research Initiatives
 
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <p>Collaborating with academic institutions on healthcare AI research, clinical validation studies, and medical education innovation.</p>
-        <ul>
-            <li>Clinical NLP research and development</li>
-            <li>Federated learning in healthcare settings</li>
-            <li>AI ethics and bias detection</li>
-            <li>Medical education technology</li>
-        </ul>
-    </div>
-</div>
+Collaborating with academic institutions on healthcare AI research, clinical validation studies, and medical education innovation.
 
-### Institute for Healthcare Improvement (IHI), Boston, USA
-
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <h4>Healthcare Quality Improvement</h4>
-        <p>Professional development and collaboration on healthcare quality improvement methodologies, patient safety initiatives, and quality measurement frameworks.</p>
-        <ul>
-            <li><strong>Training</strong>: Completed professional development program</li>
-            <li><strong>Focus</strong>: Quality improvement, patient safety, process optimization</li>
-            <li><strong>Application</strong>: Integrating quality frameworks into AI systems</li>
-        </ul>
-    </div>
-</div>
+- Clinical NLP research and development (Arabic/English)
+- Federated learning in healthcare settings
+- AI ethics and bias detection in medical AI
+- Medical education technology and simulation
 
 ---
 
 ## Technology Partners
 
 ### Cloud & Infrastructure
-
-- **Amazon Web Services (AWS)**: Cloud infrastructure, AI/ML services
-- **Microsoft Azure**: Enterprise healthcare solutions
-- **Google Cloud**: Healthcare AI APIs
+- **Amazon Web Services (AWS)**: Cloud infrastructure, AI/ML services (SageMaker, Lambda)
+- **Microsoft Azure**: Enterprise healthcare solutions, Azure Health Data Services
+- **Google Cloud**: Healthcare AI APIs, Healthcare Data Engine
+- **Cloudflare**: Security, CDN, and edge computing for healthcare platforms
 
 ### AI & Machine Learning
-
-- **OpenAI**: GPT integration for clinical applications
-- **Hugging Face**: Open-source NLP models
-- **NVIDIA**: Healthcare AI acceleration
+- **OpenAI**: GPT integration for clinical NLP applications
+- **Google Gemini**: RAG-based clinical analytics (AFHAM AI Studio)
+- **Hugging Face**: Open-source NLP models for Arabic and English
+- **NVIDIA**: Healthcare AI acceleration and GPU computing
 
 ### Healthcare Technology
-
 - **Epic Systems**: EMR integration partner
-- **Cerner**: Healthcare interoperability
+- **Cerner (Oracle Health)**: Healthcare interoperability
 - **Allscripts**: EHR connectivity
 
 ---
 
-## Partnership Benefits
+## Partnership Opportunities
 
-### For Healthcare Organizations
+### For Healthcare Providers
+- Early adopter programs for AI-ambient documentation
+- Co-development of FHIR-compliant interoperability solutions
+- Clinical validation studies and outcome research
+- Training, certification, and continuous support
 
-- Access to cutting-edge AI technology
-- FHIR/HL7 interoperability expertise
-- Implementation support and training
-- Continuous innovation and updates
-- Regulatory compliance assistance
+### For Technology Companies
+- Integration partnerships with BrainSAIT platform
+- Co-marketing and joint go-to-market opportunities
+- Technology exchange and API collaboration
+- Reference implementations and case studies
 
-### For Technology Partners
+### For Academic Institutions
+- Clinical AI research collaborations
+- Student internships and residency programs
+- Guest lectures and workshops on Healthcare AI
+- Joint publications and conference presentations
 
-- Real-world healthcare validation
-- Clinical expertise and insights
-- Middle East market access
-- Co-innovation opportunities
-- Reference implementations
-
-### For Standards Bodies
-
-- Practical implementation feedback
-- Use case development
-- Testing and validation
-- Educational resources
-- Community engagement
-
----
-
-## Join Our Partnership Network
-
-We're always looking for strategic partners who share our vision of transforming healthcare through intelligent technology.
-
-### Partnership Opportunities
-
-**Healthcare Providers**
-
-- Early adopter programs
-- Co-development initiatives
-- Clinical validation studies
-- Training and certification
-
-**Technology Companies**
-
-- Integration partnerships
-- Co-marketing opportunities
-- Reseller programs
-- Technology exchange
-
-**Academic Institutions**
-
-- Research collaborations
-- Student internships
-- Guest lectures and workshops
-- Joint publications
-
-**International Organizations**
-
-- Policy development
-- Standards contribution
-- Global health initiatives
-- Knowledge sharing
+### For International Organizations
+- Policy development and standards contribution
+- Global health initiative participation
+- Knowledge sharing and capacity building
+- Digital health deployment in emerging markets
 
 ---
 
-## Contact Partnership Team
+## Contact
 
 **Interested in partnering with BrainSAIT?**
 
-**Email**: partnerships@brainsait.io  
-**Phone**: +966-510-010-991  
-**Website**: [https://brainsait.io](https://brainsait.io)  
-**LinkedIn**: [Dr. Mohamed El Fadil](https://linkedin.com/in/thefadil)
+- **Email**: partnerships@brainsait.io
+- **Phone**: +966-510-010-991
+- **Website**: [brainsait.io](https://brainsait.io)
+- **LinkedIn**: [Dr. Mohamed El Fadil](https://linkedin.com/in/thefadil)
 
 ---
 
 ## Partnership Principles
 
-Our partnerships are guided by these core principles:
-
-1. **Mutual Benefit**: Creating value for all stakeholders
+1. **Mutual Benefit**: Creating tangible value for all stakeholders
 2. **Transparency**: Open communication and clear expectations
-3. **Innovation**: Pushing boundaries of healthcare technology
+3. **Innovation**: Pushing the boundaries of healthcare technology
 4. **Quality**: Commitment to excellence in all deliverables
 5. **Ethics**: Responsible AI development and deployment
 6. **Patient-Centricity**: Always prioritizing patient care and safety
 7. **Sustainability**: Building long-term collaborative relationships
+8. **Inclusivity**: Ensuring technology reaches underserved communities
+
+*Together, we're building the future of intelligent healthcare.*
+
+</div>
+
+<!-- ========== ARABIC PARTNERSHIPS ========== -->
+<div class="ar-content">
+
+## الشراكات والانتماءات الاستراتيجية
+
+تتعاون BrainSAIT مع المنظمات الدولية الرائدة للنهوض بالذكاء الاصطناعي في الرعاية الصحية وتحسين النتائج الصحية العالمية وتعزيز الابتكار في تكنولوجيا الرعاية الصحية.
 
 ---
 
-_Together, we're building the future of intelligent healthcare._
+## المنظمات الصحية العالمية
+
+### منظمة الصحة العالمية (WHO)
+
+#### مبادرة دمج الذكاء الاصطناعي في الرعاية الصحية
+
+التعاون مع منظمة الصحة العالمية على النشر الأخلاقي للذكاء الاصطناعي في بيئات الرعاية الصحية، والمساهمة في المبادئ التوجيهية العالمية لدمج الذكاء الاصطناعي في الممارسة السريرية.
+
+- **مجالات التركيز**: أخلاقيات الذكاء الاصطناعي، معايير التحقق السريري، العدالة الصحية العالمية
+- **المساهمة**: رؤى التنفيذ من منطقة الشرق الأوسط وأفريقيا
+- **الأثر**: التأثير على سياسة الرعاية الصحية بالذكاء الاصطناعي العالمية
+
+### فريق تطوير هيئة الخدمات الصحية الوطنية (NHS)
+
+التعاون على تحسين سير عمل الرعاية الصحية وأدوات التشخيص بالذكاء الاصطناعي ومعايير قابلية التشغيل البيني في الرعاية الصحية في المملكة المتحدة.
+
+---
+
+## السلطات الصحية الإقليمية
+
+### المجلس الصحي السعودي — رؤية 2030
+
+التوافق مع أهداف تحول الرعاية الصحية في إطار رؤية 2030 للمملكة العربية السعودية، والمساهمة في تطبيق NPHIES واستراتيجية الصحة الرقمية ومبادرات تحسين جودة الرعاية الصحية.
+
+- **مجالات التركيز**: الامتثال لـ NPHIES، مقاييس جودة الرعاية الصحية، حوكمة الذكاء الاصطناعي
+- **المساهمة**: تطوير منصة متوافقة مع NPHIES وخبرة التنفيذ
+- **الأثر**: دعم التحول الصحي الرقمي في المملكة العربية السعودية
+
+---
+
+## فرص الشراكة
+
+### لمزودي الرعاية الصحية
+- برامج التبني المبكر للتوثيق بالذكاء الاصطناعي المحيطي
+- التطوير المشترك لحلول قابلية التشغيل البيني المتوافقة مع FHIR
+- دراسات التحقق السريري وبحوث النتائج
+- التدريب والشهادات والدعم المستمر
+
+### للمؤسسات التقنية
+- شراكات التكامل مع منصة BrainSAIT
+- فرص التسويق المشترك والتعاون في الذهاب إلى السوق
+- تبادل التكنولوجيا والتعاون في واجهات برمجة التطبيقات
+
+### للمؤسسات الأكاديمية
+- تعاونات البحث في الذكاء الاصطناعي السريري
+- برامج التدريب الداخلي للطلاب
+- محاضرات ضيف وورش عمل حول الذكاء الاصطناعي الصحي
+- منشورات مشتركة
+
+---
+
+## التواصل
+
+**هل تريد الشراكة مع BrainSAIT؟**
+
+- **البريد الإلكتروني**: partnerships@brainsait.io
+- **الهاتف**: +966-510-010-991
+- **الموقع**: [brainsait.io](https://brainsait.io)
+
+*معًا، نبني مستقبل الرعاية الصحية الذكية.*
+
+</div>
