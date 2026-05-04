@@ -21,11 +21,6 @@ announcements:
   enabled: true
   scrollable: true
   limit: 3
-
-latest_posts:
-  enabled: false
-  scrollable: true
-  limit: 3
 ---
 
 <div class="en-content">

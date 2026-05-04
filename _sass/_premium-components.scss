@@ -429,7 +429,7 @@ html[data-theme="dark"] .callout-elegant {
     font-size: 0.78rem;
     font-weight: 500;
     color: var(--global-text-color-light);
-    margin-top: 5px;
+    margin-top: var(--sp-1);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
@@ -470,22 +470,23 @@ html[data-theme="dark"] .callout-elegant {
     display: block;
   }
 
-  h3 {
-    font-size: 1rem !important;
-    font-weight: 700 !important;
-    margin-bottom: var(--sp-3) !important;
-    margin-top: 0 !important;
-    color: var(--global-text-color) !important;
-    letter-spacing: 0 !important;
-    text-transform: none !important;
-  }
-
   p {
     font-size: 0.88rem;
     color: var(--global-text-color-light);
     margin-bottom: 0;
     line-height: 1.65;
   }
+}
+
+// Use higher specificity to override .post article h3 defaults inside pillar cards
+.post article .pillar-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+  margin-top: 0;
+  color: var(--global-text-color);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 html[data-theme="dark"] .pillar-card:hover {
