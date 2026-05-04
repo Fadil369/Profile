@@ -419,7 +419,7 @@ Our courses are taught by industry experts:
 
 **Email**: academy@brainsait.io  
 **Phone**: +966-510-010-991  
-**Website**: [https://brainsait.io/academy](https://brainsait.io/academy)
+**Website**: [https://bsma.elfadil.com](https://bsma.elfadil.com)
 
 **Office Hours**: Sunday - Thursday, 9 AM - 5 PM (Arabia Standard Time)
 

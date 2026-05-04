@@ -8,18 +8,21 @@
 // ---------------------------------------------------------------------------
 
 :root {
-  --fs-xs:  clamp(.75rem,  1.5vw, .8rem);
-  --fs-sm:  clamp(.8rem,   2vw,   .875rem);
-  --fs-base:clamp(.875rem, 2.2vw, 1rem);
-  --fs-lg:  clamp(1rem,    2.5vw, 1.125rem);
-  --fs-xl:  clamp(1.125rem,3vw,   1.35rem);
-  --fs-2xl: clamp(1.35rem, 4vw,   1.75rem);
-  --fs-3xl: clamp(1.75rem, 5vw,   2.5rem);
+  --fs-xs: clamp(0.75rem, 1.5vw, 0.8rem);
+  --fs-sm: clamp(0.8rem, 2vw, 0.875rem);
+  --fs-base: clamp(0.875rem, 2.2vw, 1rem);
+  --fs-lg: clamp(1rem, 2.5vw, 1.125rem);
+  --fs-xl: clamp(1.125rem, 3vw, 1.35rem);
+  --fs-2xl: clamp(1.35rem, 4vw, 1.75rem);
+  --fs-3xl: clamp(1.75rem, 5vw, 2.5rem);
 }
 
-body   { font-size: var(--fs-base); }
-.desc  { font-size: var(--fs-lg); }
-
+body {
+  font-size: var(--fs-base);
+}
+.desc {
+  font-size: var(--fs-lg);
+}
 
 // ---------------------------------------------------------------------------
 // PROFILE SECTION — CRITICAL: un-float on mobile
@@ -63,8 +66,15 @@ body   { font-size: var(--fs-base); }
     gap: var(--sp-6);
   }
 
-  .profile figure { max-width: 140px; flex-shrink: 0; }
-  .profile .more-info { flex: 1; text-align: left; margin-top: 0 !important; }
+  .profile figure {
+    max-width: 140px;
+    flex-shrink: 0;
+  }
+  .profile .more-info {
+    flex: 1;
+    text-align: left;
+    margin-top: 0 !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -76,7 +86,6 @@ body   { font-size: var(--fs-base); }
     margin-bottom: var(--sp-6) !important;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // NAVIGATION
@@ -95,9 +104,11 @@ body   { font-size: var(--fs-base); }
     min-width: 44px;
     min-height: 44px;
     color: var(--global-text-color) !important;
-    background: rgba(59,95,192,.07) !important;
+    background: rgba(59, 95, 192, 0.07) !important;
     border-radius: var(--radius-sm) !important;
-    &:focus { box-shadow: 0 0 0 3px rgba(59,95,192,.15) !important; }
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(59, 95, 192, 0.15) !important;
+    }
   }
 
   .navbar-collapse {
@@ -115,12 +126,15 @@ body   { font-size: var(--fs-base); }
     min-height: 44px;
     padding: var(--sp-2) var(--sp-4) !important;
     border-radius: var(--radius-md) !important;
-    &:hover { background: rgba(59,95,192,.06) !important; }
+    &:hover {
+      background: rgba(59, 95, 192, 0.06) !important;
+    }
   }
 
-  body.fixed-top-nav { padding-top: 56px !important; }
+  body.fixed-top-nav {
+    padding-top: 56px !important;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // POST HEADER
@@ -131,9 +145,10 @@ body   { font-size: var(--fs-base); }
     padding: var(--sp-8) 0 var(--sp-6) !important;
   }
 
-  .post-header .desc::after { width: 32px; }
+  .post-header .desc::after {
+    width: 32px;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // TECH BADGE COLUMNS — single column on mobile
@@ -151,7 +166,6 @@ body   { font-size: var(--fs-base); }
   }
 }
 
-
 // ---------------------------------------------------------------------------
 // TIMELINE TABLE — horizontal scroll on small screens
 // ---------------------------------------------------------------------------
@@ -162,27 +176,32 @@ body   { font-size: var(--fs-base); }
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-spacing: 0 4px;
-    font-size: .82rem;
+    font-size: 0.82rem;
 
-    td { padding: var(--sp-3) var(--sp-4) !important; }
+    td {
+      padding: var(--sp-3) var(--sp-4) !important;
+    }
 
-    td:first-child { font-size: .75rem; }
+    td:first-child {
+      font-size: 0.75rem;
+    }
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // CARDS GRID — reduce to 1 col on small mobile
 // ---------------------------------------------------------------------------
 
 @media (max-width: 480px) {
-  .card-columns, .row [class*="col-"] {
+  .card-columns,
+  .row [class*="col-"] {
     margin-bottom: var(--sp-4);
   }
 
-  .card-body { padding: var(--sp-5) !important; }
+  .card-body {
+    padding: var(--sp-5) !important;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // CONTACT ICONS — better spacing on mobile
@@ -200,66 +219,103 @@ body   { font-size: var(--fs-base); }
     font-size: 1rem !important;
   }
 
-  .contact-note { text-align: center; }
+  .contact-note {
+    text-align: center;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // TOUCH TARGETS — minimum 44×44 px
 // ---------------------------------------------------------------------------
 
 @media (pointer: coarse) {
-  a, button, .btn,
-  input[type="submit"], input[type="button"],
-  input[type="checkbox"], input[type="radio"],
-  label, .nav-link, .tag, .tech-badge {
+  a,
+  button,
+  .btn,
+  input[type="submit"],
+  input[type="button"],
+  input[type="checkbox"],
+  input[type="radio"],
+  label,
+  .nav-link,
+  .tag,
+  .tech-badge {
     min-height: 44px;
     min-width: 44px;
   }
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px !important; // Prevent iOS auto-zoom
     min-height: 44px;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // LANDSCAPE PHONE — compact layout
 // ---------------------------------------------------------------------------
 
 @media (max-height: 500px) and (orientation: landscape) {
-  .post-header { padding: var(--sp-6) 0 var(--sp-4) !important; }
-  .post-title { font-size: clamp(1.4rem, 4vw, 1.8rem); }
-  .navbar { min-height: 48px !important; }
-  body.fixed-top-nav { padding-top: 48px !important; }
+  .post-header {
+    padding: var(--sp-6) 0 var(--sp-4) !important;
+  }
+  .post-title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+  .navbar {
+    min-height: 48px !important;
+  }
+  body.fixed-top-nav {
+    padding-top: 48px !important;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // LARGE SCREENS — max-width discipline (don't override site.max_width)
 // ---------------------------------------------------------------------------
 
 @media (min-width: 960px) {
-  .post-header { padding: var(--sp-12) 0 var(--sp-10); }
-  .post article h2 { margin-top: var(--sp-12); }
+  .post-header {
+    padding: var(--sp-12) 0 var(--sp-10);
+  }
+  .post article h2 {
+    margin-top: var(--sp-12);
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // PRINT
 // ---------------------------------------------------------------------------
 
 @media print {
-  .navbar, footer, #back-to-top,
-  #ai-chat-widget, .navbar-toggler { display: none !important; }
+  .navbar,
+  footer,
+  #back-to-top,
+  #ai-chat-widget,
+  .navbar-toggler {
+    display: none !important;
+  }
 
-  body { font-size: 11pt; color: #000; background: #fff; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #666; }
-  .profile.float-right { float: right !important; max-width: 200px; }
-  .post-title { -webkit-text-fill-color: #000 !important; color: #000 !important; }
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+  .profile.float-right {
+    float: right !important;
+    max-width: 200px;
+  }
+  .post-title {
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // PLATFORM GRID — responsive breakpoints
@@ -287,7 +343,10 @@ body   { font-size: var(--fs-base); }
   }
   .platform-card {
     padding: var(--sp-3) var(--sp-4);
-    &__icon { width: 36px; height: 36px; font-size: 1.2rem; }
+    &__icon {
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+    }
   }
 }
-

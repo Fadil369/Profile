@@ -104,7 +104,9 @@
           {% else %}
             {% assign file_ext = item.logo | split: '.' | last %}
             {% if file_ext == 'svg' %}
-              <svg><image xlink:href="{% if item.logo contains '://' %}{{ item.logo }}{% else %}{{ item.logo | relative_url }}{% endif %}" /></svg>
+              <svg>
+                <image xlink:href="{% if item.logo contains '://' %}{{ item.logo }}{% else %}{{ item.logo | relative_url }}{% endif %}" />
+              </svg>
             {% elsif item.logo contains '.' %}
               <img src="{% if item.logo contains '://' %}{{ item.logo }}{% else %}{{ item.logo | relative_url }}{% endif %}" alt="{{ item.title }}">
             {% else %}

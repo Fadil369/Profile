@@ -275,7 +275,7 @@ GIVC Academy offers internationally recognized certifications:
 
 ## Contact & Support
 
-**Website**: [https://brainsait.io](https://brainsait.io)  
+**Website**: [https://brainsait.org](https://brainsait.org)  
 **Email**: support@brainsait.io  
 **Phone**: +966-510-010-991
 

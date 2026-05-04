@@ -509,7 +509,7 @@ The future of healthcare depends on open, accessible, collaborative technology. 
 - Install: `pip install brainsait-pyheart brainsait-pybrain`
 - GitHub: [github.com/Fadil369](https://github.com/Fadil369)
 - PyPI: [pypi.org/project/brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/)
-- Docs: [brainsait.io/docs](https://brainsait.io/docs)
+- Docs: [brainsait.org/docs](https://brainsait.org/docs)
 
 **Connect:**
 

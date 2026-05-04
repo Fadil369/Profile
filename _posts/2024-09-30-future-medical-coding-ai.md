@@ -602,9 +602,9 @@ The question isn't whether AI will transform medical coding - it's whether you'l
 
 **Resources:**
 
-- [BrainSAIT ClaimLinc Agent](https://brainsait.io/claimlinc)
+- [BrainSAIT ClaimLinc Agent](https://brainsait.org/claimlinc)
 - [brainsait-pybrain on PyPI](https://pypi.org/project/brainsait-pybrain/)
-- [Medical Coding Certification](https://brainsait.io/academy)
+- [Medical Coding Certification](https://bsma.elfadil.com)
 
 **Connect:**
 

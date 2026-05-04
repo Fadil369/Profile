@@ -11,13 +11,19 @@ cv_pdf: /assets/pdf/cv.pdf # path to your CV PDF file
 rss_icon: true # comment this line to hide the RSS icon
 custom_social:
   - logo: "fa-solid fa-brain"
-    title: BrainSAIT App
-    url: https://www.brainsait.io/
-  - logo: "fa-solid fa-globe"
-    title: brainsait.org
+    title: BrainSAIT
     url: https://brainsait.org
+  - logo: "fa-solid fa-hospital"
+    title: Health Network Hub
+    url: https://hnh.brainsait.org
+  - logo: "fa-solid fa-bolt"
+    title: BrainSAIT Spark
+    url: https://spark.brainsait.org
+  - logo: "fa-solid fa-seedling"
+    title: BrainSAIT Incubator
+    url: https://brainsait.org/incubator
   - logo: "fa-solid fa-user-doctor"
-    title: Profile
+    title: Clinical Profile
     url: https://dr.elfadil.com
   - logo: "fa-solid fa-door-open"
     title: Portal
@@ -25,3 +31,6 @@ custom_social:
   - logo: "fa-solid fa-briefcase"
     title: Work
     url: https://work.elfadil.com
+  - logo: "fa-solid fa-heart"
+    title: My Sons — A Legacy
+    url: https://son.elfadil.com

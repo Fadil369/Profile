@@ -64,6 +64,7 @@ on:
 permissions:
   contents: read
   deployments: write
+  pull-requests: write
 
 jobs:
   deploy:
@@ -78,11 +79,27 @@ jobs:
           ruby-version: "3.3.5"
           bundler-cache: true
 
+      - name: Cache Ruby gems 💎
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
           cache: "pip"
+
+      - name: Cache npm dependencies 📦
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install and Build 🔧
         run: |
@@ -93,13 +110,22 @@ jobs:
 
       - name: Purge unused CSS 🧹
         run: |
+          npm ci
           npm install -g purgecss
           purgecss -c purgecss.config.js
 
-      - name: Deploy to Cloudflare Pages 🚀
+      - name: Deploy to Cloudflare Pages 🚀 (Production)
         if: github.event_name != 'pull_request'
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v3 # wrangler-action v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy _site --project-name=elfadil-com --commit-dirty=true
+
+      - name: Deploy Preview to Cloudflare Pages 🔍 (PR)
+        if: github.event_name == 'pull_request'
+        uses: cloudflare/wrangler-action@v3 # wrangler-action v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=elfadil-com --branch=preview-pr-${{ github.event.pull_request.number }} --commit-dirty=true

@@ -3,7 +3,6 @@
    Subtle authority · Precision accents · Restrained motion
    ============================================================================= */
 
-
 // ---------------------------------------------------------------------------
 // 1. SECTION HEADER DECORATOR — gradient accent + ai label
 // ---------------------------------------------------------------------------
@@ -14,23 +13,22 @@
   align-items: center;
   gap: 10px;
   &::after {
-    content: 'AI';
+    content: "AI";
     display: inline-flex;
     align-items: center;
-    font-size: .62rem;
+    font-size: 0.62rem;
     font-weight: 800;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     color: #fff;
     background: var(--grad-accent);
     border-radius: 4px;
     padding: 2px 7px;
     vertical-align: middle;
     line-height: 1.6;
-    opacity: .85;
+    opacity: 0.85;
     flex-shrink: 0;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 2. GRADIENT TEXT UTILITY
@@ -50,7 +48,6 @@
   background-clip: text;
 }
 
-
 // ---------------------------------------------------------------------------
 // 3. PREMIUM CARDS — elevated with hover lift
 // ---------------------------------------------------------------------------
@@ -60,7 +57,9 @@
   border: 1px solid var(--global-divider-color) !important;
   border-radius: var(--radius-lg) !important;
   box-shadow: var(--shadow-sm) !important;
-  transition: transform .3s ease, box-shadow .3s ease !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
   overflow: hidden;
 
   &:hover {
@@ -70,13 +69,14 @@
 }
 
 .card-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   color: var(--global-text-color);
 }
 
-.card-body { padding: var(--sp-6) !important; }
-
+.card-body {
+  padding: var(--sp-6) !important;
+}
 
 // ---------------------------------------------------------------------------
 // 4. PROJECT CARDS — featured section
@@ -85,15 +85,19 @@
 .projects .card {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 2px;
     background: var(--grad-accent);
     opacity: 0;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
   }
-  &:hover::before { opacity: 1; }
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .projects .card-img-top {
@@ -102,7 +106,6 @@
   object-fit: cover;
 }
 
-
 // ---------------------------------------------------------------------------
 // 5. NEWS ITEMS — clean timeline list
 // ---------------------------------------------------------------------------
@@ -110,32 +113,33 @@
 .news table tbody tr {
   border-radius: var(--radius-md);
   td:first-child {
-    font-size: .78rem;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--global-text-color-light);
     white-space: nowrap;
     padding-right: var(--sp-5) !important;
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: .02em;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: 0.02em;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 6. SKILL / KNOWLEDGE PILLS (al-folio tags)
 // ---------------------------------------------------------------------------
 
-.tag, .post-tag, .badge {
+.tag,
+.post-tag,
+.badge {
   display: inline-flex !important;
   align-items: center;
   padding: 3px 11px !important;
   border-radius: 99px !important;
-  font-size: .72rem !important;
+  font-size: 0.72rem !important;
   font-weight: 600 !important;
-  letter-spacing: .04em;
-  background: rgba(59,95,192,.07) !important;
+  letter-spacing: 0.04em;
+  background: rgba(59, 95, 192, 0.07) !important;
   color: var(--brand-blue) !important;
-  border: 1px solid rgba(59,95,192,.18) !important;
+  border: 1px solid rgba(59, 95, 192, 0.18) !important;
   transition: var(--trans-fast);
   &:hover {
     background: var(--brand-blue) !important;
@@ -146,11 +150,10 @@
 html[data-theme="dark"] .tag,
 html[data-theme="dark"] .post-tag,
 html[data-theme="dark"] .badge {
-  background: rgba(107,138,247,.12) !important;
+  background: rgba(107, 138, 247, 0.12) !important;
   color: #7b9af9 !important;
-  border-color: rgba(107,138,247,.22) !important;
+  border-color: rgba(107, 138, 247, 0.22) !important;
 }
-
 
 // ---------------------------------------------------------------------------
 // 7. SEARCH BAR — refined
@@ -161,35 +164,34 @@ html[data-theme="dark"] .badge {
   border: 1.5px solid var(--global-divider-color) !important;
   border-radius: var(--radius-md) !important;
   color: var(--global-text-color) !important;
-  font-size: .9rem;
+  font-size: 0.9rem;
   transition: var(--trans-fast);
   &:focus {
     border-color: var(--brand-blue) !important;
-    box-shadow: 0 0 0 3px rgba(59,95,192,.12) !important;
+    box-shadow: 0 0 0 3px rgba(59, 95, 192, 0.12) !important;
     outline: none !important;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 8. BUTTONS
 // ---------------------------------------------------------------------------
 
-.btn-primary, .btn-sm.btn-primary {
+.btn-primary,
+.btn-sm.btn-primary {
   background: var(--brand-blue) !important;
   border-color: var(--brand-blue) !important;
   border-radius: var(--radius-md) !important;
   font-weight: 600 !important;
-  font-size: .875rem !important;
+  font-size: 0.875rem !important;
   transition: var(--trans-fast);
   &:hover {
     background: var(--brand-blue-soft) !important;
     border-color: var(--brand-blue-soft) !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(59,95,192,.3) !important;
+    box-shadow: 0 4px 14px rgba(59, 95, 192, 0.3) !important;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 9. BACK-TO-TOP BUTTON
@@ -198,14 +200,13 @@ html[data-theme="dark"] .badge {
 #back-to-top {
   background: var(--brand-blue) !important;
   border-radius: 50% !important;
-  box-shadow: 0 4px 16px rgba(59,95,192,.35) !important;
+  box-shadow: 0 4px 16px rgba(59, 95, 192, 0.35) !important;
   transition: var(--trans-fast);
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(59,95,192,.4) !important;
+    box-shadow: 0 8px 20px rgba(59, 95, 192, 0.4) !important;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 10. CV PAGE — timeline & skills list
@@ -217,7 +218,10 @@ html[data-theme="dark"] .badge {
 
 .cv ul.card-body {
   padding: var(--sp-5) var(--sp-6) !important;
-  li { line-height: 1.7; margin-bottom: var(--sp-2); }
+  li {
+    line-height: 1.7;
+    margin-bottom: var(--sp-2);
+  }
 }
 
 .cv .list-group-item {
@@ -225,18 +229,19 @@ html[data-theme="dark"] .badge {
   border-color: var(--global-divider-color) !important;
   color: var(--global-text-color) !important;
   transition: var(--trans-fast);
-  &:hover { background: rgba(59,95,192,.04) !important; }
+  &:hover {
+    background: rgba(59, 95, 192, 0.04) !important;
+  }
 }
 
 .cv .badge.text-uppercase {
   background: var(--brand-blue) !important;
   border-radius: var(--radius-sm) !important;
-  font-size: .68rem !important;
+  font-size: 0.68rem !important;
 }
 
-
 // ---------------------------------------------------------------------------
-// 11. SUBTLE TECH-GRID BACKGROUND DECORATION  
+// 11. SUBTLE TECH-GRID BACKGROUND DECORATION
 //     (CSS-only, no JS, performance-safe SVG data-URL pattern)
 // ---------------------------------------------------------------------------
 
@@ -244,20 +249,20 @@ html[data-theme="dark"] .badge {
   position: relative;
   overflow: hidden;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; right: -40px;
-    width: 280px; height: 280px;
-    background-image:
-      radial-gradient(circle, rgba(59,95,192,.15) 1.5px, transparent 1.5px);
+    top: 0;
+    right: -40px;
+    width: 280px;
+    height: 280px;
+    background-image: radial-gradient(circle, rgba(59, 95, 192, 0.15) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     border-radius: 50%;
-    opacity: .6;
+    opacity: 0.6;
     pointer-events: none;
     // No animation — performance safe
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 12. MOTION-SAFE ANIMATIONS
@@ -267,22 +272,34 @@ html[data-theme="dark"] .badge {
 @media (prefers-reduced-motion: no-preference) {
   // Gentle fade-in on page load for the profile section
   .profile {
-    animation: fadeInRight .5s ease both;
-    animation-delay: .1s;
+    animation: fadeInRight 0.5s ease both;
+    animation-delay: 0.1s;
   }
 
   .post-header {
-    animation: fadeInUp .45s ease both;
+    animation: fadeInUp 0.45s ease both;
   }
 
   @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(16px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   // Profile photo ring subtle pulse (opacity only, GPU-safe)
@@ -291,19 +308,25 @@ html[data-theme="dark"] .badge {
   }
 
   @keyframes ringPulse {
-    0%, 100% { opacity: .9; }
-    50%       { opacity: .65; }
+    0%,
+    100% {
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 0.65;
+    }
   }
 }
 
 // Explicit reduced-motion: strip all animations
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    transition-duration: .001ms !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 10. ELEGANT ORANGE — Playfair Display accent elements
@@ -322,24 +345,29 @@ blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
   padding: var(--sp-4) var(--sp-6);
   margin: var(--sp-8) 0;
 
-  p { margin-bottom: 0; color: inherit; }
+  p {
+    margin-bottom: 0;
+    color: inherit;
+  }
 
   &::before {
-    content: '\201C';
+    content: "\201C";
     font-size: 3rem;
     line-height: 0;
-    vertical-align: -.6em;
-    margin-right: .15em;
+    vertical-align: -0.6em;
+    margin-right: 0.15em;
     color: var(--brand-orange);
-    opacity: .4;
+    opacity: 0.4;
     font-family: var(--font-elegant);
   }
 }
 html[data-theme="dark"] blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
   color: var(--brand-orange-soft);
   border-left-color: var(--brand-orange-soft);
-  background: rgba(255,139,101,.08);
-  &::before { color: var(--brand-orange-soft); }
+  background: rgba(255, 139, 101, 0.08);
+  &::before {
+    color: var(--brand-orange-soft);
+  }
 }
 
 // Callout: orange elegant pull-quote card
@@ -358,7 +386,7 @@ html[data-theme="dark"] blockquote:not(.block-tip):not(.block-warning):not(.bloc
 html[data-theme="dark"] .callout-elegant {
   color: var(--brand-orange-soft);
   border-left-color: var(--brand-orange-soft);
-  background: rgba(255,139,101,.08);
+  background: rgba(255, 139, 101, 0.08);
 }
 
 // Orange section heading variant
@@ -367,7 +395,6 @@ html[data-theme="dark"] .callout-elegant {
   font-style: italic;
   color: var(--brand-orange);
 }
-
 
 // ---------------------------------------------------------------------------
 // 11. PLATFORM GRID — Digital presence cards
@@ -390,7 +417,10 @@ html[data-theme="dark"] .callout-elegant {
   background: var(--global-card-bg-color);
   box-shadow: var(--shadow-sm);
   text-decoration: none !important;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 
   &:hover {
     transform: translateY(-3px);
@@ -419,7 +449,7 @@ html[data-theme="dark"] .callout-elegant {
   &__name {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: var(--global-text-color);
     white-space: nowrap;
     overflow: hidden;
@@ -427,7 +457,7 @@ html[data-theme="dark"] .callout-elegant {
   }
 
   &__url {
-    font-size: .75rem;
+    font-size: 0.75rem;
     color: var(--global-text-color-light);
     white-space: nowrap;
     overflow: hidden;
@@ -436,9 +466,9 @@ html[data-theme="dark"] .callout-elegant {
 
   // Orange variant (BrainSAIT)
   &--orange {
-    border-color: rgba(247,105,53,.2);
+    border-color: rgba(247, 105, 53, 0.2);
     .platform-card__icon {
-      background: rgba(247,105,53,.1);
+      background: rgba(247, 105, 53, 0.1);
       color: var(--brand-orange);
     }
     &:hover {
@@ -452,9 +482,9 @@ html[data-theme="dark"] .callout-elegant {
 
   // Blue variant (Profile/Portal)
   &--blue {
-    border-color: rgba(59,95,192,.2);
+    border-color: rgba(59, 95, 192, 0.2);
     .platform-card__icon {
-      background: rgba(59,95,192,.1);
+      background: rgba(59, 95, 192, 0.1);
       color: var(--brand-blue);
     }
     &:hover {
@@ -468,9 +498,9 @@ html[data-theme="dark"] .callout-elegant {
 
   // Green variant (Work)
   &--green {
-    border-color: rgba(26,184,126,.2);
+    border-color: rgba(26, 184, 126, 0.2);
     .platform-card__icon {
-      background: rgba(26,184,126,.1);
+      background: rgba(26, 184, 126, 0.1);
       color: var(--brand-green);
     }
     &:hover {
@@ -481,14 +511,38 @@ html[data-theme="dark"] .callout-elegant {
       }
     }
   }
+
+  // Purple variant (Personal / Legacy)
+  &--purple {
+    border-color: rgba(139, 92, 246, 0.2);
+    .platform-card__icon {
+      background: rgba(139, 92, 246, 0.1);
+      color: #8b5cf6;
+    }
+    &:hover {
+      border-color: #8b5cf6;
+      .platform-card__icon {
+        background: #8b5cf6;
+        color: #fff;
+      }
+    }
+  }
 }
 
 html[data-theme="dark"] .platform-card {
-  &--orange { border-color: rgba(255,139,101,.15); }
-  &--blue   { border-color: rgba(107,138,247,.15); }
-  &--green  { border-color: rgba(45,212,160,.15); }
+  &--orange {
+    border-color: rgba(255, 139, 101, 0.15);
+  }
+  &--blue {
+    border-color: rgba(107, 138, 247, 0.15);
+  }
+  &--green {
+    border-color: rgba(45, 212, 160, 0.15);
+  }
+  &--purple {
+    border-color: rgba(167, 139, 250, 0.15);
+  }
 }
-
 
 // ---------------------------------------------------------------------------
 // 12. CUSTOM SOCIAL ICON — span-based emoji fallback
@@ -501,4 +555,3 @@ html[data-theme="dark"] .platform-card {
   align-items: center;
   justify-content: center;
 }
-
