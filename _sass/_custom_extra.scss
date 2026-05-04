@@ -11,32 +11,32 @@
 
 :root {
   // Brand primitives
-  --brand-blue:       #3b5fc0;      // AI precision blue
-  --brand-blue-soft:  #5b7ae8;
+  --brand-blue: #3b5fc0; // AI precision blue
+  --brand-blue-soft: #5b7ae8;
   --brand-blue-muted: #8ea5f0;
-  --brand-orange:     #f76935;      // BrainSAIT energy orange (second accent)
-  --brand-orange-soft:#ff8f65;
-  --brand-orange-pale:rgba(247,105,53,.10);
-  --brand-green:      #1ab87e;      // Healthcare success green
-  --brand-navy:       #0f1324;      // Deep authority navy
+  --brand-orange: #f76935; // BrainSAIT energy orange (second accent)
+  --brand-orange-soft: #ff8f65;
+  --brand-orange-pale: rgba(247, 105, 53, 0.1);
+  --brand-green: #1ab87e; // Healthcare success green
+  --brand-navy: #0f1324; // Deep authority navy
 
   // Fonts
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Space Grotesk', 'Inter', sans-serif;
-  --font-elegant: 'Playfair Display', Georgia, 'Times New Roman', serif; // orange accent
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-elegant: "Playfair Display", Georgia, "Times New Roman", serif; // orange accent
 
   // Gradients
-  --grad-brand:     linear-gradient(135deg, var(--brand-blue) 0%, #6b4fd8 100%);
-  --grad-hero:      linear-gradient(145deg, #0f1324 0%, #1a2550 60%, #0d1e3d 100%);
-  --grad-accent:    linear-gradient(90deg, var(--brand-blue), var(--brand-green));
-  --grad-warm:      linear-gradient(90deg, var(--brand-orange), #f7b731);
-  --grad-orange:    linear-gradient(135deg, var(--brand-orange) 0%, #f7b731 100%);
+  --grad-brand: linear-gradient(135deg, var(--brand-blue) 0%, #6b4fd8 100%);
+  --grad-hero: linear-gradient(145deg, #0f1324 0%, #1a2550 60%, #0d1e3d 100%);
+  --grad-accent: linear-gradient(90deg, var(--brand-blue), var(--brand-green));
+  --grad-warm: linear-gradient(90deg, var(--brand-orange), #f7b731);
+  --grad-orange: linear-gradient(135deg, var(--brand-orange) 0%, #f7b731 100%);
 
   // Shadows (elevation scale)
-  --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md:  0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.05);
-  --shadow-lg:  0 12px 32px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
-  --shadow-xl:  0 24px 48px rgba(0,0,0,.16);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.16);
 
   // Radii
   --radius-sm: 6px;
@@ -45,50 +45,57 @@
   --radius-xl: 24px;
 
   // Spacing scale
-  --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
-  --sp-5: 20px; --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
-  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
 
   // Transitions
-  --trans-fast:   all .15s ease;
-  --trans-normal: all .25s ease;
-  --trans-slow:   all .4s ease;
+  --trans-fast: all 0.15s ease;
+  --trans-normal: all 0.25s ease;
+  --trans-slow: all 0.4s ease;
 
   // ---- Bridge onto --global-* (overrides _themes.scss light defaults) ----
-  --global-bg-color:          #f6f8fb;
-  --global-text-color:        #1a1d2e;
-  --global-text-color-light:  #6b7594;
-  --global-theme-color:       var(--brand-blue);
-  --global-hover-color:       var(--brand-blue);
-  --global-hover-text-color:  #ffffff;
-  --global-card-bg-color:     #ffffff;
-  --global-divider-color:     rgba(15,19,36,.08);
-  --global-footer-bg-color:   #0f1324;
+  --global-bg-color: #f6f8fb;
+  --global-text-color: #1a1d2e;
+  --global-text-color-light: #6b7594;
+  --global-theme-color: var(--brand-blue);
+  --global-hover-color: var(--brand-blue);
+  --global-hover-text-color: #ffffff;
+  --global-card-bg-color: #ffffff;
+  --global-divider-color: rgba(15, 19, 36, 0.08);
+  --global-footer-bg-color: #0f1324;
   --global-footer-text-color: #8d9ab5;
   --global-footer-link-color: #c5cde0;
 }
 
 html[data-theme="dark"] {
-  --brand-blue-soft:  #7b9af9;
-  --brand-orange:     #ff7b4a;
+  --brand-blue-soft: #7b9af9;
+  --brand-orange: #ff7b4a;
 
-  --shadow-sm:  0 1px 3px rgba(0,0,0,.25);
-  --shadow-md:  0 4px 16px rgba(0,0,0,.4);
-  --shadow-lg:  0 12px 32px rgba(0,0,0,.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
 
   // Bridge dark mode onto --global-*
-  --global-bg-color:          #0b0d18;
-  --global-text-color:        #dde2f0;
-  --global-text-color-light:  #7a85a8;
-  --global-theme-color:       #6b8af7;
-  --global-hover-color:       #6b8af7;
-  --global-card-bg-color:     #111525;
-  --global-divider-color:     rgba(255,255,255,.08);
-  --global-footer-bg-color:   #08090f;
+  --global-bg-color: #0b0d18;
+  --global-text-color: #dde2f0;
+  --global-text-color-light: #7a85a8;
+  --global-theme-color: #6b8af7;
+  --global-hover-color: #6b8af7;
+  --global-card-bg-color: #111525;
+  --global-divider-color: rgba(255, 255, 255, 0.08);
+  --global-footer-bg-color: #08090f;
   --global-footer-text-color: #6b7594;
   --global-footer-link-color: #9aa5c8;
 }
-
 
 // ---------------------------------------------------------------------------
 // 2. GLOBAL BODY & TYPOGRAPHY
@@ -101,18 +108,28 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color .3s ease, color .3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   color: var(--global-text-color);
   font-weight: 600;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   line-height: 1.25;
 }
 
-p { line-height: 1.75; margin-bottom: var(--sp-4); }
+p {
+  line-height: 1.75;
+  margin-bottom: var(--sp-4);
+}
 
 a {
   color: var(--global-theme-color);
@@ -121,7 +138,7 @@ a {
   &:hover {
     color: var(--brand-blue-soft);
     text-decoration: underline;
-    text-decoration-color: rgba(91,122,232,.4);
+    text-decoration-color: rgba(91, 122, 232, 0.4);
     text-underline-offset: 3px;
   }
 }
@@ -133,15 +150,13 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: .045;
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 10%, #3b5fc0, transparent),
-    radial-gradient(ellipse 40% 35% at 80% 75%, #f76935, transparent),
-    radial-gradient(ellipse 50% 40% at 75% 15%, #6b4fd8, transparent),
-    radial-gradient(ellipse 40% 35% at 50% 50%, #1ab87e, transparent);
+  opacity: 0.045;
+  background: radial-gradient(ellipse 60% 50% at 20% 10%, #3b5fc0, transparent), radial-gradient(ellipse 40% 35% at 80% 75%, #f76935, transparent),
+    radial-gradient(ellipse 50% 40% at 75% 15%, #6b4fd8, transparent), radial-gradient(ellipse 40% 35% at 50% 50%, #1ab87e, transparent);
 }
-html[data-theme="dark"] body::before { opacity: .12; }
-
+html[data-theme="dark"] body::before {
+  opacity: 0.12;
+}
 
 // ---------------------------------------------------------------------------
 // 3. NAVIGATION — Glassmorphism, precise 56 px height
@@ -150,30 +165,33 @@ html[data-theme="dark"] body::before { opacity: .12; }
 .navbar {
   height: 56px;
   padding: 0 var(--sp-4) !important;
-  background: rgba(246,248,251,.88) !important;
+  background: rgba(246, 248, 251, 0.88) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(59,95,192,.1) !important;
+  border-bottom: 1px solid rgba(59, 95, 192, 0.1) !important;
   box-shadow: var(--shadow-sm);
   transition: var(--trans-normal);
 }
 html[data-theme="dark"] .navbar {
-  background: rgba(11,13,24,.88) !important;
-  border-bottom-color: rgba(107,138,247,.12) !important;
+  background: rgba(11, 13, 24, 0.88) !important;
+  border-bottom-color: rgba(107, 138, 247, 0.12) !important;
 }
 
 .navbar-brand {
   font-family: var(--font-display) !important;
   font-weight: 700 !important;
   font-size: 1.05rem !important;
-  letter-spacing: -.02em !important;
+  letter-spacing: -0.02em !important;
   color: var(--global-text-color) !important;
   transition: var(--trans-fast);
-  &:hover { color: var(--brand-blue) !important; text-decoration: none; }
+  &:hover {
+    color: var(--brand-blue) !important;
+    text-decoration: none;
+  }
 }
 
 .nav-link {
-  font-size: .875rem !important;
+  font-size: 0.875rem !important;
   font-weight: 500 !important;
   color: var(--global-text-color) !important;
   padding: var(--sp-2) var(--sp-3) !important;
@@ -181,16 +199,27 @@ html[data-theme="dark"] .navbar {
   transition: var(--trans-fast);
   &:hover {
     color: var(--brand-blue) !important;
-    background: rgba(59,95,192,.07) !important;
+    background: rgba(59, 95, 192, 0.07) !important;
     text-decoration: none !important;
   }
-  &.active { color: var(--brand-blue) !important; font-weight: 600 !important; }
+  &.active {
+    color: var(--brand-blue) !important;
+    font-weight: 600 !important;
+  }
 }
 
 // Ensure fixed-top-nav offset remains in sync with 56px navbar
-body.fixed-top-nav { padding-top: 56px !important; }
-h1, h2, h3, h4, h5, h6 { scroll-margin-top: 64px; }
-
+body.fixed-top-nav {
+  padding-top: 56px !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 64px;
+}
 
 // ---------------------------------------------------------------------------
 // 4. POST HEADER — Premium hero typography
@@ -203,10 +232,10 @@ h1, h2, h3, h4, h5, h6 { scroll-margin-top: 64px; }
 }
 
 .post-title {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: "Space Grotesk", sans-serif !important;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: var(--sp-3) !important;
   // Gradient text accent
@@ -227,11 +256,11 @@ html[data-theme="dark"] .post-title {
   color: var(--brand-orange);
   font-weight: 400;
   font-style: italic;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   margin-bottom: 0;
   // Accent underline bar — warm orange gradient
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 48px;
     height: 3px;
@@ -244,7 +273,6 @@ html[data-theme="dark"] .post-header .desc {
   color: var(--brand-orange-soft);
 }
 
-
 // ---------------------------------------------------------------------------
 // 5. PROFILE SECTION — Premium photo ring + smart layout
 // ---------------------------------------------------------------------------
@@ -255,19 +283,21 @@ html[data-theme="dark"] .post-header .desc {
     position: relative;
     display: inline-block;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: -4px;
       border-radius: 50%;
       background: var(--grad-brand);
       z-index: 0;
-      opacity: .9;
+      opacity: 0.9;
     }
     img {
       position: relative;
       z-index: 1;
       border: 3px solid var(--global-bg-color) !important;
-      transition: transform .35s ease, box-shadow .35s ease;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
     }
     &:hover img {
       transform: scale(1.025);
@@ -282,7 +312,7 @@ html[data-theme="dark"] .post-header .desc {
     padding: var(--sp-5) var(--sp-6);
     margin-top: var(--sp-5);
     box-shadow: var(--shadow-md);
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.7;
     color: var(--global-text-color-light);
 
@@ -300,14 +330,13 @@ html[data-theme="dark"] .post-header .desc {
   }
 }
 
-
 // ---------------------------------------------------------------------------
 // 6. CONTENT SECTIONS — Section headings with AI accent bar
 // ---------------------------------------------------------------------------
 
 .post article {
   h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(1.2rem, 3vw, 1.55rem);
     font-weight: 600;
     padding-bottom: var(--sp-3);
@@ -316,7 +345,7 @@ html[data-theme="dark"] .post-header .desc {
     margin-bottom: var(--sp-6);
     position: relative;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -1px;
       left: 0;
@@ -333,12 +362,16 @@ html[data-theme="dark"] .post-header .desc {
     color: var(--global-text-color);
     margin-top: var(--sp-8);
     margin-bottom: var(--sp-4);
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
   }
 
-  strong { color: var(--global-text-color); font-weight: 600; }
+  strong {
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
 
-  ul li, ol li {
+  ul li,
+  ol li {
     line-height: 1.75;
     margin-bottom: var(--sp-2);
   }
@@ -346,20 +379,24 @@ html[data-theme="dark"] .post-header .desc {
   // Blockquote styling
   blockquote {
     border-left: 3px solid var(--brand-blue);
-    background: rgba(59,95,192,.04);
+    background: rgba(59, 95, 192, 0.04);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: var(--sp-5) var(--sp-6);
     margin: var(--sp-6) 0;
-    p { color: var(--global-text-color); margin-bottom: 0; font-style: italic; }
+    p {
+      color: var(--global-text-color);
+      margin-bottom: 0;
+      font-style: italic;
+    }
   }
 
   // Inline code
   code:not(pre code) {
-    background: rgba(59,95,192,.08);
+    background: rgba(59, 95, 192, 0.08);
     color: var(--brand-blue);
     border-radius: 4px;
     padding: 2px 6px;
-    font-size: .85em;
+    font-size: 0.85em;
   }
 
   // HR separator
@@ -367,11 +404,10 @@ html[data-theme="dark"] .post-header .desc {
     border: none;
     height: 1px;
     background: linear-gradient(90deg, var(--brand-blue) 0%, transparent 100%);
-    opacity: .2;
+    opacity: 0.2;
     margin: var(--sp-8) 0;
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 7. TECH BADGES — Color-coded category pills
@@ -389,12 +425,12 @@ html[data-theme="dark"] .post-header .desc {
   align-items: center;
   padding: 5px 13px;
   border-radius: 99px;
-  font-size: .78rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: .03em;
-  background: rgba(59,95,192,.08);
+  letter-spacing: 0.03em;
+  background: rgba(59, 95, 192, 0.08);
   color: var(--brand-blue);
-  border: 1px solid rgba(59,95,192,.2);
+  border: 1px solid rgba(59, 95, 192, 0.2);
   transition: var(--trans-fast);
   white-space: nowrap;
   &:hover {
@@ -402,13 +438,13 @@ html[data-theme="dark"] .post-header .desc {
     color: #fff;
     border-color: var(--brand-blue);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59,95,192,.25);
+    box-shadow: 0 4px 12px rgba(59, 95, 192, 0.25);
   }
 }
 html[data-theme="dark"] .tech-badge {
-  background: rgba(107,138,247,.12);
+  background: rgba(107, 138, 247, 0.12);
   color: var(--brand-blue-soft);
-  border-color: rgba(107,138,247,.25);
+  border-color: rgba(107, 138, 247, 0.25);
   &:hover {
     background: #6b8af7;
     color: #fff;
@@ -418,10 +454,10 @@ html[data-theme="dark"] .tech-badge {
 
 // Section column layout for tech badges
 .row .col-sm-4 h3 {
-  font-size: .8rem !important;
+  font-size: 0.8rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: .1em !important;
+  letter-spacing: 0.1em !important;
   color: var(--global-text-color-light) !important;
   margin-bottom: var(--sp-3) !important;
   margin-top: var(--sp-6) !important;
@@ -430,29 +466,40 @@ html[data-theme="dark"] .tech-badge {
 // Differentiate badge categories by column position (1=blue, 2=green, 3=purple)
 .row .col-sm-4:nth-child(2) {
   .tech-badge {
-    background: rgba(26,184,126,.08);
+    background: rgba(26, 184, 126, 0.08);
     color: #0e9d6a;
-    border-color: rgba(26,184,126,.2);
-    &:hover { background: #1ab87e; color: #fff; border-color: #1ab87e;
-      box-shadow: 0 4px 12px rgba(26,184,126,.25); }
+    border-color: rgba(26, 184, 126, 0.2);
+    &:hover {
+      background: #1ab87e;
+      color: #fff;
+      border-color: #1ab87e;
+      box-shadow: 0 4px 12px rgba(26, 184, 126, 0.25);
+    }
   }
 }
 .row .col-sm-4:nth-child(3) {
   .tech-badge {
-    background: rgba(107,79,216,.08);
+    background: rgba(107, 79, 216, 0.08);
     color: #6b4fd8;
-    border-color: rgba(107,79,216,.2);
-    &:hover { background: #6b4fd8; color: #fff; border-color: #6b4fd8;
-      box-shadow: 0 4px 12px rgba(107,79,216,.25); }
+    border-color: rgba(107, 79, 216, 0.2);
+    &:hover {
+      background: #6b4fd8;
+      color: #fff;
+      border-color: #6b4fd8;
+      box-shadow: 0 4px 12px rgba(107, 79, 216, 0.25);
+    }
   }
 }
 html[data-theme="dark"] .row .col-sm-4:nth-child(2) .tech-badge {
-  color: #2dd4a0; border-color: rgba(45,212,160,.25); background: rgba(45,212,160,.1);
+  color: #2dd4a0;
+  border-color: rgba(45, 212, 160, 0.25);
+  background: rgba(45, 212, 160, 0.1);
 }
 html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
-  color: #a78bfa; border-color: rgba(167,139,250,.25); background: rgba(167,139,250,.1);
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.25);
+  background: rgba(167, 139, 250, 0.1);
 }
-
 
 // ---------------------------------------------------------------------------
 // 8. TIMELINE TABLE — Premium experience timeline
@@ -462,15 +509,15 @@ html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 6px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin: var(--sp-6) 0;
 
   thead th {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: .72rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
     color: var(--global-text-color-light);
     padding: var(--sp-3) var(--sp-4) !important;
     border-bottom: 2px solid var(--global-divider-color);
@@ -482,7 +529,10 @@ html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: var(--trans-fast);
-    &:hover { box-shadow: var(--shadow-md); transform: translateX(3px); }
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateX(3px);
+    }
   }
 
   td {
@@ -492,20 +542,20 @@ html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
     &:first-child {
       border-radius: var(--radius-md) 0 0 var(--radius-md);
       font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       color: var(--brand-blue);
-      font-size: .82rem;
+      font-size: 0.82rem;
       white-space: nowrap;
       &::before {
-        content: '▸';
+        content: "▸";
         margin-right: 6px;
-        opacity: .4;
+        opacity: 0.4;
       }
     }
     &:last-child {
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       color: var(--global-text-color-light);
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
     &:nth-child(2) {
       font-weight: 600;
@@ -513,7 +563,6 @@ html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
     }
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 9. SOCIAL LINKS
@@ -556,45 +605,53 @@ html[data-theme="dark"] .row .col-sm-4:nth-child(3) .tech-badge {
 }
 
 .contact-note {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--global-text-color-light);
   font-style: normal;
   line-height: 1.6;
 }
 
-
 // ---------------------------------------------------------------------------
 // 10. FOOTER
 // ---------------------------------------------------------------------------
 
-footer.fixed-bottom, footer.sticky-bottom, footer {
+footer.fixed-bottom,
+footer.sticky-bottom,
+footer {
   background: var(--global-footer-bg-color) !important;
-  border-top: 1px solid rgba(255,255,255,.06) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
   padding: var(--sp-5) 0 !important;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--global-footer-text-color);
 
   a {
     color: var(--global-footer-link-color);
-    &:hover { color: #fff; }
+    &:hover {
+      color: #fff;
+    }
   }
 }
-
 
 // ---------------------------------------------------------------------------
 // 11. SELECTION + SCROLLBAR
 // ---------------------------------------------------------------------------
 
 ::selection {
-  background: rgba(59,95,192,.15);
+  background: rgba(59, 95, 192, 0.15);
   color: var(--brand-blue);
 }
 
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: rgba(107,115,155,.3);
-  border-radius: 99px;
-  &:hover { background: var(--brand-blue); }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 115, 155, 0.3);
+  border-radius: 99px;
+  &:hover {
+    background: var(--brand-blue);
+  }
+}

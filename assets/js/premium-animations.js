@@ -3,21 +3,21 @@
  * Smooth scroll animations and interactive elements
  ******************************************************************************/
 
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
   // Intersection Observer Configuration
   // - threshold: 0.1 means element is considered visible when 10% enters viewport
   // - rootMargin: Adds padding to viewport detection zone (negative value = wait until element is 50px in)
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const animateOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-on-scroll');
+        entry.target.classList.add("animate-on-scroll");
         // Unobserve after animation to improve performance
         animateOnScroll.unobserve(entry.target);
       }
@@ -26,23 +26,23 @@
 
   // Elements to animate on scroll
   const elementsToAnimate = [
-    '.card',
-    '.project',
-    '.news-item',
-    '.post-item',
-    '.profile',
-    'h1',
-    'h2',
-    'h3',
-    '.tech-badge-container',
-    'table',
-    'blockquote'
+    ".card",
+    ".project",
+    ".news-item",
+    ".post-item",
+    ".profile",
+    "h1",
+    "h2",
+    "h3",
+    ".tech-badge-container",
+    "table",
+    "blockquote",
   ];
 
   // Initialize animations when DOM is ready
   function initializeAnimations() {
-    elementsToAnimate.forEach(selector => {
-      document.querySelectorAll(selector).forEach(element => {
+    elementsToAnimate.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((element) => {
         animateOnScroll.observe(element);
       });
     });
@@ -50,16 +50,16 @@
 
   // Smooth scroll for anchor links
   function initializeSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href !== '#' && href !== '#!') {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href && href !== "#" && href !== "#!") {
           const target = document.querySelector(href);
           if (target) {
             e.preventDefault();
             target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+              behavior: "smooth",
+              block: "start",
             });
             // Update URL without jumping
             if (history.pushState) {
@@ -73,27 +73,29 @@
 
   // Enhanced navbar on scroll
   function initializeNavbarEnhancement() {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector(".navbar");
     if (!navbar) return;
 
     let lastScroll = 0;
     const navbarHeight = navbar.offsetHeight;
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
+    window.addEventListener(
+      "scroll",
+      () => {
+        const currentScroll = window.pageYOffset;
 
-      // Add shadow when scrolled
-      if (currentScroll > 10) {
-        navbar.classList.add('scrolled');
-        navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
-      } else {
-        navbar.classList.remove('scrolled');
-        navbar.style.boxShadow = '';
-      }
+        // Add shadow when scrolled
+        if (currentScroll > 10) {
+          navbar.classList.add("scrolled");
+          navbar.style.boxShadow = "0 2px 12px rgba(0, 0, 0, 0.08)";
+        } else {
+          navbar.classList.remove("scrolled");
+          navbar.style.boxShadow = "";
+        }
 
-      // Hide/show navbar on scroll (optional - can be disabled)
-      // Uncomment the following lines to enable auto-hide navbar
-      /*
+        // Hide/show navbar on scroll (optional - can be disabled)
+        // Uncomment the following lines to enable auto-hide navbar
+        /*
       if (currentScroll > lastScroll && currentScroll > navbarHeight) {
         navbar.style.transform = 'translateY(-100%)';
       } else {
@@ -101,81 +103,83 @@
       }
       */
 
-      lastScroll = currentScroll;
-    }, { passive: true });
+        lastScroll = currentScroll;
+      },
+      { passive: true }
+    );
   }
 
   // Loading state for images
   function initializeImageLoading() {
     const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    images.forEach(img => {
+
+    images.forEach((img) => {
       // Add loading class
-      img.classList.add('img-loading');
-      
+      img.classList.add("img-loading");
+
       // Remove loading class when image loads
-      img.addEventListener('load', () => {
-        img.classList.remove('img-loading');
-        img.classList.add('img-loaded');
+      img.addEventListener("load", () => {
+        img.classList.remove("img-loading");
+        img.classList.add("img-loaded");
       });
 
       // Handle errors
-      img.addEventListener('error', () => {
-        img.classList.remove('img-loading');
-        img.classList.add('img-error');
+      img.addEventListener("error", () => {
+        img.classList.remove("img-loading");
+        img.classList.add("img-error");
       });
     });
   }
 
   // Card hover parallax effect (subtle)
   function initializeCardParallax() {
-    const cards = document.querySelectorAll('.card, .premium-card');
-    
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll(".card, .premium-card");
+
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const deltaX = (x - centerX) / centerX;
         const deltaY = (y - centerY) / centerY;
-        
+
         // Very subtle tilt effect
         const rotateX = deltaY * 2;
         const rotateY = -deltaX * 2;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
       });
     });
   }
 
   // Ripple effect on buttons
   function initializeRippleEffect() {
-    const buttons = document.querySelectorAll('.btn, .btn-premium, button');
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple-effect');
-        
+    const buttons = document.querySelectorAll(".btn, .btn-premium, button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple-effect");
+
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        
+
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+
         this.appendChild(ripple);
-        
+
         setTimeout(() => ripple.remove(), 600);
       });
     });
@@ -183,48 +187,52 @@
 
   // Progress indicator as you scroll down the page
   function initializeScrollProgress() {
-    const progressBar = document.querySelector('.progress-bar, #progress');
+    const progressBar = document.querySelector(".progress-bar, #progress");
     if (!progressBar) return;
 
-    window.addEventListener('scroll', () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight - windowHeight;
-      const scrolled = (window.pageYOffset / documentHeight) * 100;
-      
-      if (progressBar.style) {
-        progressBar.style.width = scrolled + '%';
-      }
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = (window.pageYOffset / documentHeight) * 100;
+
+        if (progressBar.style) {
+          progressBar.style.width = scrolled + "%";
+        }
+      },
+      { passive: true }
+    );
   }
 
   // Copy code button enhancement
   function initializeCodeCopy() {
-    const codeBlocks = document.querySelectorAll('pre code');
-    
-    codeBlocks.forEach(code => {
+    const codeBlocks = document.querySelectorAll("pre code");
+
+    codeBlocks.forEach((code) => {
       const pre = code.parentElement;
-      if (!pre.querySelector('.copy-code-button')) {
-        const button = document.createElement('button');
-        button.className = 'copy-code-button';
-        button.innerHTML = '📋 Copy';
-        button.title = 'Copy to clipboard';
-        
-        button.addEventListener('click', async () => {
+      if (!pre.querySelector(".copy-code-button")) {
+        const button = document.createElement("button");
+        button.className = "copy-code-button";
+        button.innerHTML = "📋 Copy";
+        button.title = "Copy to clipboard";
+
+        button.addEventListener("click", async () => {
           try {
             await navigator.clipboard.writeText(code.textContent);
-            button.innerHTML = '✓ Copied!';
-            button.classList.add('copied');
-            
+            button.innerHTML = "✓ Copied!";
+            button.classList.add("copied");
+
             setTimeout(() => {
-              button.innerHTML = '📋 Copy';
-              button.classList.remove('copied');
+              button.innerHTML = "📋 Copy";
+              button.classList.remove("copied");
             }, 2000);
           } catch (err) {
-            console.error('Failed to copy:', err);
+            console.error("Failed to copy:", err);
           }
         });
-        
-        pre.style.position = 'relative';
+
+        pre.style.position = "relative";
         pre.appendChild(button);
       }
     });
@@ -232,7 +240,7 @@
 
   // Add CSS for animations
   function injectStyles() {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       /* Fade in animations */
       @keyframes fadeInUp {
@@ -323,8 +331,8 @@
   }
 
   // Initialize everything when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
       injectStyles();
       initializeAnimations();
       initializeSmoothScroll();
@@ -347,5 +355,4 @@
     initializeScrollProgress();
     initializeCodeCopy();
   }
-
 })();

@@ -118,18 +118,21 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 ## Technology Partners
 
 ### Cloud & Infrastructure
+
 - **Amazon Web Services (AWS)**: Cloud infrastructure, AI/ML services (SageMaker, Lambda)
 - **Microsoft Azure**: Enterprise healthcare solutions, Azure Health Data Services
 - **Google Cloud**: Healthcare AI APIs, Healthcare Data Engine
 - **Cloudflare**: Security, CDN, and edge computing for healthcare platforms
 
 ### AI & Machine Learning
+
 - **OpenAI**: GPT integration for clinical NLP applications
 - **Google Gemini**: RAG-based clinical analytics (AFHAM AI Studio)
 - **Hugging Face**: Open-source NLP models for Arabic and English
 - **NVIDIA**: Healthcare AI acceleration and GPU computing
 
 ### Healthcare Technology
+
 - **Epic Systems**: EMR integration partner
 - **Cerner (Oracle Health)**: Healthcare interoperability
 - **Allscripts**: EHR connectivity
@@ -139,24 +142,28 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 ## Partnership Opportunities
 
 ### For Healthcare Providers
+
 - Early adopter programs for AI-ambient documentation
 - Co-development of FHIR-compliant interoperability solutions
 - Clinical validation studies and outcome research
 - Training, certification, and continuous support
 
 ### For Technology Companies
+
 - Integration partnerships with BrainSAIT platform
 - Co-marketing and joint go-to-market opportunities
 - Technology exchange and API collaboration
 - Reference implementations and case studies
 
 ### For Academic Institutions
+
 - Clinical AI research collaborations
 - Student internships and residency programs
 - Guest lectures and workshops on Healthcare AI
 - Joint publications and conference presentations
 
 ### For International Organizations
+
 - Policy development and standards contribution
 - Global health initiative participation
 - Knowledge sharing and capacity building
@@ -186,7 +193,7 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 7. **Sustainability**: Building long-term collaborative relationships
 8. **Inclusivity**: Ensuring technology reaches underserved communities
 
-*Together, we're building the future of intelligent healthcare.*
+_Together, we're building the future of intelligent healthcare._
 
 </div>
 
@@ -232,17 +239,20 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 ## فرص الشراكة
 
 ### لمزودي الرعاية الصحية
+
 - برامج التبني المبكر للتوثيق بالذكاء الاصطناعي المحيطي
 - التطوير المشترك لحلول قابلية التشغيل البيني المتوافقة مع FHIR
 - دراسات التحقق السريري وبحوث النتائج
 - التدريب والشهادات والدعم المستمر
 
 ### للمؤسسات التقنية
+
 - شراكات التكامل مع منصة BrainSAIT
 - فرص التسويق المشترك والتعاون في الذهاب إلى السوق
 - تبادل التكنولوجيا والتعاون في واجهات برمجة التطبيقات
 
 ### للمؤسسات الأكاديمية
+
 - تعاونات البحث في الذكاء الاصطناعي السريري
 - برامج التدريب الداخلي للطلاب
 - محاضرات ضيف وورش عمل حول الذكاء الاصطناعي الصحي
@@ -258,6 +268,6 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 - **الهاتف**: +966-510-010-991
 - **الموقع**: [brainsait.org](https://brainsait.org)
 
-*معًا، نبني مستقبل الرعاية الصحية الذكية.*
+_معًا، نبني مستقبل الرعاية الصحية الذكية._
 
 </div>

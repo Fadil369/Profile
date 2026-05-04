@@ -42,6 +42,7 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 ## Expertise
 
 ### Healthcare AI & Interoperability
+
 - FHIR R4 and HL7 v2.x standards implementation and consulting
 - Clinical Natural Language Processing (NLP) for Arabic and English
 - Healthcare data harmonization and ETL pipelines
@@ -49,12 +50,14 @@ To decode the complexity of healthcare through **intelligent automation**, **int
 - Revenue Cycle Management (RCM) AI automation
 
 ### Software Engineering
+
 - Published PyPI packages: [brainsait-pyheart](https://pypi.org/project/brainsait-pyheart/) & [brainsait-pybrain](https://pypi.org/project/brainsait-pybrain/)
 - Full-stack development: Python, FastAPI, React, Next.js
 - Cloud architecture: AWS, Azure, Docker, Kubernetes
 - Multi-agent AI systems and orchestration
 
 ### Clinical Background
+
 - Critical Care & ICU Medicine (Anfas Medical Care, 2021–2024)
 - Neurosurgery (Aster Sanad Hospital, 2018–2021)
 - Emergency Medicine & Telemedicine
@@ -118,25 +121,25 @@ My initiatives have reached healthcare providers across continents, with focus o
 
 ## Timeline of Innovation
 
-| Year | Milestone | Description |
-|:-----|:----------|:------------|
-| **2025** | **BrainSAIT Suite v3** | Next-gen multi-agent healthcare AI orchestration platform |
-| **2024** | **BrainSAIT Horizon** | Launch of 2nd Gen AI-Ambient Scribe for ICU settings; LINC Agent enterprise deployment |
-| **2023** | **Open Source Pivot** | Released `brainsait-pyheart` to standardize FHIR integration; 50k+ downloads |
-| **2021** | **Founder & CEO** | Founded BrainSAIT to bridge clinical medicine and AI across MENA |
-| **2019** | **Author** | Published *"OI vs AI"*, establishing the Original Intelligence framework |
-| **2018** | **Clinical Shift** | Moved into Neurosurgery and Critical Care, identifying healthcare tech gaps |
-| **2015** | **Medical Graduate** | Graduated medical school with focus on healthcare technology integration |
+| Year     | Milestone              | Description                                                                            |
+| :------- | :--------------------- | :------------------------------------------------------------------------------------- |
+| **2025** | **BrainSAIT Suite v3** | Next-gen multi-agent healthcare AI orchestration platform                              |
+| **2024** | **BrainSAIT Horizon**  | Launch of 2nd Gen AI-Ambient Scribe for ICU settings; LINC Agent enterprise deployment |
+| **2023** | **Open Source Pivot**  | Released `brainsait-pyheart` to standardize FHIR integration; 50k+ downloads           |
+| **2021** | **Founder & CEO**      | Founded BrainSAIT to bridge clinical medicine and AI across MENA                       |
+| **2019** | **Author**             | Published _"OI vs AI"_, establishing the Original Intelligence framework               |
+| **2018** | **Clinical Shift**     | Moved into Neurosurgery and Critical Care, identifying healthcare tech gaps            |
+| **2015** | **Medical Graduate**   | Graduated medical school with focus on healthcare technology integration               |
 
 ## Speaking & Advisory
 
 I speak at global conferences about the future of Healthcare AI and Interoperability:
 
-- **Global Health Exhibition (Riyadh)** — *AI in RCM Optimization*
-- **HIMSS Middle East** — *FHIR Interoperability & NPHIES Integration*
-- **WHO Digital Health Advisory** — *Telemedicine in Emerging Markets*
-- **Arab Health Congress** — *Clinical AI Ethics and Implementation*
-- **Sudan Medical Innovation Summit** — *Digital Health for Underserved Communities*
+- **Global Health Exhibition (Riyadh)** — _AI in RCM Optimization_
+- **HIMSS Middle East** — _FHIR Interoperability & NPHIES Integration_
+- **WHO Digital Health Advisory** — _Telemedicine in Emerging Markets_
+- **Arab Health Congress** — _Clinical AI Ethics and Implementation_
+- **Sudan Medical Innovation Summit** — _Digital Health for Underserved Communities_
 
 ## Partnerships
 
@@ -258,6 +261,7 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
 ## مجالات الخبرة
 
 ### الذكاء الاصطناعي للرعاية الصحية وقابلية التشغيل البيني
+
 - تنفيذ واستشارات معايير FHIR R4 وHL7 v2.x
 - معالجة اللغة الطبيعية السريرية للغتين العربية والإنجليزية
 - تنسيق البيانات الصحية وخطوط أنابيب ETL
@@ -265,12 +269,14 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
 - أتمتة إدارة دورة الإيرادات (RCM)
 
 ### هندسة البرمجيات
+
 - حزم PyPI المنشورة: brainsait-pyheart و brainsait-pybrain
 - تطوير متكامل: Python، FastAPI، React، Next.js
 - البنية السحابية: AWS، Azure، Docker، Kubernetes
 - أنظمة الذكاء الاصطناعي متعددة العوامل
 
 ### الخلفية السريرية
+
 - الرعاية الحرجة وطب العناية المركزة (مستشفى أنفاس، 2021–2024)
 - جراحة الأعصاب (مستشفى آستر سناد، 2018–2021)
 - طب الطوارئ والطب عن بُعد

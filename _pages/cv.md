@@ -28,7 +28,7 @@ Physician and healthcare AI architect with **10+ years** of comprehensive experi
 
 ## Professional Experience
 
-### Founder & CEO — BrainSAIT LTD *(2021 – Present)*
+### Founder & CEO — BrainSAIT LTD _(2021 – Present)_
 
 Lead a unified healthcare AI ecosystem serving hospitals and healthcare providers across Saudi Arabia and Sudan.
 
@@ -38,7 +38,7 @@ Lead a unified healthcare AI ecosystem serving hospitals and healthcare provider
 - Developed NPHIES-compliant claims processing with 95%+ approval rates
 - Led team of engineers across Sudan, Saudi Arabia, and remote collaborators
 
-### Critical Care & ICU Physician — Anfas Medical Care *(2021 – 2024)*
+### Critical Care & ICU Physician — Anfas Medical Care _(2021 – 2024)_
 
 Managed high-acuity clinical environments while designing AI-driven solutions for real clinical problems.
 
@@ -47,7 +47,7 @@ Managed high-acuity clinical environments while designing AI-driven solutions fo
 - Piloted AI-ambient documentation in live clinical settings
 - Collaborated with IT teams on EHR integration and clinical data extraction
 
-### Neurosurgery Physician — Aster Sanad Hospital *(2018 – 2021)*
+### Neurosurgery Physician — Aster Sanad Hospital _(2018 – 2021)_
 
 Specialized clinical practice with a focus on surgical data analytics and precision medicine.
 
@@ -57,12 +57,14 @@ Specialized clinical practice with a focus on surgical data analytics and precis
 
 ## Education
 
-### Medical Doctor (MD) — Medical School *(2015 – 2021)*
+### Medical Doctor (MD) — Medical School _(2015 – 2021)_
+
 - Focus on healthcare technology integration and medical informatics
 - Research in AI applications for clinical decision support
 - Graduated with honors in digital health innovation
 
-### Healthcare AI Specialization *(2021 – Present)*
+### Healthcare AI Specialization _(2021 – Present)_
+
 - Advanced training in clinical AI, machine learning, and LLMs
 - FHIR/HL7 interoperability standards certification
 - Healthcare compliance: HIPAA, GDPR, NPHIES regulatory frameworks
@@ -74,26 +76,26 @@ Specialized clinical practice with a focus on surgical data analytics and precis
 - **`brainsait-pybrain`** — Clinical Intelligence Engine (PyPI, 2023)
 - **BrainSAIT LINC Agent** — Enterprise bilingual AI agent for healthcare operations (2024)
 - **AFHAM AI Studio** — RAG-based clinical analytics with Google Gemini (2024)
-- **OI vs AI** — *Original Intelligence vs Artificial Intelligence* (Book, 2019)
+- **OI vs AI** — _Original Intelligence vs Artificial Intelligence_ (Book, 2019)
 
 ## Speaking & Presentations
 
-- **Global Health Exhibition (Riyadh)** — *AI in RCM Optimization*
-- **HIMSS Middle East** — *FHIR Interoperability & NPHIES Integration*
-- **WHO Digital Health Advisory** — *Telemedicine in Emerging Markets*
-- **Arab Health Congress** — *Clinical AI Ethics and Implementation*
+- **Global Health Exhibition (Riyadh)** — _AI in RCM Optimization_
+- **HIMSS Middle East** — _FHIR Interoperability & NPHIES Integration_
+- **WHO Digital Health Advisory** — _Telemedicine in Emerging Markets_
+- **Arab Health Congress** — _Clinical AI Ethics and Implementation_
 
 ## Skills & Technologies
 
-| Category | Technologies |
-|:---------|:-------------|
-| **Languages** | Python, JavaScript, TypeScript, SQL |
-| **Frameworks** | FastAPI, Flask, React, Next.js, LangChain |
-| **Cloud** | AWS (EC2, S3, Lambda, SageMaker), Azure, GCP |
-| **DevOps** | Docker, Kubernetes, CI/CD, GitHub Actions |
-| **AI/ML** | TensorFlow, PyTorch, OpenAI API, Hugging Face |
-| **Standards** | FHIR R4, HL7 v2.x, ICD-10, SNOMED CT, NPHIES |
-| **Databases** | PostgreSQL, MongoDB, Redis, Pinecone |
+| Category       | Technologies                                  |
+| :------------- | :-------------------------------------------- |
+| **Languages**  | Python, JavaScript, TypeScript, SQL           |
+| **Frameworks** | FastAPI, Flask, React, Next.js, LangChain     |
+| **Cloud**      | AWS (EC2, S3, Lambda, SageMaker), Azure, GCP  |
+| **DevOps**     | Docker, Kubernetes, CI/CD, GitHub Actions     |
+| **AI/ML**      | TensorFlow, PyTorch, OpenAI API, Hugging Face |
+| **Standards**  | FHIR R4, HL7 v2.x, ICD-10, SNOMED CT, NPHIES  |
+| **Databases**  | PostgreSQL, MongoDB, Redis, Pinecone          |
 
 </div>
 
@@ -115,7 +117,7 @@ Specialized clinical practice with a focus on surgical data analytics and precis
 
 ## الخبرة المهنية
 
-### المؤسس والرئيس التنفيذي — BrainSAIT LTD *(2021 – حتى الآن)*
+### المؤسس والرئيس التنفيذي — BrainSAIT LTD _(2021 – حتى الآن)_
 
 قيادة منظومة ذكاء اصطناعي صحية موحدة تخدم المستشفيات ومزودي الرعاية الصحية في المملكة العربية السعودية والسودان.
 
@@ -124,22 +126,24 @@ Specialized clinical practice with a focus on surgical data analytics and precis
 - تطوير التوثيق السريري بالذكاء الاصطناعي المحيطي مما يقلل وقت توثيق أطباء العناية المركزة بنسبة 60%
 - تطوير معالجة مطالبات متوافقة مع NPHIES بمعدل قبول يتجاوز 95%
 
-### طبيب رعاية حرجة وعناية مركزة — مستشفى أنفاس *(2021 – 2024)*
+### طبيب رعاية حرجة وعناية مركزة — مستشفى أنفاس _(2021 – 2024)_
 
 إدارة البيئات السريرية عالية الحدة مع تصميم حلول مدفوعة بالذكاء الاصطناعي للمشكلات السريرية الحقيقية.
 
-### طبيب جراحة أعصاب — مستشفى آستر سناد *(2018 – 2021)*
+### طبيب جراحة أعصاب — مستشفى آستر سناد _(2018 – 2021)_
 
 ممارسة سريرية متخصصة مع التركيز على تحليلات البيانات الجراحية والطب الدقيق.
 
 ## التعليم
 
-### دكتور في الطب (MD) *(2015 – 2021)*
+### دكتور في الطب (MD) _(2015 – 2021)_
+
 - التركيز على تكامل التكنولوجيا في الرعاية الصحية والمعلوماتية الطبية
 - بحث في تطبيقات الذكاء الاصطناعي لدعم القرار السريري
 - تخرج بامتياز في مجال الصحة الرقمية
 
-### تخصص الذكاء الاصطناعي في الرعاية الصحية *(2021 – حتى الآن)*
+### تخصص الذكاء الاصطناعي في الرعاية الصحية _(2021 – حتى الآن)_
+
 - تدريب متقدم في الذكاء الاصطناعي السريري والتعلم الآلي
 - شهادة معايير قابلية التشغيل البيني FHIR/HL7
 - معايير HIPAA وGDPR وأطر NPHIES التنظيمية
