@@ -17,8 +17,8 @@ Explore my curated digital library and reading insights on my dedicated platform
 
 <div class="row mt-3 text-center">
     <div class="col-sm-12">
-        <a href="https://read.thefadil.site" target="_blank" class="btn btn-primary">
-            <i class="fas fa-book-reader mr-2"></i> Visit Digital Bookshelf (read.thefadil.site)
+        <a href="https://brainsait.org/books" target="_blank" class="btn btn-primary">
+            <i class="fas fa-book-reader mr-2"></i> Visit Digital Bookshelf
         </a>
     </div>
 </div>

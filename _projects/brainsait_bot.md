@@ -481,6 +481,6 @@ BrainSAIT BOT represents a paradigm shift in healthcare revenue cycle management
 **Business Development**  
 Email: business@brainsait.io  
 Phone: +966-510-010-991  
-Website: [https://brainsait.io](https://brainsait.io)
+Website: [https://brainsait.org](https://brainsait.org)
 
 _Transforming healthcare revenue through intelligent automation._

@@ -13,7 +13,7 @@ profile:
     <p>طبيب ومهندس الذكاء الاصطناعي الصحي</p>
     <p>Founder & CEO, BrainSAIT</p>
     <p>المؤسس والرئيس التنفيذي، BrainSAIT</p>
-    <p><a href="https://www.brainsait.io" target="_blank"><img src="assets/img/company_logo.jpg" alt="BrainSAIT" style="max-width:120px;margin-top:8px;"></a></p>
+    <p><a href="https://brainsait.org" target="_blank"><img src="assets/img/company_logo.jpg" alt="BrainSAIT" style="max-width:120px;margin-top:8px;"></a></p>
     <p>🇸🇦 Riyadh, Saudi Arabia &nbsp;|&nbsp; 🇸🇩 Sudan</p>
 
 selected_projects: true
@@ -33,7 +33,7 @@ latest_posts:
 
 <div class="en-content">
 
-I'm a physician and healthcare AI architect with over **10 years of experience** spanning clinical practice, healthcare AI innovation, and interoperability systems. As the Founder and CEO of [BrainSAIT](https://www.brainsait.io), I lead the development of AI solutions that transform healthcare delivery across the Middle East and Africa.
+I'm a physician and healthcare AI architect with over **10 years of experience** spanning clinical practice, healthcare AI innovation, and interoperability systems. As the Founder and CEO of [BrainSAIT](https://brainsait.org), I lead the development of AI solutions that transform healthcare delivery across the Middle East and Africa.
 
 ## Mission
 
@@ -158,18 +158,53 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
 ## Digital Platforms
 
 <div class="platform-grid">
-  <a href="https://www.brainsait.io" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+  <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT App</span>
-      <span class="platform-card__url">brainsait.io</span>
+      <span class="platform-card__name">BrainSAIT</span>
+      <span class="platform-card__url">brainsait.org</span>
     </div>
   </a>
-  <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-globe platform-card__icon"></i>
+  <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-hospital platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Org</span>
-      <span class="platform-card__url">brainsait.org</span>
+      <span class="platform-card__name">Health Network Hub</span>
+      <span class="platform-card__url">hnh.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://spark.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bolt platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Spark</span>
+      <span class="platform-card__url">spark.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://brainsait.org/incubator" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-seedling platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Incubator</span>
+      <span class="platform-card__url">brainsait.org/incubator</span>
+    </div>
+  </a>
+  <a href="https://bsma.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-graduation-cap platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BSMA Academy</span>
+      <span class="platform-card__url">bsma.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://givc.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-video platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">GIVC Platform</span>
+      <span class="platform-card__url">givc.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://sbs.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-stethoscope platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Smart Brain Suite</span>
+      <span class="platform-card__url">sbs.elfadil.com</span>
     </div>
   </a>
   <a href="https://dr.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
@@ -200,6 +235,13 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
       <span class="platform-card__url">elfadil.com</span>
     </div>
   </a>
+  <a href="https://son.elfadil.com" class="platform-card platform-card--purple" target="_blank" rel="noopener">
+    <i class="fa-solid fa-heart platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">My Sons — A Legacy</span>
+      <span class="platform-card__url">son.elfadil.com</span>
+    </div>
+  </a>
 </div>
 
 </div>
@@ -207,7 +249,7 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
 <!-- ========== ARABIC VERSION ========== -->
 <div class="ar-content">
 
-أنا طبيب ومهندس ذكاء اصطناعي للرعاية الصحية، بخبرة تزيد على **10 سنوات** تمتد عبر الممارسة السريرية وابتكار الذكاء الاصطناعي في الرعاية الصحية وأنظمة قابلية التشغيل البيني. بصفتي المؤسس والرئيس التنفيذي لـ [BrainSAIT](https://www.brainsait.io)، أقود تطوير حلول الذكاء الاصطناعي التي تُحوّل تقديم الرعاية الصحية عبر الشرق الأوسط وأفريقيا.
+أنا طبيب ومهندس ذكاء اصطناعي للرعاية الصحية، بخبرة تزيد على **10 سنوات** تمتد عبر الممارسة السريرية وابتكار الذكاء الاصطناعي في الرعاية الصحية وأنظمة قابلية التشغيل البيني. بصفتي المؤسس والرئيس التنفيذي لـ [BrainSAIT](https://brainsait.org)، أقود تطوير حلول الذكاء الاصطناعي التي تُحوّل تقديم الرعاية الصحية عبر الشرق الأوسط وأفريقيا.
 
 ## الرسالة
 
@@ -258,11 +300,53 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
 ## المنصات الرقمية
 
 <div class="platform-grid">
-  <a href="https://www.brainsait.io" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+  <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">تطبيق BrainSAIT</span>
-      <span class="platform-card__url">brainsait.io</span>
+      <span class="platform-card__name">BrainSAIT</span>
+      <span class="platform-card__url">brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-hospital platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">شبكة الصحة</span>
+      <span class="platform-card__url">hnh.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://spark.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bolt platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Spark</span>
+      <span class="platform-card__url">spark.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://brainsait.org/incubator" class="platform-card platform-card--orange" target="_blank" rel="noopener">
+    <i class="fa-solid fa-seedling platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">حاضنة BrainSAIT</span>
+      <span class="platform-card__url">brainsait.org/incubator</span>
+    </div>
+  </a>
+  <a href="https://bsma.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-graduation-cap platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">أكاديمية BSMA</span>
+      <span class="platform-card__url">bsma.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://givc.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-video platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">منصة GIVC</span>
+      <span class="platform-card__url">givc.elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://sbs.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+    <i class="fa-solid fa-stethoscope platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">الجناح الذكي</span>
+      <span class="platform-card__url">sbs.elfadil.com</span>
     </div>
   </a>
   <a href="https://dr.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
@@ -277,6 +361,13 @@ Interested in collaboration or a deep dive into Healthcare AI? Reach out at **fa
     <div class="platform-card__body">
       <span class="platform-card__name">الموقع الشخصي</span>
       <span class="platform-card__url">elfadil.com</span>
+    </div>
+  </a>
+  <a href="https://son.elfadil.com" class="platform-card platform-card--purple" target="_blank" rel="noopener">
+    <i class="fa-solid fa-heart platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">أبنائي — إرثي</span>
+      <span class="platform-card__url">son.elfadil.com</span>
     </div>
   </a>
 </div>

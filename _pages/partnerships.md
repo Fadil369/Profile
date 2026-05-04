@@ -170,7 +170,7 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 
 - **Email**: partnerships@brainsait.io
 - **Phone**: +966-510-010-991
-- **Website**: [brainsait.io](https://brainsait.io)
+- **Website**: [brainsait.org](https://brainsait.org)
 - **LinkedIn**: [Dr. Mohamed El Fadil](https://linkedin.com/in/thefadil)
 
 ---
@@ -256,7 +256,7 @@ Collaborating with academic institutions on healthcare AI research, clinical val
 
 - **البريد الإلكتروني**: partnerships@brainsait.io
 - **الهاتف**: +966-510-010-991
-- **الموقع**: [brainsait.io](https://brainsait.io)
+- **الموقع**: [brainsait.org](https://brainsait.org)
 
 *معًا، نبني مستقبل الرعاية الصحية الذكية.*
 

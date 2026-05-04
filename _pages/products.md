@@ -547,7 +547,7 @@ Get custom pricing for your organization's needs.
 
 **Email**: sales@brainsait.io  
 **Phone**: +966-510-010-991  
-**Website**: [https://brainsait.io](https://brainsait.io)
+**Website**: [https://brainsait.org](https://brainsait.org)
 
 ---
 

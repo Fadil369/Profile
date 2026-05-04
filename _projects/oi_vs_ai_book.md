@@ -251,7 +251,7 @@ Dr. Mohamed El Fadil brings a unique dual perspective as both a practicing physi
 
 ## Availability
 
-- **Website**: [https://brainsait.io/book](https://brainsait.io/book)
+- **Website**: [https://brainsait.org/book](https://brainsait.org/book)
 - **Amazon**: Available for order
 - **Digital Formats**: PDF, ePub, Kindle
 - **Bulk Orders**: Available for educational institutions

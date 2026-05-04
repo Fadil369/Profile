@@ -481,12 +481,29 @@ html[data-theme="dark"] .callout-elegant {
       }
     }
   }
+
+  // Purple variant (Personal / Legacy)
+  &--purple {
+    border-color: rgba(139,92,246,.2);
+    .platform-card__icon {
+      background: rgba(139,92,246,.1);
+      color: #8b5cf6;
+    }
+    &:hover {
+      border-color: #8b5cf6;
+      .platform-card__icon {
+        background: #8b5cf6;
+        color: #fff;
+      }
+    }
+  }
 }
 
 html[data-theme="dark"] .platform-card {
   &--orange { border-color: rgba(255,139,101,.15); }
   &--blue   { border-color: rgba(107,138,247,.15); }
   &--green  { border-color: rgba(45,212,160,.15); }
+  &--purple { border-color: rgba(167,139,250,.15); }
 }
 
 

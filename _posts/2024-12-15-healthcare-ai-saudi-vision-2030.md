@@ -227,4 +227,4 @@ Dr. Mohamed El Fadil is a physician and healthcare AI innovator, founder of Brai
 
 - [Saudi Vision 2030 Healthcare Sector](https://www.vision2030.gov.sa/)
 - [NPHIES Platform Information](https://nphies.sa/)
-- [BrainSAIT Healthcare Solutions](https://brainsait.io)
+- [BrainSAIT Healthcare Solutions](https://brainsait.org)
