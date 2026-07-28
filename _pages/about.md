@@ -66,12 +66,56 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
 
 ## My Platforms
 
+Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), **DIVI** (development), **COVI** (community) — now sit in front of everything below. See the full breakdown on the [Ecosystem](/ecosystem/) page.
+
 <div class="platform-grid">
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
       <span class="platform-card__name">BrainSAIT</span>
       <span class="platform-card__url">brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://hivi.brainsait.org" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-comment-medical platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">HIVI Health Agent</span>
+      <span class="platform-card__url">hivi.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://abeer.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-hospital-user platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Abeer / Rafa Polyclinic</span>
+      <span class="platform-card__url">abeer.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://edu.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-book-medical platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Education</span>
+      <span class="platform-card__url">edu.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://market.brainsait.de" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-store platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Market</span>
+      <span class="platform-card__url">market.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://sibaiti.app" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-wheat-awn platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">Sibaiti Trading Co.</span>
+      <span class="platform-card__url">sibaiti.app</span>
+    </div>
+  </a>
+  <a href="https://mom.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
+    <i class="fa-solid fa-utensils platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">MomFood</span>
+      <span class="platform-card__url">mom.elfadil.com</span>
     </div>
   </a>
   <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
@@ -199,12 +243,56 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
 
 ## منصاتي الرقمية
 
+أربعة عوامل ذكاء اصطناعي أمامية منسّقة عبر LINC — **HIVI** (الصحة)، **BIKI** (الأعمال)، **DIVI** (التطوير)، **COVI** (المجتمع) — تقف اليوم أمام كل ما يلي. التفاصيل الكاملة في صفحة [النظام البيئي](/ecosystem/).
+
 <div class="platform-grid">
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
       <span class="platform-card__name">BrainSAIT</span>
       <span class="platform-card__url">brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://hivi.brainsait.org" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-comment-medical platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">وكيل HIVI الصحي</span>
+      <span class="platform-card__url">hivi.brainsait.org</span>
+    </div>
+  </a>
+  <a href="https://abeer.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-hospital-user platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">عبير / مجمع رافا الطبي</span>
+      <span class="platform-card__url">abeer.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://edu.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
+    <i class="fa-solid fa-book-medical platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">تعليم BrainSAIT</span>
+      <span class="platform-card__url">edu.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://market.brainsait.de" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-store platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">سوق BrainSAIT</span>
+      <span class="platform-card__url">market.brainsait.de</span>
+    </div>
+  </a>
+  <a href="https://sibaiti.app" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-wheat-awn platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">شركة سبيتي للتجارة</span>
+      <span class="platform-card__url">sibaiti.app</span>
+    </div>
+  </a>
+  <a href="https://mom.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
+    <i class="fa-solid fa-utensils platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">مومفود</span>
+      <span class="platform-card__url">mom.elfadil.com</span>
     </div>
   </a>
   <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">

@@ -4,7 +4,7 @@ title: brainsait-pybrain
 description: Unified Healthcare Intelligence Platform with AI-powered analytics
 img: assets/img/12.jpg
 importance: 3
-category: open source
+category: development
 github: https://github.com/Fadil369/brainsait-pybrain
 ---
 

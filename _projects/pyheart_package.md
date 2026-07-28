@@ -4,7 +4,7 @@ title: brainsait-pyheart
 description: Open-source Healthcare Interoperability & Workflow Engine
 img: assets/img/12.jpg
 importance: 2
-category: open source
+category: development
 github: https://github.com/Fadil369/brainsait-pyheart
 ---
 

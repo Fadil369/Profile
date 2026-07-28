@@ -22,6 +22,12 @@ custom_social:
   - logo: "fa-solid fa-seedling"
     title: BrainSAIT Incubator
     url: https://brainsait.org/incubator
+  - logo: "fa-solid fa-comment-medical"
+    title: HIVI Health Agent
+    url: https://hivi.brainsait.org
+  - logo: "fa-solid fa-store"
+    title: BrainSAIT Market
+    url: https://market.brainsait.de
   - logo: "fa-solid fa-user-doctor"
     title: Clinical Profile
     url: https://dr.elfadil.com

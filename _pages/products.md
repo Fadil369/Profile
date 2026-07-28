@@ -11,6 +11,8 @@ nav_order: 4
 
 Transforming healthcare through intelligent automation and AI-powered solutions. Our comprehensive product portfolio addresses every aspect of modern healthcare operations.
 
+> Every product below now sits behind one of four front agents — **HIVI**, **BIKI**, **DIVI**, **COVI**. See the [Ecosystem](/ecosystem/) page for the full map of live surfaces.
+
 ---
 
 ## Core Healthcare Platform
