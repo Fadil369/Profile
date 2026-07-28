@@ -29,6 +29,7 @@ At the last audit pass the marketplace listed **97 products** across nine catego
 - [ClaimLinc / RCM Workspace](https://portal.elfadil.com) — claims automation product line
 - [Wathq Developer Hub](https://brainsait.org/wathq) — pay-per-request government data APIs
 - [TrustOS](https://brainsait.org/trustos) — AI tender & contract analysis
+- [MomFood](https://momfood.de) — the marketplace's own **MOM** catalog category, run as a standalone commerce domain
 
 ## Links
 

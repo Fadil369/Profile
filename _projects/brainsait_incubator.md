@@ -18,7 +18,7 @@ The **BrainSAIT Incubator** extends that into an ongoing home for founders: an a
 
 - **BrainSAIT Academy** — trains providers on NPHIES, RCM, and the full platform toolset
 - **GTM Playbook** — go-to-market guidance for healthcare AI founders
-- **Training courses** — including *Collective Brainpower* and *NPHIES-AI Mastery*, also mirrored on Google Classroom
+- **Training courses** — including _Collective Brainpower_ and _NPHIES-AI Mastery_, also mirrored on Google Classroom
 
 ## Links
 

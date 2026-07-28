@@ -52,6 +52,7 @@ Every product I've shipped — across [brainsait.org](https://brainsait.org), [b
       <li><a href="https://sibaiti.app" target="_blank" rel="noopener">Sibaiti General Trading Co. — sibaiti.app</a></li>
       <li><a href="https://brainsait.org/wathq" target="_blank" rel="noopener">Wathq Developer Hub — brainsait.org/wathq</a></li>
       <li><a href="https://brainsait.org/trustos" target="_blank" rel="noopener">TrustOS — brainsait.org/trustos</a></li>
+      <li><a href="https://momfood.de" target="_blank" rel="noopener">MomFood Marketplace — momfood.de</a></li>
     </ul>
   </div>
 
@@ -110,6 +111,7 @@ A working audit of every domain and subdomain currently in production, as review
     <tr><td><a href="https://dr.elfadil.com" target="_blank" rel="noopener">dr.elfadil.com</a></td><td>HIVI</td><td>Clinical founder profile & booking</td><td><span class="pill pill--live">Live</span></td></tr>
     <tr><td><a href="https://vip.elfadil.com/edu" target="_blank" rel="noopener">vip.elfadil.com/edu</a></td><td>HIVI</td><td>VIP education portal</td><td><span class="pill pill--building">App shell only</span></td></tr>
     <tr><td><a href="https://mom.elfadil.com" target="_blank" rel="noopener">mom.elfadil.com</a></td><td>COVI</td><td>MomFood community kitchen</td><td><span class="pill pill--live">Live</span></td></tr>
+    <tr><td><a href="https://momfood.de" target="_blank" rel="noopener">momfood.de</a></td><td>BIKI</td><td>MomFood marketplace / commerce domain</td><td><span class="pill pill--live">Live</span></td></tr>
     <tr><td><a href="https://brainsait.org" target="_blank" rel="noopener">brainsait.org</a></td><td>Multi</td><td>Flagship platform, Spark, Incubator, Academy</td><td><span class="pill pill--live">Live</span></td></tr>
     <tr><td><a href="https://brainsait.de" target="_blank" rel="noopener">brainsait.de</a></td><td>Multi</td><td>Clinician-led platform family</td><td><span class="pill pill--live">Live</span></td></tr>
     <tr><td><a href="https://abeer.brainsait.de" target="_blank" rel="noopener">abeer.brainsait.de</a></td><td>HIVI</td><td>Rafa Polyclinic connected care</td><td><span class="pill pill--live">Live</span></td></tr>
