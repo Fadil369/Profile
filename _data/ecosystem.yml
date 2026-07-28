@@ -1,0 +1,255 @@
+# Single source of truth for the /ecosystem/ page: the four LINC-orchestrated
+# front agents (HIVI/BIKI/DIVI/COVI), the surfaces each one fronts, and the
+# live-surface audit directory. Update here rather than hand-editing HTML.
+
+agents:
+  - key: hivi
+    name: HIVI
+    icon: "🏥"
+    acronym: Health Integrated Virtual Intelligence
+    status_label: "Live · OID 1.3.6.1.4.1.61026.2.6"
+    status_class: live
+    mission: >
+      A single conversational agent for every healthcare stakeholder —
+      patient, family, caregiver, insurer, and auditor — registered under a
+      traceable, audit-ready object identifier.
+    links:
+      - title: HIVI Agent — hivi.brainsait.org
+        url: https://hivi.brainsait.org
+      - title: Abeer / Rafa Polyclinic — abeer.brainsait.de
+        url: https://abeer.brainsait.de
+      - title: BrainSAIT Education — edu.brainsait.de
+        url: https://edu.brainsait.de
+      - title: GIVC Platform — givc.elfadil.com
+        url: https://givc.elfadil.com
+      - title: Clinical Profile — dr.elfadil.com
+        url: https://dr.elfadil.com
+
+  - key: biki
+    name: BIKI
+    icon: "💼"
+    acronym: Business Integrated Knowledge Intelligence
+    status_label: Live surfaces
+    status_class: live
+    mission: >
+      The commercial face of the ecosystem — revenue-cycle automation, the
+      BrainSAIT marketplace, and portfolio ventures outside healthcare, like
+      general trading.
+    links:
+      - title: BrainSAIT AI Marketplace — market.brainsait.de
+        url: https://market.brainsait.de
+      - title: ClaimLinc / RCM Workspace — portal.elfadil.com
+        url: https://portal.elfadil.com
+      - title: Sibaiti General Trading Co. — sibaiti.app
+        url: https://sibaiti.app
+      - title: Wathq Developer Hub — brainsait.org/wathq
+        url: https://brainsait.org/wathq
+      - title: TrustOS — brainsait.org/trustos
+        url: https://brainsait.org/trustos
+      - title: MomFood Marketplace — momfood.de
+        url: https://momfood.de
+
+  - key: divi
+    name: DIVI
+    icon: "🛠️"
+    acronym: Development Integrated Virtual Intelligence
+    status_label: Infra live · front in progress
+    status_class: building
+    mission: >
+      The builder's layer — the integration hub, orchestration engine, MCP
+      tooling, and open-source SDKs that every other agent is built on top
+      of.
+    links:
+      - title: BrainSAIT Dashboard — dashboard.brainsait.de
+        url: https://dashboard.brainsait.de
+      - title: Integration Hub API — hub.brainsait.de
+        url: https://hub.brainsait.de
+      - title: MasterLINC Engine — GitHub
+        url: https://github.com/Fadil369/masterlinc
+      - title: BrainSAIT MCP Extension — GitHub
+        url: https://github.com/Fadil369/brainsait-mcp-dxt
+      - title: pyheart / pybrain SDKs — PyPI
+        url: https://pypi.org/project/brainsait-pyheart/
+
+  - key: covi
+    name: COVI
+    icon: "🤝"
+    acronym: Community Virtual Intelligence
+    status_label: Surfaces live · front in progress
+    status_class: building
+    mission: >
+      Everything built for people and founders rather than transactions —
+      startup building, training, and community food & family projects.
+    links:
+      - title: BrainSAIT Spark — spark.brainsait.org
+        url: https://spark.brainsait.org
+      - title: BrainSAIT Incubator — brainsait.org/incubator
+        url: https://brainsait.org/incubator
+      - title: MomFood — mom.elfadil.com
+        url: https://mom.elfadil.com
+      - title: My Sons — A Legacy — son.elfadil.com
+        url: https://son.elfadil.com
+      - title: OI vs AI (book) — Projects
+        url: /projects/#community
+
+# Live surface directory — the working audit table on /ecosystem/.
+# agent: hivi / biki / divi / covi / multi / none
+surfaces:
+  - url: https://elfadil.com
+    label: elfadil.com
+    agent: none
+    role: Personal site (this repo)
+    status_label: Live
+    status_class: live
+
+  - url: https://dr.elfadil.com
+    label: dr.elfadil.com
+    agent: hivi
+    role: Clinical founder profile & booking
+    status_label: Live
+    status_class: live
+
+  - url: https://vip.elfadil.com/edu
+    label: vip.elfadil.com/edu
+    agent: hivi
+    role: VIP education portal
+    status_label: App shell only
+    status_class: building
+
+  - url: https://givc.elfadil.com
+    label: givc.elfadil.com
+    agent: hivi
+    role: GIVC telemedicine & remote care platform
+    status_label: Live
+    status_class: live
+
+  - url: https://mom.elfadil.com
+    label: mom.elfadil.com
+    agent: covi
+    role: MomFood community kitchen
+    status_label: Live
+    status_class: live
+
+  - url: https://momfood.de
+    label: momfood.de
+    agent: biki
+    role: MomFood marketplace / commerce domain
+    status_label: Live
+    status_class: live
+
+  - url: https://son.elfadil.com
+    label: son.elfadil.com
+    agent: covi
+    role: My Sons — A Legacy
+    status_label: Live
+    status_class: live
+
+  - url: https://portal.elfadil.com
+    label: portal.elfadil.com
+    agent: biki
+    role: ClaimLinc / RCM workspace
+    status_label: Live
+    status_class: live
+
+  - url: https://brainsait.org
+    label: brainsait.org
+    agent: multi
+    role: Flagship platform, Spark, Incubator, Academy
+    status_label: Live
+    status_class: live
+
+  - url: https://spark.brainsait.org
+    label: spark.brainsait.org
+    agent: covi
+    role: AI healthcare startup builder
+    status_label: Live
+    status_class: live
+
+  - url: https://brainsait.org/incubator
+    label: brainsait.org/incubator
+    agent: covi
+    role: Founder incubator — app store, partners, clinics hub
+    status_label: Live
+    status_class: live
+
+  - url: https://brainsait.org/wathq
+    label: brainsait.org/wathq
+    agent: biki
+    role: Wathq Developer Hub — Saudi gov-data APIs
+    status_label: Live
+    status_class: live
+
+  - url: https://brainsait.org/trustos
+    label: brainsait.org/trustos
+    agent: biki
+    role: TrustOS — AI tender & contract analysis
+    status_label: Live
+    status_class: live
+
+  - url: https://brainsait.de
+    label: brainsait.de
+    agent: multi
+    role: Clinician-led platform family
+    status_label: Live
+    status_class: live
+
+  - url: https://abeer.brainsait.de
+    label: abeer.brainsait.de
+    agent: hivi
+    role: Rafa Polyclinic connected care
+    status_label: Live
+    status_class: live
+
+  - url: https://edu.brainsait.de
+    label: edu.brainsait.de
+    agent: hivi
+    role: Medical AI Foundations program
+    status_label: Live (MVP)
+    status_class: live
+
+  - url: https://market.brainsait.de
+    label: market.brainsait.de
+    agent: biki
+    role: AI product marketplace
+    status_label: Live
+    status_class: live
+
+  - url: https://hub.brainsait.de
+    label: hub.brainsait.de
+    agent: divi
+    role: Integration Hub API
+    status_label: Live (API)
+    status_class: live
+
+  - url: https://dashboard.brainsait.de
+    label: dashboard.brainsait.de
+    agent: divi
+    role: Executive OID-aware dashboard
+    status_label: Live
+    status_class: live
+
+  - url: https://hivi.brainsait.org
+    label: hivi.brainsait.org
+    agent: hivi
+    role: Multi-persona health agent
+    status_label: Live
+    status_class: live
+
+  - url: https://sibaiti.app
+    label: sibaiti.app
+    agent: biki
+    role: Sibaiti General Trading Co.
+    status_label: Live
+    status_class: live
+
+# Recent design previews (Figma) — dated, referenced only, since the assets
+# require Figma access to open and content shouldn't be inferred.
+design_previews:
+  - label: Design review — 20 Jul 2026
+    url: https://f.io/dcOtN3Lf
+  - label: Design review — 5 Jul 2026
+    url: https://f.io/eQ-mghwg
+  - label: "Asset galleries: set A"
+    url: https://f.io/ruVGav4w
+  - label: "Asset galleries: set B"
+    url: https://f.io/9rzehN-O

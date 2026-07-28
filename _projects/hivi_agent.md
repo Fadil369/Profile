@@ -38,4 +38,4 @@ HIVI is registered under `1.3.6.1.4.1.61026.2.6`, part of the BrainSAIT Ltd priv
 ## Links
 
 - **Live agent**: [hivi.brainsait.org](https://hivi.brainsait.org)
-- **Ecosystem overview**: [/ecosystem/#hivi](/ecosystem/)
+- **Ecosystem overview**: [/ecosystem/#hivi](/ecosystem/#hivi)
