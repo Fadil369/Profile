@@ -5,9 +5,16 @@ permalink: /projects/
 description: Healthcare AI innovations transforming clinical operations and patient care.
 nav: true
 nav_order: 3
-display_categories: [healthcare, open-source]
+display_categories: [healthcare, business, development, community]
 horizontal: false
 ---
+
+Every project below sits behind one of four LINC-orchestrated front agents — see the [Ecosystem](/ecosystem/) page for how they connect:
+
+- 🏥 **healthcare** → fronted by **HIVI**
+- 💼 **business** → fronted by **BIKI**
+- 🛠️ **development** → fronted by **DIVI**
+- 🤝 **community** → fronted by **COVI**
 
 <!-- pages/projects.md -->
 <div class="projects">

@@ -624,6 +624,255 @@ html[data-theme="dark"] .pillar-card:hover {
       }
     }
   }
+
+  // Teal variant (HIVI — healthcare pillar)
+  &--teal {
+    border-color: var(--agent-hivi-pale);
+    .platform-card__icon {
+      background: var(--agent-hivi-pale);
+      color: var(--agent-hivi);
+    }
+    &:hover {
+      border-color: var(--agent-hivi);
+      .platform-card__icon {
+        background: var(--agent-hivi);
+        color: #fff;
+      }
+    }
+  }
+
+  // Amber variant (BIKI — business pillar)
+  &--amber {
+    border-color: var(--agent-biki-pale);
+    .platform-card__icon {
+      background: var(--agent-biki-pale);
+      color: var(--agent-biki);
+    }
+    &:hover {
+      border-color: var(--agent-biki);
+      .platform-card__icon {
+        background: var(--agent-biki);
+        color: #fff;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 13b. AGENT GRID — HIVI · BIKI · DIVI · COVI pillar cards (Ecosystem page)
+// ---------------------------------------------------------------------------
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-6);
+  margin: var(--sp-6) 0 var(--sp-10);
+}
+
+.agent-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-6);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-3);
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--global-text-color);
+  }
+
+  &__acronym {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+
+  &__mission {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    line-height: 1.65;
+    margin-bottom: var(--sp-4);
+  }
+
+  &__status {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: var(--sp-4);
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  &__links a {
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    color: var(--global-text-color);
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+
+  // HIVI — Health Integrated Virtual Intelligence
+  &--hivi {
+    border-color: var(--agent-hivi-pale);
+    .agent-card__icon {
+      background: var(--agent-hivi-pale);
+      color: var(--agent-hivi);
+    }
+    .agent-card__status {
+      background: var(--agent-hivi-pale);
+      color: var(--agent-hivi);
+    }
+    &:hover {
+      border-color: var(--agent-hivi);
+    }
+  }
+
+  // BIKI — Business Integrated Knowledge Intelligence
+  &--biki {
+    border-color: var(--agent-biki-pale);
+    .agent-card__icon {
+      background: var(--agent-biki-pale);
+      color: var(--agent-biki);
+    }
+    .agent-card__status {
+      background: var(--agent-biki-pale);
+      color: var(--agent-biki);
+    }
+    &:hover {
+      border-color: var(--agent-biki);
+    }
+  }
+
+  // DIVI — Development Integrated Virtual Intelligence
+  &--divi {
+    border-color: var(--agent-divi-pale);
+    .agent-card__icon {
+      background: var(--agent-divi-pale);
+      color: var(--agent-divi);
+    }
+    .agent-card__status {
+      background: var(--agent-divi-pale);
+      color: var(--agent-divi);
+    }
+    &:hover {
+      border-color: var(--agent-divi);
+    }
+  }
+
+  // COVI — Community Virtual Intelligence
+  &--covi {
+    border-color: var(--agent-covi-pale);
+    .agent-card__icon {
+      background: var(--agent-covi-pale);
+      color: var(--agent-covi);
+    }
+    .agent-card__status {
+      background: var(--agent-covi-pale);
+      color: var(--agent-covi);
+    }
+    &:hover {
+      border-color: var(--agent-covi);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 13c. SURFACE DIRECTORY TABLE — audit table on the Ecosystem page
+// ---------------------------------------------------------------------------
+
+.surface-directory {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: var(--sp-5) 0 var(--sp-10);
+
+  th,
+  td {
+    text-align: left;
+    padding: var(--sp-3) var(--sp-4);
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  th {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--global-text-color-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  td a {
+    text-decoration: none !important;
+  }
+
+  tbody tr:hover {
+    background: var(--global-card-bg-color);
+  }
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+
+  &--live {
+    background: rgba(26, 184, 126, 0.12);
+    color: var(--brand-green);
+  }
+  &--building {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--agent-biki);
+  }
 }
 
 html[data-theme="dark"] .platform-card {

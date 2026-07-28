@@ -4,7 +4,7 @@ title: OI vs AI Book
 description: Original Intelligence vs Artificial Intelligence in Healthcare
 img: assets/img/12.jpg
 importance: 5
-category: publications
+category: community
 ---
 
 ## OI vs AI: Original Intelligence vs Artificial Intelligence

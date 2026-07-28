@@ -20,6 +20,16 @@
   --brand-green: #1ab87e; // Healthcare success green
   --brand-navy: #0f1324; // Deep authority navy
 
+  // LINC agent accents — HIVI (health) · BIKI (business) · DIVI (development) · COVI (community)
+  --agent-hivi: #14b8a6;
+  --agent-hivi-pale: rgba(20, 184, 166, 0.1);
+  --agent-biki: #f59e0b;
+  --agent-biki-pale: rgba(245, 158, 11, 0.1);
+  --agent-divi: #6366f1;
+  --agent-divi-pale: rgba(99, 102, 241, 0.1);
+  --agent-covi: #ec4899;
+  --agent-covi-pale: rgba(236, 72, 153, 0.1);
+
   // Fonts
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", "Inter", sans-serif;
@@ -79,6 +89,11 @@
 html[data-theme="dark"] {
   --brand-blue-soft: #7b9af9;
   --brand-orange: #ff7b4a;
+
+  --agent-hivi: #2dd4bf;
+  --agent-biki: #fbbf24;
+  --agent-divi: #818cf8;
+  --agent-covi: #f472b6;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
