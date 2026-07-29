@@ -1,6 +1,7 @@
 # Single source of truth for the /ecosystem/ page: the four LINC-orchestrated
 # front agents (HIVI/BIKI/DIVI/COVI), the surfaces each one fronts, and the
 # live-surface audit directory. Update here rather than hand-editing HTML.
+# Last full live-surface audit: 2026-07-28.
 
 agents:
   - key: hivi
