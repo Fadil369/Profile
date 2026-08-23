@@ -13,6 +13,8 @@ Transforming healthcare through intelligent automation and AI-powered solutions.
 
 > Every product below now sits behind one of four front agents — **HIVI**, **BIKI**, **DIVI**, **COVI**. See the [Ecosystem](/ecosystem/) page for the full map of live surfaces.
 
+> 🛍️ **Buying something today?** Books, blueprints, guided builds, and licensed solutions are sold through the [BrainSAIT Store](/store/) — live at [fadil369.github.io](https://fadil369.github.io).
+
 ---
 
 ## Core Healthcare Platform

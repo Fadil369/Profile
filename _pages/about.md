@@ -44,6 +44,18 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
   </div>
 </div>
 
+<div class="store-banner">
+  <div>
+    <span class="store-banner__eyebrow">🛍️ Now open</span>
+    <h3 class="store-banner__title">The BrainSAIT Store is live</h3>
+    <p class="store-banner__text">Books &amp; blueprints, guided builds, and production-grade solutions — bilingual, instant delivery, one storefront.</p>
+  </div>
+  <div class="store-banner__actions">
+    <a class="btn btn-primary" href="/store/">See featured products</a>
+    <a class="btn btn-outline-secondary" href="https://fadil369.github.io" target="_blank" rel="noopener">Open the Store ↗</a>
+  </div>
+</div>
+
 ## What I Build
 
 <div class="pillar-grid">
@@ -64,11 +76,16 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
   </div>
 </div>
 
-## My Platforms
-
-Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), **DIVI** (development), **COVI** (community) — now sit in front of everything below. See the full breakdown on the [Ecosystem](/ecosystem/) page.
+## Where to Find Me
 
 <div class="platform-grid">
+  <a href="https://fadil369.github.io" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bag-shopping platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Store</span>
+      <span class="platform-card__url">fadil369.github.io</span>
+    </div>
+  </a>
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
@@ -76,116 +93,18 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
       <span class="platform-card__url">brainsait.org</span>
     </div>
   </a>
-  <a href="https://hivi.brainsait.org" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-comment-medical platform-card__icon"></i>
+  <a href="/blog/" class="platform-card platform-card--blue">
+    <i class="fa-solid fa-newspaper platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">HIVI Health Agent</span>
-      <span class="platform-card__url">hivi.brainsait.org</span>
+      <span class="platform-card__name">Blog</span>
+      <span class="platform-card__url">elfadil.com/blog</span>
     </div>
   </a>
-  <a href="https://abeer.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-hospital-user platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Abeer / Rafa Polyclinic</span>
-      <span class="platform-card__url">abeer.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://edu.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-book-medical platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Education</span>
-      <span class="platform-card__url">edu.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://market.brainsait.de" class="platform-card platform-card--amber" target="_blank" rel="noopener">
-    <i class="fa-solid fa-store platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Market</span>
-      <span class="platform-card__url">market.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://sibaiti.app" class="platform-card platform-card--amber" target="_blank" rel="noopener">
-    <i class="fa-solid fa-wheat-awn platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Sibaiti Trading Co.</span>
-      <span class="platform-card__url">sibaiti.app</span>
-    </div>
-  </a>
-  <a href="https://mom.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
-    <i class="fa-solid fa-utensils platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">MomFood</span>
-      <span class="platform-card__url">mom.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-hospital platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Health Network Hub</span>
-      <span class="platform-card__url">hnh.brainsait.org</span>
-    </div>
-  </a>
-  <a href="https://spark.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-bolt platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Spark</span>
-      <span class="platform-card__url">spark.brainsait.org</span>
-    </div>
-  </a>
-  <a href="https://brainsait.org/incubator" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-seedling platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Incubator</span>
-      <span class="platform-card__url">brainsait.org/incubator</span>
-    </div>
-  </a>
-  <a href="https://bsma.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-graduation-cap platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BSMA Academy</span>
-      <span class="platform-card__url">bsma.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://givc.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+  <a href="https://meet.google.com/wcb-ovvp-jzp" class="platform-card platform-card--green" target="_blank" rel="noopener">
     <i class="fa-solid fa-video platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">GIVC Platform</span>
-      <span class="platform-card__url">givc.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://sbs.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-stethoscope platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Smart Brain Suite</span>
-      <span class="platform-card__url">sbs.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://dr.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-user-doctor platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Clinical Profile</span>
-      <span class="platform-card__url">dr.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://portal.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-door-open platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Portal</span>
-      <span class="platform-card__url">portal.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://work.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
-    <i class="fa-solid fa-briefcase platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Work &amp; Portfolio</span>
-      <span class="platform-card__url">work.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
-    <i class="fa-solid fa-house platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">Personal Site</span>
-      <span class="platform-card__url">elfadil.com</span>
+      <span class="platform-card__name">Contact — Book a Meeting</span>
+      <span class="platform-card__url">meet.google.com</span>
     </div>
   </a>
   <a href="https://son.elfadil.com" class="platform-card platform-card--purple" target="_blank" rel="noopener">
@@ -221,6 +140,18 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
   </div>
 </div>
 
+<div class="store-banner">
+  <div>
+    <span class="store-banner__eyebrow">🛍️ مفتوح الآن</span>
+    <h3 class="store-banner__title">متجر BrainSAIT مباشر الآن</h3>
+    <p class="store-banner__text">كتب ومخططات، برنامج بناء موجَّه، وحلول جاهزة للإنتاج — ثنائي اللغة، تسليم فوري، متجر واحد.</p>
+  </div>
+  <div class="store-banner__actions">
+    <a class="btn btn-primary" href="/store/">شاهد المنتجات المميّزة</a>
+    <a class="btn btn-outline-secondary" href="https://fadil369.github.io" target="_blank" rel="noopener">افتح المتجر ↗</a>
+  </div>
+</div>
+
 ## ما أبنيه
 
 <div class="pillar-grid">
@@ -241,11 +172,16 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
   </div>
 </div>
 
-## منصاتي الرقمية
-
-أربعة عوامل ذكاء اصطناعي أمامية منسّقة عبر LINC — **HIVI** (الصحة)، **BIKI** (الأعمال)، **DIVI** (التطوير)، **COVI** (المجتمع) — تقف اليوم أمام كل ما يلي. التفاصيل الكاملة في صفحة [النظام البيئي](/ecosystem/).
+## أين تجدني
 
 <div class="platform-grid">
+  <a href="https://fadil369.github.io" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bag-shopping platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">متجر BrainSAIT</span>
+      <span class="platform-card__url">fadil369.github.io</span>
+    </div>
+  </a>
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
@@ -253,102 +189,18 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
       <span class="platform-card__url">brainsait.org</span>
     </div>
   </a>
-  <a href="https://hivi.brainsait.org" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-comment-medical platform-card__icon"></i>
+  <a href="/blog/" class="platform-card platform-card--blue">
+    <i class="fa-solid fa-newspaper platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">وكيل HIVI الصحي</span>
-      <span class="platform-card__url">hivi.brainsait.org</span>
+      <span class="platform-card__name">المدونة</span>
+      <span class="platform-card__url">elfadil.com/blog</span>
     </div>
   </a>
-  <a href="https://abeer.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-hospital-user platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">عبير / مجمع رافا الطبي</span>
-      <span class="platform-card__url">abeer.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://edu.brainsait.de" class="platform-card platform-card--teal" target="_blank" rel="noopener">
-    <i class="fa-solid fa-book-medical platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">تعليم BrainSAIT</span>
-      <span class="platform-card__url">edu.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://market.brainsait.de" class="platform-card platform-card--amber" target="_blank" rel="noopener">
-    <i class="fa-solid fa-store platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">سوق BrainSAIT</span>
-      <span class="platform-card__url">market.brainsait.de</span>
-    </div>
-  </a>
-  <a href="https://sibaiti.app" class="platform-card platform-card--amber" target="_blank" rel="noopener">
-    <i class="fa-solid fa-wheat-awn platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">شركة سبيتي للتجارة</span>
-      <span class="platform-card__url">sibaiti.app</span>
-    </div>
-  </a>
-  <a href="https://mom.elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
-    <i class="fa-solid fa-utensils platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">مومفود</span>
-      <span class="platform-card__url">mom.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://hnh.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-hospital platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">شبكة الصحة</span>
-      <span class="platform-card__url">hnh.brainsait.org</span>
-    </div>
-  </a>
-  <a href="https://spark.brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-bolt platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">BrainSAIT Spark</span>
-      <span class="platform-card__url">spark.brainsait.org</span>
-    </div>
-  </a>
-  <a href="https://brainsait.org/incubator" class="platform-card platform-card--orange" target="_blank" rel="noopener">
-    <i class="fa-solid fa-seedling platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">حاضنة BrainSAIT</span>
-      <span class="platform-card__url">brainsait.org/incubator</span>
-    </div>
-  </a>
-  <a href="https://bsma.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-graduation-cap platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">أكاديمية BSMA</span>
-      <span class="platform-card__url">bsma.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://givc.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
+  <a href="https://meet.google.com/wcb-ovvp-jzp" class="platform-card platform-card--green" target="_blank" rel="noopener">
     <i class="fa-solid fa-video platform-card__icon"></i>
     <div class="platform-card__body">
-      <span class="platform-card__name">منصة GIVC</span>
-      <span class="platform-card__url">givc.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://sbs.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-stethoscope platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">الجناح الذكي</span>
-      <span class="platform-card__url">sbs.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://dr.elfadil.com" class="platform-card platform-card--blue" target="_blank" rel="noopener">
-    <i class="fa-solid fa-user-doctor platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">الملف الطبي</span>
-      <span class="platform-card__url">dr.elfadil.com</span>
-    </div>
-  </a>
-  <a href="https://elfadil.com" class="platform-card platform-card--green" target="_blank" rel="noopener">
-    <i class="fa-solid fa-house platform-card__icon"></i>
-    <div class="platform-card__body">
-      <span class="platform-card__name">الموقع الشخصي</span>
-      <span class="platform-card__url">elfadil.com</span>
+      <span class="platform-card__name">تواصل — احجز اجتماعاً</span>
+      <span class="platform-card__url">meet.google.com</span>
     </div>
   </a>
   <a href="https://son.elfadil.com" class="platform-card platform-card--purple" target="_blank" rel="noopener">

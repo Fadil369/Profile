@@ -2,6 +2,8 @@ require 'feedjira'
 require 'httparty'
 require 'jekyll'
 require 'nokogiri'
+require 'securerandom'
+require 'set'
 require 'time'
 
 module ExternalPosts
@@ -11,6 +13,7 @@ module ExternalPosts
 
     def generate(site)
       if site.config['external_sources'] != nil
+        @used_slugs = Set.new
         site.config['external_sources'].each do |src|
           puts "Fetching external posts from #{src['name']}:"
           if src['rss_url']
@@ -47,15 +50,28 @@ module ExternalPosts
     end
 
     def create_document(site, source_name, url, content)
+      url_slug = url.split('/').last.to_s.sub(/\.\w+\z/, '')
+      source_slug = source_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+
       # check if title is composed only of whitespace or foreign characters
       if content[:title].gsub(/[^\w]/, '').strip.empty?
         # use the source name and last url segment as fallback
-        slug = "#{source_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}-#{url.split('/').last}"
+        slug = "#{source_slug}-#{url_slug}"
       else
         # parse title from the post or use the source name and last url segment as fallback
         slug = content[:title].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-        slug = "#{source_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}-#{url.split('/').last}" if slug.empty?
+        slug = "#{source_slug}-#{url_slug}" if slug.empty?
       end
+
+      # collapse runs of symbols/emoji stripped down to bare dashes, and make sure
+      # the slug is actually unique — titles can be near-duplicates (or reduce to
+      # the same ASCII skeleton once non-word characters are stripped), which would
+      # otherwise make two different posts collide on the same destination URL
+      slug = slug.gsub(/-+/, '-').gsub(/\A-|-\z/, '')
+      slug = "#{source_slug}-#{url_slug}" if slug.empty?
+      slug = "#{slug}-#{url_slug}" if @used_slugs.include?(slug) && !slug.end_with?("-#{url_slug}")
+      slug = "#{slug}-#{SecureRandom.hex(3)}" while @used_slugs.include?(slug)
+      @used_slugs << slug
 
       path = site.in_source_dir("_posts/#{slug}.md")
       doc = Jekyll::Document.new(
