@@ -901,3 +901,194 @@ html[data-theme="dark"] .platform-card {
   align-items: center;
   justify-content: center;
 }
+
+// ---------------------------------------------------------------------------
+// 14. STORE — announcement banner & featured product cards
+// ---------------------------------------------------------------------------
+
+.store-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+  margin: var(--sp-6) 0 var(--sp-8);
+  padding: var(--sp-6) var(--sp-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: radial-gradient(circle at 0% 0%, rgba(245, 158, 11, 0.12), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(59, 95, 192, 0.1), transparent 55%), var(--global-card-bg-color);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--agent-biki);
+    margin-bottom: var(--sp-2);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--global-text-color);
+    margin: 0 0 var(--sp-2);
+  }
+
+  &__text {
+    font-size: 0.92rem;
+    color: var(--global-text-color-light);
+    max-width: 46ch;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+}
+
+html[data-theme="dark"] .store-banner {
+  border-color: rgba(251, 191, 36, 0.28);
+}
+
+// Store stage section headings (Learn / Build / Solutions)
+.store-section {
+  margin: var(--sp-10) 0 var(--sp-4);
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-2);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  &__blurb {
+    font-size: 0.88rem;
+    color: var(--global-text-color-light);
+    margin: 0 0 var(--sp-5);
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-5);
+  margin: 0 0 var(--sp-6);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-blue);
+    text-decoration: none !important;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-2);
+  }
+
+  &__icon {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  &__price {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--brand-green);
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.96rem;
+    color: var(--global-text-color);
+    line-height: 1.35;
+  }
+
+  &__tagline {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  &__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-2);
+    margin-top: var(--sp-2);
+    padding-top: var(--sp-3);
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  &__cat {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+
+  &__cta {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+  }
+}
+
+html[data-theme="dark"] .product-card:hover {
+  border-color: var(--brand-blue-soft);
+}

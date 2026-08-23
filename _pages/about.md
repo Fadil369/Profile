@@ -44,6 +44,18 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
   </div>
 </div>
 
+<div class="store-banner">
+  <div>
+    <span class="store-banner__eyebrow">🛍️ Now open</span>
+    <h3 class="store-banner__title">The BrainSAIT Store is live</h3>
+    <p class="store-banner__text">Books &amp; blueprints, guided builds, and production-grade solutions — bilingual, instant delivery, one storefront.</p>
+  </div>
+  <div class="store-banner__actions">
+    <a class="btn btn-primary" href="/store/">See featured products</a>
+    <a class="btn btn-outline-secondary" href="https://fadil369.github.io" target="_blank" rel="noopener">Open the Store ↗</a>
+  </div>
+</div>
+
 ## What I Build
 
 <div class="pillar-grid">
@@ -69,6 +81,13 @@ Over **10 years** at the bedside — in ICUs, neurosurgery wards, and emergency 
 Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), **DIVI** (development), **COVI** (community) — now sit in front of everything below. See the full breakdown on the [Ecosystem](/ecosystem/) page.
 
 <div class="platform-grid">
+  <a href="https://fadil369.github.io" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bag-shopping platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">BrainSAIT Store</span>
+      <span class="platform-card__url">fadil369.github.io</span>
+    </div>
+  </a>
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
@@ -221,6 +240,18 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
   </div>
 </div>
 
+<div class="store-banner">
+  <div>
+    <span class="store-banner__eyebrow">🛍️ مفتوح الآن</span>
+    <h3 class="store-banner__title">متجر BrainSAIT مباشر الآن</h3>
+    <p class="store-banner__text">كتب ومخططات، برنامج بناء موجَّه، وحلول جاهزة للإنتاج — ثنائي اللغة، تسليم فوري، متجر واحد.</p>
+  </div>
+  <div class="store-banner__actions">
+    <a class="btn btn-primary" href="/store/">شاهد المنتجات المميّزة</a>
+    <a class="btn btn-outline-secondary" href="https://fadil369.github.io" target="_blank" rel="noopener">افتح المتجر ↗</a>
+  </div>
+</div>
+
 ## ما أبنيه
 
 <div class="pillar-grid">
@@ -246,6 +277,13 @@ Four LINC-orchestrated front agents — **HIVI** (health), **BIKI** (business), 
 أربعة عوامل ذكاء اصطناعي أمامية منسّقة عبر LINC — **HIVI** (الصحة)، **BIKI** (الأعمال)، **DIVI** (التطوير)، **COVI** (المجتمع) — تقف اليوم أمام كل ما يلي. التفاصيل الكاملة في صفحة [النظام البيئي](/ecosystem/).
 
 <div class="platform-grid">
+  <a href="https://fadil369.github.io" class="platform-card platform-card--amber" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bag-shopping platform-card__icon"></i>
+    <div class="platform-card__body">
+      <span class="platform-card__name">متجر BrainSAIT</span>
+      <span class="platform-card__url">fadil369.github.io</span>
+    </div>
+  </a>
   <a href="https://brainsait.org" class="platform-card platform-card--orange" target="_blank" rel="noopener">
     <i class="fa-solid fa-brain platform-card__icon"></i>
     <div class="platform-card__body">
