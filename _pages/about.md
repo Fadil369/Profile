@@ -1,7 +1,9 @@
 ---
 layout: about
 title: About
-permalink: /
+permalink: /about/
+nav: true
+nav_order: 1
 subtitle: Physician · Healthcare AI Architect · Founder & CEO, BrainSAIT
 
 profile:

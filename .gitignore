@@ -10,6 +10,10 @@ Gemfile.lock
 assets/libs/
 node_modules/
 vendor
+landing/dist
+landing/*.tsbuildinfo
+landing/vite.config.js
+landing/vite.config.d.ts
 .idea
 .venv
 .env

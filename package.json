@@ -6,7 +6,8 @@
     "prettier": "3.1.1"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:landing": "npm --prefix landing install && npm --prefix landing run build && node landing/build-and-publish.mjs"
   },
   "lint-staged": {
     "*.{js,css,md,html,json,scss}": "prettier --write"
