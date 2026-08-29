@@ -6,12 +6,9 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [
-  {%- for page in site.pages -%}
-    {%- if page.permalink == '/' -%}{%- assign about_title = page.title | strip -%}{%- endif -%}
-  {%- endfor -%}
   {
-    id: "nav-{{ about_title | slugify }}",
-    title: "{{ about_title | truncatewords: 13 }}",
+    id: "nav-home",
+    title: "{{ site.title | strip | truncatewords: 13 }}",
     section: "Navigation",
     handler: () => {
       window.location.href = "{{ '/' | relative_url }}";
