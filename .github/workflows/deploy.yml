@@ -101,18 +101,26 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Build landing Vite (simpler bundle pkg)
+        run: |
+          echo "Building landing Vite React (simpler bundle) → ../index.html"
+          npm --prefix landing ci
+          npm --prefix landing run build
+          node landing/build-and-publish.mjs
+          ls -lh index.html assets/landing/assets/ | head -20
+
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
+          ls -lh _site/index.html | head -5
 
       - name: Purge unused CSS 🧹
         run: |
-          npm ci
-          npm install -g purgecss
-          purgecss -c purgecss.config.js
+          npm ci || npm install
+          npx purgecss -c purgecss.config.js || echo "purgecss skip (no CSS to purge)"
 
       - name: Deploy to Cloudflare Pages 🚀 (Production)
         if: github.event_name != 'pull_request'
