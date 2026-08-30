@@ -315,6 +315,54 @@ export const CONTENT: Record<Lang, LangContent> = {
         desc: "حل بالذكاء الاصطناعي لأتمتة التوثيق السريري وخفض إجهاد الأطباء بتقنية الاستماع الذكي.",
         tech: ["Whisper", "GPT-4"],
         link: "https://brainsait.org"
+      },
+      {
+        name: "DeepSeek Harness — Intelligent Agent Platform",
+        status: "Active",
+        year: "2024–2026",
+        desc: "منصة وكلاء ذكية — 9 مزودين (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ نموذج، تحويل تلقائي عند الاستهلاك، ALLAM و Orpheus Saudi TTS.",
+        tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
+        link: "https://agent.brainsait.org"
+      },
+      {
+        name: "ALLAM — Arabic LLM (SDAIA) & Saudi TTS",
+        status: "Active",
+        year: "2024–2026",
+        desc: "تكامل ALLAM 2-7B و Groq Orpheus Saudi (عبدالله/نورا) — واجهة صوتية سعودية، تحويل النص إلى كلام عربي فاخر.",
+        tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
+        link: "https://platforms.brainsait.org/v1/catalog"
+      },
+      {
+        name: "BrainSAIT Stores — gh.io + Shopify",
+        status: "Active",
+        year: "2024–2026",
+        desc: "متجران متكاملان — 40 كتاب تعليمي + 60 حل + حاضنة 16 يومًا، متزامنان مع Shopify store.brainsait.de (182/499/24k SAR).",
+        tech: ["fadil369.github.io", "Shopify", "MyFatoorah", "R2"],
+        link: "https://fadil369.github.io"
+      },
+      {
+        name: "Cloudflare Workers & Pages — 146 Workers",
+        status: "Active",
+        year: "2023–2026",
+        desc: "146 Worker + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.org، build-apply، store-delivery، platforms-dispatcher.",
+        tech: ["CF Workers", "KV", "R2", "D1", "AI"],
+        link: "https://platforms.brainsait.org/v1/projects"
+      },
+      {
+        name: "GitHub — 50+ Repos & Ecosystem",
+        status: "Active",
+        year: "2020–2026",
+        desc: "50+ مستودع — OID, HNH, GIVC, SBS, Momfood, NPHIES، وأكثر مع CI/CD و Canva/Airtable.",
+        tech: ["GitHub", "Git", "Actions", "Canva", "Airtable"],
+        link: "https://github.com/Fadil369"
+      },
+      {
+        name: "n8n Workflows — 20 Automated",
+        status: "Active",
+        year: "2024–2026",
+        desc: "20 سير عمل — Shopify Concierge، License Issuance، Order Fanout، Lark، Telegram، 3CX، مع تكامل Hermes و Hub.",
+        tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
+        link: "https://hub.brainsait.org"
       }
     ],
     ecosystem: [
@@ -561,6 +609,54 @@ export const CONTENT: Record<Lang, LangContent> = {
         desc: "AI-powered solution automating clinical documentation and reducing physician burnout with ambient listening.",
         tech: ["Whisper", "GPT-4"],
         link: "https://brainsait.org"
+      },
+      {
+        name: "DeepSeek Harness — Intelligent Agent Platform",
+        status: "Active",
+        year: "2024–2026",
+        desc: "Intelligent agent platform — 9 providers (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ models, auto-failover, ALLAM & Orpheus Saudi TTS.",
+        tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
+        link: "https://agent.brainsait.org"
+      },
+      {
+        name: "ALLAM — Arabic LLM & Saudi TTS",
+        status: "Active",
+        year: "2024–2026",
+        desc: "ALLAM 2-7B + Groq Orpheus Saudi (abdullah/noura) — premium Saudi voice, Arabic TTS.",
+        tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
+        link: "https://platforms.brainsait.org/v1/catalog"
+      },
+      {
+        name: "BrainSAIT Stores — gh.io + Shopify",
+        status: "Active",
+        year: "2024–2026",
+        desc: "Two integrated stores — 40 Learn + 60 Solutions + 16-day incubator, synced with Shopify store.brainsait.de (182/499/24k SAR).",
+        tech: ["fadil369.github.io", "Shopify", "MyFatoorah", "R2"],
+        link: "https://fadil369.github.io"
+      },
+      {
+        name: "Cloudflare Workers & Pages — 146 Workers",
+        status: "Active",
+        year: "2023–2026",
+        desc: "146 Workers + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.org, build-apply, store-delivery, platforms-dispatcher.",
+        tech: ["CF Workers", "KV", "R2", "D1", "AI"],
+        link: "https://platforms.brainsait.org/v1/projects"
+      },
+      {
+        name: "GitHub — 50+ Repos & Ecosystem",
+        status: "Active",
+        year: "2020–2026",
+        desc: "50+ repos — OID, HNH, GIVC, SBS, Momfood, NPHIES with CI/CD & Canva/Airtable.",
+        tech: ["GitHub", "Git", "Actions", "Canva", "Airtable"],
+        link: "https://github.com/Fadil369"
+      },
+      {
+        name: "n8n Workflows — 20 Automated",
+        status: "Active",
+        year: "2024–2026",
+        desc: "20 workflows — Shopify Concierge, License Issuance, Order Fanout, Lark, Telegram, 3CX via Hermes & Hub.",
+        tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
+        link: "https://hub.brainsait.org"
       }
     ],
     ecosystem: [
