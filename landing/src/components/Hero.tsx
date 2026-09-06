@@ -1,7 +1,6 @@
 import { useAppState } from "../AppState";
 import { useBooking } from "../BookingContext";
-import { CalendarIcon, ChevronDownIcon, DownloadIcon } from "../Icons";
-import { CV_URL } from "../content";
+import { CalendarIcon, ChevronDownIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
 import { LinkedInBadge } from "./LinkedInBadge";
 
@@ -25,10 +24,6 @@ export function Hero() {
           <CalendarIcon />
           {t.heroCtaMeet}
         </button>
-        <a className="btn btn-secondary" href={CV_URL}>
-          <DownloadIcon />
-          {t.heroCtaCv}
-        </a>
       </div>
       <LinkedInBadge />
       <button className="hero-scroll-hint" aria-label="scroll to about" onClick={() => scrollToSection("about")}>

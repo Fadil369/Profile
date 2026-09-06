@@ -17,15 +17,13 @@ If you believe you have found a security issue in this portfolio's code, build c
 
 ## Scope
 
-This policy applies to the source code, build scripts (GitHub Actions), and configuration files (like `_config.yml`) within this repository. It covers the security of the site generation and deployment process.
-
-For the security of third-party services or themes (like the **al-folio Jekyll theme**), please refer to their respective security policies and update them regularly.
+This policy applies to the source code, build scripts (GitHub Actions), and configuration files (like `wrangler.jsonc`) within this repository. It covers the security of the site generation and deployment process.
 
 ## Security Considerations for This Project
 
 As a static site, this project prioritizes the following:
 
-- **Dependency Security:** Keeping Jekyll, Ruby gems, and Node.js dependencies updated via Dependabot alerts [citation:2][citation:4].
+- **Dependency Security:** Keeping Node.js dependencies updated via Dependabot alerts [citation:2][citation:4].
 - **Secret Management:** Ensuring no API keys, tokens, or personal credentials are committed to the repository. GitHub's secret scanning and push protection features are recommended [citation:2][citation:4].
 - **Build Integrity:** Using protected branches and required status checks for the `main` branch to prevent unauthorized changes [citation:7].
 

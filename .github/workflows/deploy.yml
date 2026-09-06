@@ -3,64 +3,20 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - main
     paths:
-      - "assets/**"
       - "landing/**"
-      - "_sass/**"
-      - "_scripts/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+      - "wrangler.jsonc"
+      - "package.json"
+      - ".github/workflows/deploy.yml"
   pull_request:
     branches:
-      - master
       - main
     paths:
-      - "assets/**"
       - "landing/**"
-      - "_sass/**"
-      - "_scripts/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+      - "wrangler.jsonc"
+      - "package.json"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 permissions:
@@ -75,67 +31,30 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Ruby 💎
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
         with:
-          ruby-version: "3.3.5"
-          bundler-cache: true
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: landing/package-lock.json
 
-      - name: Cache Ruby gems 💎
-        uses: actions/cache@v4
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - name: Setup Python 🐍
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-          cache: "pip"
-
-      - name: Cache npm dependencies 📦
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Build landing Vite
+      - name: Build landing (Vite/React) 🔧
         run: |
-          echo "Building landing Vite React"
           npm --prefix landing ci
           npm --prefix landing run build
-          node landing/build-and-publish.mjs
-          ls -lh index.html assets/landing/assets/ | head -20
 
-      - name: Install and Build 🔧
-        run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
-          export JEKYLL_ENV=production
-          bundle exec jekyll build
-          ls -lh _site/index.html | head -5
-
-      - name: Purge unused CSS
-        run: |
-          npm ci || echo "skip npm ci"
-          npx purgecss -c purgecss.config.js || echo "purgecss skip"
-
-      - name: Deploy to Cloudflare Pages 🚀 (Production)
+      - name: Deploy to Cloudflare Workers 🚀 (Production)
         if: github.event_name != 'pull_request'
-        uses: cloudflare/wrangler-action@v3 # wrangler-action v3
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=elfadil-com --commit-dirty=true
+          command: deploy
 
-      - name: Deploy Preview to Cloudflare Pages 🔍 (PR)
+      - name: Deploy Preview to Cloudflare Workers 🔍 (PR)
         if: github.event_name == 'pull_request'
-        uses: cloudflare/wrangler-action@v3 # wrangler-action v3
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=elfadil-com --branch=preview-pr-${{ github.event.pull_request.number }} --commit-dirty=true
+          command: versions upload --preview-alias pr-${{ github.event.pull_request.number }}

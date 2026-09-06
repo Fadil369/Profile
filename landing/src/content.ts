@@ -48,7 +48,6 @@ export interface LangContent {
   heroTitle: string;
   heroLocation: string;
   heroCtaMeet: string;
-  heroCtaCv: string;
   bookModalTitle: string;
   bookModalSubtitle: string;
   bookModalClose: string;
@@ -86,7 +85,6 @@ export interface LangContent {
 }
 
 export const MEET_URL = "https://meet.google.com/wcb-ovvp-jzp";
-export const CV_URL = "/cv/";
 export const BOOKING_EMBED_URL =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0edxToXuq6bDCBKRZ8_EOcx-Qp6M_bgUVjGQKEeNE2sxMLRxCNlsjk2flHMwMU2hvJyhFy_8Og?gv=true";
 
@@ -99,7 +97,6 @@ export const CONTENT: Record<Lang, LangContent> = {
     heroTitle: "طبيب وريادي أعمال ومبتكر في الذكاء الاصطناعي الصحي",
     heroLocation: "الرياض، السعودية  ·  الخرطوم، السودان",
     heroCtaMeet: "احجز اجتماعاً",
-    heroCtaCv: "السيرة الذاتية",
     bookModalTitle: "احجز موعداً",
     bookModalSubtitle: "اختر الوقت الأنسب لك — تأكيد فوري عبر جوجل كالندر.",
     bookModalClose: "إغلاق",
@@ -393,7 +390,6 @@ export const CONTENT: Record<Lang, LangContent> = {
     heroTitle: "Physician, Entrepreneur & Healthcare AI Innovator",
     heroLocation: "Riyadh, Saudi Arabia  ·  Khartoum, Sudan",
     heroCtaMeet: "Book a meeting",
-    heroCtaCv: "View CV",
     bookModalTitle: "Book a meeting",
     bookModalSubtitle: "Pick a time that works for you — instantly confirmed via Google Calendar.",
     bookModalClose: "Close",

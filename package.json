@@ -1,16 +1,17 @@
 {
+  "name": "elfadil-profile",
+  "private": true,
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "1.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "3.1.1"
   },
   "scripts": {
     "prepare": "husky",
-    "build:landing": "npm --prefix landing install && npm --prefix landing run build && node landing/build-and-publish.mjs",
-    "build:worker": "npm --prefix landing ci && npm --prefix landing run build"
+    "build": "npm --prefix landing ci && npm --prefix landing run build",
+    "deploy": "npm run build && npx wrangler deploy"
   },
   "lint-staged": {
-    "*.{js,css,md,html,json,scss}": "prettier --write"
+    "*.{js,css,md,json}": "prettier --write"
   }
 }
