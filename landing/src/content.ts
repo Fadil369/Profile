@@ -67,8 +67,9 @@ export interface LangContent {
   heroKicker: string;
   heroName: string;
   heroTitle: string;
-  heroLocation: string;
-  heroCtaMeet: string;
+heroLocation: string;
+    heroCtaMeet: string;
+    heroSubtitle: string;
   bookModalTitle: string;
   bookModalSubtitle: string;
   bookModalClose: string;
@@ -119,7 +120,8 @@ export const CONTENT: Record<Lang, LangContent> = {
     langToggle: "EN",
     heroKicker: "طبيب · مؤسس · مبتكر ذكاء اصطناعي صحي",
     heroName: "د. محمد الفاضل",
-    heroTitle: "طبيب وريادي أعمال ومبتكر في الذكاء الاصطناعي الصحي",
+    heroTitle: "من الطبيب المستخدم للنظام… إلى الطبيب الذي يُشغّل النظام",
+    heroSubtitle: "طبيب منذ سنوات. مؤسس برينسايت. بنا نظامًا حوالي الطبيب بدل أن نطلب منه أن يتكيف مع أنظمة لم تُبنَ له.",
     heroLocation: "الرياض، السعودية  ·  الخرطوم، السودان",
     heroCtaMeet: "احجز اجتماعاً",
     bookModalTitle: "احجز موعداً",
@@ -468,7 +470,8 @@ export const CONTENT: Record<Lang, LangContent> = {
     langToggle: "ع",
     heroKicker: "Physician · Founder · Healthcare AI Innovator",
     heroName: "Dr. Mohamed El Fadil",
-    heroTitle: "Physician, Entrepreneur & Healthcare AI Innovator",
+    heroTitle: "From the physician who uses the system… to the physician who runs it",
+    heroSubtitle: "Physician for years. Founder of BrainSAIT. We built a system around the doctor — not the doctor around the system.",
     heroLocation: "Riyadh, Saudi Arabia  ·  Khartoum, Sudan",
     heroCtaMeet: "Book a meeting",
     bookModalTitle: "Book a meeting",
