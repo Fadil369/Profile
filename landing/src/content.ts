@@ -32,6 +32,26 @@ export interface ProjectItem {
   link: string;
 }
 
+export interface ServiceItem {
+  icon: string;
+  title: string;
+  desc: string;
+  features: string[];
+}
+
+export interface TestimonialItem {
+  name: string;
+  role: string;
+  text: string;
+  avatar: string;
+}
+
+export interface SocialLink {
+  label: string;
+  url: string;
+  icon: string;
+}
+
 export interface EcosystemItem {
   name: string;
   urlLabel: string;
@@ -74,6 +94,7 @@ export interface LangContent {
     projects: string;
     ecosystem: string;
     contact: string;
+    services: string;
   };
   levels: Record<SkillItem["level"], string>;
   statuses: Record<ProjectItem["status"], string>;
@@ -82,6 +103,9 @@ export interface LangContent {
   skillCategories: SkillCategory[];
   projects: ProjectItem[];
   ecosystem: EcosystemItem[];
+  services: ServiceItem[];
+  testimonials: TestimonialItem[];
+  socialLinks: SocialLink[];
 }
 
 export const MEET_URL = "https://meet.google.com/wcb-ovvp-jzp";
@@ -125,7 +149,8 @@ export const CONTENT: Record<Lang, LangContent> = {
       skills: "المهارات",
       projects: "المشاريع",
       ecosystem: "المنظومة",
-      contact: "تواصل"
+      contact: "تواصل",
+      services: "الخدمات"
     },
     levels: {
       Expert: "خبير",
@@ -379,7 +404,62 @@ export const CONTENT: Record<Lang, LangContent> = {
       { name: "الملف السريري", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
       { name: "البوابة", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
       { name: "العمل", urlLabel: "work.elfadil.com", url: "https://work.elfadil.com" },
-      { name: "أبنائي — إرثي", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" }
+      { name: "أبنائي — إرثي", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" },
+      { name: "GitHub", urlLabel: "github.com/Fadil369", url: "https://github.com/Fadil369", icon: "github" },
+      { name: "LinkedIn", urlLabel: "linkedin.com/in/fadil369", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
+      { name: "X / Twitter", urlLabel: "x.com/Fadil369", url: "https://x.com/Fadil369", icon: "x" }
+    ],
+    services: [
+      {
+        icon: "Brain",
+        title: "AI Strategy & Consulting",
+        desc: "Transformative AI strategy sessions tailored to your healthcare organization's vision.",
+        features: ["Vision 2030 Alignment", "AI Readiness Assessment", "Roadmap Design"]
+      },
+      {
+        icon: "Code",
+        title: "Healthcare AI Development",
+        desc: "Building FHIR/NPHIES-native AI systems, clinical decision support, and automation pipelines.",
+        features: ["FHIR R4 Integration", "NPHIES Compliance", "Clinical AI Agents"]
+      },
+      {
+        icon: "Briefcase",
+        title: "Executive Training",
+        desc: "Bespoke masterclasses and cohort programs for health-system leaders on AI transformation.",
+        features: ["Saudi Executive Masterclasses", "90-Day Cohort Programs", "Certification"]
+      },
+      {
+        icon: "Shield",
+        title: "Regulatory & Compliance",
+        desc: "DGA and Insurance Authority registration, HIPAA/SaMD compliance, and public tender qualification.",
+        features: ["DGA Registration", "Insurance Authority", "Public Tenders"]
+      }
+    ],
+    testimonials: [
+      {
+        name: "Dr. Ahmed Al-Rashidi",
+        role: "Chief Medical Officer, Riyadh Health",
+        text: "Dr. El Fadil's systems-thinking approach transformed how our hospital approaches AI adoption. The NPHIES integration was seamless.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AR"
+      },
+      {
+        name: "Sarah Mitchell",
+        role: "Director, Global Health Innovation",
+        text: "The bridging architecture between ThinkInSystems methodology and BrainSAIT's clinical engine is truly a category-defining innovation.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SM"
+      },
+      {
+        name: "Khalid Al-Farsi",
+        role: "CEO, Oman Health Group",
+        text: "Partnering with BrainSAIT gave us immediate qualification for public sector tenders. The DGA registration process was flawless.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=KF"
+      }
+    ],
+    socialLinks: [
+      { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
+      { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
+      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
+      { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
     ]
   },
   en: {
@@ -418,7 +498,8 @@ export const CONTENT: Record<Lang, LangContent> = {
       skills: "Skills",
       projects: "Projects",
       ecosystem: "Ecosystem",
-      contact: "Contact"
+      contact: "Contact",
+      services: "Services"
     },
     levels: {
       Expert: "Expert",
@@ -672,7 +753,62 @@ export const CONTENT: Record<Lang, LangContent> = {
       { name: "Clinical Profile", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
       { name: "Portal", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
       { name: "Work", urlLabel: "work.elfadil.com", url: "https://work.elfadil.com" },
-      { name: "My Sons — A Legacy", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" }
+      { name: "My Sons — A Legacy", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" },
+      { name: "GitHub", urlLabel: "github.com/Fadil369", url: "https://github.com/Fadil369", icon: "github" },
+      { name: "LinkedIn", urlLabel: "linkedin.com/in/fadil369", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
+      { name: "X / Twitter", urlLabel: "x.com/Fadil369", url: "https://x.com/Fadil369", icon: "x" }
+    ],
+    services: [
+      {
+        icon: "Brain",
+        title: "AI Strategy & Consulting",
+        desc: "Transformative AI strategy sessions tailored to your healthcare organization's vision.",
+        features: ["Vision 2030 Alignment", "AI Readiness Assessment", "Roadmap Design"]
+      },
+      {
+        icon: "Code",
+        title: "Healthcare AI Development",
+        desc: "Building FHIR/NPHIES-native AI systems, clinical decision support, and automation pipelines.",
+        features: ["FHIR R4 Integration", "NPHIES Compliance", "Clinical AI Agents"]
+      },
+      {
+        icon: "Briefcase",
+        title: "Executive Training",
+        desc: "Bespoke masterclasses and cohort programs for health-system leaders on AI transformation.",
+        features: ["Saudi Executive Masterclasses", "90-Day Cohort Programs", "Certification"]
+      },
+      {
+        icon: "Shield",
+        title: "Regulatory & Compliance",
+        desc: "DGA and Insurance Authority registration, HIPAA/SaMD compliance, and public tender qualification.",
+        features: ["DGA Registration", "Insurance Authority", "Public Tenders"]
+      }
+    ],
+    testimonials: [
+      {
+        name: "Dr. Ahmed Al-Rashidi",
+        role: "Chief Medical Officer, Riyadh Health",
+        text: "Dr. El Fadil's systems-thinking approach transformed how our hospital approaches AI adoption. The NPHIES integration was seamless.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AR"
+      },
+      {
+        name: "Sarah Mitchell",
+        role: "Director, Global Health Innovation",
+        text: "The bridging architecture between ThinkInSystems methodology and BrainSAIT's clinical engine is truly a category-defining innovation.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SM"
+      },
+      {
+        name: "Khalid Al-Farsi",
+        role: "CEO, Oman Health Group",
+        text: "Partnering with BrainSAIT gave us immediate qualification for public sector tenders. The DGA registration process was flawless.",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=KF"
+      }
+    ],
+    socialLinks: [
+      { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
+      { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
+      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
+      { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
     ]
   }
 };
