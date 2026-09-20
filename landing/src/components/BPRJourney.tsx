@@ -24,7 +24,11 @@ export function BPRJourney() {
           {t.bprJourneySteps.map((step, i) => {
             const Icon = ICONS[i];
             return (
-              <div key={step.title} className="journey-card glass-card">
+              <div
+                key={step.title}
+                className="journey-card glass-card"
+                style={{ "--journey-i": i } as React.CSSProperties}
+              >
                 <div className="journey-step">0{i + 1}</div>
                 <div className="journey-icon">
                   <Icon size={24} />
@@ -35,7 +39,7 @@ export function BPRJourney() {
             );
           })}
         </div>
-        <div className="journey-arrow" aria-hidden="true">
+        <div className="journey-progress" aria-hidden="true">
           <span />
         </div>
       </div>

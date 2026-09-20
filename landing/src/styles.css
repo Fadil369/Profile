@@ -840,6 +840,21 @@ a {
   width: 1px;
   background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
 }
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 19px;
+  width: 2px;
+  height: var(--tl-progress, 0%);
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 55%, transparent)
+  );
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
+  transition: height 0.1s linear;
+}
 .timeline-item {
   position: relative;
   padding: 0 0 44px 40px;
@@ -857,6 +872,25 @@ html[dir="rtl"] .timeline-item {
   background: var(--bg);
   border: 2px solid var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
+  z-index: 1;
+}
+.timeline-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  animation: dotRing 2.6s ease-out infinite;
+}
+@keyframes dotRing {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 .timeline-year {
   font-size: 12px;
@@ -971,6 +1005,28 @@ html[dir="rtl"] .timeline-item {
   color: var(--accent);
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+.project-status::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-inline-end: 7px;
+  vertical-align: 1px;
+  background: currentColor;
+}
+.project-status--active {
+  background: rgba(74, 222, 128, 0.14);
+  color: #4ade80;
+}
+.project-status--maintained {
+  background: rgba(56, 189, 248, 0.14);
+  color: #38bdf8;
+}
+.project-status--enterprise {
+  background: rgba(168, 85, 247, 0.14);
+  color: #c084fc;
 }
 .project-year {
   font-size: 13px;
@@ -1348,6 +1404,20 @@ html[dir="rtl"] .timeline-item {
 .service-cta:hover {
   gap: 10px;
 }
+.reveal.is-visible .service-card {
+  animation: cardRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--service-i) * 90ms);
+}
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ---------- testimonials ---------- */
 
@@ -1622,6 +1692,52 @@ html[dir="rtl"] .timeline-item {
   font-size: 14px;
   line-height: 1.7;
   color: var(--muted);
+}
+.journey-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  inset-inline-end: -20px;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(
+    to inline-end,
+    color-mix(in srgb, var(--accent) 40%, transparent),
+    transparent
+  );
+}
+@media (max-width: 980px) {
+  .journey-card::after {
+    display: none;
+  }
+}
+.journey-progress {
+  position: relative;
+  width: min(460px, 70vw);
+  height: 4px;
+  margin: 44px auto 0;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+.journey-progress span {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(
+    to right,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 55%, transparent)
+  );
+  border-radius: inherit;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+.reveal.is-visible .journey-progress span {
+  transform: scaleX(1);
+}
+[dir="rtl"] .journey-progress span {
+  transform-origin: 100% 50%;
 }
 
 /* ---------- registry ---------- */

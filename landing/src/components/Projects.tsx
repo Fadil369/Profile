@@ -27,7 +27,9 @@ export function Projects() {
               className="glass-card project-card"
             >
               <div className="project-top">
-                <span className="project-status">{t.statuses[proj.status]}</span>
+                <span className={`project-status project-status--${String(proj.status).toLowerCase()}`}>
+                  {t.statuses[proj.status]}
+                </span>
                 <span className="project-year">{proj.year}</span>
               </div>
               <h3>{proj.name}</h3>

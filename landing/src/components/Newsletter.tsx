@@ -1,9 +1,11 @@
 import { useAppState } from "../AppState";
+import { useBooking } from "../BookingContext";
 import { useReveal } from "../hooks/useReveal";
 import { MailIcon, CalendarIcon } from "../Icons";
 
 export function Newsletter() {
   const { t } = useAppState();
+  const { open: openBooking } = useBooking();
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -22,7 +24,7 @@ export function Newsletter() {
               Get early access to executive AI masterclasses, research publications, and partnership opportunities.
             </p>
             <div className="newsletter-ctas">
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" onClick={openBooking}>
                 <CalendarIcon />
                 Book a Meeting
               </button>

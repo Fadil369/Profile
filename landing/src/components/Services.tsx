@@ -47,8 +47,12 @@ export function Services() {
           </p>
         </div>
         <div className="services-grid">
-          {services.map((service) => (
-            <div key={service.title} className="glass-card service-card">
+          {services.map((service, i) => (
+            <div
+              key={service.title}
+              className="glass-card service-card"
+              style={{ "--service-i": i } as React.CSSProperties}
+            >
               <div className="service-icon">
                 <service.icon size={28} />
               </div>
