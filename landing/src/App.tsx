@@ -3,6 +3,7 @@ import { BookingProvider } from "./BookingContext";
 import { OrbBackground } from "./components/OrbBackground";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
+import { Statement } from "./components/Statement";
 import { About } from "./components/About";
 import { BPRJourney } from "./components/BPRJourney";
 import { Services } from "./components/Services";
@@ -28,6 +29,7 @@ export default function App() {
           <OrbBackground />
           <Nav />
           <Hero />
+          <Statement />
           <About />
           <BPRJourney />
           <Services />

@@ -45,8 +45,8 @@ export function Testimonials() {
     >
       <div className="testimonials-wrap">
         <div className="section-heading">
-          <div className="kicker">Voices</div>
-          <h2>What Partners Say</h2>
+          <div className="kicker">{t.testimonialsKicker}</div>
+          <h2>{t.testimonialsTitle}</h2>
         </div>
       </div>
 

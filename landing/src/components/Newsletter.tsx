@@ -18,24 +18,22 @@ export function Newsletter() {
       <div className="newsletter-wrap">
         <div className="newsletter-inner">
           <div className="newsletter-content">
-            <div className="kicker">Stay Connected</div>
-            <h2>Join the Pipeline</h2>
-            <p className="newsletter-desc">
-              Get early access to executive AI masterclasses, research publications, and partnership opportunities.
-            </p>
+            <div className="kicker">{t.newsletterKicker}</div>
+            <h2>{t.newsletterTitle}</h2>
+            <p className="newsletter-desc">{t.newsletterDesc}</p>
             <div className="newsletter-ctas">
               <button className="btn btn-primary" onClick={openBooking}>
                 <CalendarIcon />
-                Book a Meeting
+                {t.newsletterBookCta}
               </button>
               <a href="#contact" className="btn btn-secondary">
                 <MailIcon />
-                Get in Touch
+                {t.newsletterContactCta}
               </a>
             </div>
           </div>
           <div className="newsletter-social">
-            <div className="social-heading">Follow the Work</div>
+            <div className="social-heading">{t.newsletterSocialTitle}</div>
             <div className="social-links">
               {t.socialLinks.map((link) => (
                 <a

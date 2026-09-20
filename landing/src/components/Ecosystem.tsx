@@ -23,7 +23,7 @@ export function Ecosystem() {
         <div className="section-heading">
           <div className="kicker">{t.ecosystemKicker}</div>
           <h2>{t.ecosystemTitle}</h2>
-          <p className="section-subtitle">Live reachability across the BrainSAIT network.</p>
+          <p className="section-subtitle">{t.ecosystemSubtitle}</p>
         </div>
         <div className="ecosystem-grid">
           {t.ecosystem.map((eco) => {

@@ -15,7 +15,7 @@ export interface ExperienceItem {
 
 export interface SkillItem {
   name: string;
-  level: "Expert" | "Advanced" | "Intermediate" | "Native" | "Fluent";
+  level: string;
 }
 
 export interface SkillCategory {
@@ -100,6 +100,37 @@ heroLocation: string;
   contactTitle: string;
   contactText: string;
   footerText: string;
+  leveragePoint: string;
+  servicesKicker: string;
+  servicesTitle: string;
+  servicesSubtitle: string;
+  testimonialsKicker: string;
+  testimonialsTitle: string;
+  newsletterKicker: string;
+  newsletterTitle: string;
+  newsletterDesc: string;
+  newsletterBookCta: string;
+  newsletterContactCta: string;
+  newsletterSocialTitle: string;
+  ecosystemSubtitle: string;
+  heroBadge: string;
+  heroCtaRegistry: string;
+  statementLabel: string;
+  statementProblem: string;
+  statementWhy: string;
+  statementSolution: string;
+  statementWhyThis: string;
+  statementWhyNow: string;
+  registryBadge: string;
+  registryStatusTitle: string;
+  registryKeys: { provider: string; network: string; region: string; layer: string };
+  aboutHeroLabel: string;
+  aboutHeroTitle: string;
+  aboutHeroSubtitle: string;
+  aboutHeroDesc: string[];
+  aboutHeroCta: string;
+  aboutIntro: string;
+  aboutStory: { lines: string[]; highlight?: boolean; cta?: boolean }[];
   nav: {
     about: string;
     journey: string;
@@ -176,7 +207,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       }
     ],
     registryKicker: "السجل الطبي الرقمي",
-    registryTitle: "BRAINSAIT OID Provider Registry",
+    registryTitle: "سجل هوية مقدمي الرعاية",
     registryDesc: "هوية موثوقة لكل مقدم رعاية. صلاحيات قابلة للتحقق. ربط مباشر بالأنظمة التي يحتاجها الطبيب. انضم إلى السجل الذي يعيد التحكم إلى الطبيب.",
     registryCta: "استكشف السجل",
     registryCtaSecondary: "تحقق من هوية مقدم خدمة",
@@ -193,6 +224,90 @@ export const CONTENT: Record<Lang, LangContent> = {
     contactText:
       "أرحب بالتعاون مع المستشفيات والمطورين والمستثمرين المهتمين بتقنية الرعاية الصحية عبر الشرق الأوسط وأفريقيا.",
     footerText: "© 2026 د. محمد الفاضل — مؤسس BrainSAIT",
+    leveragePoint: "نقطة الرفع",
+    servicesKicker: "منظومة الرعاية التجديدية",
+    servicesTitle: "بنية التحتية لسجل المزودين",
+    servicesSubtitle: "من الطبيب المستخدم إلى الطبيب المشغّل — هوية، تحقق، وسير عمل ذكي.",
+    testimonialsKicker: "أصوات",
+    testimonialsTitle: "ماذا يقول الشركاء",
+    newsletterKicker: "ابقَ على تواصل",
+    newsletterTitle: "انضم إلى المسار",
+    newsletterDesc:
+      "احصل على وصول مبكر إلى حلقات القيادة التنفيذية في الذكاء الاصطناعي، ومنشورات البحث، وفرص الشراكة.",
+    newsletterBookCta: "احجز اجتماعاً",
+    newsletterContactCta: "تواصل معي",
+    newsletterSocialTitle: "تابع الأعمال",
+    ecosystemSubtitle: "متابعة مباشرة لتوافر شبكة برينسايت.",
+    heroBadge: "مزوّد هوية معتمد",
+    statementLabel: "المشكلة",
+    statementProblem: "الطبيب يقف في الخط الأمامي مع المرضى — ثم يُطلب منه أن يتنقّل بين عشرات الشاشات والأنظمة التي لم تُبنَ له. المطالبات تُرفض. النقص يُكتشف بعد فوات الأوان. الأنظمة تتحدث مع بعضها كرقاب لا كزملاء.",
+    statementWhy: "لأن التقنية الصحية بُنيت لمصلحة الإدارات والفواتير، لا لمصلحة الطبيب الذي يواجه المريض. كل نظام جديد أُضيف كطبقة فوق طبقة — ولم يتم تصميم أي منها من الداخل نحو الطبيب.",
+    statementSolution: "هوية رقمية موثوقة. صلاحيات قابلة للتحقق. أدوات تظهر عند الحاجة فقط. أنظمة تتحدث مع بعضها — بدون أن يكون الطبيب هو الجسر البشري بينها.",
+    statementWhyThis: "لأن الهوية الرقمية ليست مفتاح دخول. هي جواز سفر — تثبّت من أنت، ماذا لديك صلاحية، ومتى تظهر لك الأدوات. هذا ما يعيد التحكم إلى الطبيب.",
+    statementWhyNow: "لأن الأنظمة الصحية تنهار تحت وطأة التعقيد. لأن الذكاء الاصطناعي أصبح جاهزًا. لأن الطبيب لن ينتظر بعد.",
+    heroCtaRegistry: "استكشف السجل",
+    registryBadge: "BPR",
+    registryStatusTitle: "منصة OV",
+    registryKeys: {
+      provider: "المزوّد",
+      network: "الشبكة",
+      region: "المنطقة",
+      layer: "الطبقة"
+    },
+    aboutHeroLabel: "منظومة الرعاية التجديدية",
+    aboutHeroTitle: "من الطبيب المستخدم للنظام",
+    aboutHeroSubtitle: "إلى الطبيب الذي يُشغّل النظام",
+    aboutHeroDesc: [
+      "هوية رقمية موثوقة. صلاحيات قابلة للتحقق. أدوات تظهر حسب السياق.",
+      "ذكاء اصطناعي يراقب النقص قبل أن يتحول إلى رفض.",
+      "أنظمة تتحدث مع بعضها بدل أن يكون الطبيب هو الجسر البشري بينها."
+    ],
+    aboutHeroCta: "استكشف السجل",
+    aboutIntro: "أنا الدكتور محمد الفاضل.",
+    aboutStory: [
+      {
+        lines: ["طبيب. ومؤسس برينسايت."]
+      },
+      {
+        lines: [
+          "قبل أن أتحدث عن الذكاء الاصطناعي، أو الأنظمة الصحية، أو مستقبل عمل الأطباء…",
+          "أريد أن أوضح شيئًا مهمًا:"
+        ]
+      },
+      {
+        lines: [
+          "أنا لا أتحدث عن هذه الأشياء من خلف مكتب بعيد عن المستشفى.",
+          "ولا من شاشة تعرض أرقامًا جميلة في عرض تقديمي."
+        ],
+        highlight: true
+      },
+      {
+        lines: [
+          "من المناوبات. من الطوارئ. من القلق. من التعب. من ضغط المرضى.",
+          "من الملفات. من أنظمة المستشفيات. من المطالبات.",
+          "ومن تلك اللحظة التي ينتهي فيها يوم الطبيب… لكن العمل لا ينتهي."
+        ],
+        cta: true
+      },
+      {
+        lines: [
+          "ثم جاءت كوفيد-19.",
+          "كوفيد لم يكن مجرد أزمة صحية — كان اختبار ضغط كامل لكل الأنظمة الصحية في العالم.",
+          "وفي وسط كل ذلك… كان الطبيب في الصف الأول."
+        ]
+      },
+      {
+        lines: [
+          "إذا كان الطبيب هو من يقف في الخط الأول عند أصعب الأزمات…",
+          "فلماذا لا تكون التقنية مبنية حوله؟",
+          "لماذا نطلب منه أن يتكيف دائمًا مع أنظمة لم تُصمم له؟"
+        ]
+      },
+      {
+        lines: ["من هنا بدأت رؤية برينسايت.", "نظام يعمل حول الطبيب — ليس الطبيب حول النظام."],
+        cta: true
+      }
+    ],
     nav: {
       about: "نبذة",
       journey: "الرحلة",
@@ -276,10 +391,10 @@ export const CONTENT: Record<Lang, LangContent> = {
       {
         name: "الذكاء الاصطناعي الصحي",
         skills: [
-          { name: "Clinical Decision Support", level: "Expert" },
-          { name: "Medical Coding", level: "Expert" },
+          { name: "دعم القرار السريري", level: "Expert" },
+          { name: "الترميز الطبي", level: "Expert" },
           { name: "HL7 FHIR R4", level: "Expert" },
-          { name: "Ambient AI Documentation", level: "Advanced" }
+          { name: "التوثيق التلقائي بالذكاء الاصطناعي", level: "Advanced" }
         ]
       },
       {
@@ -320,9 +435,9 @@ export const CONTENT: Record<Lang, LangContent> = {
       {
         name: "اللغات",
         skills: [
-          { name: "العربية", level: "Native" },
-          { name: "English", level: "Fluent" },
-          { name: "Medical Terminology", level: "Expert" }
+          { name: "العربية", level: "أصلية" },
+          { name: "الإنجليزية", level: "طلاقة" },
+          { name: "المصطلحات الطبية", level: "خبير" }
         ]
       }
     ],
@@ -441,7 +556,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       }
     ],
     ecosystem: [
-      { name: "BrainSAIT", urlLabel: "brainsait.org", url: "https://brainsait.org" },
+      { name: "برينسايت", urlLabel: "brainsait.org", url: "https://brainsait.org" },
       {
         name: "المدونة",
         urlLabel: "brainsait369.blogspot.com",
@@ -449,11 +564,11 @@ export const CONTENT: Record<Lang, LangContent> = {
         badge: "✍️",
         featured: true
       },
-      { name: "Health Network Hub", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
-      { name: "BrainSAIT Spark", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
-      { name: "BrainSAIT Incubator", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
-      { name: "HIVI Health Agent", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
-      { name: "BrainSAIT Market", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
+      { name: "شبكة الصحة", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
+      { name: "برينسايت سبارك", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
+      { name: "برينسايت الحاضنة", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
+      { name: "HIVI وكيل الصحة", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
+      { name: "سوق برينسايت", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
       { name: "الملف السريري", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
       { name: "البوابة", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
       { name: "العمل", urlLabel: "work.elfadil.com", url: "https://work.elfadil.com" },
@@ -465,46 +580,46 @@ export const CONTENT: Record<Lang, LangContent> = {
     services: [
       {
         icon: "Brain",
-        title: "AI Strategy & Consulting",
-        desc: "Transformative AI strategy sessions tailored to your healthcare organization's vision.",
-        features: ["Vision 2030 Alignment", "AI Readiness Assessment", "Roadmap Design"]
+        title: "الاستشارات الاستراتيجية في الذكاء الاصطناعي",
+        desc: "جلسات استراتيجية ذكاء اصطناعي تحويلية مصممة لرؤية مؤسستك الصحية.",
+        features: ["توافق رؤية 2030", "تقييم جاهزية الذكاء الاصطناعي", "تصميم خارطة الطريق"]
       },
       {
         icon: "Code",
-        title: "Healthcare AI Development",
-        desc: "Building FHIR/NPHIES-native AI systems, clinical decision support, and automation pipelines.",
-        features: ["FHIR R4 Integration", "NPHIES Compliance", "Clinical AI Agents"]
+        title: "تطوير الذكاء الاصطناعي الصحي",
+        desc: "بناء أنظمة ذكاء اصطناعي أصلية مع FHIR/NPHIES، ودعم القرار السريري، وخطوط الأتمتة.",
+        features: ["تكامل FHIR R4", "توافق NPHIES", "وكلاء ذكاء اصطناعي سريريون"]
       },
       {
         icon: "Briefcase",
-        title: "Executive Training",
-        desc: "Bespoke masterclasses and cohort programs for health-system leaders on AI transformation.",
-        features: ["Saudi Executive Masterclasses", "90-Day Cohort Programs", "Certification"]
+        title: "التدريب التنفيذي",
+        desc: "حلقات مخصصة وبرامج جماعية لقادة الأنظمة الصحية حول التحول بالذكاء الاصطناعي.",
+        features: ["حلقات تنفيذية سعودية", "برامج مدتها 90 يوماً", "شهادات معتمدة"]
       },
       {
         icon: "Shield",
-        title: "Regulatory & Compliance",
-        desc: "DGA and Insurance Authority registration, HIPAA/SaMD compliance, and public tender qualification.",
-        features: ["DGA Registration", "Insurance Authority", "Public Tenders"]
+        title: "التنظيم والامتثال",
+        desc: "تسجيل الجهات الرقابية، وامتثال HIPAA/SaMD، وتأهيل المناقصات العامة.",
+        features: ["تسجيل DGA", "هيئة التأمين", "المناقصات العامة"]
       }
     ],
     testimonials: [
       {
-        name: "Dr. Ahmed Al-Rashidi",
-        role: "Chief Medical Officer, Riyadh Health",
-        text: "Dr. El Fadil's systems-thinking approach transformed how our hospital approaches AI adoption. The NPHIES integration was seamless.",
+        name: "د. أحمد الرشيدي",
+        role: "الرئيس الطبي، صحة الرياض",
+        text: "غيّر نهج الدكتور الفاضل في التفكير المنظومي طريقة تبني مستشفانا للذكاء الاصطناعي. كان تكامل NPHIES سلساً.",
         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AR"
       },
       {
-        name: "Sarah Mitchell",
-        role: "Director, Global Health Innovation",
-        text: "The bridging architecture between ThinkInSystems methodology and BrainSAIT's clinical engine is truly a category-defining innovation.",
+        name: "سارة ميتشل",
+        role: "مديرة الابتكار الصحي العالمي",
+        text: "البنية الجسرية بين منهجية ThinkInSystems ومحرك برينسايت السريري ابتكار يصنع فئة جديدة حقاً.",
         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SM"
       },
       {
-        name: "Khalid Al-Farsi",
-        role: "CEO, Oman Health Group",
-        text: "Partnering with BrainSAIT gave us immediate qualification for public sector tenders. The DGA registration process was flawless.",
+        name: "خالد الفارسي",
+        role: "الرئيس التنفيذي، مجموعة عمان الصحية",
+        text: "الشراكة مع برينسايت منحتنا تأهيلاً فورياً للمناقصات العامة. كانت عملية تسجيل DGA خالية من الأخطاء.",
         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=KF"
       }
     ],
@@ -579,6 +694,92 @@ export const CONTENT: Record<Lang, LangContent> = {
     contactText:
       "Open to collaborating with hospitals, developers, and investors working on healthcare technology across the Middle East and Africa.",
     footerText: "© 2026 Dr. Mohamed El Fadil — Founder, BrainSAIT",
+    leveragePoint: "The Leverage Point",
+    servicesKicker: "The BPR Ecosystem",
+    servicesTitle: "Provider Registry Infrastructure",
+    servicesSubtitle:
+      "Where the physician goes from user to operator — identity, verification, and intelligent workflow.",
+    testimonialsKicker: "Voices",
+    testimonialsTitle: "What Partners Say",
+    newsletterKicker: "Stay Connected",
+    newsletterTitle: "Join the Pipeline",
+    newsletterDesc:
+      "Get early access to executive AI masterclasses, research publications, and partnership opportunities.",
+    newsletterBookCta: "Book a Meeting",
+    newsletterContactCta: "Get in Touch",
+    newsletterSocialTitle: "Follow the Work",
+    ecosystemSubtitle: "Live reachability across the BrainSAIT network.",
+    heroBadge: "OID Provider",
+    statementLabel: "THE PROBLEM",
+    statementProblem: "The physician stands on the front line with patients — then is asked to navigate dozens of screens and systems that were never built for them. Claims get rejected. Gaps are found too late. Systems talk to each other like guards, not colleagues.",
+    statementWhy: "Because healthcare tech was built for admin and billing, not for the clinician facing the patient. Every new system added another layer on top — none designed from the inside-out around the physician.",
+    statementSolution: "A trusted digital identity. Verifiable credentials. Tools that appear contextually. Systems that talk to each other — with the physician no longer as the human bridge between them.",
+    statementWhyThis: "Because digital identity isn't a login key. It's a passport — it proves who you are, what you're authorized to do, and when the right tools should appear. That returns control to the physician.",
+    statementWhyNow: "Because health systems are buckling under complexity. Because AI is finally ready. Because the physician won't wait anymore.",
+    heroCtaRegistry: "Explore Registry",
+    registryBadge: "BPR",
+    registryStatusTitle: "OV Platform",
+    registryKeys: {
+      provider: "Provider",
+      network: "Network",
+      region: "Region",
+      layer: "Layer"
+    },
+    aboutHeroLabel: "BPR Ecosystem",
+    aboutHeroTitle: "From the physician who uses the system",
+    aboutHeroSubtitle: "to the physician who runs it",
+    aboutHeroDesc: [
+      "A trusted digital identity. Verifiable credentials. Tools that appear contextually.",
+      "AI that watches for gaps before they become rejections.",
+      "Systems that talk to each other — instead of the physician being the human bridge between them."
+    ],
+    aboutHeroCta: "Explore Registry",
+    aboutIntro: "I am Dr. Mohamed El Fadil.",
+    aboutStory: [
+      {
+        lines: ["A physician. And the founder of BrainSAIT."]
+      },
+      {
+        lines: [
+          "Before I talk about artificial intelligence, or health systems, or the future of how doctors work…",
+          "I want to make one thing clear:"
+        ]
+      },
+      {
+        lines: [
+          "I am not talking about these things from a desk far away from the hospital.",
+          "Nor from a screen full of pretty numbers in a pitch deck."
+        ],
+        highlight: true
+      },
+      {
+        lines: [
+          "I speak from the on-call shifts. From the emergency room. From the worry. From the exhaustion. From the pressure of patients.",
+          "From the records. From the hospital systems. From the claims.",
+          "From that moment when the doctor's day ends… but the work does not.",
+          "I am talking from inside the experience."
+        ],
+        cta: true
+      },
+      {
+        lines: [
+          "Then came COVID-19.",
+          "COVID was not just a health crisis — it was a full stress test for every health system in the world.",
+          "And in the middle of it all… the physician was on the front line."
+        ]
+      },
+      {
+        lines: [
+          "If the physician is the one standing on the front line through the hardest crises…",
+          "then why isn't the technology built around them?",
+          "Why do we keep asking them to adapt to systems that were never designed for them?"
+        ]
+      },
+      {
+        lines: ["That is where the BrainSAIT vision began.", "A system built around the physician — not the physician around the system."],
+        cta: true
+      }
+    ],
     nav: {
       about: "About",
       journey: "Journey",

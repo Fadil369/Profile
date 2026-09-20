@@ -39,7 +39,7 @@ export function Nav() {
             </button>
           ))}
           <a href="/the_leverage_point.html" className="nav-link" target="_blank" rel="noopener noreferrer">
-            The Leverage Point
+            {t.leveragePoint}
           </a>
         </div>
 
@@ -71,7 +71,7 @@ export function Nav() {
               </button>
             ))}
             <a href="/the_leverage_point.html" className="drawer-link" target="_blank" rel="noopener noreferrer">
-              The Leverage Point
+              {t.leveragePoint}
             </a>
             <button className="btn btn-primary drawer-book" onClick={() => { setMenuOpen(false); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
               {t.heroCtaMeet}

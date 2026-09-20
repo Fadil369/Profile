@@ -6,11 +6,11 @@ import { ShieldIcon, ArrowRightIcon, CheckCircleIcon } from "../Icons";
 const REGISTRY_LINES = {
   ar: [
     "$ brainsait verify --provider SA-PHY-000001",
-    "→ querying OID registry…",
-    "✓ FOUND  Dr. Mohamed El Fadil",
-    "✓ ROLE   Physician · Founder",
-    "✓ SCOPE  Claims · NPHIES · FHIR R4",
-    "✓ STATUS VERIFIED",
+    "→ التحقق من سجل OID…",
+    "✓ تم العثور  الدكتور محمد الفاضل",
+    "✓ الدور    طبيب · مؤسس",
+    "✓ النطاق   مطالبات · NPHIES · FHIR R4",
+    "✓ الحالة    تم التحقق",
   ],
   en: [
     "$ brainsait verify --provider SA-PHY-000001",
@@ -43,7 +43,7 @@ export function Registry() {
             <div>
               <div className="kicker">{t.registryKicker}</div>
               <h2 className="registry-title">
-                <span className="grad">BPR</span> Registry
+                <span className="grad">{t.registryBadge}</span> {t.registryTitle}
               </h2>
             </div>
           </div>
@@ -87,23 +87,23 @@ export function Registry() {
           <div className="glass-card registry-status-card">
             <div className="registry-status-title">
               <CheckCircleIcon />
-              <span>OV Platform</span>
+              <span>{t.registryStatusTitle}</span>
             </div>
             <div className="registry-status-grid">
               <div>
-                <div className="status-key">Provider</div>
+                <div className="status-key">{t.registryKeys.provider}</div>
                 <div className="status-val">SA-PHY-000001</div>
               </div>
               <div>
-                <div className="status-key">Network</div>
+                <div className="status-key">{t.registryKeys.network}</div>
                 <div className="status-val">OID · Registry</div>
               </div>
               <div>
-                <div className="status-key">Region</div>
+                <div className="status-key">{t.registryKeys.region}</div>
                 <div className="status-val">ME · Africa</div>
               </div>
               <div>
-                <div className="status-key">Layer</div>
+                <div className="status-key">{t.registryKeys.layer}</div>
                 <div className="status-val">Identity</div>
               </div>
             </div>

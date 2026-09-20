@@ -52,7 +52,7 @@ export function Hero() {
         <img src="/assets/img/prof_pic.jpg" alt="Dr. Mohamed El Fadil" />
         <div className="hero-badge">
           <ShieldIcon size={18} />
-          <span>OID Provider</span>
+          <span>{t.heroBadge}</span>
         </div>
         {CREDENTIAL_CHIPS.map((chip, i) => (
           <div key={chip.label} className={`hero-chip hero-chip--${i + 1}`} aria-hidden="true">
@@ -81,7 +81,7 @@ export function Hero() {
           </button>
           <a href="#registry" className="btn btn-secondary">
             <TerminalIcon />
-            Explore Registry
+            {t.heroCtaRegistry}
           </a>
         </div>
       </div>

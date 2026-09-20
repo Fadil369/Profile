@@ -16,7 +16,7 @@ const AppStateContext = createContext<AppStateValue | null>(null);
 
 function readInitial<T extends string>(key: string, allowed: T[], fallback: T): T {
   if (typeof window === "undefined") return fallback;
-  const stored = window.localStorage.getItem(key);
+  const stored = typeof window !== "undefined" ? window.localStorage.getItem(key) : null;
   return (allowed as string[]).includes(stored || "") ? (stored as T) : fallback;
 }
 
