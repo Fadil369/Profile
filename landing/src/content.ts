@@ -58,6 +58,7 @@ export interface EcosystemItem {
   url: string;
   badge?: string;
   featured?: boolean;
+  icon?: string;
 }
 
 export interface LangContent {
