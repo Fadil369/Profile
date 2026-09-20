@@ -1,0 +1,9 @@
+{
+  "include": ["/*"],
+  "replacements": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    }
+  ]
+}
