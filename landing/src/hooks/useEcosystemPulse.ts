@@ -2,42 +2,46 @@ import { useEffect, useState } from "react";
 
 export type PulseState = "checking" | "online" | "probe";
 
-const TIMEOUT = 4500;
-
-/** Best-effort reachability check per ecosystem URL. Falls back gracefully. */
+/** Best-effort reachability check for each ecosystem URL.
+ *  Probes run server-side via the same-origin /__pulse worker endpoint,
+ *  which is immune to browser CORS/CORP blocks. Falls back gracefully. */
 export function useEcosystemPulse(urls: string[]) {
   const [statuses, setStatuses] = useState<Record<string, PulseState>>(() =>
     Object.fromEntries(urls.map((u) => [u, "checking"]))
   );
 
+  const key = urls.join("|");
+
   useEffect(() => {
-    const controllers: AbortController[] = [];
+    if (!urls.length) return;
 
-    for (const url of urls) {
-      const controller = new AbortController();
-      controllers.push(controller);
+    const controller = new AbortController();
+    const qs = urls.map((u) => `u=${encodeURIComponent(u)}`).join("&");
 
-      const timer = setTimeout(() => controller.abort(), TIMEOUT);
-
-      fetch(url, {
-        method: "GET",
-        mode: "no-cors",
-        signal: controller.signal,
-        cache: "no-store",
+    fetch(`/__pulse?${qs}`, {
+      method: "GET",
+      signal: controller.signal,
+      cache: "no-cache",
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("bad status"))))
+      .then((data) => {
+        const results = data?.results;
+        if (!results) return;
+        setStatuses((prev) => {
+          const next = { ...prev };
+          for (const u of urls) {
+            next[u] = results[u] === "online" ? "online" : "probe";
+          }
+          return next;
+        });
       })
-        .then(() => {
-          setStatuses((prev) => ({ ...prev, [url]: "online" }));
-        })
-        .catch(() => {
-          setStatuses((prev) => ({ ...prev, [url]: "probe" }));
-        })
-        .finally(() => clearTimeout(timer));
-    }
+      .catch(() => {
+        // Unreachable /__pulse → leave dots ambiguous (grey), not alarming.
+      });
 
-    return () => {
-      for (const c of controllers) c.abort();
-    };
-  }, [urls]);
+    return () => controller.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
 
   return statuses;
 }
