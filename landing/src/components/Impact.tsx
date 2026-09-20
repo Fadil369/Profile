@@ -39,7 +39,7 @@ export function Impact() {
       id="impact"
       data-scroll-anchor
       ref={ref}
-      className={`section reveal ${visible ? "is-visible" : ""}`}
+      className={`section section--tint reveal ${visible ? "is-visible" : ""}`}
     >
       <div className="impact-wrap">
         <div className="section-heading">

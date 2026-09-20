@@ -17,7 +17,7 @@ export function Ecosystem() {
       id="ecosystem"
       data-scroll-anchor
       ref={ref}
-      className={`section reveal ${visible ? "is-visible" : ""}`}
+      className={`section section--tint reveal ${visible ? "is-visible" : ""}`}
     >
       <div className="ecosystem-wrap">
         <div className="section-heading">

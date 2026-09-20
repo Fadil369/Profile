@@ -10,7 +10,7 @@ export function Projects() {
       id="projects"
       data-scroll-anchor
       ref={ref}
-      className={`section reveal ${visible ? "is-visible" : ""}`}
+      className={`section section--tint reveal ${visible ? "is-visible" : ""}`}
     >
       <div className="projects-wrap">
         <div className="section-heading">
