@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE BRIDGING ARCHITECTURE | ThinkInSystems × BrainSAIT</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'flow': 'flow 2s linear infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        flow: {
+                            '0%': { strokeDashoffset: '24' },
+                            '100%': { strokeDashoffset: '0' },
+                        },
+                        glow: {
+                            '0%': { opacity: '0.4', filter: 'blur(20px)' },
+                            '100%': { opacity: '0.8', filter: 'blur(35px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #060913;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism primitives */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-panel-interactive {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-panel-interactive:hover {
+            background: rgba(30, 41, 59, 0.75);
+            border-color: rgba(45, 212, 191, 0.35);
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15), 0 0 30px rgba(45, 212, 191, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .glass-card-gold {
+            background: rgba(20, 16, 5, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060913;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+
+        /* Pipe Flow Particle Line */
+        .animated-pipe-line {
+            stroke-dasharray: 8 6;
+            animation: flow 1.5s linear infinite;
+        }
+
+        /* Ambient glowing circles */
+        .bg-glow-teal {
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .bg-glow-indigo {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative font-sans text-slate-200 antialiased selection:bg-teal-500 selection:text-slate-950">
+
+    <!-- Ambient Dynamic Canvas Background -->
+    <canvas id="canvas-bg" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+    <!-- Glowing Background Orbs -->
+    <div class="fixed top-1/4 left-10 w-96 h-96 bg-glow-teal rounded-full animate-glow pointer-events-none z-0"></div>
+    <div class="fixed bottom-1/3 right-10 w-[500px] h-[500px] bg-glow-indigo rounded-full animate-glow pointer-events-none z-0" style="animation-delay: 2s;"></div>
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 w-full glass-panel border-b border-slate-800/80 px-4 lg:px-8 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Mark -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-indigo-600 p-[1px] flex items-center justify-center shadow-lg shadow-teal-500/20">
+                    <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
+                        <i class="fa-solid fa-diagram-project text-teal-400 text-lg"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block">Executive Strategy</span>
+                    <span class="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
+                        THE LEVERAGE POINT <span class="text-teal-400 text-xs font-normal">v2.6</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
+                <a href="#synthesis" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">The Synthesis</a>
+                <a href="#bridges" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Strategic Bridges</a>
+                <a href="#dynamics" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">System Dynamics</a>
+                <a href="#matrix" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Value Matrix</a>
+                <a href="#pathway" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">90-Day Plan</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="flex items-center space-x-3">
+                <button onclick="openTerminal()" class="px-3.5 py-1.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-mono font-medium flex items-center gap-2 transition cursor-pointer">
+                    <i class="fa-solid fa-robot text-teal-400"></i>
+                    <span>Gemini AI Strategy</span>
+                </button>
+                <a href="#pathway" class="hidden sm:inline-flex px-4 py-1.5 rounded-lg bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-400 hover:to-indigo-500 text-slate-950 font-semibold text-xs transition shadow-lg shadow-teal-500/25">
+                    Launch Partnership
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 space-y-20">
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-8 pb-12 text-center space-y-8">
+            <!-- Prepared Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-teal-500/30 text-xs text-teal-300 font-mono shadow-inner animate-float">
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                <span>Exclusively Prepared for Dr. Mohamed El Fadil (@Mohamed)</span>
+                <span class="text-slate-500">|</span>
+                <span class="text-slate-400">September 2026</span>
+            </div>
+
+            <!-- Main Title -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                    THE BRIDGING <span class="text-gradient-cyan">ARCHITECTURE</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+                    Synthesizing <span class="text-teal-300 font-medium">ThinkInSystems</span> Methodology with <span class="text-indigo-300 font-medium">BrainSAIT</span> Health Execution Engine for Saudi Arabia's Vision 2030.
+                </p>
+            </div>
+
+            <!-- Central Epigraph Card -->
+            <div class="max-w-3xl mx-auto p-6 rounded-2xl glass-panel border border-slate-800 text-left relative overflow-hidden group">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all duration-500"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl text-teal-400 font-serif leading-none pt-1">“</div>
+                    <blockquote class="text-sm sm:text-base text-slate-300 italic leading-relaxed">
+                        Systems thinkers don't fixate on friction—they identify complementary stocks, align hidden feedback loops, and build high-flow pipes between existing capabilities.
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Hero Action Controls -->
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a href="#synthesis" class="px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-400 hover:to-indigo-500 text-slate-950 font-bold text-sm shadow-xl shadow-teal-500/20 transition flex items-center gap-2">
+                    <span>Explore The Synthesis</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+                <button onclick="toggleFlowSimulator()" class="px-6 py-3 rounded-xl glass-panel hover:bg-slate-800/80 text-teal-300 border border-teal-500/30 text-sm font-medium transition flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-play text-xs text-teal-400"></i>
+                    <span>Simulate Pipeline Flow</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 1: THE CORE SYNTHESIS (INTERACTIVE STOCKS & PIPE) -->
+        <section id="synthesis" class="space-y-8 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <div class="text-xs font-mono uppercase tracking-widest text-teal-400">System Dynamics Model</div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">The Core Synthesis: Stocks & Flows</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Connecting pure conceptual methodology with native clinical execution infrastructure.</p>
+            </div>
+
+            <!-- Stocks Visualizer Canvas Box -->
+            <div class="p-6 lg:p-8 rounded-3xl glass-panel border border-slate-800 relative overflow-hidden space-y-8">
+                <!-- Interactive Pipe Header Status -->
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="text-sm font-mono font-medium text-slate-300">Pipe Status: <span id="pipe-status-text" class="text-teal-400 font-bold">READY FOR HIGH-FLOW ACTIVATION</span></span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+                        <i class="fa-solid fa-gauge-high text-teal-400"></i>
+                        <span>Target Region: KSA Vision 2030 Health Transformation</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Dual Stock Graphic -->
+                <div class="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
+                    
+                    <!-- Stock A Card -->
+                    <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-900/90 border border-teal-500/30 space-y-4 hover:border-teal-400 transition-all duration-300 shadow-xl">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 text-lg border border-teal-500/30">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-base">STOCK A: ThinkInSystems</h3>
+                                    <span class="text-xs text-teal-400 font-mono">The Methodology Stock ™</span>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30">PURE LENS</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Category-defining strategic frameworks, systems dynamics positioning, decision-making models, and executive authority.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-400 font-mono">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Proprietary Second/Third-Order Framework</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> High-Level Decision Maker Positioning</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Category Name Protection (™)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Flow Pipe Connector (Desktop SVG & Mobile Visual) -->
+                    <div class="lg:col-span-1 flex flex-col items-center justify-center py-2 lg:py-0">
+                        <div class="relative w-full flex items-center justify-center">
+                            <svg class="w-full h-12 hidden lg:block" viewBox="0 0 100 40">
+                                <line x1="0" y1="20" x2="100" y2="20" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+                                <line id="animated-svg-pipe" x1="0" y1="20" x2="100" y2="20" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" class="animated-pipe-line" />
+                            </svg>
+                            <div class="lg:hidden w-1 h-12 bg-teal-500/40 relative overflow-hidden">
+                                <div class="w-full h-full bg-teal-400 animate-pulse"></div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-mono text-teal-400 font-bold tracking-widest mt-1 uppercase">THE PIPE</span>
+                    </div>
+
+                    <!-- Stock B Card -->
+                    <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-4 hover:border-indigo-400 transition-all duration-300 shadow-xl">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg border border-indigo-500/30">
+                                    <i class="fa-solid fa-server"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-base">STOCK B: BrainSAIT</h3>
+                                    <span class="text-xs text-indigo-400 font-mono">The Execution Engine ✅</span>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">LIVE LABORATORY</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Deep healthcare infrastructure, native FHIR & NPHIES integration, Arabic AI agent suites, DGA & Insurance Authority credentials.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-400 font-mono">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> NPHIES / FHIR Workflow Engine (ClaimLinc)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Arabic-First Automated Publishing (PulseForge)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> DGA & Insurance Authority Registrations</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Synthesis Formula Result Box -->
+                <div class="p-4 rounded-xl bg-gradient-to-r from-teal-950/60 via-slate-900 to-indigo-950/60 border border-slate-700/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-sparkles text-amber-400 text-xl"></i>
+                        <div>
+                            <div class="text-xs font-mono text-slate-400">SYNERGISTIC EQUATION</div>
+                            <div class="text-sm font-semibold text-white">Methodology (Stock A) + Clinical Engine (Stock B) = <span class="text-gradient-cyan">Category-Defining Transformation</span></div>
+                        </div>
+                    </div>
+                    <button onclick="scrollToBridges()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-teal-300 border border-slate-700 transition">
+                        Explore 4 Strategic Bridges &rarr;
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE 4 STRATEGIC BRIDGES -->
+        <section id="bridges" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <div class="text-xs font-mono uppercase tracking-widest text-teal-400">Value Creation Corridors</div>
+                    <h2 class="text-3xl font-bold tracking-tight">The Four Strategic Bridges</h2>
+                </div>
+                <p class="text-xs font-mono text-slate-400">Click any bridge card to view Saudi healthcare application</p>
+            </div>
+
+            <!-- Bridge Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Bridge 1 -->
+                <div onclick="showBridgeDetail(1)" class="glass-panel-interactive p-6 rounded-2xl cursor-pointer group space-y-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30 font-semibold">BRIDGE 1 · TEACH</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition">Method Meets Laboratory</h3>
+                        <p class="text-xs text-slate-400 mt-1">Grounding abstract system dynamics in real-world NPHIES claims data and clinical workflows.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+                        <span>Saudi Exec Masterclasses</span>
+                        <i class="fa-solid fa-chevron-right text-teal-400 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Bridge 2 -->
+                <div onclick="showBridgeDetail(2)" class="glass-panel-interactive p-6 rounded-2xl cursor-pointer group space-y-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-earth-middle-east"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold">BRIDGE 2 · SCALE</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition">Arabic-First Regional Access</h3>
+                        <p class="text-xs text-slate-400 mt-1">Localization and publication of executive systems literature for KSA decision makers.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+                        <span>PulseForge Automated Publishing</span>
+                        <i class="fa-solid fa-chevron-right text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Bridge 3 -->
+                <div onclick="showBridgeDetail(3)" class="glass-panel-interactive p-6 rounded-2xl cursor-pointer group space-y-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold">BRIDGE 3 · BUILD</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition">Frameworks as Digital Agent SKUs</h3>
+                        <p class="text-xs text-slate-400 mt-1">Transforming static mental models into active, automated AI agent workflows.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+                        <span>799 SAR Software Agent Store</span>
+                        <i class="fa-solid fa-chevron-right text-cyan-400 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Bridge 4 -->
+                <div onclick="showBridgeDetail(4)" class="glass-panel-interactive p-6 rounded-2xl cursor-pointer group space-y-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">BRIDGE 4 · CREDIBILITY</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-amber-300 transition">Regulatory Anchor & Public Bids</h3>
+                        <p class="text-xs text-slate-400 mt-1">Unlocking public sector tenders via official DGA and Insurance Authority registrations.</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+                        <span>Institutional Tenders</span>
+                        <i class="fa-solid fa-chevron-right text-amber-400 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Dynamic Bridge Inspector Modal/Drawer Container -->
+            <div id="bridge-inspector" class="p-6 rounded-2xl bg-slate-900 border border-teal-500/40 space-y-4 hidden animate-float">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2">
+                        <i id="inspector-icon" class="fa-solid fa-bridge text-teal-400 text-lg"></i>
+                        <h4 id="inspector-title" class="font-bold text-white text-base">Bridge Detail Inspector</h4>
+                    </div>
+                    <button onclick="closeBridgeInspector()" class="text-slate-400 hover:text-white text-xs font-mono">
+                        <i class="fa-solid fa-xmark"></i> Close
+                    </button>
+                </div>
+                <div id="inspector-content" class="text-sm text-slate-300 leading-relaxed">
+                    <!-- Dynamic details injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SYSTEM DYNAMICS & FEEDBACK LOOPS -->
+        <section id="dynamics" class="space-y-8 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <div class="text-xs font-mono uppercase tracking-widest text-teal-400">Compounding Engine</div>
+                <h2 class="text-3xl font-bold tracking-tight">The Reinforcing Feedback Loop</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Every turn of this engine reduces customer acquisition costs and builds institutional momentum.</p>
+            </div>
+
+            <!-- Interactive Step Loop Player -->
+            <div class="p-6 lg:p-8 rounded-3xl glass-panel border border-slate-800 space-y-8">
+                <!-- Step Navigation Pills -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button onclick="setLoopStep(1)" id="loop-btn-1" class="p-3 rounded-xl bg-teal-500/20 border border-teal-500 text-teal-300 text-xs font-mono font-medium text-center transition">
+                        1. Co-Authored Insight
+                    </button>
+                    <button onclick="setLoopStep(2)" id="loop-btn-2" class="p-3 rounded-xl bg-slate-800/60 border border-slate-700 text-slate-400 text-xs font-mono font-medium text-center transition">
+                        2. Pilot Masterclass
+                    </button>
+                    <button onclick="setLoopStep(3)" id="loop-btn-3" class="p-3 rounded-xl bg-slate-800/60 border border-slate-700 text-slate-400 text-xs font-mono font-medium text-center transition">
+                        3. Proof & Case Study
+                    </button>
+                    <button onclick="setLoopStep(4)" id="loop-btn-4" class="p-3 rounded-xl bg-slate-800/60 border border-slate-700 text-slate-400 text-xs font-mono font-medium text-center transition">
+                        4. Paid Executive Cohort
+                    </button>
+                </div>
+
+                <!-- Display Step Canvas Card -->
+                <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col md:flex-row items-center gap-6">
+                    <div id="loop-step-icon" class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-teal-500 to-indigo-600 flex items-center justify-center text-3xl text-slate-950 font-bold shrink-0">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <div class="space-y-2 text-left">
+                        <div id="loop-step-badge" class="text-xs font-mono text-teal-400">STAGE 01 · FRICTIONLESS ENTRY</div>
+                        <h3 id="loop-step-title" class="text-xl font-bold text-white">Co-Authored Thought Leadership</h3>
+                        <p id="loop-step-desc" class="text-sm text-slate-300 leading-relaxed">
+                            Publish a single high-impact, bilingual article examining systemic healthcare dynamics in KSA. Generates immediate category authority with zero financial risk.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Donella Meadows Leverage Hierarchy Spectrum -->
+                <div class="pt-6 border-t border-slate-800 space-y-4">
+                    <h4 class="text-sm font-mono text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-teal-400"></i>
+                        <span>Donella Meadows Leverage Ranking Applied</span>
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+                        <div class="p-4 rounded-xl bg-slate-900/80 border border-teal-500/40 space-y-2">
+                            <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-[10px]">RANK 2 · PARADIGMS</span>
+                            <div class="text-sm font-bold text-white">Reframe Web Properties</div>
+                            <p class="text-slate-400">Shift from passive brochures to active AI agent discovery nodes.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/80 border border-indigo-500/40 space-y-2">
+                            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px]">RANK 6 · INFO FLOWS</span>
+                            <div class="text-sm font-bold text-white">Expose Live Proof</div>
+                            <p class="text-slate-400">Publish active NPHIES workflow analytics & case studies.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/80 border border-purple-500/40 space-y-2">
+                            <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]">RANK 7 · REINFORCING LOOPS</span>
+                            <div class="text-sm font-bold text-white">Pilot-to-Cohort Engine</div>
+                            <p class="text-slate-400">Activate the self-compounding educational pipeline.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: VALUE EXCHANGE MATRIX & SYNERGISTIC CALCULATOR -->
+        <section id="matrix" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <div class="text-xs font-mono uppercase tracking-widest text-teal-400">Capabilities Synthesis</div>
+                    <h2 class="text-3xl font-bold tracking-tight">The Value Exchange Matrix</h2>
+                </div>
+                <span class="text-xs font-mono text-slate-400">Mutual alignment across all operational axes</span>
+            </div>
+
+            <!-- Responsive Glass Table -->
+            <div class="overflow-x-auto rounded-2xl glass-panel border border-slate-800">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="bg-slate-900/90 text-xs font-mono uppercase text-teal-400 border-b border-slate-800">
+                        <tr>
+                            <th class="p-4">Dimension</th>
+                            <th class="p-4">ThinkInSystems Asset</th>
+                            <th class="p-4">BrainSAIT Asset</th>
+                            <th class="p-4">Synergistic Market Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 font-mono text-xs">
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-4 font-bold text-white">Intellectual Capital</td>
+                            <td class="p-4 text-teal-300">Systems thinking method & ™ framing</td>
+                            <td class="p-4 text-indigo-300">FHIR, NPHIES & Critical Care expertise</td>
+                            <td class="p-4 text-slate-200">Unrivaled authority on healthcare complexity</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-4 font-bold text-white">Localization & Reach</td>
+                            <td class="p-4 text-teal-300">Global strategic executive narrative</td>
+                            <td class="p-4 text-indigo-300">Arabic-first translation & KSA network</td>
+                            <td class="p-4 text-slate-200">Direct relevance to Saudi health leaders</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-4 font-bold text-white">Delivery Engine</td>
+                            <td class="p-4 text-teal-300">Conceptual mental model tools</td>
+                            <td class="p-4 text-indigo-300">PulseForge publishing & Agent store</td>
+                            <td class="p-4 text-slate-200">Multi-channel ecosystem (Media, Software, Cohorts)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-4 font-bold text-white">Institutional Standing</td>
+                            <td class="p-4 text-teal-300">Methodological prestige</td>
+                            <td class="p-4 text-indigo-300">DGA & Insurance Authority vendor status</td>
+                            <td class="p-4 text-slate-200">Rapid qualification for public sector tenders</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Interactive Synergistic Revenue & Reach Calculator -->
+            <div class="p-6 rounded-2xl glass-card-gold space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-500/20 pb-4">
+                    <div>
+                        <div class="text-xs font-mono uppercase tracking-widest text-amber-400">Interactive Projection Model</div>
+                        <h3 class="text-lg font-bold text-white">Collaborative Reach & Revenue Estimator</h3>
+                    </div>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30">SAUDI ARABIA MARKET</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Sliders Box -->
+                    <div class="space-y-4 lg:col-span-2">
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                <span>Annual Executive Cohort Size:</span>
+                                <span id="calc-cohort-val" class="text-amber-400 font-bold">50 Leaders</span>
+                            </div>
+                            <input type="range" id="calc-cohort" min="10" max="200" value="50" step="10" oninput="updateCalculator()" class="w-full accent-amber-400 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                <span>Masterclass Price per Seat (SAR):</span>
+                                <span id="calc-price-val" class="text-amber-400 font-bold">4,500 SAR</span>
+                            </div>
+                            <input type="range" id="calc-price" min="2000" max="12000" value="4500" step="500" oninput="updateCalculator()" class="w-full accent-amber-400 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="p-4 rounded-xl bg-slate-950/90 border border-amber-500/30 text-center flex flex-col justify-center space-y-2">
+                        <div class="text-xs font-mono text-slate-400">PROJECTED COHORT VALUE</div>
+                        <div id="calc-total-sar" class="text-2xl sm:text-3xl font-extrabold text-gradient-gold">225,000 SAR</div>
+                        <div class="text-[10px] font-mono text-slate-400">Excludes software agent sales & institutional tenders</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: 90-DAY GATED PATHWAY -->
+        <section id="pathway" class="space-y-8 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <div class="text-xs font-mono uppercase tracking-widest text-teal-400">Risk-Mitigated Roadmap</div>
+                <h2 class="text-3xl font-bold tracking-tight">The 90-Day Gated Execution Blueprint</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Advance only on market evidence. Never on unverified enthusiasm.</p>
+            </div>
+
+            <!-- Timeline Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Phase 1 -->
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-teal-400 space-y-4">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-teal-400 font-bold">PHASE 1</span>
+                        <span class="text-slate-500">DAYS 0–30</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">Share & Align</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Co-author a single high-impact bilingual thought leadership article. Verify initial cross-channel audience resonance.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-teal-300">
+                        <i class="fa-solid fa-circle-check"></i> Gate 1: Response verified
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-indigo-400 space-y-4">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-indigo-400 font-bold">PHASE 2</span>
+                        <span class="text-slate-500">DAYS 31–60</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">Pilot & Demonstrate</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Host a 90-minute joint executive masterclass mapping NPHIES system lifecycles. Execute under a simple 1-page LOI.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-indigo-300">
+                        <i class="fa-solid fa-circle-check"></i> Gate 2: Signups & feedback secured
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-purple-400 space-y-4">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-purple-400 font-bold">PHASE 3</span>
+                        <span class="text-slate-500">DAYS 61–90</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base">Scale & Formalize</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Launch the paid executive cohort, package frameworks into Agent SKUs, and evaluate formal licensing agreements.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-purple-300">
+                        <i class="fa-solid fa-circle-check"></i> Gate 3: Testimonials & repeat demand
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Opening Invitation Script Box -->
+            <div class="p-6 rounded-2xl bg-slate-900/90 border border-teal-500/30 space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-teal-400"></i>
+                        <h3 class="font-bold text-white text-sm">Recommended Opening Salvo Script</h3>
+                    </div>
+                    <button onclick="copySalvoScript()" class="px-3 py-1.5 rounded bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 text-xs font-mono border border-teal-500/30 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copy-btn-text">Copy Invitation Text</span>
+                    </button>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950 text-xs font-mono text-slate-300 leading-relaxed border border-slate-800 select-all" id="salvo-text">
+"BrainSAIT builds Arabic-first, NPHIES- and FHIR-native systems for Saudi health transformation. ThinkInSystems has crafted a powerful lens for navigating complex organizational dynamics. We see an incredible opportunity to pair your systems-thinking methodology with our live clinical infrastructure—co-authoring a bilingual executive piece and hosting a joint masterclass for health-system leaders in Riyadh. Let's explore how our combined strengths can frame the future of healthcare transformation."
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: GEMINI AI STRATEGY ASSISTANT TERMINAL -->
+        <section id="ai-terminal-section" class="space-y-6 scroll-mt-24">
+            <div class="p-6 lg:p-8 rounded-3xl glass-panel border border-teal-500/30 space-y-6 shadow-2xl relative overflow-hidden">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 text-xl">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Gemini AI Partnership Strategy Terminal</h3>
+                            <p class="text-xs text-slate-400">Powered by Gemini 3 Flash · Interactive Strategic Co-Pilot</p>
+                        </div>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/30">LIVE API INTEGRATION</span>
+                </div>
+
+                <!-- Terminal Output Display -->
+                <div id="terminal-output" class="p-4 rounded-xl bg-slate-950 border border-slate-800 h-64 overflow-y-auto text-xs font-mono text-slate-300 space-y-3">
+                    <div class="text-teal-400">
+                        [System Initialized]: Gemini 3 Flash Strategy Engine Ready.<br>
+                        Select a quick prompt or type your custom strategy query below to generate tailored partnership collateral, LOIs, or workshop outlines.
+                    </div>
+                </div>
+
+                <!-- Quick Prompts Buttons -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="runQuickPrompt('workshop')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-teal-300 border border-slate-700 transition">
+                        💡 Outline NPHIES Workshop
+                    </button>
+                    <button onclick="runQuickPrompt('loi')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-teal-300 border border-slate-700 transition">
+                        📄 Draft 1-Page Pilot LOI
+                    </button>
+                    <button onclick="runQuickPrompt('article')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-teal-300 border border-slate-700 transition">
+                        ✍️ Pitch Co-Authored Article
+                    </button>
+                </div>
+
+                <!-- Input Prompt Box -->
+                <div class="flex gap-2">
+                    <input type="text" id="ai-user-prompt" placeholder="Ask Gemini strategy assistant (e.g., 'Draft a pitch for a Riyadh hospital CEO')..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-teal-500 font-mono">
+                    <button onclick="executeGeminiQuery()" id="ai-submit-btn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-400 hover:to-indigo-500 text-slate-950 font-bold text-xs transition flex items-center gap-2">
+                        <span>Execute</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-slate-800/80 bg-slate-950/80 py-12 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-shield-cat text-teal-400 text-base"></i>
+                <span>ThinkInSystems × BrainSAIT · Vision 2030 Health Alignment</span>
+            </div>
+            <div>
+                Prepared for Dr. Mohamed El Fadil (@Mohamed) · September 2026
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#synthesis" class="hover:text-teal-400 transition">Top</a>
+                <a href="#bridges" class="hover:text-teal-400 transition">Bridges</a>
+                <a href="#pathway" class="hover:text-teal-400 transition">90-Day Plan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. CANVAS AMBIENT BACKGROUND PARTICLES
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 1.5 + 0.5;
+                this.color = Math.random() > 0.5 ? 'rgba(45, 212, 191, ' : 'rgba(129, 140, 248, ';
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + this.alpha + ')';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 45; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            // Draw faint connecting lines
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(45, 212, 191, ${0.1 * (1 - dist / 120)})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        // 2. INTERACTIVE BRIDGE INSPECTOR DETAILS
+        const bridgeDetails = {
+            1: {
+                title: "Bridge 1: Method Meets Laboratory (TEACH)",
+                icon: "fa-solid fa-chalkboard-user text-teal-400",
+                text: "<strong>Grounding Abstract Systems Dynamics:</strong> ThinkInSystems' mental models (such as second-order loops and leverage points) are paired directly with BrainSAIT's live NPHIES claim submission data. Healthcare executives in Riyadh won't just study system dynamics in theory—they will map them on real-world clinical rejection cycles using live FHIR data flows."
+            },
+            2: {
+                title: "Bridge 2: Arabic-First Regional Access (SCALE)",
+                icon: "fa-solid fa-earth-middle-east text-indigo-400",
+                text: "<strong>Regional Executive Reach:</strong> BrainSAIT operates a bilingual automated publishing pipeline (PulseForge) and deep relationships across Saudi health clusters. This bridge translates and contextualizes ThinkInSystems' executive literature into Arabic-first executive Mini-Books and briefing papers for Ministry and hospital leadership."
+            },
+            3: {
+                title: "Bridge 3: Frameworks as Digital Agent SKUs (BUILD)",
+                icon: "fa-solid fa-microchip text-cyan-400",
+                text: "<strong>Software-Assisted Systems Tools:</strong> Translating static systems-thinking diagnostic templates into active AI software agents within BrainSAIT's marketplace (priced on the 799 SAR agent tier). Turns consulting frameworks into recurring software-assisted tools."
+            },
+            4: {
+                title: "Bridge 4: Regulatory Anchor & Public Bids (CREDIBILITY)",
+                icon: "fa-solid fa-shield-halved text-amber-400",
+                text: "<strong>Institutional Procurement Access:</strong> BrainSAIT holds official vendor registrations with the Digital Government Authority (DGA) and Insurance Authority. This allows the partnership to prime high-value public sector training tenders and regional health transformation contracts."
+            }
+        };
+
+        function showBridgeDetail(id) {
+            const inspector = document.getElementById('bridge-inspector');
+            const title = document.getElementById('inspector-title');
+            const icon = document.getElementById('inspector-icon');
+            const content = document.getElementById('inspector-content');
+
+            const item = bridgeDetails[id];
+            title.innerText = item.title;
+            icon.className = item.icon + " text-lg";
+            content.innerHTML = item.text;
+
+            inspector.classList.remove('hidden');
+            inspector.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function closeBridgeInspector() {
+            document.getElementById('bridge-inspector').classList.add('hidden');
+        }
+
+        // 3. REINFORCING LOOP STEP PLAYER
+        const loopSteps = {
+            1: {
+                badge: "STAGE 01 · FRICTIONLESS ENTRY",
+                title: "Co-Authored Thought Leadership",
+                desc: "Publish a single high-impact, bilingual article examining systemic healthcare dynamics in KSA. Generates immediate category authority with zero financial risk.",
+                icon: "fa-solid fa-file-pen"
+            },
+            2: {
+                badge: "STAGE 02 · PILOT DEMONSTRATION",
+                title: "Joint Executive Masterclass",
+                desc: "A 90-minute workshop mapping the NPHIES claims lifecycle as a system. Hosted under a simple 1-page LOI to capture initial signups and interest.",
+                icon: "fa-solid fa-people-group"
+            },
+            3: {
+                badge: "STAGE 03 · PROOF ARTIFACTS",
+                title: "Case Study & Testimonial Collection",
+                desc: "Transforming pilot participant feedback into visible proof artifacts. Published on brainsait.org to destroy verification gaps.",
+                icon: "fa-solid fa-award"
+            },
+            4: {
+                badge: "STAGE 04 · RECURRING REVENUE",
+                title: "Paid Cohort & Method Licensing",
+                desc: "Rolling out paid bilingual executive cohorts for Saudi health-system leaders and establishing method licensing structures.",
+                icon: "fa-solid fa-chart-line"
+            }
+        };
+
+        function setLoopStep(step) {
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`loop-btn-${i}`);
+                if (i === step) {
+                    btn.className = "p-3 rounded-xl bg-teal-500/20 border border-teal-500 text-teal-300 text-xs font-mono font-medium text-center transition";
+                } else {
+                    btn.className = "p-3 rounded-xl bg-slate-800/60 border border-slate-700 text-slate-400 text-xs font-mono font-medium text-center transition";
+                }
+            }
+            const data = loopSteps[step];
+            document.getElementById('loop-step-badge').innerText = data.badge;
+            document.getElementById('loop-step-title').innerText = data.title;
+            document.getElementById('loop-step-desc').innerText = data.desc;
+            document.getElementById('loop-step-icon').innerHTML = `<i class="${data.icon}"></i>`;
+        }
+
+        // 4. CALCULATOR MODEL
+        function updateCalculator() {
+            const cohort = parseInt(document.getElementById('calc-cohort').value);
+            const price = parseInt(document.getElementById('calc-price').value);
+
+            document.getElementById('calc-cohort-val').innerText = `${cohort} Leaders`;
+            document.getElementById('calc-price-val').innerText = `${price.toLocaleString()} SAR`;
+
+            const total = cohort * price;
+            document.getElementById('calc-total-sar').innerText = `${total.toLocaleString()} SAR`;
+        }
+
+        // 5. UTILITY FUNCTIONS
+        function scrollToBridges() {
+            document.getElementById('bridges').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleFlowSimulator() {
+            const statusText = document.getElementById('pipe-status-text');
+            const svgPipe = document.getElementById('animated-svg-pipe');
+
+            if (statusText.innerText.includes('ACTIVE')) {
+                statusText.innerText = "READY FOR HIGH-FLOW ACTIVATION";
+                statusText.className = "text-teal-400 font-bold";
+                if(svgPipe) svgPipe.style.animationDuration = "1.5s";
+            } else {
+                statusText.innerText = "HIGH-FLOW PARTNERSHIP ACTIVE (100% CAPACITY)";
+                statusText.className = "text-amber-400 font-bold animate-pulse";
+                if(svgPipe) svgPipe.style.animationDuration = "0.5s";
+            }
+        }
+
+        function copySalvoScript() {
+            const text = document.getElementById('salvo-text').innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const btnText = document.getElementById('copy-btn-text');
+            btnText.innerText = "Copied to Clipboard!";
+            setTimeout(() => {
+                btnText.innerText = "Copy Invitation Text";
+            }, 2500);
+        }
+
+        function openTerminal() {
+            document.getElementById('ai-terminal-section').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('ai-user-prompt').focus();
+        }
+
+        // 6. GEMINI API INTEGRATION (gemini-3-flash-preview)
+        async function fetchGeminiStrategy(promptText) {
+            const terminalOutput = document.getElementById('terminal-output');
+            const submitBtn = document.getElementById('ai-submit-btn');
+
+            // Append user prompt to terminal
+            const userMsg = document.createElement('div');
+            userMsg.className = "text-indigo-300 border-l-2 border-indigo-500 pl-2 my-2";
+            userMsg.innerHTML = `<strong>User:</strong> ${promptText}`;
+            terminalOutput.appendChild(userMsg);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
+            // Loading indicator
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = "text-amber-400 my-2 animate-pulse";
+            loadingMsg.innerHTML = `[Gemini 3 Flash Thinking... Processing Systems Context]`;
+            terminalOutput.appendChild(loadingMsg);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
+            submitBtn.disabled = true;
+
+            const systemInstruction = "Act as an elite executive strategist specializing in systems dynamics, Donella Meadows leverage frameworks, and Saudi Vision 2030 healthcare transformation. Provide concise, high-impact, professional advice for a partnership between ThinkInSystems (methodology brand) and BrainSAIT (healthcare technology engine). Keep responses clear, bulleted, and actionable.";
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: promptText }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            let retries = 0;
+            const maxRetries = 3;
+            let success = false;
+
+            while (retries < maxRetries && !success) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const result = await response.json();
+                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                    loadingMsg.remove();
+
+                    if (text) {
+                        const aiMsg = document.createElement('div');
+                        aiMsg.className = "text-slate-200 bg-slate-900/90 p-3 rounded-lg border border-teal-500/30 whitespace-pre-line my-2";
+                        aiMsg.innerHTML = `<strong>Gemini Strategy AI:</strong>\n${text}`;
+                        terminalOutput.appendChild(aiMsg);
+                    } else {
+                        throw new Error("No text response candidate.");
+                    }
+
+                    success = true;
+                } catch (err) {
+                    retries++;
+                    if (retries >= maxRetries) {
+                        loadingMsg.remove();
+                        const errMsg = document.createElement('div');
+                        errMsg.className = "text-red-400 my-2";
+                        errMsg.innerText = `[Error]: Unable to reach Gemini API. Please try again.`;
+                        terminalOutput.appendChild(errMsg);
+                    } else {
+                        await new Promise(res => setTimeout(res, 1000 * Math.pow(2, retries)));
+                    }
+                }
+            }
+
+            submitBtn.disabled = false;
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        function executeGeminiQuery() {
+            const input = document.getElementById('ai-user-prompt');
+            const val = input.value.trim();
+            if (val) {
+                fetchGeminiStrategy(val);
+                input.value = '';
+            }
+        }
+
+        function runQuickPrompt(type) {
+            let prompt = "";
+            if (type === 'workshop') {
+                prompt = "Draft a 90-minute executive workshop agenda titled 'Mapping NPHIES Claims as a Dynamic System' for Saudi hospital CEOs.";
+            } else if (type === 'loi') {
+                prompt = "Outline the key terms of a 1-page Letter of Intent (LOI) between a methodology partner and a healthcare software partner for a pilot workshop.";
+            } else if (type === 'article') {
+                prompt = "Provide 3 compelling co-authored article titles for ThinkInSystems and BrainSAIT regarding Vision 2030 digital health strategy.";
+            }
+            if (prompt) fetchGeminiStrategy(prompt);
+        }
+
+        // Enter key listener for prompt
+        document.getElementById('ai-user-prompt').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                executeGeminiQuery();
+            }
+        });
+    </script>
+</body>
+</html>

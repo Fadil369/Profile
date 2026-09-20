@@ -30,6 +30,9 @@ export function Nav() {
               {item.label}
             </button>
           ))}
+          <a href="/the_leverage_point.html" className="nav-link" target="_blank" rel="noopener noreferrer">
+            The Leverage Point
+          </a>
         </div>
 
         <div className="nav-actions">
@@ -59,6 +62,9 @@ export function Nav() {
                 {item.label}
               </button>
             ))}
+            <a href="/the_leverage_point.html" className="drawer-link" target="_blank" rel="noopener noreferrer">
+              The Leverage Point
+            </a>
           </div>
         </div>
       )}

@@ -1,0 +1,9 @@
+{
+  "include": ["/*"],
+  "replacements": [
+    {
+      "source": "/the_leverage_point.html",
+      "destination": "/the_leverage_point.html"
+    }
+  ]
+}
