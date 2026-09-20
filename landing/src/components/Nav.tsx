@@ -4,7 +4,7 @@ import { GlobeIcon, MenuIcon, MoonIcon, SunIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
 import { withViewTransition } from "../viewTransition";
 
-const SECTION_IDS = ["about", "services", "experience", "skills", "projects", "ecosystem", "contact"] as const;
+const SECTION_IDS = ["about", "journey", "services", "registry", "impact", "experience", "skills", "projects", "ecosystem", "contact"] as const;
 
 export function Nav() {
   const { t, isDark, toggleLang, toggleTheme } = useAppState();

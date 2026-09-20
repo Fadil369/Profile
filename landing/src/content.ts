@@ -85,18 +85,32 @@ heroLocation: string;
   projectsTitle: string;
   ecosystemKicker: string;
   ecosystemTitle: string;
+  bprJourneyKicker: string;
+  bprJourneyTitle: string;
+  bprJourneySteps: { title: string; desc: string }[];
+  registryKicker: string;
+  registryTitle: string;
+  registryDesc: string;
+  registryCta: string;
+  registryCtaSecondary: string;
+  impactKicker: string;
+  impactTitle: string;
+  impactStats: StatItem[];
   contactKicker: string;
   contactTitle: string;
   contactText: string;
   footerText: string;
   nav: {
     about: string;
+    journey: string;
+    services: string;
+    registry: string;
+    impact: string;
     experience: string;
     skills: string;
     projects: string;
     ecosystem: string;
     contact: string;
-    services: string;
   };
   levels: Record<SkillItem["level"], string>;
   statuses: Record<ProjectItem["status"], string>;
@@ -141,6 +155,39 @@ export const CONTENT: Record<Lang, LangContent> = {
     projectsTitle: "مشاريع مختارة",
     ecosystemKicker: "المنظومة",
     ecosystemTitle: "أين تجدني",
+    bprJourneyKicker: "رحلة التحول",
+    bprJourneyTitle: "من المستخدم إلى المشغّل",
+    bprJourneySteps: [
+      {
+        title: "الطبيب كمستخدم",
+        desc: "يقف في الصف الأول مع المرضى، ثم يُطلب منه أن يتنقل بين عشرات الشاشات والأنظمة التي لم تُبنَ له."
+      },
+      {
+        title: "نقطة الانهيار",
+        desc: "كوفيد-19 والمطالبات المرفوضة كشفتا الحقيقة: الطبيب يُحاسب على أخطاء أنظمة لا يملك التحكم فيها."
+      },
+      {
+        title: "السؤال الجذري",
+        desc: "لماذا نطلب من الطبيب أن يتكيف مع النظام؟ لماذا لا نبني النظام حول الطبيب؟"
+      },
+      {
+        title: "رؤية برينسايت",
+        desc: "نظام هوية وتشغيل ذكي يعرف الطبيب، يحميه، ويجعل الأدوات تظهر حسب السياق بدل البحث عنها."
+      }
+    ],
+    registryKicker: "السجل الطبي الرقمي",
+    registryTitle: "BRAINSAIT OID Provider Registry",
+    registryDesc: "هوية موثوقة لكل مقدم رعاية. صلاحيات قابلة للتحقق. ربط مباشر بالأنظمة التي يحتاجها الطبيب. انضم إلى السجل الذي يعيد التحكم إلى الطبيب.",
+    registryCta: "استكشف السجل",
+    registryCtaSecondary: "تحقق من هوية مقدم خدمة",
+    impactKicker: "الأثر",
+    impactTitle: "ما الذي نبنيه معًا",
+    impactStats: [
+      { value: "+10", label: "سنوات خبرة سريرية وتقنية" },
+      { value: "+50k", label: "تنزيل مفتوح المصدر" },
+      { value: "3", label: "قارات وصل إليها الأثر" },
+      { value: "146", label: "خدمة سحابية في المنظومة" }
+    ],
     contactKicker: "لنتحدث",
     contactTitle: "هل لديك مشروع رعاية صحية بالذكاء الاصطناعي؟",
     contactText:
@@ -148,12 +195,15 @@ export const CONTENT: Record<Lang, LangContent> = {
     footerText: "© 2026 د. محمد الفاضل — مؤسس BrainSAIT",
     nav: {
       about: "نبذة",
+      journey: "الرحلة",
+      services: "الخدمات",
+      registry: "السجل",
+      impact: "الأثر",
       experience: "الخبرة",
       skills: "المهارات",
       projects: "المشاريع",
       ecosystem: "المنظومة",
-      contact: "تواصل",
-      services: "الخدمات"
+      contact: "تواصل"
     },
     levels: {
       Expert: "خبير",
@@ -491,6 +541,39 @@ export const CONTENT: Record<Lang, LangContent> = {
     projectsTitle: "Featured Projects",
     ecosystemKicker: "Ecosystem",
     ecosystemTitle: "Where to Find Me",
+    bprJourneyKicker: "The Journey",
+    bprJourneyTitle: "From User to Operator",
+    bprJourneySteps: [
+      {
+        title: "The Physician as User",
+        desc: "On the frontline with patients, then asked to navigate dozens of screens and systems that were never built for them."
+      },
+      {
+        title: "The Breaking Point",
+        desc: "COVID-19 and rejected claims revealed the truth: physicians are blamed for errors in systems they do not control."
+      },
+      {
+        title: "The Radical Question",
+        desc: "Why do we ask the physician to adapt to the system? Why not build the system around the physician?"
+      },
+      {
+        title: "The BrainSAIT Vision",
+        desc: "An identity and intelligent operating layer that knows the physician, protects them, and surfaces the right tools at the right moment."
+      }
+    ],
+    registryKicker: "Provider Registry",
+    registryTitle: "BRAINSAIT OID Provider Registry",
+    registryDesc: "A trusted identity for every healthcare provider. Verifiable credentials. Direct integration with the systems they need. Join the registry that returns control to the physician.",
+    registryCta: "Explore the Registry",
+    registryCtaSecondary: "Verify a Provider",
+    impactKicker: "Impact",
+    impactTitle: "What We Are Building Together",
+    impactStats: [
+      { value: "10+", label: "Years Clinical & AI" },
+      { value: "50k+", label: "Open Source Downloads" },
+      { value: "3", label: "Continents Reached" },
+      { value: "146", label: "Cloud Services in Ecosystem" }
+    ],
     contactKicker: "Let’s Talk",
     contactTitle: "Have a healthcare AI project in mind?",
     contactText:
@@ -498,12 +581,15 @@ export const CONTENT: Record<Lang, LangContent> = {
     footerText: "© 2026 Dr. Mohamed El Fadil — Founder, BrainSAIT",
     nav: {
       about: "About",
+      journey: "Journey",
+      services: "Services",
+      registry: "Registry",
+      impact: "Impact",
       experience: "Experience",
       skills: "Skills",
       projects: "Projects",
       ecosystem: "Ecosystem",
-      contact: "Contact",
-      services: "Services"
+      contact: "Contact"
     },
     levels: {
       Expert: "Expert",

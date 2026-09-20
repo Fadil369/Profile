@@ -1213,6 +1213,165 @@ html[dir="rtl"] .timeline-item {
   }
 }
 
+/* ---------- bpr journey ---------- */
+
+.journey-wrap {
+  padding: 90px 0 100px;
+}
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+.journey-card {
+  position: relative;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.journey-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--glow-shadow);
+}
+.journey-step {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  opacity: 0.7;
+}
+[dir="rtl"] .journey-step {
+  right: auto;
+  left: 20px;
+}
+.journey-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.journey-card h3 {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+.journey-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---------- registry ---------- */
+
+.registry-wrap {
+  padding: 64px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.registry-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.registry-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: var(--glow-shadow);
+  position: relative;
+}
+.registry-wrap .section-heading {
+  margin-bottom: 0;
+  position: relative;
+}
+.registry-desc {
+  max-width: 640px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  position: relative;
+}
+.registry-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  position: relative;
+}
+.registry-ctas .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---------- impact ---------- */
+
+.impact-wrap {
+  padding: 90px 0 100px;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.impact-card {
+  padding: 34px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.impact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--glow-shadow);
+}
+.impact-value {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 52px);
+  background: linear-gradient(135deg, var(--accent), var(--text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.impact-label {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 200px;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 860px) {

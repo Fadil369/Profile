@@ -4,7 +4,10 @@ import { OrbBackground } from "./components/OrbBackground";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { BPRJourney } from "./components/BPRJourney";
 import { Services } from "./components/Services";
+import { Registry } from "./components/Registry";
+import { Impact } from "./components/Impact";
 import { Experience } from "./components/Experience";
 import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
@@ -24,7 +27,10 @@ export default function App() {
           <Nav />
           <Hero />
           <About />
+          <BPRJourney />
           <Services />
+          <Registry />
+          <Impact />
           <Experience />
           <Skills />
           <Projects />
