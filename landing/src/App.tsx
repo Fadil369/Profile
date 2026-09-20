@@ -17,12 +17,14 @@ import { Newsletter } from "./components/Newsletter";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { BookingModal } from "./components/BookingModal";
+import { ScrollProgressBar, BackToTop } from "./components/ScrollChrome";
 
 export default function App() {
   return (
     <AppStateProvider>
       <BookingProvider>
         <div className="app-root">
+          <ScrollProgressBar />
           <OrbBackground />
           <Nav />
           <Hero />
@@ -40,6 +42,7 @@ export default function App() {
           <Contact />
           <Footer />
           <BookingModal />
+          <BackToTop />
         </div>
       </BookingProvider>
     </AppStateProvider>

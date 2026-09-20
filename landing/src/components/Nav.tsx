@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppState } from "../AppState";
 import { GlobeIcon, MenuIcon, MoonIcon, SunIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
@@ -9,6 +9,14 @@ const SECTION_IDS = ["about", "journey", "services", "registry", "impact", "expe
 export function Nav() {
   const { t, isDark, toggleLang, toggleTheme } = useAppState();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navItems = SECTION_IDS.map((id) => ({ id, label: t.nav[id] }));
 
@@ -19,7 +27,7 @@ export function Nav() {
 
   return (
     <>
-      <nav className="nav">
+      <nav className={`nav${scrolled ? " nav--scrolled" : ""}`}>
         <button className="nav-brand" onClick={() => scrollToSection("top")}>
           {t.brand}
         </button>
@@ -65,6 +73,9 @@ export function Nav() {
             <a href="/the_leverage_point.html" className="drawer-link" target="_blank" rel="noopener noreferrer">
               The Leverage Point
             </a>
+            <button className="btn btn-primary drawer-book" onClick={() => { setMenuOpen(false); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+              {t.heroCtaMeet}
+            </button>
           </div>
         </div>
       )}
