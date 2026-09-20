@@ -76,41 +76,42 @@ html {
 }
 
 html[lang="ar"] {
-  /* Aref Ruqaa Ink: a hand-brushed, ink-bleed variant of Aref Ruqaa — every
-     repeated letter gets a slightly different stroke, so headings read as
-     genuinely handwritten rather than a mechanically repeated typeface. */
-  --heading-font: "Aref Ruqaa Ink", "Aref Ruqaa", serif;
+  /* Tajawal: clean geometric Arabic — crisp, premium, executive-grade at
+     display sizes; pairs with IBM Plex Sans Arabic for body. */
+  --heading-font: "Tajawal", "Inter", system-ui, sans-serif;
   --body-font: "IBM Plex Sans Arabic", sans-serif;
 }
 
 html[data-theme="dark"] {
-  --bg: #0f1117;
-  --surface: rgba(30, 32, 45, 0.6);
-  --border: rgba(233, 233, 237, 0.18);
-  --text: #f0f0f3;
-  --muted: rgba(233, 233, 237, 0.78);
-  --accent: #a99af0;
-  --accent-soft: rgba(169, 154, 240, 0.18);
-  --accent-soft-2: rgba(167, 161, 219, 0.14);
-  --glow-shadow: 0 8px 32px rgba(169, 154, 240, 0.38);
-  --statement-bg: linear-gradient(165deg, #b6a7f7 0%, #a99af0 45%, #8b78e2 100%);
-  --statement-ink: #0f1117;
+  --bg: #0d0f15;
+  --surface: rgba(27, 30, 42, 0.62);
+  --border: rgba(235, 236, 240, 0.16);
+  --text: #f2f2f6;
+  --muted: rgba(235, 236, 240, 0.78);
+  --accent: #a89bf5;
+  --accent-strong: #7a68e3;
+  --accent-soft: rgba(168, 155, 245, 0.16);
+  --accent-soft-2: rgba(168, 155, 245, 0.1);
+  --glow-shadow: 0 8px 32px rgba(122, 104, 227, 0.42);
+  --statement-bg: linear-gradient(165deg, #b9aaf8 0%, #a89bf5 45%, #7a68e3 100%);
+  --statement-ink: #0d0f15;
   --card-edge: rgba(255, 255, 255, 0.07);
 }
 
 html[data-theme="light"] {
-  --bg: #fdf8f0;
-  --surface: rgba(255, 255, 255, 0.75);
-  --border: rgba(41, 43, 49, 0.14);
-  --text: #1a1d23;
-  --muted: rgba(32, 34, 43, 0.75);
-  --accent: #6b5dd3;
-  --accent-soft: rgba(107, 93, 211, 0.16);
-  --accent-soft-2: rgba(107, 93, 211, 0.12);
-  --glow-shadow: 0 8px 28px rgba(107, 93, 211, 0.28);
-  --statement-bg: linear-gradient(165deg, #6b5dd3 0%, #5949c2 45%, #4839ae 100%);
-  --statement-ink: #fdf8f0;
-  --card-edge: rgba(255, 255, 255, 0.7);
+  --bg: #faf8f2;
+  --surface: rgba(255, 255, 255, 0.78);
+  --border: rgba(38, 40, 48, 0.13);
+  --text: #171922;
+  --muted: rgba(30, 32, 42, 0.78);
+  --accent: #6557cf;
+  --accent-strong: #44379e;
+  --accent-soft: rgba(101, 87, 207, 0.14);
+  --accent-soft-2: rgba(101, 87, 207, 0.09);
+  --glow-shadow: 0 8px 28px rgba(101, 87, 207, 0.3);
+  --statement-bg: linear-gradient(165deg, #6a5cd0 0%, #5849c0 45%, #44379e 100%);
+  --statement-ink: #faf8f2;
+  --card-edge: rgba(255, 255, 255, 0.75);
 }
 
 body {
@@ -2103,8 +2104,35 @@ html {
     flex-direction: column;
     padding: 32px 24px;
   }
+  .newsletter-content,
+  .newsletter-social {
+    min-width: 0;
+  }
   .service-card:hover {
     transform: translateY(-2px);
+  }
+}
+
+/* Mobile-first: compact section rhythm (section padding already provides 56px) */
+@media (max-width: 600px) {
+  .ecosystem-wrap,
+  .impact-wrap,
+  .journey-wrap,
+  .projects-wrap,
+  .services-wrap,
+  .skills-wrap,
+  .timeline-wrap,
+  .registry-layout {
+    padding: 40px 0 48px;
+  }
+  .newsletter-wrap {
+    padding: 48px 0;
+  }
+  .testimonials-wrap {
+    padding: 40px 0 24px;
+  }
+  .contact-wrap {
+    padding: 48px 6vw 40px;
   }
 }
 
@@ -2150,7 +2178,7 @@ html {
 
 .statement-label {
   font-family: var(--heading-font);
-  font-size: clamp(48px, 8vw, 96px);
+  font-size: clamp(34px, 8vw, 96px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
