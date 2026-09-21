@@ -101,6 +101,12 @@ heroLocation: string;
   contactText: string;
   footerText: string;
   leveragePoint: string;
+  workspaceCta: string;
+  workspaceHint: string;
+  workspaceExit: string;
+  workspaceBack: string;
+  workspaceStandard: string;
+  workspaceDock: { about: string; projects: string; collaborate: string };
   servicesKicker: string;
   servicesTitle: string;
   servicesSubtitle: string;
@@ -225,6 +231,12 @@ export const CONTENT: Record<Lang, LangContent> = {
       "أرحب بالتعاون مع المستشفيات والمطورين والمستثمرين المهتمين بتقنية الرعاية الصحية عبر الشرق الأوسط وأفريقيا.",
     footerText: "© 2026 د. محمد الفاضل — مؤسس BrainSAIT",
     leveragePoint: "نقطة الرفع",
+    workspaceCta: "استكشف مساحة عملي",
+    workspaceHint: "مكتب ثلاثي الأبعاد تفاعلي — طبيب، وصانع",
+    workspaceExit: "الموقع المبسّط",
+    workspaceBack: "العودة إلى المشهد",
+    workspaceStandard: "إغلاق",
+    workspaceDock: { about: "عنّي", projects: "مشاريعي", collaborate: "لنتعاون" },
     servicesKicker: "منظومة الرعاية التجديدية",
     servicesTitle: "بنية التحتية لسجل المزودين",
     servicesSubtitle: "من الطبيب المستخدم إلى الطبيب المشغّل — هوية، تحقق، وسير عمل ذكي.",
@@ -695,6 +707,12 @@ export const CONTENT: Record<Lang, LangContent> = {
       "Open to collaborating with hospitals, developers, and investors working on healthcare technology across the Middle East and Africa.",
     footerText: "© 2026 Dr. Mohamed El Fadil — Founder, BrainSAIT",
     leveragePoint: "The Leverage Point",
+    workspaceCta: "Explore my workspace",
+    workspaceHint: "An interactive 3D desk — physician, builder",
+    workspaceExit: "Standard website",
+    workspaceBack: "Back to the scene",
+    workspaceStandard: "Close",
+    workspaceDock: { about: "About Me", projects: "Projects", collaborate: "Collaborate" },
     servicesKicker: "The BPR Ecosystem",
     servicesTitle: "Provider Registry Infrastructure",
     servicesSubtitle:
