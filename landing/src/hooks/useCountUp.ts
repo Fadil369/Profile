@@ -15,7 +15,7 @@ export function useCountUp({
   suffix = "",
   trigger = true,
 }: CountUpOptions) {
-  const [displayValue, setDisplayValue] = useState<string>("0");
+  const [displayValue, setDisplayValue] = useState<string>(`${end.toLocaleString("en-US", { maximumFractionDigits: decimals, minimumFractionDigits: decimals })}${suffix}`);
   const animationRef = useRef<number>();
   const startTimeRef = useRef<number>();
 
@@ -46,8 +46,8 @@ export function useCountUp({
 
   useEffect(() => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    if (!trigger) {
-      setDisplayValue("0");
+    if (!trigger || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayValue(formatNumber(end, decimals, suffix));
       return;
     }
     startTimeRef.current = undefined;

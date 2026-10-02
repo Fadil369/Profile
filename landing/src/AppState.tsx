@@ -16,17 +16,18 @@ const AppStateContext = createContext<AppStateValue | null>(null);
 
 function readInitial<T extends string>(key: string, allowed: T[], fallback: T): T {
   if (typeof window === "undefined") return fallback;
-  const stored = typeof window !== "undefined" ? window.localStorage.getItem(key) : null;
+  let stored: string | null = null;
+  try { stored = window.localStorage.getItem(key); } catch { /* Storage may be blocked. */ }
   return (allowed as string[]).includes(stored || "") ? (stored as T) : fallback;
 }
 
-export function AppStateProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>(() => readInitial("elfadil-lang", ["ar", "en"], "ar"));
-  const [theme, setTheme] = useState<ThemeName>(() => readInitial("elfadil-theme", ["dark", "light"], "dark"));
+export function AppStateProvider({ children, initialPath = "/" }: { children: ReactNode; initialPath?: string }) {
+  const [lang] = useState<Lang>(initialPath === "/en" || initialPath.startsWith("/en/") ? "en" : "ar");
+  const [theme, setTheme] = useState<ThemeName>("dark");
+  useEffect(() => { setTheme(readInitial<ThemeName>("elfadil-theme", ["dark", "light"], "dark")); }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("elfadil-lang", lang);
-    window.localStorage.setItem("elfadil-theme", theme);
+    try { window.localStorage.setItem("elfadil-theme", theme); } catch { /* Keep preferences in memory. */ }
     const root = document.documentElement;
     root.lang = lang;
     root.dir = lang === "ar" ? "rtl" : "ltr";
@@ -41,7 +42,11 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       isAr,
       isDark: theme === "dark",
       t: CONTENT[lang],
-      toggleLang: () => withViewTransition(() => setLang((l) => (l === "ar" ? "en" : "ar"))),
+      toggleLang: () => {
+        const next = lang === "ar" ? "en" : "ar";
+        const path = window.location.pathname.replace(/^\/(ar|en)(?=\/|$)/, "");
+        window.location.assign(`/${next}${path === "/" ? "" : path}${window.location.search}${window.location.hash}`);
+      },
       toggleTheme: () => withViewTransition(() => setTheme((th) => (th === "dark" ? "light" : "dark")))
     };
   }, [lang, theme]);

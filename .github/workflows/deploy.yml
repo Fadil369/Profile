@@ -1,4 +1,4 @@
-name: Deploy site
+name: Preview and promote site
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
     paths:
       - "landing/**"
       - "wrangler.jsonc"
+      - "worker.js"
       - "package.json"
       - ".github/workflows/deploy.yml"
   pull_request:
@@ -15,46 +16,90 @@ on:
     paths:
       - "landing/**"
       - "wrangler.jsonc"
+      - "worker.js"
       - "package.json"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
+    inputs:
+      action:
+        description: Create a preview or promote an already reviewed version
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - promote
+      version:
+        description: Reviewed Cloudflare version UUID (required only for promotion)
+        required: false
+        type: string
 
 permissions:
   contents: read
   deployments: write
-  pull-requests: write
+
+concurrency:
+  group: site-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  preview:
+    if: github.event_name != 'workflow_dispatch' || inputs.action == 'preview'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ⚙️
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: landing/package-lock.json
 
-      - name: Build landing (Vite/React) 🔧
+      - name: Build and prerender
         run: |
           npm --prefix landing ci
           npm --prefix landing run build
 
-      - name: Deploy to Cloudflare Workers 🚀 (Production)
-        if: github.event_name != 'pull_request'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+      - name: Install browser for route and accessibility checks
+        run: npm --prefix landing exec -- playwright install --with-deps chromium
 
-      - name: Deploy Preview to Cloudflare Workers 🔍 (PR)
-        if: github.event_name == 'pull_request'
+      - name: Verify the built site against the Workers runtime
+        run: |
+          npx --yes wrangler@4.135.0 dev --ip 127.0.0.1 --port 8794 --inspector-port 9238 --local > /tmp/profile-wrangler.log 2>&1 &
+          WORKER_PID=$!
+          trap 'kill "$WORKER_PID"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8794/en > /dev/null; then break; fi
+            sleep 1
+          done
+          npm --prefix landing test
+
+      - name: Upload reviewable Worker version
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: versions upload --preview-alias pr-${{ github.event.pull_request.number }}
+          wranglerVersion: "4.135.0"
+          command: versions upload --preview-alias review-${{ github.event.pull_request.number || github.run_number }}
+
+  promote:
+    if: github.event_name == 'workflow_dispatch' && inputs.action == 'promote' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate reviewed version identifier
+        env:
+          REVIEWED_VERSION: ${{ inputs.version }}
+        run: '[[ "$REVIEWED_VERSION" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]'
+      - name: Promote reviewed version
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.135.0"
+          command: versions deploy ${{ inputs.version }}@100% --yes

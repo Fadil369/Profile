@@ -156,8 +156,7 @@ heroLocation: string;
 }
 
 export const MEET_URL = "https://meet.google.com/wcb-ovvp-jzp";
-export const BOOKING_EMBED_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0edxToXuq6bDCBKRZ8_EOcx-Qp6M_bgUVjGQKEeNE2sxMLRxCNlsjk2flHMwMU2hvJyhFy_8Og?gv=true";
+export { BOOKING_URL as BOOKING_EMBED_URL } from "./booking";
 
 export const CONTENT: Record<Lang, LangContent> = {
   ar: {
@@ -168,7 +167,7 @@ export const CONTENT: Record<Lang, LangContent> = {
     heroTitle: "من الطبيب المستخدم للنظام… إلى الطبيب الذي يُشغّل النظام",
     heroSubtitle: "طبيب منذ سنوات. مؤسس برينسايت. بنا نظامًا حوالي الطبيب بدل أن نطلب منه أن يتكيف مع أنظمة لم تُبنَ له.",
     heroLocation: "الرياض، السعودية  ·  الخرطوم، السودان",
-    heroCtaMeet: "احجز اجتماعاً",
+    heroCtaMeet: "احجز موعدًا",
     bookModalTitle: "احجز موعداً",
     bookModalSubtitle: "اختر الوقت الأنسب لك — تأكيد فوري عبر جوجل كالندر.",
     bookModalClose: "إغلاق",
@@ -234,7 +233,7 @@ export const CONTENT: Record<Lang, LangContent> = {
     newsletterTitle: "انضم إلى المسار",
     newsletterDesc:
       "احصل على وصول مبكر إلى حلقات القيادة التنفيذية في الذكاء الاصطناعي، ومنشورات البحث، وفرص الشراكة.",
-    newsletterBookCta: "احجز اجتماعاً",
+    newsletterBookCta: "احجز موعدًا",
     newsletterContactCta: "تواصل معي",
     newsletterSocialTitle: "تابع الأعمال",
     ecosystemSubtitle: "متابعة مباشرة لتوافر شبكة برينسايت.",
@@ -552,7 +551,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "20 سير عمل — Shopify Concierge، License Issuance، Order Fanout، Lark، Telegram، 3CX، مع تكامل Hermes و Hub.",
         tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.org"
+        link: "https://github.com/Fadil369/brainsait-linc-docs"
       }
     ],
     ecosystem: [
@@ -564,18 +563,14 @@ export const CONTENT: Record<Lang, LangContent> = {
         badge: "✍️",
         featured: true
       },
-      { name: "شبكة الصحة", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
-      { name: "برينسايت سبارك", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
+      { name: "برينسايت سبارك · يتطلب تسجيل الدخول", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
       { name: "برينسايت الحاضنة", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
       { name: "HIVI وكيل الصحة", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
       { name: "سوق برينسايت", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
       { name: "الملف السريري", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
-      { name: "البوابة", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
-      { name: "العمل", urlLabel: "work.elfadil.com", url: "https://work.elfadil.com" },
       { name: "أبنائي — إرثي", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" },
       { name: "GitHub", urlLabel: "github.com/Fadil369", url: "https://github.com/Fadil369", icon: "github" },
       { name: "LinkedIn", urlLabel: "linkedin.com/in/fadil369", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { name: "X / Twitter", urlLabel: "x.com/Fadil369", url: "https://x.com/Fadil369", icon: "x" }
     ],
     services: [
       {
@@ -626,7 +621,6 @@ export const CONTENT: Record<Lang, LangContent> = {
     socialLinks: [
       { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
       { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
       { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
     ]
   },
@@ -639,7 +633,7 @@ export const CONTENT: Record<Lang, LangContent> = {
     heroSubtitle: "Physician for years. Founder of BrainSAIT. We built a system around the doctor — not the doctor around the system.",
     heroLocation: "Riyadh, Saudi Arabia  ·  Khartoum, Sudan",
     heroCtaMeet: "Book a meeting",
-    bookModalTitle: "Book a meeting",
+    bookModalTitle: "Let’s talk",
     bookModalSubtitle: "Pick a time that works for you — instantly confirmed via Google Calendar.",
     bookModalClose: "Close",
     bookModalOpenExternal: "Open in a new tab ↗",
@@ -705,7 +699,7 @@ export const CONTENT: Record<Lang, LangContent> = {
     newsletterTitle: "Join the Pipeline",
     newsletterDesc:
       "Get early access to executive AI masterclasses, research publications, and partnership opportunities.",
-    newsletterBookCta: "Book a Meeting",
+    newsletterBookCta: "Book a meeting",
     newsletterContactCta: "Get in Touch",
     newsletterSocialTitle: "Follow the Work",
     ecosystemSubtitle: "Live reachability across the BrainSAIT network.",
@@ -1024,7 +1018,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "20 workflows — Shopify Concierge, License Issuance, Order Fanout, Lark, Telegram, 3CX via Hermes & Hub.",
         tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.org"
+        link: "https://github.com/Fadil369/brainsait-linc-docs"
       }
     ],
     ecosystem: [
@@ -1036,18 +1030,14 @@ export const CONTENT: Record<Lang, LangContent> = {
         badge: "✍️",
         featured: true
       },
-      { name: "Health Network Hub", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
-      { name: "BrainSAIT Spark", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
+      { name: "BrainSAIT Spark · Sign-in required", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
       { name: "BrainSAIT Incubator", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
       { name: "HIVI Health Agent", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
       { name: "BrainSAIT Market", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
       { name: "Clinical Profile", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
-      { name: "Portal", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
-      { name: "Work", urlLabel: "work.elfadil.com", url: "https://work.elfadil.com" },
       { name: "My Sons — A Legacy", urlLabel: "son.elfadil.com", url: "https://son.elfadil.com" },
       { name: "GitHub", urlLabel: "github.com/Fadil369", url: "https://github.com/Fadil369", icon: "github" },
       { name: "LinkedIn", urlLabel: "linkedin.com/in/fadil369", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { name: "X / Twitter", urlLabel: "x.com/Fadil369", url: "https://x.com/Fadil369", icon: "x" }
     ],
     services: [
       {
@@ -1098,7 +1088,6 @@ export const CONTENT: Record<Lang, LangContent> = {
     socialLinks: [
       { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
       { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
       { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
     ]
   }

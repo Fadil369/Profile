@@ -692,17 +692,17 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-white text-lg">Gemini AI Partnership Strategy Terminal</h3>
-                            <p class="text-xs text-slate-400">Powered by Gemini 3 Flash · Interactive Strategic Co-Pilot</p>
+                            <p class="text-xs text-slate-400">Archived concept · Assistant currently unavailable</p>
                         </div>
                     </div>
-                    <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/30">LIVE API INTEGRATION</span>
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/30">ARCHIVED DEMO</span>
                 </div>
 
                 <!-- Terminal Output Display -->
                 <div id="terminal-output" class="p-4 rounded-xl bg-slate-950 border border-slate-800 h-64 overflow-y-auto text-xs font-mono text-slate-300 space-y-3">
                     <div class="text-teal-400">
-                        [System Initialized]: Gemini 3 Flash Strategy Engine Ready.<br>
-                        Select a quick prompt or type your custom strategy query below to generate tailored partnership collateral, LOIs, or workshop outlines.
+                        This assistant is currently unavailable.<br>
+                        For collaboration inquiries, email info@brainsait.org. No requests are sent to an AI service.
                     </div>
                 </div>
 
@@ -958,81 +958,8 @@
         }
 
         // 6. GEMINI API INTEGRATION (gemini-3-flash-preview)
-        async function fetchGeminiStrategy(promptText) {
-            const terminalOutput = document.getElementById('terminal-output');
-            const submitBtn = document.getElementById('ai-submit-btn');
-
-            // Append user prompt to terminal
-            const userMsg = document.createElement('div');
-            userMsg.className = "text-indigo-300 border-l-2 border-indigo-500 pl-2 my-2";
-            userMsg.innerHTML = `<strong>User:</strong> ${promptText}`;
-            terminalOutput.appendChild(userMsg);
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-
-            // Loading indicator
-            const loadingMsg = document.createElement('div');
-            loadingMsg.className = "text-amber-400 my-2 animate-pulse";
-            loadingMsg.innerHTML = `[Gemini 3 Flash Thinking... Processing Systems Context]`;
-            terminalOutput.appendChild(loadingMsg);
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-
-            submitBtn.disabled = true;
-
-            const systemInstruction = "Act as an elite executive strategist specializing in systems dynamics, Donella Meadows leverage frameworks, and Saudi Vision 2030 healthcare transformation. Provide concise, high-impact, professional advice for a partnership between ThinkInSystems (methodology brand) and BrainSAIT (healthcare technology engine). Keep responses clear, bulleted, and actionable.";
-
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-            const payload = {
-                contents: [{ parts: [{ text: promptText }] }],
-                systemInstruction: { parts: [{ text: systemInstruction }] }
-            };
-
-            let retries = 0;
-            const maxRetries = 3;
-            let success = false;
-
-            while (retries < maxRetries && !success) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    
-                    const result = await response.json();
-                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                    loadingMsg.remove();
-
-                    if (text) {
-                        const aiMsg = document.createElement('div');
-                        aiMsg.className = "text-slate-200 bg-slate-900/90 p-3 rounded-lg border border-teal-500/30 whitespace-pre-line my-2";
-                        aiMsg.innerHTML = `<strong>Gemini Strategy AI:</strong>\n${text}`;
-                        terminalOutput.appendChild(aiMsg);
-                    } else {
-                        throw new Error("No text response candidate.");
-                    }
-
-                    success = true;
-                } catch (err) {
-                    retries++;
-                    if (retries >= maxRetries) {
-                        loadingMsg.remove();
-                        const errMsg = document.createElement('div');
-                        errMsg.className = "text-red-400 my-2";
-                        errMsg.innerText = `[Error]: Unable to reach Gemini API. Please try again.`;
-                        terminalOutput.appendChild(errMsg);
-                    } else {
-                        await new Promise(res => setTimeout(res, 1000 * Math.pow(2, retries)));
-                    }
-                }
-            }
-
-            submitBtn.disabled = false;
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        async function fetchGeminiStrategy() {
+            document.getElementById('terminal-output').textContent = 'This archived assistant is unavailable. For collaboration, email info@brainsait.org.';
         }
 
         function executeGeminiQuery() {

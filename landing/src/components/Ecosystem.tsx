@@ -7,7 +7,7 @@ function monogram(name: string) {
 }
 
 export function Ecosystem() {
-  const { t } = useAppState();
+  const { t, isAr } = useAppState();
   const { ref, visible } = useReveal<HTMLElement>();
   const urls = t.ecosystem.map((eco) => eco.url);
   const pulse = useEcosystemPulse(urls);
@@ -36,7 +36,7 @@ export function Ecosystem() {
                 rel="noopener noreferrer"
                 className={`glass-card ecosystem-card${eco.featured ? " ecosystem-card--featured" : ""}`}
               >
-                <span className={`pulse-dot pulse-${state}`} aria-label={state} />
+                <span className={`pulse-dot pulse-${state}`} title={state === "online" ? (isAr ? "استجابة HTTP متاحة" : "HTTP response reachable") : (isAr ? "لم يتم تأكيد الاتصال" : "Reachability unconfirmed")} aria-hidden="true" />
                 <div className="ecosystem-mono">{eco.badge ?? monogram(eco.name)}</div>
                 <div className="ecosystem-text">
                   <span className="ecosystem-name">{eco.name}</span>

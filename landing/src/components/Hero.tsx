@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppState } from "../AppState";
 import { useBooking } from "../BookingContext";
-import { CalendarIcon, ChevronDownIcon, ShieldIcon, TerminalIcon } from "../Icons";
+import { CalendarIcon, ChevronDownIcon, ShieldIcon, TerminalIcon, BrainIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
 import { LinkedInBadge } from "./LinkedInBadge";
 
@@ -31,12 +31,13 @@ const CREDENTIAL_CHIPS = [
   { label: "HIPAA", hint: "Compliance" },
 ];
 
-export function Hero() {
+export function Hero({ onEnterWorkspace }: { onEnterWorkspace?: () => void }) {
   const { t, isAr } = useAppState();
   const { open: openBooking } = useBooking();
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const interval = setInterval(() => {
       setStage((prev) => (prev + 1) % HERO_STAGES.length);
     }, 5000);
@@ -49,17 +50,12 @@ export function Hero() {
       <div className="hero-grid-overlay" aria-hidden="true" />
       <div className="hero-photo">
         <div className="hero-ring" aria-hidden="true" />
-        <img src="/assets/img/prof_pic.jpg" alt="Dr. Mohamed El Fadil" />
+        <img src="/assets/img/prof_pic.jpg" alt="Dr. Mohamed El Fadil" width={360} height={400} />
         <div className="hero-badge">
           <ShieldIcon size={18} />
           <span>{t.heroBadge}</span>
         </div>
-        {CREDENTIAL_CHIPS.map((chip, i) => (
-          <div key={chip.label} className={`hero-chip hero-chip--${i + 1}`} aria-hidden="true">
-            <span className="hero-chip-label">{chip.label}</span>
-            <span className="hero-chip-hint">{chip.hint}</span>
-          </div>
-        ))}
+
       </div>
       <div className="hero-copy">
         <div className="hero-kicker">
@@ -74,6 +70,7 @@ export function Hero() {
           </span>
         </p>
         <p className="hero-subtitle">{t.heroSubtitle}</p>
+        <div className="hero-credentials" aria-label={isAr ? "مجالات العمل" : "Focus areas"}>{CREDENTIAL_CHIPS.filter(chip => chip.label !== "HIPAA").map(chip => <span className="hero-credential" key={chip.label}>{chip.label}</span>)}</div>
         <div className="hero-ctas">
           <button className="btn btn-primary" onClick={openBooking}>
             <CalendarIcon />
@@ -83,6 +80,12 @@ export function Hero() {
             <TerminalIcon />
             {t.heroCtaRegistry}
           </a>
+          {onEnterWorkspace && (
+            <button className="btn btn-ghost" onClick={onEnterWorkspace}>
+              <BrainIcon />
+              {isAr ? "ادخل مساحة عملي" : "Enter my workspace"}
+            </button>
+          )}
         </div>
       </div>
       <div className="hero-meta">

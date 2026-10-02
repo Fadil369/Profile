@@ -18,6 +18,12 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   const navItems = SECTION_IDS.map((id) => ({ id, label: t.nav[id] }));
 
   const go = (id: string) => {
@@ -38,7 +44,7 @@ export function Nav() {
               {item.label}
             </button>
           ))}
-          <a href="/the_leverage_point.html" className="nav-link" target="_blank" rel="noopener noreferrer">
+          <a href="/the_leverage_point" className="nav-link" target="_blank" rel="noopener noreferrer">
             {t.leveragePoint}
           </a>
         </div>
@@ -54,6 +60,8 @@ export function Nav() {
           <button
             className="icon-btn square menu-toggle"
             aria-label="menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => withViewTransition(() => setMenuOpen((v) => !v))}
           >
             <MenuIcon />
@@ -64,13 +72,13 @@ export function Nav() {
       {menuOpen && (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div className="drawer-backdrop" onClick={() => setMenuOpen(false)}>
-          <div className="drawer-panel" onClick={(e) => e.stopPropagation()}>
+          <div id="mobile-navigation" className="drawer-panel" onClick={(e) => e.stopPropagation()}>
             {navItems.map((item) => (
               <button key={item.id} className="drawer-link" onClick={() => go(item.id)}>
                 {item.label}
               </button>
             ))}
-            <a href="/the_leverage_point.html" className="drawer-link" target="_blank" rel="noopener noreferrer">
+            <a href="/the_leverage_point" className="drawer-link" target="_blank" rel="noopener noreferrer">
               {t.leveragePoint}
             </a>
             <button className="btn btn-primary drawer-book" onClick={() => { setMenuOpen(false); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>

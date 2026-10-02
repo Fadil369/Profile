@@ -1,47 +1,22 @@
 import { useEffect, useState } from "react";
-
 export type PulseState = "checking" | "online" | "probe";
 
-/** Best-effort reachability check for each ecosystem URL.
- *  Probes run server-side via the same-origin /__pulse worker endpoint,
- *  which is immune to browser CORS/CORP blocks. Falls back gracefully. */
+/** Best-effort HTTP reachability only; no assertion about service operation. */
 export function useEcosystemPulse(urls: string[]) {
-  const [statuses, setStatuses] = useState<Record<string, PulseState>>(() =>
-    Object.fromEntries(urls.map((u) => [u, "checking"]))
-  );
-
+  const [statuses, setStatuses] = useState<Record<string, PulseState>>({});
   const key = urls.join("|");
-
   useEffect(() => {
-    if (!urls.length) return;
-
     const controller = new AbortController();
-    const qs = urls.map((u) => `u=${encodeURIComponent(u)}`).join("&");
-
-    fetch(`/__pulse?${qs}`, {
-      method: "GET",
-      signal: controller.signal,
-      cache: "no-cache",
-    })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("bad status"))))
-      .then((data) => {
-        const results = data?.results;
-        if (!results) return;
-        setStatuses((prev) => {
-          const next = { ...prev };
-          for (const u of urls) {
-            next[u] = results[u] === "online" ? "online" : "probe";
-          }
-          return next;
-        });
-      })
-      .catch(() => {
-        // Unreachable /__pulse → leave dots ambiguous (grey), not alarming.
-      });
-
+    const targets = key.split("|").filter(Boolean);
+    for (let i = 0; i < targets.length; i += 8) {
+      const batch = targets.slice(i, i + 8);
+      const query = new URLSearchParams(batch.map(u => ["u", u]));
+      fetch(`/__pulse?${query}`, { signal: controller.signal })
+        .then(async r => { if (!r.ok) throw new Error("Probe unavailable"); return r.json(); })
+        .then(data => { if (!controller.signal.aborted) setStatuses(prev => ({ ...prev, ...Object.fromEntries(batch.map(u => [u, data.results?.[u] === "online" ? "online" : "probe"])) })); })
+        .catch(() => { if (!controller.signal.aborted) setStatuses(prev => ({ ...prev, ...Object.fromEntries(batch.map(u => [u, "probe" as const])) })); });
+    }
     return () => controller.abort();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
-
   return statuses;
 }

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 /** Fades a section in the first time it scrolls into view, then stops watching it. */
 export function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const node = ref.current;

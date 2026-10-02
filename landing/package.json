@@ -5,17 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "tsc -b && vite build && tsx scripts/prerender.ts",
+    "preview": "vite preview",
+    "test": "playwright test"
   },
   "dependencies": {
+    "lucide-react": "^1.47.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.186.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "0.25.12",
+    "tsx": "^4.23.15",
     "typescript": "^5.6.3",
     "vite": "^6.4.3"
   }

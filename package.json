@@ -9,7 +9,7 @@
   "scripts": {
     "prepare": "husky",
     "build": "npm --prefix landing ci && npm --prefix landing run build",
-    "deploy": "npm run build && npx wrangler deploy"
+    "deploy": "npm run build && npx --yes wrangler@4.135.0 deploy"
   },
   "lint-staged": {
     "*.{js,css,md,json}": "prettier --write"

@@ -1,14 +1,12 @@
-/**
- * Wraps a state update in the View Transitions API when the browser supports it
- * (mainly mobile Safari/Chrome), so theme/language/menu swaps cross-fade instead
- * of snapping. Falls back to a plain call everywhere else.
- */
+/** Cosmetic transitions must never block an update or reject during rapid clicks. */
 export function withViewTransition(update: () => void) {
   const doc = document as Document & {
-    startViewTransition?: (cb: () => void) => void;
+    startViewTransition?: (cb: () => void) => { ready: Promise<void>; finished: Promise<void> };
   };
-  if (typeof doc.startViewTransition === "function") {
-    doc.startViewTransition(update);
+  if (typeof doc.startViewTransition === "function" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const transition = doc.startViewTransition(update);
+    void transition.ready.catch(() => {});
+    void transition.finished.catch(() => {});
   } else {
     update();
   }

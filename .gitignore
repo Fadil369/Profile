@@ -7,3 +7,12 @@ landing/vite.config.d.ts
 .idea
 .venv
 .env
+
+landing/test-results/
+landing/playwright-report/
+
+.wrangler/
+
+# stale hashed bundles from earlier builds (vite output never belongs in public/)
+landing/public/assets/index-*.js
+landing/public/assets/index-*.css
