@@ -2369,3 +2369,35 @@ html {
   .schedule-dialog .booking-frame-wrap { min-height: 180px; }
   .schedule-dialog .booking-frame { min-height: 180px; }
 }
+
+/* Workspace entry FAB. Ported from the 3D-overlay layer so the workspace is
+   reachable from every route, sharing one overlay with the Hero entry point. */
+.workspace-fab {
+  position: fixed;
+  bottom: 24px;
+  inset-inline-start: 24px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+}
+.workspace-fab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+@media (max-width: 640px) {
+  .workspace-fab span { display: none; }
+  .workspace-fab { padding: 0; width: 44px; justify-content: center; }
+}

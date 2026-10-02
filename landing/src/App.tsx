@@ -1,4 +1,4 @@
-import { useState, useRef, lazy, Suspense } from "react";
+import { useRef, lazy, Suspense } from "react";
 import { AppStateProvider, useAppState } from "./AppState";
 import { BookingProvider } from "./BookingContext";
 import { OrbBackground } from "./components/OrbBackground";
@@ -23,6 +23,8 @@ const WorkspaceDesktop = lazy(() => import("./workspace/WorkspaceDesktop"));
 import { XIcon } from "./Icons";
 import { ContentPage } from "./ContentPage";
 import { useDialog } from "./hooks/useDialog";
+import { WorkspaceProvider, useWorkspace } from "./WorkspaceContext";
+import { WorkspaceFab } from "./components/Workspace/WorkspaceFab";
 import "./workspace/Desktop.css";
 
 function WorkspaceOverlay({ onExit }: { onExit: () => void }) {
@@ -45,34 +47,43 @@ function WorkspaceOverlay({ onExit }: { onExit: () => void }) {
 }
 
 function AppShell() {
-  const [workspaceOpen, setWorkspaceOpen] = useState(false);
+  // The Hero entry point opens the same workspace the site-wide FAB opens.
+  const { open } = useWorkspace();
 
   return (
+    <div className="app-root">
+      <ScrollProgressBar />
+      <OrbBackground />
+      <Nav />
+      <main id="main-content" tabIndex={-1}>
+      <Hero onEnterWorkspace={open} />
+      <Statement />
+      <About />
+      <BPRJourney />
+      <Services />
+      <Registry />
+      <Impact />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Ecosystem />
+      <Newsletter />
+      <Contact />
+      </main>
+      <Footer />
+      <BookingModal />
+      <BackToTop />
+    </div>
+  );
+}
+
+// Consumes the workspace context, so it must render inside WorkspaceProvider.
+function WorkspaceLayer() {
+  const { isOpen, close } = useWorkspace();
+  return (
     <>
-      <div className="app-root">
-        <ScrollProgressBar />
-        <OrbBackground />
-        <Nav />
-        <main id="main-content" tabIndex={-1}>
-        <Hero onEnterWorkspace={() => setWorkspaceOpen(true)} />
-        <Statement />
-        <About />
-        <BPRJourney />
-        <Services />
-        <Registry />
-        <Impact />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Ecosystem />
-        <Newsletter />
-        <Contact />
-        </main>
-        <Footer />
-        <BookingModal />
-        <BackToTop />
-      </div>
-      {workspaceOpen && <WorkspaceOverlay onExit={() => setWorkspaceOpen(false)} />}
+      <WorkspaceFab />
+      {isOpen && <WorkspaceOverlay onExit={close} />}
     </>
   );
 }
@@ -81,8 +92,13 @@ export default function App({ initialPath = "/" }: { initialPath?: string }) {
   return (
     <AppStateProvider initialPath={initialPath}>
       <BookingProvider>
-        <a className="skip-link" href="#main-content">{initialPath.startsWith("/en") ? "Skip to content" : "انتقل إلى المحتوى"}</a>
-        {["/", "/ar", "/en"].includes(initialPath) ? <AppShell /> : <ContentPage path={initialPath} />}
+        <WorkspaceProvider>
+          <a className="skip-link" href="#main-content">{initialPath.startsWith("/en") ? "Skip to content" : "انتقل إلى المحتوى"}</a>
+          {["/", "/ar", "/en"].includes(initialPath) ? <AppShell /> : <ContentPage path={initialPath} />}
+          {/* Workspace entry and overlay live at the root so the workspace is
+              reachable from every route, not only the home page. */}
+          <WorkspaceLayer />
+        </WorkspaceProvider>
       </BookingProvider>
     </AppStateProvider>
   );
