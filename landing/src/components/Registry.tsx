@@ -64,7 +64,7 @@ export function Registry() {
 
           <div className="registry-ctas">
             <a
-              href="https://registry.brainsait.org"
+              href="https://registry.brainsait.de"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -73,7 +73,7 @@ export function Registry() {
               <ArrowRightIcon />
             </a>
             <a
-              href="https://verify.brainsait.org"
+              href="https://verify.brainsait.de"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

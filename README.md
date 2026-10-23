@@ -10,6 +10,13 @@ Source for [elfadil.com](https://elfadil.com) — a bilingual (Arabic/English) p
 
 This repo previously also hosted a Jekyll-based academic site (blog, CV, publications, bibliography) alongside the React app. That Jekyll site has been removed — the React app in `landing/` is now the entire site.
 
+## Self-hosted copy: elfadil.brainsait.de
+
+The same build (`landing/dist/`) is also served by Apache at [elfadil.brainsait.de](https://elfadil.brainsait.de).
+There, [`server/pulse.php`](./server/pulse.php) replaces the worker's `/__pulse` endpoint (Apache rewrites `/__pulse` to it).
+Unlike the worker, it only probes https URLs on an allow-list of hosts, refuses private addresses, and reports
+`online` only when a site answers on its own host (a redirect to another host counts as `probe`).
+
 ## Local development
 
 ```bash

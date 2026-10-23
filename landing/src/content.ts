@@ -220,10 +220,10 @@ export const CONTENT: Record<Lang, LangContent> = {
     impactKicker: "الأثر",
     impactTitle: "ما الذي نبنيه معًا",
     impactStats: [
-      { value: "+10", label: "سنوات خبرة سريرية وتقنية" },
-      { value: "+50k", label: "تنزيل مفتوح المصدر" },
-      { value: "3", label: "قارات وصل إليها الأثر" },
-      { value: "146", label: "خدمة سحابية في المنظومة" }
+      { value: "2010", label: "ممارسة سريرية منذ" },
+      { value: "20", label: "عملًا في سجل ORCID" },
+      { value: "10", label: "معرّف DOI في مجتمع BPR على Zenodo" },
+      { value: "293", label: "مستودعًا عامًا على GitHub" }
     ],
     contactKicker: "لنتحدث",
     contactTitle: "هل لديك مشروع رعاية صحية بالذكاء الاصطناعي؟",
@@ -508,7 +508,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2023–2024",
         desc: "حلول مؤسسية للتشغيل البيني الصحي مع التركيز على معايير FHIR/HL7 وامتثال NPHIES.",
         tech: ["FHIR R4", "NPHIES", "OAuth2"],
-        link: "https://brainsait.org"
+        link: "https://brainsait.de"
       },
       {
         name: "Clinical Documentation Automation",
@@ -516,7 +516,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024",
         desc: "حل بالذكاء الاصطناعي لأتمتة التوثيق السريري وخفض إجهاد الأطباء بتقنية الاستماع الذكي.",
         tech: ["Whisper", "GPT-4"],
-        link: "https://brainsait.org"
+        link: "https://brainsait.de"
       },
       {
         name: "DeepSeek Harness — Intelligent Agent Platform",
@@ -524,7 +524,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "منصة وكلاء ذكية — 9 مزودين (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ نموذج، تحويل تلقائي عند الاستهلاك، ALLAM و Orpheus Saudi TTS.",
         tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
-        link: "https://agent.brainsait.org"
+        link: "https://agent.brainsait.de"
       },
       {
         name: "ALLAM — Arabic LLM (SDAIA) & Saudi TTS",
@@ -532,7 +532,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "تكامل ALLAM 2-7B و Groq Orpheus Saudi (عبدالله/نورا) — واجهة صوتية سعودية، تحويل النص إلى كلام عربي فاخر.",
         tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
-        link: "https://platforms.brainsait.org/v1/catalog"
+        link: "https://platforms.brainsait.de/v1/catalog"
       },
       {
         name: "BrainSAIT Stores — gh.io + Shopify",
@@ -546,9 +546,9 @@ export const CONTENT: Record<Lang, LangContent> = {
         name: "Cloudflare Workers & Pages — 146 Workers",
         status: "Active",
         year: "2023–2026",
-        desc: "146 Worker + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.org، build-apply، store-delivery، platforms-dispatcher.",
+        desc: "146 Worker + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.de، build-apply، store-delivery، platforms-dispatcher.",
         tech: ["CF Workers", "KV", "R2", "D1", "AI"],
-        link: "https://platforms.brainsait.org/v1/projects"
+        link: "https://platforms.brainsait.de/v1/projects"
       },
       {
         name: "GitHub — 50+ Repos & Ecosystem",
@@ -564,11 +564,15 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "20 سير عمل — Shopify Concierge، License Issuance، Order Fanout، Lark، Telegram، 3CX، مع تكامل Hermes و Hub.",
         tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.org"
+        link: "https://hub.brainsait.de"
       }
     ],
     ecosystem: [
-      { name: "برينسايت", urlLabel: "brainsait.org", url: "https://brainsait.org" },
+      { name: "ملفي في سجل BPR", urlLabel: "registry.brainsait.de/p/SA-PHY-000003", url: "https://registry.brainsait.de/p/SA-PHY-000003", badge: "✓", featured: true },
+      { name: "ORCID", urlLabel: "orcid.org/0009-0003-7485-3575", url: "https://orcid.org/0009-0003-7485-3575" },
+      { name: "مجتمع BPR على Zenodo", urlLabel: "zenodo.org/communities/bpr-doctors", url: "https://zenodo.org/communities/bpr-doctors/" },
+      { name: "Hugging Face", urlLabel: "huggingface.co/Fadil369", url: "https://huggingface.co/Fadil369" },
+      { name: "برينسايت", urlLabel: "brainsait.de", url: "https://brainsait.de" },
       {
         name: "المدونة",
         urlLabel: "brainsait369.blogspot.com",
@@ -576,10 +580,10 @@ export const CONTENT: Record<Lang, LangContent> = {
         badge: "✍️",
         featured: true
       },
-      { name: "شبكة الصحة", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
-      { name: "برينسايت سبارك", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
-      { name: "برينسايت الحاضنة", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
-      { name: "HIVI وكيل الصحة", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
+      { name: "شبكة الصحة", urlLabel: "hnh.brainsait.de", url: "https://hnh.brainsait.de" },
+      { name: "برينسايت سبارك", urlLabel: "spark.brainsait.de", url: "https://spark.brainsait.de" },
+      { name: "برينسايت الحاضنة", urlLabel: "brainsait.de/incubator", url: "https://brainsait.de/incubator" },
+      { name: "HIVI وكيل الصحة", urlLabel: "hivi.brainsait.de", url: "https://hivi.brainsait.de" },
       { name: "سوق برينسايت", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
       { name: "الملف السريري", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
       { name: "البوابة", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
@@ -615,26 +619,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         features: ["تسجيل DGA", "هيئة التأمين", "المناقصات العامة"]
       }
     ],
-    testimonials: [
-      {
-        name: "د. أحمد الرشيدي",
-        role: "الرئيس الطبي، صحة الرياض",
-        text: "غيّر نهج الدكتور الفاضل في التفكير المنظومي طريقة تبني مستشفانا للذكاء الاصطناعي. كان تكامل NPHIES سلساً.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AR"
-      },
-      {
-        name: "سارة ميتشل",
-        role: "مديرة الابتكار الصحي العالمي",
-        text: "البنية الجسرية بين منهجية ThinkInSystems ومحرك برينسايت السريري ابتكار يصنع فئة جديدة حقاً.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SM"
-      },
-      {
-        name: "خالد الفارسي",
-        role: "الرئيس التنفيذي، مجموعة عمان الصحية",
-        text: "الشراكة مع برينسايت منحتنا تأهيلاً فورياً للمناقصات العامة. كانت عملية تسجيل DGA خالية من الأخطاء.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=KF"
-      }
-    ],
+    testimonials: [], // placeholder endorsements removed until real, attributable ones are supplied
     socialLinks: [
       { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
       { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
@@ -696,10 +681,10 @@ export const CONTENT: Record<Lang, LangContent> = {
     impactKicker: "Impact",
     impactTitle: "What We Are Building Together",
     impactStats: [
-      { value: "10+", label: "Years Clinical & AI" },
-      { value: "50k+", label: "Open Source Downloads" },
-      { value: "3", label: "Continents Reached" },
-      { value: "146", label: "Cloud Services in Ecosystem" }
+      { value: "2010", label: "Clinical practice since" },
+      { value: "20", label: "Works on ORCID" },
+      { value: "10", label: "DOIs in the BPR community on Zenodo" },
+      { value: "293", label: "Public GitHub repositories" }
     ],
     contactKicker: "Let’s Talk",
     contactTitle: "Have a healthcare AI project in mind?",
@@ -986,7 +971,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2023–2024",
         desc: "Enterprise solutions for healthcare data interoperability focused on FHIR/HL7 standards and NPHIES compliance.",
         tech: ["FHIR R4", "NPHIES", "OAuth2"],
-        link: "https://brainsait.org"
+        link: "https://brainsait.de"
       },
       {
         name: "Clinical Documentation Automation",
@@ -994,7 +979,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024",
         desc: "AI-powered solution automating clinical documentation and reducing physician burnout with ambient listening.",
         tech: ["Whisper", "GPT-4"],
-        link: "https://brainsait.org"
+        link: "https://brainsait.de"
       },
       {
         name: "DeepSeek Harness — Intelligent Agent Platform",
@@ -1002,7 +987,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "Intelligent agent platform — 9 providers (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ models, auto-failover, ALLAM & Orpheus Saudi TTS.",
         tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
-        link: "https://agent.brainsait.org"
+        link: "https://agent.brainsait.de"
       },
       {
         name: "ALLAM — Arabic LLM & Saudi TTS",
@@ -1010,7 +995,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "ALLAM 2-7B + Groq Orpheus Saudi (abdullah/noura) — premium Saudi voice, Arabic TTS.",
         tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
-        link: "https://platforms.brainsait.org/v1/catalog"
+        link: "https://platforms.brainsait.de/v1/catalog"
       },
       {
         name: "BrainSAIT Stores — gh.io + Shopify",
@@ -1024,9 +1009,9 @@ export const CONTENT: Record<Lang, LangContent> = {
         name: "Cloudflare Workers & Pages — 146 Workers",
         status: "Active",
         year: "2023–2026",
-        desc: "146 Workers + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.org, build-apply, store-delivery, platforms-dispatcher.",
+        desc: "146 Workers + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.de, build-apply, store-delivery, platforms-dispatcher.",
         tech: ["CF Workers", "KV", "R2", "D1", "AI"],
-        link: "https://platforms.brainsait.org/v1/projects"
+        link: "https://platforms.brainsait.de/v1/projects"
       },
       {
         name: "GitHub — 50+ Repos & Ecosystem",
@@ -1042,11 +1027,15 @@ export const CONTENT: Record<Lang, LangContent> = {
         year: "2024–2026",
         desc: "20 workflows — Shopify Concierge, License Issuance, Order Fanout, Lark, Telegram, 3CX via Hermes & Hub.",
         tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.org"
+        link: "https://hub.brainsait.de"
       }
     ],
     ecosystem: [
-      { name: "BrainSAIT", urlLabel: "brainsait.org", url: "https://brainsait.org" },
+      { name: "My BPR registry profile", urlLabel: "registry.brainsait.de/p/SA-PHY-000003", url: "https://registry.brainsait.de/p/SA-PHY-000003", badge: "✓", featured: true },
+      { name: "ORCID", urlLabel: "orcid.org/0009-0003-7485-3575", url: "https://orcid.org/0009-0003-7485-3575" },
+      { name: "BPR community on Zenodo", urlLabel: "zenodo.org/communities/bpr-doctors", url: "https://zenodo.org/communities/bpr-doctors/" },
+      { name: "Hugging Face", urlLabel: "huggingface.co/Fadil369", url: "https://huggingface.co/Fadil369" },
+      { name: "BrainSAIT", urlLabel: "brainsait.de", url: "https://brainsait.de" },
       {
         name: "The Blog",
         urlLabel: "brainsait369.blogspot.com",
@@ -1054,10 +1043,10 @@ export const CONTENT: Record<Lang, LangContent> = {
         badge: "✍️",
         featured: true
       },
-      { name: "Health Network Hub", urlLabel: "hnh.brainsait.org", url: "https://hnh.brainsait.org" },
-      { name: "BrainSAIT Spark", urlLabel: "spark.brainsait.org", url: "https://spark.brainsait.org" },
-      { name: "BrainSAIT Incubator", urlLabel: "brainsait.org/incubator", url: "https://brainsait.org/incubator" },
-      { name: "HIVI Health Agent", urlLabel: "hivi.brainsait.org", url: "https://hivi.brainsait.org" },
+      { name: "Health Network Hub", urlLabel: "hnh.brainsait.de", url: "https://hnh.brainsait.de" },
+      { name: "BrainSAIT Spark", urlLabel: "spark.brainsait.de", url: "https://spark.brainsait.de" },
+      { name: "BrainSAIT Incubator", urlLabel: "brainsait.de/incubator", url: "https://brainsait.de/incubator" },
+      { name: "HIVI Health Agent", urlLabel: "hivi.brainsait.de", url: "https://hivi.brainsait.de" },
       { name: "BrainSAIT Market", urlLabel: "market.brainsait.de", url: "https://market.brainsait.de" },
       { name: "Clinical Profile", urlLabel: "dr.elfadil.com", url: "https://dr.elfadil.com" },
       { name: "Portal", urlLabel: "portal.elfadil.com", url: "https://portal.elfadil.com" },
@@ -1093,26 +1082,7 @@ export const CONTENT: Record<Lang, LangContent> = {
         features: ["DGA Registration", "Insurance Authority", "Public Tenders"]
       }
     ],
-    testimonials: [
-      {
-        name: "Dr. Ahmed Al-Rashidi",
-        role: "Chief Medical Officer, Riyadh Health",
-        text: "Dr. El Fadil's systems-thinking approach transformed how our hospital approaches AI adoption. The NPHIES integration was seamless.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AR"
-      },
-      {
-        name: "Sarah Mitchell",
-        role: "Director, Global Health Innovation",
-        text: "The bridging architecture between ThinkInSystems methodology and BrainSAIT's clinical engine is truly a category-defining innovation.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SM"
-      },
-      {
-        name: "Khalid Al-Farsi",
-        role: "CEO, Oman Health Group",
-        text: "Partnering with BrainSAIT gave us immediate qualification for public sector tenders. The DGA registration process was flawless.",
-        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=KF"
-      }
-    ],
+    testimonials: [], // placeholder endorsements removed until real, attributable ones are supplied
     socialLinks: [
       { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
       { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
