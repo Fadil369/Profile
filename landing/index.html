@@ -24,15 +24,18 @@
     <link rel="alternate" hreflang="en" href="https://elfadil.brainsait.de/" />
     <link rel="alternate" hreflang="ar" href="https://elfadil.brainsait.de/ar/" />
     <link rel="alternate" hreflang="x-default" href="https://elfadil.brainsait.de/" />
-    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="icon" href="/app-icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/app-icons/icon-180.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="author" href="/llms.txt" type="text/plain" title="Summary for AI assistants" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://registry.brainsait.de" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
+    <!-- Fonts load without blocking: the prerendered text paints at once in system fonts, then swaps. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" /></noscript>
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Dr. Mohamed El Fadil" />

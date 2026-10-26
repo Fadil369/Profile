@@ -1,4 +1,4 @@
-// Renders the share cards (public/og/og-{en,ar}.png) and PNG app icons from public/icons/icon.svg.
+// Renders the share cards (public/og/og-{en,ar}.png) and PNG app icons from public/app-icons/icon.svg.
 //   node scripts/render-assets.mjs        (needs a Chromium; set CHROME_PATH if it is not the Playwright one)
 // The outputs are committed; re-run only when the card text, photo or icon changes.
 import { chromium } from "playwright-core";
@@ -17,12 +17,12 @@ for (const lang of ["en", "ar"]) {
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: join(root, `public/og/og-${lang}.png`) });
 }
-const svg = `file://${join(root, "public/icons/icon.svg")}`;
+const svg = `file://${join(root, "public/app-icons/icon.svg")}`;
 for (const [size, name] of [[180, "icon-180.png"], [192, "icon-192.png"], [512, "icon-512.png"]]) {
   await page.setViewportSize({ width: size, height: size });
   await page.setContent(`<style>*{margin:0}</style><img src="${svg}" width="${size}" height="${size}">`);
   await page.waitForLoadState("networkidle");
-  await page.screenshot({ path: join(root, "public/icons", name), omitBackground: true });
+  await page.screenshot({ path: join(root, "public/app-icons", name), omitBackground: true });
 }
 await browser.close();
 console.log("rendered og-en.png, og-ar.png and icons");
