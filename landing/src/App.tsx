@@ -7,6 +7,7 @@ import { Hero } from "./components/Hero";
 import { Statement } from "./components/Statement";
 import { About } from "./components/About";
 import { BPRJourney } from "./components/BPRJourney";
+import { BprShowcase } from "./components/BprShowcase";
 import { Services } from "./components/Services";
 import { Registry } from "./components/Registry";
 import { Impact } from "./components/Impact";
@@ -34,10 +35,11 @@ export default function App() {
             <Nav />
             <Hero />
             <Statement />
-            <About />
+            <BprShowcase />
+            <Registry />
             <BPRJourney />
             <Services />
-            <Registry />
+            <About />
             <Impact />
             <Experience />
             <Skills />

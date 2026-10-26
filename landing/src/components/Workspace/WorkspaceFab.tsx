@@ -7,7 +7,7 @@ export function WorkspaceFab() {
   const { open } = useWorkspace();
 
   return (
-    <button className="workspace-fab" onClick={open} title={t.workspaceHint}>
+    <button className="workspace-fab" onClick={() => open()} title={t.workspaceHint}>
       <CodeIcon size={18} />
       <span>{t.workspaceCta}</span>
     </button>

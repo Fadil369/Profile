@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppState } from "../AppState";
 import { useBooking } from "../BookingContext";
+import { useWorkspace } from "../WorkspaceContext";
 import { CalendarIcon, ChevronDownIcon, ShieldIcon, TerminalIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
 import { LinkedInBadge } from "./LinkedInBadge";
@@ -34,6 +35,7 @@ const CREDENTIAL_CHIPS = [
 export function Hero() {
   const { t, isAr } = useAppState();
   const { open: openBooking } = useBooking();
+  const { open: openWorkspace } = useWorkspace();
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
@@ -79,8 +81,11 @@ export function Hero() {
             <CalendarIcon />
             {t.heroCtaMeet}
           </button>
-          <a href="#registry" className="btn btn-secondary">
+          <button className="btn btn-secondary btn-3d" onClick={() => openWorkspace()}>
             <TerminalIcon />
+            {t.workspaceCta}
+          </button>
+          <a href="#bpr" className="btn btn-ghost-link">
             {t.heroCtaRegistry}
           </a>
         </div>

@@ -33,6 +33,7 @@ function Card({ name, role, text, avatar }: { name: string; role: string; text: 
 export function Testimonials() {
   const { t } = useAppState();
   const { ref, visible } = useReveal<HTMLElement>();
+  if (!t.testimonials.length) return null;
 
   const doubled = [...t.testimonials, ...t.testimonials];
 

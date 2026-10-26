@@ -1,31 +1,18 @@
 import { useAppState } from "../AppState";
+import { useWorkspace } from "../WorkspaceContext";
 import { useReveal } from "../hooks/useReveal";
-import { useTypewriter } from "../hooks/useTypewriter";
 import { ShieldIcon, ArrowRightIcon, CheckCircleIcon } from "../Icons";
-
-const REGISTRY_LINES = {
-  ar: [
-    "$ brainsait verify --provider SA-PHY-000001",
-    "→ التحقق من سجل OID…",
-    "✓ تم العثور  الدكتور محمد الفاضل",
-    "✓ الدور    طبيب · مؤسس",
-    "✓ النطاق   مطالبات · NPHIES · FHIR R4",
-    "✓ الحالة    تم التحقق",
-  ],
-  en: [
-    "$ brainsait verify --provider SA-PHY-000001",
-    "→ querying OID registry…",
-    "✓ FOUND  Dr. Mohamed El Fadil",
-    "✓ ROLE   Physician · Founder",
-    "✓ SCOPE  Claims · NPHIES · FHIR R4",
-    "✓ STATUS VERIFIED",
-  ],
-};
+import { VerifyConsole } from "../bpr/VerifyConsole";
+import { BPR_TEXT } from "../bpr/modules";
+import { REGISTRY, SPID, short, useBprLive } from "../bpr/live";
 
 export function Registry() {
-  const { t, isAr } = useAppState();
+  const { t, lang } = useAppState();
+  const { open } = useWorkspace();
   const { ref, visible } = useReveal<HTMLElement>();
-  const { typed, doneTyping } = useTypewriter(REGISTRY_LINES[isAr ? "ar" : "en"]);
+  const live = useBprLive();
+  const T = BPR_TEXT[lang];
+  const s = live.claims?.credentialSubject;
 
   return (
     <section
@@ -49,37 +36,19 @@ export function Registry() {
           </div>
           <p className="registry-desc">{t.registryDesc}</p>
 
-          <div className="registry-terminal" dir="ltr">
-            <div className="terminal-bar">
-              <span className="terminal-dot" />
-              <span className="terminal-dot" />
-              <span className="terminal-dot" />
-              <span className="terminal-title">brainsait --verify</span>
-            </div>
-            <div className="terminal-body">
-              <span className="terminal-output">{typed}</span>
-              <span className={`terminal-caret ${doneTyping ? "is-blinking" : ""}`} />
-            </div>
-          </div>
+          <VerifyConsole />
 
           <div className="registry-ctas">
-            <a
-              href="https://registry.brainsait.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
+            <a href={`${REGISTRY}/join.php`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               {t.registryCta}
               <ArrowRightIcon />
             </a>
-            <a
-              href="https://verify.brainsait.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
+            <a href={`${REGISTRY}/verify`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               {t.registryCtaSecondary}
             </a>
+            <button className="btn btn-secondary btn-3d" onClick={() => open("verify")}>
+              {T.openIn3d}
+            </button>
           </div>
         </div>
 
@@ -92,19 +61,31 @@ export function Registry() {
             <div className="registry-status-grid">
               <div>
                 <div className="status-key">{t.registryKeys.provider}</div>
-                <div className="status-val">SA-PHY-000001</div>
+                <div className="status-val">
+                  <a href={`${REGISTRY}/p/${SPID}`} target="_blank" rel="noopener noreferrer">
+                    {SPID}
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div className="status-key">{T.console.membership}</div>
+                <div className="status-val">{s?.membership ? `${s.membership.state} · ${s.membership.validTo}` : "…"}</div>
               </div>
               <div>
                 <div className="status-key">{t.registryKeys.network}</div>
-                <div className="status-val">OID · Registry</div>
+                <div className="status-val">OID 1.3.6.1.4.1.61026</div>
               </div>
               <div>
-                <div className="status-key">{t.registryKeys.region}</div>
-                <div className="status-val">ME · Africa</div>
+                <div className="status-key">{T.console.chain}</div>
+                <div className="status-val">{live.head ? `#${live.head.size} · ${short(live.head.hash, 6)}` : "…"}</div>
+              </div>
+              <div>
+                <div className="status-key">{T.console.providers}</div>
+                <div className="status-val">{live.providers ?? "…"}</div>
               </div>
               <div>
                 <div className="status-key">{t.registryKeys.layer}</div>
-                <div className="status-val">Identity</div>
+                <div className="status-val">FHIR R4 · VC 2.0</div>
               </div>
             </div>
           </div>
