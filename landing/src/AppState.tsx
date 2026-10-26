@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { CONTENT, THEMES, type Lang, type LangContent, type ThemeName } from "./content";
+import { CONTENT, type Lang, type LangContent, type ThemeName } from "./content";
 import { withViewTransition } from "./viewTransition";
 
 interface AppStateValue {
@@ -53,9 +53,4 @@ export function useAppState() {
   const ctx = useContext(AppStateContext);
   if (!ctx) throw new Error("useAppState must be used within AppStateProvider");
   return ctx;
-}
-
-export function useThemeTokens() {
-  const { theme } = useAppState();
-  return THEMES[theme];
 }

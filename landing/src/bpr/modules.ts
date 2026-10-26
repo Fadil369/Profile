@@ -39,7 +39,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "Signed credentials",
       tag: "W3C VC 2.0 · Ed25519",
-      desc: "Every approved provider holds a W3C Verifiable Credential signed with the registry's Ed25519 key. Anyone can check it on their own device — no account, no upload.",
+      desc: "A W3C credential signed by the registry — anyone can check it on their own device, with no account and no upload.",
       facts: ["Issuer did:web:registry.brainsait.de", "VC-JOSE (vc+jwt, EdDSA)", "Public facts only — never licence numbers", "Live status: current / superseded / revoked"],
       links: [
         { label: "Open the verifier", url: `${REGISTRY}/verify` },
@@ -52,7 +52,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "Transparency log",
       tag: "Append-only · signed head",
-      desc: "Each issue, renewal and revocation is a line in a public hash chain. The head is signed, so a single changed byte anywhere shows up in your browser.",
+      desc: "Every issue, renewal and revocation is a line in a public, signed hash chain that browsers can replay.",
       facts: ["hash = sha256(line)", "line.prev = previous hash", "Genesis = 64 zeros", "Signed head: BPR-TLOG-v1"],
       links: [
         { label: "Replay the log", url: `${REGISTRY}/transparency` },
@@ -65,7 +65,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "Provider identity",
       tag: "SPID · OID 1.3.6.1.4.1.61026",
-      desc: "One permanent provider ID under BrainSAIT's IANA enterprise number, tied to ORCID, a public profile, a member card and the verified directory.",
+      desc: "One permanent provider ID, linked to ORCID, a public profile, a member card and the verified directory.",
       facts: ["SPID format SA-PHY-000003", "ORCID-linked sign-in", "Public profile + QR member card", "Searchable verified directory"],
       links: [
         { label: "My public profile", url: `${REGISTRY}/p/${SPID}` },
@@ -79,7 +79,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "Onboarding",
       tag: "One question per slide",
-      desc: "A bilingual join wizard asks one thing at a time, then credential documents are uploaded, reviewed and turned into verified qualifications.",
+      desc: "A bilingual wizard asks one thing at a time; uploaded documents are reviewed into verified qualifications.",
       facts: ["Arabic-first, English alongside", "Document upload + reviewer queue", "11-step provider journey, application → renewal", "Membership & invoicing built in"],
       links: [{ label: "Join the registry", url: `${REGISTRY}/join.php` }]
     },
@@ -89,7 +89,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "Research footprint",
       tag: "ORCID × Zenodo × Hugging Face",
-      desc: "Works are matched by DOI across ORCID, the BPR community on Zenodo and Hugging Face, so a provider's research reads as one verified record.",
+      desc: "Works matched by DOI across ORCID, Zenodo and Hugging Face into one verifiable research record.",
       facts: ["DOI-matched across 3 sources", "Views, downloads and community badges", "Zenodo community: bpr-doctors", "Refreshed automatically"],
       links: [
         { label: "My research page", url: `${REGISTRY}/research/${SPID}` },
@@ -102,7 +102,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "Specialty toolkit",
       tag: "13 kits · 72 tools",
-      desc: "A cockpit matched to the provider's specialty: checklists that remember, templates pre-filled with name and SPID, quick references and 15 clinical calculators.",
+      desc: "Checklists, pre-filled templates and 15 clinical calculators, matched to the provider's specialty.",
       facts: ["13 specialty kits", "15 calculators (eGFR, CHA₂DS₂-VASc, NEWS2, SOFA…)", "A4 print with live QR verification", "Reference aids — checked against local protocol"],
       links: [{ label: "Open the toolkit (members)", url: `${REGISTRY}/tools.php` }]
     },
@@ -112,7 +112,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "Personal EMR",
       tag: "One OpenEMR per provider",
-      desc: "Each provider can get their own OpenEMR instance on their own subdomain, isolated in its own container stack with its own database and TLS.",
+      desc: "An isolated OpenEMR instance for each provider, on its own subdomain with its own database and TLS.",
       facts: ["{spid}.emr.brainsait.de", "OpenEMR 7 + MariaDB per provider", "Wildcard TLS, encrypted offsite backups", "Provisioned from the registry"],
       links: [{ label: "EMR portal", url: "https://emr.brainsait.de/" }]
     },
@@ -122,7 +122,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "FHIR R4 API",
       tag: "Interoperability",
-      desc: "Providers are published as FHIR R4 resources, ready for NPHIES-era systems to read instead of re-keying.",
+      desc: "Providers published as FHIR R4 resources, so NPHIES-era systems can read them instead of re-keying.",
       facts: ["Practitioner · PractitionerRole · Organization", "read, search, vread", "Public JSON API + webhooks", "Linked from every credential"],
       links: [
         { label: "CapabilityStatement", url: `${REGISTRY}/fhir/metadata` },
@@ -137,7 +137,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "شهادات موقّعة",
       tag: "W3C VC 2.0 · Ed25519",
-      desc: "يحمل كل مقدم خدمة معتمد شهادة قابلة للتحقق وفق W3C موقّعة بمفتاح السجل Ed25519. يتحقق منها أي شخص على جهازه — دون حساب ودون رفع أي شيء.",
+      desc: "شهادة W3C يوقّعها السجل — يتحقق منها أي شخص على جهازه دون حساب ودون رفع أي شيء.",
       facts: ["المُصدر did:web:registry.brainsait.de", "VC-JOSE (vc+jwt, EdDSA)", "بيانات عامة فقط — لا أرقام تراخيص", "حالة مباشرة: سارية / مستبدلة / ملغاة"],
       links: [
         { label: "افتح أداة التحقق", url: `${REGISTRY}/verify` },
@@ -150,7 +150,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "سجل الشفافية",
       tag: "إلحاق فقط · رأس موقّع",
-      desc: "كل إصدار وتجديد وإلغاء سطرٌ في سلسلة تجزئة عامة. الرأس موقّع، فأي بايت يتغير في أي مكان يظهر في متصفحك.",
+      desc: "كل إصدار وتجديد وإلغاء سطرٌ في سلسلة تجزئة عامة موقّعة يستطيع المتصفح إعادة تشغيلها.",
       facts: ["hash = sha256(line)", "line.prev = التجزئة السابقة", "البداية = 64 صفرًا", "رأس موقّع: BPR-TLOG-v1"],
       links: [
         { label: "أعد تشغيل السجل", url: `${REGISTRY}/transparency` },
@@ -163,7 +163,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "هوية مقدم الخدمة",
       tag: "SPID · OID 1.3.6.1.4.1.61026",
-      desc: "معرّف دائم واحد تحت رقم المؤسسة المسجّل لبرينسايت لدى IANA، مرتبط بـ ORCID وملف عام وبطاقة عضوية والدليل المعتمد.",
+      desc: "معرّف دائم واحد لمقدم الخدمة، مرتبط بـ ORCID وملف عام وبطاقة عضوية والدليل المعتمد.",
       facts: ["صيغة المعرّف SA-PHY-000003", "دخول مرتبط بـ ORCID", "ملف عام + بطاقة عضوية برمز QR", "دليل معتمد قابل للبحث"],
       links: [
         { label: "ملفي العام", url: `${REGISTRY}/p/${SPID}` },
@@ -177,7 +177,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "الانضمام",
       tag: "سؤال واحد في كل شريحة",
-      desc: "معالج انضمام ثنائي اللغة يسأل سؤالًا واحدًا في كل مرة، ثم تُرفع وثائق الاعتماد وتُراجع لتصبح مؤهلات موثّقة.",
+      desc: "معالج ثنائي اللغة يسأل سؤالًا واحدًا في كل مرة، وتُراجَع الوثائق المرفوعة لتصبح مؤهلات موثّقة.",
       facts: ["العربية أولًا والإنجليزية معها", "رفع الوثائق + قائمة مراجعة", "رحلة من 11 خطوة من الطلب حتى التجديد", "العضوية والفوترة مدمجتان"],
       links: [{ label: "انضم إلى السجل", url: `${REGISTRY}/join.php` }]
     },
@@ -187,7 +187,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "الأثر البحثي",
       tag: "ORCID × Zenodo × Hugging Face",
-      desc: "تُطابق الأعمال بمعرّف DOI عبر ORCID ومجتمع BPR على Zenodo وHugging Face، فيظهر بحث مقدم الخدمة سجلًا واحدًا موثّقًا.",
+      desc: "أعمال مطابَقة بمعرّف DOI عبر ORCID وZenodo وHugging Face في سجل بحثي واحد قابل للتحقق.",
       facts: ["مطابقة DOI عبر 3 مصادر", "مشاهدات وتنزيلات وشارات المجتمع", "مجتمع Zenodo: bpr-doctors", "تحديث تلقائي"],
       links: [
         { label: "صفحة أبحاثي", url: `${REGISTRY}/research/${SPID}` },
@@ -200,7 +200,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "عدّة التخصص",
       tag: "13 عدّة · 72 أداة",
-      desc: "قمرة قيادة تناسب تخصص مقدم الخدمة: قوائم تحقق تتذكر، ونماذج مملوءة مسبقًا بالاسم والمعرّف، ومراجع سريعة، و15 حاسبة سريرية.",
+      desc: "قوائم تحقق ونماذج مملوءة مسبقًا و15 حاسبة سريرية، بحسب تخصص مقدم الخدمة.",
       facts: ["13 عدّة تخصصية", "15 حاسبة (eGFR وCHA₂DS₂-VASc وNEWS2 وSOFA…)", "طباعة A4 برمز تحقق مباشر", "أدوات مرجعية — تُراجع وفق البروتوكول المحلي"],
       links: [{ label: "افتح العدّة (للأعضاء)", url: `${REGISTRY}/tools.php` }]
     },
@@ -210,7 +210,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: false,
       title: "سجل طبي خاص",
       tag: "OpenEMR لكل مقدم خدمة",
-      desc: "يمكن لكل مقدم خدمة الحصول على نسخة OpenEMR خاصة به على نطاقه الفرعي، معزولة في حاوياتها بقاعدة بياناتها وشهادة TLS الخاصة بها.",
+      desc: "نسخة OpenEMR معزولة لكل مقدم خدمة، على نطاق فرعي خاص بقاعدة بيانات وشهادة TLS مستقلتين.",
       facts: ["{spid}.emr.brainsait.de", "OpenEMR 7 + MariaDB لكل مقدم خدمة", "TLS شاملة ونسخ احتياطي مشفّر خارجي", "تُجهّز من السجل"],
       links: [{ label: "بوابة السجل الطبي", url: "https://emr.brainsait.de/" }]
     },
@@ -220,7 +220,7 @@ const MODULES: Record<Lang, Omit<BprModule, "color">[]> = {
       live: true,
       title: "واجهة FHIR R4",
       tag: "قابلية التشغيل البيني",
-      desc: "يُنشر مقدمو الخدمة موارد FHIR R4 جاهزة لتقرأها أنظمة عصر NPHIES بدل إعادة الإدخال.",
+      desc: "يُنشر مقدمو الخدمة موارد FHIR R4 لتقرأها أنظمة عصر نفيس بدل إعادة الإدخال.",
       facts: ["Practitioner · PractitionerRole · Organization", "read وsearch وvread", "واجهة JSON عامة + Webhooks", "مرتبطة من كل شهادة"],
       links: [
         { label: "CapabilityStatement", url: `${REGISTRY}/fhir/metadata` },
@@ -237,9 +237,9 @@ export function bprModules(lang: Lang): BprModule[] {
 export const BPR_TEXT = {
   en: {
     showcaseKicker: "Inside BPR",
-    showcaseTitle: "Eight systems, one provider identity",
+    showcaseTitle: "Eight systems around one provider identity",
     showcaseSub:
-      "The BrainSAIT Provider Registry is running today. The badges marked live below are reading registry.brainsait.de as you scroll — and the signature is checked by your own browser.",
+      "The BrainSAIT Provider Registry runs today. Everything marked live reads registry.brainsait.de as you scroll, and the signature is checked by your own browser. A registry record complements professional licensure — it does not replace it.",
     liveBadge: "live",
     openIn3d: "Open in the 3D workspace",
     enter3d: "Enter the BPR workspace",
@@ -300,9 +300,9 @@ export const BPR_TEXT = {
   },
   ar: {
     showcaseKicker: "داخل BPR",
-    showcaseTitle: "ثمانية أنظمة، هوية واحدة لمقدم الخدمة",
+    showcaseTitle: "ثمانية أنظمة حول هوية واحدة لمقدم الخدمة",
     showcaseSub:
-      "سجل برينسايت لمقدمي الخدمة يعمل اليوم. الشارات المعلَّمة «مباشر» تقرأ من registry.brainsait.de أثناء تصفحك — والتوقيع يتحقق منه متصفحك أنت.",
+      "سجل برينسايت لمقدمي الخدمة يعمل اليوم. كل ما يحمل علامة «مباشر» يُقرأ من registry.brainsait.de أثناء تصفحك، ومتصفحك أنت من يتحقق من التوقيع. سجل BPR مكمّل للترخيص المهني ولا يحل محله.",
     liveBadge: "مباشر",
     openIn3d: "افتحه في مساحة العمل ثلاثية الأبعاد",
     enter3d: "ادخل مساحة عمل BPR",

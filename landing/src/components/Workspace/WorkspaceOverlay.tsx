@@ -6,6 +6,12 @@ import { isWebGLAvailable } from "../../webglSupport";
 import { DesktopShell } from "./DesktopShell";
 import { CloseIcon } from "../../Icons";
 import { BPR_TEXT, bprModules, type BprAppId } from "../../bpr/modules";
+import { useRiyadhClock, type DayPhase } from "./riyadhClock";
+
+const PHASE: Record<"en" | "ar", Record<DayPhase, string>> = {
+  en: { night: "night", dawn: "dawn", day: "day", dusk: "sunset" },
+  ar: { night: "ليل", dawn: "فجر", day: "نهار", dusk: "غروب" }
+};
 
 // three.js + @react-three/fiber are ~800kB — only fetched once someone
 // actually opens the workspace, never part of the standard site's bundle.
@@ -21,6 +27,9 @@ export function WorkspaceOverlay() {
   const [stage, setStage] = useState<Stage>(webglOk ? "scene" : "desktop");
   const [app, setApp] = useState<WorkspaceAppId | null>(initialApp);
   const [hoverLabel, setHoverLabel] = useState<string | null>(null);
+  const [returning, setReturning] = useState(false);
+  const { hour, phase } = useRiyadhClock();
+  const clock = `${String(Math.floor(hour)).padStart(2, "0")}:${String(Math.floor((hour % 1) * 60)).padStart(2, "0")}`;
   const T = BPR_TEXT[lang];
 
   useEffect(() => {
@@ -30,7 +39,7 @@ export function WorkspaceOverlay() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
       if (document.querySelector(".booking-backdrop")) return;
-      if (stage === "desktop" && webglOk) setStage("scene");
+      if (stage === "desktop" && webglOk) backToDesk();
       else close();
     };
     document.addEventListener("keydown", onKey);
@@ -44,10 +53,16 @@ export function WorkspaceOverlay() {
     if (!isOpen) return;
     setApp(initialApp);
     setHoverLabel(null);
+    setReturning(false);
     setStage(initialApp || !webglOk ? "desktop" : "scene");
   }, [isOpen, initialApp, webglOk]);
 
   if (!isOpen) return null;
+
+  function backToDesk() {
+    setReturning(true);
+    setStage("scene");
+  }
 
   const openApp = (id: BprAppId | null) => {
     setApp(id);
@@ -57,7 +72,7 @@ export function WorkspaceOverlay() {
       return;
     }
     setStage("entering");
-    window.setTimeout(() => setStage("desktop"), 650);
+    window.setTimeout(() => setStage("desktop"), 900);
   };
 
   return (
@@ -71,6 +86,7 @@ export function WorkspaceOverlay() {
               modules={bprModules(lang)}
               reducedMotion={reducedMotion}
               entering={stage === "entering"}
+              returning={returning}
               onOpenApp={openApp}
               onToggleLamp={toggleTheme}
               onHoverLabel={setHoverLabel}
@@ -82,12 +98,16 @@ export function WorkspaceOverlay() {
                 <span>
                   <span className="grad">BPR</span> OS
                 </span>
+                <span className="workspace-scene-sub" dir="ltr">
+                  {lang === "ar" ? "الرياض" : "Riyadh"} {clock} · {PHASE[lang][phase]}
+                </span>
                 <span className="workspace-scene-sub">{T.hint3d}</span>
               </div>
               <button className="icon-btn square workspace-close" aria-label={t.workspaceStandard} onClick={close}>
                 <CloseIcon size={16} />
               </button>
             </div>
+            {stage === "entering" && <div className="workspace-flash" aria-hidden="true" />}
             <div className={`workspace-hover-label${hoverLabel ? " is-on" : ""}`} aria-live="polite">
               {hoverLabel}
             </div>
@@ -103,7 +123,7 @@ export function WorkspaceOverlay() {
         </>
       )}
       {stage === "desktop" && (
-        <DesktopShell initialApp={app} onBack={() => (webglOk ? setStage("scene") : close())} onExit={close} />
+        <DesktopShell initialApp={app} onBack={() => (webglOk ? backToDesk() : close())} onExit={close} />
       )}
     </div>
   );

@@ -2,6 +2,23 @@
   {
     "date": "2026-10-26",
     "en": [
+      "Simpler page: six sections instead of seventeen, one story told once, copy rewritten in English and Arabic",
+      "Founder timeline taken from the CV; peer-reviewed publications from ORCID; The Clinical Commons (v1.2) linked by DOI",
+      "Work and public milestones from the GitHub profile, each with its evidence link; GitHub repo count read live",
+      "3D desk in a real room: a window onto Riyadh at the current Riyadh time, sunlight that follows the clock, a physician's desk",
+      "Clicking the monitor now flies into the screen before BPR OS opens, and back out again"
+    ],
+    "ar": [
+      "صفحة أبسط: ستة أقسام بدل سبعة عشر، وقصة تُروى مرة واحدة، ونصوص أُعيدت كتابتها بالعربية والإنجليزية",
+      "مسار مهني من السيرة الذاتية، وأبحاث محكّمة من ORCID، و«المشاع السريري» (الإصدار 1.2) برابط DOI",
+      "الأعمال والمحطات العلنية من ملف GitHub مع رابط الدليل لكل منها، وعدد المستودعات يُقرأ مباشرة",
+      "المكتب ثلاثي الأبعاد في غرفة حقيقية: نافذة على الرياض بتوقيتها الحالي، وضوء شمس يتبع الساعة، ومكتب طبيب",
+      "النقر على الشاشة ينقلك الآن داخلها قبل فتح BPR OS، ثم يعيدك منها"
+    ]
+  },
+  {
+    "date": "2026-10-26",
+    "en": [
       "BPR OS: the 3D desk reads the live registry — signed credential, transparency log and eight module apps",
       "Credential signature and log head verified in your browser with WebCrypto Ed25519",
       "Registry toolkit eGFR corrected to CKD-EPI 2021 (registry commit 280bafe); this page uses the same equation",

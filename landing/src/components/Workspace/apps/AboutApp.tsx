@@ -1,28 +1,31 @@
 import { useAppState } from "../../../AppState";
-import { ShieldIcon } from "../../../Icons";
 
 export function AboutApp() {
   const { t } = useAppState();
 
   return (
     <div className="workspace-app workspace-app--about">
-      <div className="workspace-app-badge">
-        <ShieldIcon size={20} />
-        <span>{t.aboutHeroLabel}</span>
-      </div>
       <p className="workspace-app-lead">
-        <strong>{t.aboutIntro}</strong>
+        <strong>{t.heroName}</strong> — {t.heroKicker}
       </p>
-      {t.aboutStory.map((para, i) => (
-        <p key={i} className="workspace-app-para">
-          {para.lines.map((line, j) => (
-            <span key={j}>
-              {line}
-              {j < para.lines.length - 1 && <br />}
-            </span>
-          ))}
+      {t.founderBio.map((p) => (
+        <p key={p} className="workspace-app-para">
+          {p}
         </p>
       ))}
+      <ol className="timeline timeline--compact">
+        {t.timeline.map((e) => (
+          <li key={e.year + e.title}>
+            <span className="timeline-year" dir="ltr">
+              {e.year}
+            </span>
+            <div>
+              <h3>{e.title}</h3>
+              <div className="timeline-org">{e.org}</div>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

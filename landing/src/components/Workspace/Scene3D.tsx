@@ -4,6 +4,8 @@ import * as THREE from "three";
 import { short, SPID, useBprLive, type BprLive } from "../../bpr/live";
 import { BPR_TEXT, type BprAppId, type BprModule } from "../../bpr/modules";
 import type { Lang } from "../../content";
+import { DeskProps, Reflections, Room, Sunlight } from "./Room";
+import { useRiyadhClock } from "./riyadhClock";
 
 // The BPR desk. Everything visible is drawn from live registry data:
 //   monitor   → a console showing the credential checks that ran in this browser
@@ -18,6 +20,8 @@ interface Scene3DProps {
   modules: BprModule[];
   reducedMotion: boolean;
   entering: boolean;
+  /** coming back from the BPR OS desktop: the camera starts at the screen and pulls back */
+  returning: boolean;
   onOpenApp: (id: BprAppId | null) => void;
   onToggleLamp: () => void;
   onHoverLabel: (label: string | null) => void;
@@ -97,27 +101,39 @@ function useHover(label: string, onHoverLabel: (l: string | null) => void) {
 
 /* ---------- camera ---------- */
 
-function Rig({ reducedMotion, narrow }: { reducedMotion: boolean; narrow: boolean }) {
+function Rig({ reducedMotion, narrow, entering, returning }: { reducedMotion: boolean; narrow: boolean; entering: boolean; returning: boolean }) {
   const { camera } = useThree();
-  const target = useRef({ x: 0, y: 0 });
-  const baseZ = narrow ? 5.9 : 3.9;
-  const baseY = narrow ? 1.6 : 1.45;
-  const lookY = narrow ? 1.12 : 0.78;
+  const base = narrow ? { y: 1.6, z: 5.9, look: 1.12 } : { y: 1.45, z: 3.9, look: 0.78 };
+  const look = useRef(new THREE.Vector3(0, base.look, 0));
+  const pos = useRef(new THREE.Vector3());
+  const lookTarget = useRef(new THREE.Vector3());
 
+  // Arrival: walk up to the desk — or, coming back from the desktop, start at the screen.
   useEffect(() => {
-    camera.position.set(0, baseY, baseZ);
-    camera.lookAt(0, lookY, 0);
-  }, [camera, baseY, baseZ, lookY]);
+    if (reducedMotion) camera.position.set(0, base.y, base.z);
+    else if (returning) camera.position.set(0, 0.68, 0.42);
+    else camera.position.set(0.25, base.y + 0.45, base.z + 1.8);
+    look.current.set(0, returning && !reducedMotion ? 0.68 : base.look, returning && !reducedMotion ? -0.35 : 0);
+    camera.lookAt(look.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  useFrame((state) => {
-    if (reducedMotion) return;
+  useFrame((state, dt) => {
     const t = state.clock.getElapsedTime();
-    target.current.x = state.pointer.x * (narrow ? 0.15 : 0.45);
-    target.current.y = state.pointer.y * 0.2;
-    camera.position.x += (target.current.x - camera.position.x) * 0.03;
-    camera.position.y += (baseY + target.current.y + Math.sin(t * 0.4) * 0.02 - camera.position.y) * 0.03;
-    camera.position.z += (baseZ - camera.position.z) * 0.05;
-    camera.lookAt(0, lookY, 0);
+    if (entering) {
+      // into the monitor until the screen fills the view
+      pos.current.set(0, 0.68, 0.42);
+      lookTarget.current.set(0, 0.68, -0.35);
+    } else {
+      const sway = reducedMotion ? 0 : 1;
+      pos.current.set(state.pointer.x * (narrow ? 0.15 : 0.45) * sway, base.y + (state.pointer.y * 0.2 + Math.sin(t * 0.4) * 0.02) * sway, base.z);
+      lookTarget.current.set(0, base.look, 0);
+    }
+    // time-based easing: the same feel at 30 or 120 fps
+    const f = reducedMotion ? 1 : 1 - Math.exp(-Math.min(dt, 0.1) * (entering ? 4.2 : 2.2));
+    camera.position.lerp(pos.current, f);
+    look.current.lerp(lookTarget.current, f);
+    camera.lookAt(look.current);
   });
   return null;
 }
@@ -125,11 +141,31 @@ function Rig({ reducedMotion, narrow }: { reducedMotion: boolean; narrow: boolea
 /* ---------- furniture ---------- */
 
 function Desk({ isDark }: { isDark: boolean }) {
+  const wood = useCanvasTexture(
+    1024,
+    512,
+    (ctx) => {
+      ctx.fillStyle = isDark ? "#3a2d24" : "#b79576";
+      ctx.fillRect(0, 0, 1024, 512);
+      let seed = 42;
+      const r = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+      for (let i = 0; i < 140; i++) {
+        const y = r() * 512;
+        ctx.strokeStyle = `rgba(${isDark ? "0,0,0" : "70,40,20"},${0.06 + r() * 0.12})`;
+        ctx.lineWidth = 1 + r() * 2.5;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        for (let x = 0; x <= 1024; x += 64) ctx.lineTo(x, y + Math.sin(x / 90 + i) * 3 + (r() - 0.5) * 2);
+        ctx.stroke();
+      }
+    },
+    [isDark]
+  );
   return (
     <group position={[0, -0.02, 0]}>
       <mesh position={[0, 0.02, 0]} receiveShadow castShadow>
         <boxGeometry args={[3.6, 0.06, 1.6]} />
-        <meshStandardMaterial color={isDark ? "#2b2420" : "#c9b39a"} roughness={0.5} metalness={0.05} />
+        <meshStandardMaterial map={wood} roughness={0.42} metalness={0.02} />
       </mesh>
       {/* glowing edge strip */}
       <mesh position={[0, 0.0, 0.801]}>
@@ -153,27 +189,6 @@ function Desk({ isDark }: { isDark: boolean }) {
   );
 }
 
-function Floor({ isDark }: { isDark: boolean }) {
-  const tex = useCanvasTexture(
-    512,
-    512,
-    (ctx) => {
-      const g = ctx.createRadialGradient(256, 256, 0, 256, 256, 256);
-      g.addColorStop(0, isDark ? "rgba(122,104,227,0.35)" : "rgba(101,87,207,0.18)");
-      g.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, 512, 512);
-    },
-    [isDark]
-  );
-  return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.1, 0]}>
-      <planeGeometry args={[9, 9]} />
-      <meshBasicMaterial map={tex} transparent depthWrite={false} />
-    </mesh>
-  );
-}
-
 function Dust({ count = 160, reducedMotion }: { count?: number; reducedMotion: boolean }) {
   const ref = useRef<THREE.Points>(null);
   const positions = useMemo(() => {
@@ -181,7 +196,7 @@ function Dust({ count = 160, reducedMotion }: { count?: number; reducedMotion: b
     for (let i = 0; i < count; i++) {
       a[i * 3] = (Math.random() - 0.5) * 7;
       a[i * 3 + 1] = Math.random() * 3 - 0.5;
-      a[i * 3 + 2] = (Math.random() - 0.5) * 4 - 0.8;
+      a[i * 3 + 2] = -1.5 + Math.random() * 3.2;
     }
     return a;
   }, [count]);
@@ -193,7 +208,7 @@ function Dust({ count = 160, reducedMotion }: { count?: number; reducedMotion: b
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.014} color="#c9c3f5" transparent opacity={0.55} depthWrite={false} />
+      <pointsMaterial size={0.01} color="#f3e6c8" transparent opacity={0.35} depthWrite={false} />
     </points>
   );
 }
@@ -395,7 +410,7 @@ function Lamp({ isDark, onClick, onHoverLabel, label, position }: { isDark: bool
         <coneGeometry args={[0.14, 0.2, 20, 1, true]} />
         <meshStandardMaterial color={bulbColor} emissive={bulbColor} emissiveIntensity={hovered ? 1.4 : 0.9} side={THREE.DoubleSide} toneMapped={false} />
       </mesh>
-      <pointLight position={[0.14, 0.5, 0]} intensity={isDark ? 0.7 : 0.35} color={bulbColor} distance={2.2} />
+      <pointLight position={[0.14, 0.5, 0]} intensity={isDark ? 1.1 : 0.5} color={bulbColor} distance={2.6} castShadow shadow-mapSize={[512, 512]} />
     </group>
   );
 }
@@ -684,7 +699,7 @@ function tileLayout(count: number, narrow: boolean): Vec3[] {
 
 /* ---------- scene ---------- */
 
-function SceneContent({ isDark, lang, modules, reducedMotion, entering, onOpenApp, onToggleLamp, onHoverLabel }: Scene3DProps) {
+function SceneContent({ isDark, lang, modules, reducedMotion, entering, returning, onOpenApp, onToggleLamp, onHoverLabel }: Scene3DProps) {
   const group = useRef<THREE.Group>(null);
   const live = useBprLive();
   const { size } = useThree();
@@ -694,28 +709,23 @@ function SceneContent({ isDark, lang, modules, reducedMotion, entering, onOpenAp
   const verify = modules.find((m) => m.id === "verify")!;
   const ledger = modules.find((m) => m.id === "ledger")!;
 
-  useFrame((state) => {
-    if (!group.current) return;
-    if (entering) {
-      group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, 1.2, reducedMotion ? 1 : 0.08);
-      group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, -0.35, reducedMotion ? 1 : 0.08);
-    } else if (!reducedMotion) {
-      group.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.15) * 0.02;
-    }
-  });
+  const { hour, phase } = useRiyadhClock();
+  const night = phase === "night";
 
   return (
     <>
-      <Rig reducedMotion={reducedMotion} narrow={narrow} />
-      <fog attach="fog" args={[isDark ? "#0d0f15" : "#faf8f2", 6, 13]} />
-      <ambientLight intensity={isDark ? 0.4 : 0.75} />
-      <directionalLight position={[2, 3, 2]} intensity={isDark ? 0.55 : 0.9} castShadow shadow-mapSize={[1024, 1024]} />
-      <Floor isDark={isDark} />
+      <Rig reducedMotion={reducedMotion} narrow={narrow} entering={entering} returning={returning} />
+      <Reflections intensity={isDark ? 0.35 : 0.6} />
+      <ambientLight intensity={(isDark ? 0.22 : 0.45) + (night ? 0 : 0.18)} />
+      <hemisphereLight args={[night ? "#334" : "#dfe8ff", isDark ? "#1a1410" : "#b8a58c", (isDark ? 0.25 : 0.45) + (night ? 0 : 0.3)]} />
+      <Sunlight phase={phase} isDark={isDark} />
+      <Room isDark={isDark} hour={hour} phase={phase} />
       <Dust reducedMotion={reducedMotion} />
       <group ref={group}>
         <Desk isDark={isDark} />
         <Monitor isDark={isDark} lang={lang} live={live} onOpen={() => onOpenApp(null)} onHoverLabel={onHoverLabel} label={T.enter3d} />
         <Keyboard />
+        <DeskProps narrow={narrow} reducedMotion={reducedMotion} />
         <Lamp isDark={isDark} onClick={onToggleLamp} onHoverLabel={onHoverLabel} label={T.lamp} position={narrow ? [0.74, 0.03, 0.3] : [1.45, 0.03, -0.35]} />
         <Hologram
           live={live}
@@ -754,7 +764,7 @@ export function Scene3D(props: Scene3DProps) {
 
   return (
     <Canvas
-      shadows
+      shadows="soft"
       dpr={dpr}
       camera={{ position: [0, 1.45, 3.9], fov: 42 }}
       gl={{ antialias: true, powerPreference: "low-power" }}

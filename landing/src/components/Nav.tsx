@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useAppState } from "../AppState";
 import { GlobeIcon, MenuIcon, MoonIcon, SunIcon } from "../Icons";
 import { scrollToSection } from "../scrollTo";
+import { useBooking } from "../BookingContext";
 import { withViewTransition } from "../viewTransition";
 
-const SECTION_IDS = ["bpr", "registry", "journey", "about", "impact", "experience", "projects", "ecosystem", "contact"] as const;
+const SECTION_IDS = ["bpr", "why", "founder", "research", "work", "contact"] as const;
 
 export function Nav() {
   const { t, isDark, toggleLang, toggleTheme } = useAppState();
+  const { open: openBooking } = useBooking();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,9 +40,6 @@ export function Nav() {
               {item.label}
             </button>
           ))}
-          <a href="/the_leverage_point.html" className="nav-link" target="_blank" rel="noopener noreferrer">
-            {t.leveragePoint}
-          </a>
         </div>
 
         <div className="nav-actions">
@@ -73,7 +72,7 @@ export function Nav() {
             <a href="/the_leverage_point.html" className="drawer-link" target="_blank" rel="noopener noreferrer">
               {t.leveragePoint}
             </a>
-            <button className="btn btn-primary drawer-book" onClick={() => { setMenuOpen(false); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <button className="btn btn-primary drawer-book" onClick={() => { setMenuOpen(false); openBooking(); }}>
               {t.heroCtaMeet}
             </button>
           </div>

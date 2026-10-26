@@ -83,6 +83,7 @@ export interface BprLive {
     communityUrl?: string;
   };
   fhir?: { version: string; resources: { type: string; interactions: string[] }[] };
+  github?: { publicRepos: number };
 }
 
 const initial: BprLive = {
@@ -235,6 +236,8 @@ async function loadLedger(jwksP: Promise<Jwk[]>) {
 async function loadProxied() {
   const tasks: Promise<void>[] = [
     getJson<{ providers: number }>(`${PROXY}?r=api`).then((d) => set({ providers: d.providers })),
+    // GitHub's API allows browser requests; 60/hour per visitor IP is plenty for one call.
+    getJson<{ public_repos: number }>("https://api.github.com/users/Fadil369").then((d) => set({ github: { publicRepos: d.public_repos } })),
     getJson<{
       counts: { orcid: number; zenodo: number; hf: number; in_community: number; dois: number };
       metrics: { zenodo_views: number; zenodo_downloads: number; hf_downloads: number };

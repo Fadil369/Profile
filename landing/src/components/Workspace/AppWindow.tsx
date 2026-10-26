@@ -13,6 +13,11 @@ export function AppWindow({
   return (
     <div className="app-window" role="dialog" aria-label={title}>
       <div className="app-window-bar">
+        <span className="app-window-dots" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+        </span>
         <span className="app-window-title">{title}</span>
         <button className="app-window-close" aria-label={title} onClick={onClose}>
           <CloseIcon size={16} />

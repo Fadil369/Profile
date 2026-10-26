@@ -4,7 +4,8 @@ import { useReveal } from "../hooks/useReveal";
 import { ArrowRightIcon } from "../Icons";
 import { BprIcon } from "../bpr/BprIcon";
 import { BPR_TEXT, bprModules, type BprAppId } from "../bpr/modules";
-import { useBprLive, type BprLive } from "../bpr/live";
+import { REGISTRY, useBprLive, type BprLive } from "../bpr/live";
+import { VerifyConsole } from "../bpr/VerifyConsole";
 
 // "Inside BPR": the eight systems of the registry, each opening its live app in the 3D workspace.
 
@@ -27,7 +28,7 @@ function liveFact(id: BprAppId, live: BprLive, lang: "ar" | "en"): string | null
 }
 
 export function BprShowcase() {
-  const { lang } = useAppState();
+  const { t, lang } = useAppState();
   const { open } = useWorkspace();
   const { ref, visible } = useReveal<HTMLElement>();
   const live = useBprLive();
@@ -36,18 +37,28 @@ export function BprShowcase() {
   return (
     <section id="bpr" data-scroll-anchor ref={ref} className={`section reveal ${visible ? "is-visible" : ""}`}>
       <div className="bpr-showcase">
-        <div className="section-heading bpr-showcase-head">
-          <div className="kicker">
-            <span className="bpr-live-dot">{T.liveBadge}</span> {T.showcaseKicker}
+        <div className="bpr-top">
+          <div className="bpr-showcase-head">
+            <div className="kicker">
+              <span className="bpr-live-dot">{T.liveBadge}</span> {T.showcaseKicker}
+            </div>
+            <h2>
+              <span className="grad">BPR</span> — {T.showcaseTitle}
+            </h2>
+            <p className="section-subtitle">{T.showcaseSub}</p>
+            <div className="bpr-ctas">
+              <button className="btn btn-primary btn-3d" onClick={() => open()}>
+                {T.enter3d}
+              </button>
+              <a className="btn btn-secondary" href={`${REGISTRY}/join.php`} target="_blank" rel="noopener noreferrer">
+                {t.registryJoin}
+              </a>
+              <a className="btn-ghost-link" href={`${REGISTRY}/verify`} target="_blank" rel="noopener noreferrer">
+                {t.registryVerify}
+              </a>
+            </div>
           </div>
-          <h2>
-            <span className="grad">BPR</span> — {T.showcaseTitle}
-          </h2>
-          <p className="section-subtitle">{T.showcaseSub}</p>
-          <button className="btn btn-primary btn-3d bpr-showcase-cta" onClick={() => open()}>
-            {T.enter3d}
-            <ArrowRightIcon />
-          </button>
+          <VerifyConsole />
         </div>
 
         <div className="bpr-grid">
@@ -72,9 +83,8 @@ export function BprShowcase() {
                 <div className={`bpr-card-fact${fact ? " is-on" : ""}`} dir="auto">
                   {fact ?? (m.live ? "…" : m.facts[0])}
                 </div>
-                <span className="bpr-card-open">
-                  {T.openIn3d}
-                  <ArrowRightIcon size={14} />
+                <span className="bpr-card-open" aria-hidden="true">
+                  3D <ArrowRightIcon size={13} />
                 </span>
               </button>
             );

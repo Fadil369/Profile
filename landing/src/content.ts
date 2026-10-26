@@ -6,1299 +6,478 @@ export interface StatItem {
   label: string;
 }
 
-export interface ExperienceItem {
+export interface TimelineItem {
   year: string;
   title: string;
   org: string;
-  desc: string[];
-}
-
-export interface SkillItem {
-  name: string;
-  level: string;
-}
-
-export interface SkillCategory {
-  name: string;
-  skills: SkillItem[];
+  line: string;
 }
 
 export interface ProjectItem {
   name: string;
-  status: "Active" | "Maintained" | "Enterprise";
-  year: string;
+  status: "Active" | "Maintained";
+  year?: string;
   desc: string;
   tech: string[];
   link: string;
 }
 
-export interface ServiceItem {
-  icon: string;
+export interface PublicationItem {
   title: string;
-  desc: string;
-  features: string[];
+  venue: string;
+  year: string;
+  url: string;
 }
 
-export interface TestimonialItem {
-  name: string;
-  role: string;
-  text: string;
-  avatar: string;
-}
-
-export interface SocialLink {
+export interface LinkItem {
   label: string;
   url: string;
-  icon: string;
-}
-
-export interface EcosystemItem {
-  name: string;
-  urlLabel: string;
-  url: string;
-  badge?: string;
-  featured?: boolean;
-  icon?: string;
+  source?: string;
 }
 
 export interface LangContent {
   brand: string;
   langToggle: string;
+  nav: { bpr: string; why: string; founder: string; research: string; work: string; contact: string };
+  leveragePoint: string;
+
   heroKicker: string;
   heroName: string;
   heroTitle: string;
-heroLocation: string;
-    heroCtaMeet: string;
-    heroSubtitle: string;
+  heroLead: string;
+  heroLocation: string;
+  heroCtaMeet: string;
+  heroProofPending: string;
+  heroProofOk: string;
+  heroProofFail: string;
+
+  whyKicker: string;
+  whyTitle: string;
+  whyBeats: { label: string; text: string }[];
+
+  registryJoin: string;
+  registryVerify: string;
+
+  founderKicker: string;
+  founderTitle: string;
+  founderBio: string[];
+  impactStats: StatItem[];
+  timelineTitle: string;
+  timeline: TimelineItem[];
+  linksTitle: string;
+  links: LinkItem[];
+  recognitionTitle: string;
+  recognition: LinkItem[];
+
+  researchKicker: string;
+  researchTitle: string;
+  commonsTag: string;
+  commonsTitle: string;
+  commonsDesc: string;
+  commonsStatus: string;
+  commonsRead: { en: string; ar: string; record: string };
+  publicationsTitle: string;
+  publications: PublicationItem[];
+
+  workKicker: string;
+  workTitle: string;
+  projects: ProjectItem[];
+  statuses: Record<ProjectItem["status"], string>;
+
+  contactKicker: string;
+  contactTitle: string;
+  contactText: string;
+  contactJoin: string;
+  footerText: string;
+
   bookModalTitle: string;
   bookModalSubtitle: string;
   bookModalClose: string;
   bookModalOpenExternal: string;
-  aboutKicker: string;
-  aboutP1: string;
-  aboutP2: string;
-  expKicker: string;
-  expTitle: string;
-  skillsKicker: string;
-  skillsTitle: string;
-  projectsKicker: string;
-  projectsTitle: string;
-  ecosystemKicker: string;
-  ecosystemTitle: string;
-  bprJourneyKicker: string;
-  bprJourneyTitle: string;
-  bprJourneySteps: { title: string; desc: string }[];
-  registryKicker: string;
-  registryTitle: string;
-  registryDesc: string;
-  registryCta: string;
-  registryCtaSecondary: string;
-  impactKicker: string;
-  impactTitle: string;
-  impactStats: StatItem[];
-  contactKicker: string;
-  contactTitle: string;
-  contactText: string;
-  footerText: string;
-  leveragePoint: string;
+
   workspaceCta: string;
   workspaceHint: string;
   workspaceExit: string;
   workspaceBack: string;
   workspaceStandard: string;
   workspaceDock: { about: string; projects: string; collaborate: string };
-  servicesKicker: string;
-  servicesTitle: string;
-  servicesSubtitle: string;
-  testimonialsKicker: string;
-  testimonialsTitle: string;
-  newsletterKicker: string;
-  newsletterTitle: string;
-  newsletterDesc: string;
-  newsletterBookCta: string;
-  newsletterContactCta: string;
-  newsletterSocialTitle: string;
-  ecosystemSubtitle: string;
-  heroBadge: string;
-  heroCtaRegistry: string;
-  statementLabel: string;
-  statementProblem: string;
-  statementWhy: string;
-  statementSolution: string;
-  statementWhyThis: string;
-  statementWhyNow: string;
-  registryBadge: string;
-  registryStatusTitle: string;
-  registryKeys: { provider: string; network: string; region: string; layer: string };
-  aboutHeroLabel: string;
-  aboutHeroTitle: string;
-  aboutHeroSubtitle: string;
-  aboutHeroDesc: string[];
-  aboutHeroCta: string;
-  aboutIntro: string;
-  aboutStory: { lines: string[]; highlight?: boolean; cta?: boolean }[];
-  nav: {
-    bpr: string;
-    about: string;
-    journey: string;
-    services: string;
-    registry: string;
-    impact: string;
-    experience: string;
-    skills: string;
-    projects: string;
-    ecosystem: string;
-    contact: string;
-  };
-  levels: Record<SkillItem["level"], string>;
-  statuses: Record<ProjectItem["status"], string>;
-  stats: StatItem[];
-  experience: ExperienceItem[];
-  skillCategories: SkillCategory[];
-  projects: ProjectItem[];
-  ecosystem: EcosystemItem[];
-  services: ServiceItem[];
-  testimonials: TestimonialItem[];
-  socialLinks: SocialLink[];
 }
 
-export const MEET_URL = "https://meet.google.com/wcb-ovvp-jzp";
 export const BOOKING_EMBED_URL =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0edxToXuq6bDCBKRZ8_EOcx-Qp6M_bgUVjGQKEeNE2sxMLRxCNlsjk2flHMwMU2hvJyhFy_8Og?gv=true";
 
-export const CONTENT: Record<Lang, LangContent> = {
-  ar: {
-    brand: "د. الفاضل",
-    langToggle: "EN",
-    heroKicker: "طبيب · مؤسس · مبتكر ذكاء اصطناعي صحي",
-    heroName: "د. محمد الفاضل",
-    heroTitle: "من الطبيب المستخدم للنظام… إلى الطبيب الذي يُشغّل النظام",
-    heroSubtitle: "طبيب منذ سنوات. مؤسس برينسايت. بنا نظامًا حوالي الطبيب بدل أن نطلب منه أن يتكيف مع أنظمة لم تُبنَ له.",
-    heroLocation: "الرياض، السعودية  ·  الخرطوم، السودان",
-    heroCtaMeet: "احجز اجتماعاً",
-    bookModalTitle: "احجز موعداً",
-    bookModalSubtitle: "اختر الوقت الأنسب لك — تأكيد فوري عبر جوجل كالندر.",
-    bookModalClose: "إغلاق",
-    bookModalOpenExternal: "فتح في نافذة جديدة ↗",
-    aboutKicker: "نبذة عني",
-    aboutP1:
-      "أجمع بين الطب السريري والذكاء الاصطناعي — أبني أنظمة تجعل الرعاية الصحية أذكى وأسرع وأكثر إنسانية عبر الشرق الأوسط وأفريقيا.",
-    aboutP2:
-      "أكثر من 10 سنوات في غرف العمليات وعنابر العناية المركزة وأقسام الطوارئ منحتني فهماً حقيقياً لما تحتاجه الرعاية الصحية فعلاً. اليوم، بصفتي المؤسس والرئيس التنفيذي لـ BrainSAIT، أحوّل هذه الرؤية إلى منتجات ذكاء اصطناعي مُنشرة في مستشفيات من الرياض إلى الخرطوم.",
-    expKicker: "المسار المهني",
-    expTitle: "الخبرة والتعليم",
-    skillsKicker: "الخبرات التقنية",
-    skillsTitle: "المهارات",
-    projectsKicker: "الأعمال",
-    projectsTitle: "مشاريع مختارة",
-    ecosystemKicker: "المنظومة",
-    ecosystemTitle: "أين تجدني",
-    bprJourneyKicker: "رحلة التحول",
-    bprJourneyTitle: "من المستخدم إلى المشغّل",
-    bprJourneySteps: [
-      {
-        title: "الطبيب كمستخدم",
-        desc: "يقف في الصف الأول مع المرضى، ثم يُطلب منه أن يتنقل بين عشرات الشاشات والأنظمة التي لم تُبنَ له."
-      },
-      {
-        title: "نقطة الانهيار",
-        desc: "كوفيد-19 والمطالبات المرفوضة كشفتا الحقيقة: الطبيب يُحاسب على أخطاء أنظمة لا يملك التحكم فيها."
-      },
-      {
-        title: "السؤال الجذري",
-        desc: "لماذا نطلب من الطبيب أن يتكيف مع النظام؟ لماذا لا نبني النظام حول الطبيب؟"
-      },
-      {
-        title: "رؤية برينسايت",
-        desc: "نظام هوية وتشغيل ذكي يعرف الطبيب، يحميه، ويجعل الأدوات تظهر حسب السياق بدل البحث عنها."
-      }
-    ],
-    registryKicker: "السجل الطبي الرقمي",
-    registryTitle: "سجل هوية مقدمي الرعاية",
-    registryDesc: "هوية موثوقة لكل مقدم رعاية. صلاحيات قابلة للتحقق. ربط مباشر بالأنظمة التي يحتاجها الطبيب. انضم إلى السجل الذي يعيد التحكم إلى الطبيب.",
-    registryCta: "انضم إلى السجل",
-    registryCtaSecondary: "تحقق من هوية مقدم خدمة",
-    impactKicker: "الأثر",
-    impactTitle: "ما الذي نبنيه معًا",
-    impactStats: [
-      {
-        "value": "2010",
-        "label": "ممارسة سريرية منذ"
-      },
-      {
-        "value": "20",
-        "label": "عملًا في سجل ORCID"
-      },
-      {
-        "value": "10",
-        "label": "معرّف DOI في مجتمع BPR على Zenodo"
-      },
-      {
-        "value": "293",
-        "label": "مستودعًا عامًا على GitHub"
-      }
-    ],
-    contactKicker: "لنتحدث",
-    contactTitle: "هل لديك مشروع رعاية صحية بالذكاء الاصطناعي؟",
-    contactText:
-      "أرحب بالتعاون مع المستشفيات والمطورين والمستثمرين المهتمين بتقنية الرعاية الصحية عبر الشرق الأوسط وأفريقيا.",
-    footerText: "© 2026 د. محمد الفاضل — مؤسس BrainSAIT",
-    leveragePoint: "نقطة الرفع",
-    workspaceCta: "ادخل مساحة عمل BPR ثلاثية الأبعاد",
-    workspaceHint: "مكتب ثلاثي الأبعاد يقرأ سجل BPR مباشرة",
-    workspaceExit: "الموقع المبسّط",
-    workspaceBack: "العودة إلى المشهد",
-    workspaceStandard: "إغلاق",
-    workspaceDock: { about: "عنّي", projects: "مشاريعي", collaborate: "لنتعاون" },
-    servicesKicker: "منظومة الرعاية التجديدية",
-    servicesTitle: "بنية التحتية لسجل المزودين",
-    servicesSubtitle: "من الطبيب المستخدم إلى الطبيب المشغّل — هوية، تحقق، وسير عمل ذكي.",
-    testimonialsKicker: "أصوات",
-    testimonialsTitle: "ماذا يقول الشركاء",
-    newsletterKicker: "ابقَ على تواصل",
-    newsletterTitle: "انضم إلى المسار",
-    newsletterDesc:
-      "احصل على وصول مبكر إلى حلقات القيادة التنفيذية في الذكاء الاصطناعي، ومنشورات البحث، وفرص الشراكة.",
-    newsletterBookCta: "احجز اجتماعاً",
-    newsletterContactCta: "تواصل معي",
-    newsletterSocialTitle: "تابع الأعمال",
-    ecosystemSubtitle: "متابعة مباشرة لتوافر شبكة برينسايت.",
-    heroBadge: "مزوّد هوية معتمد",
-    statementLabel: "المشكلة",
-    statementProblem: "الطبيب يقف في الخط الأمامي مع المرضى — ثم يُطلب منه أن يتنقّل بين عشرات الشاشات والأنظمة التي لم تُبنَ له. المطالبات تُرفض. النقص يُكتشف بعد فوات الأوان. الأنظمة تتحدث مع بعضها كرقاب لا كزملاء.",
-    statementWhy: "لأن التقنية الصحية بُنيت لمصلحة الإدارات والفواتير، لا لمصلحة الطبيب الذي يواجه المريض. كل نظام جديد أُضيف كطبقة فوق طبقة — ولم يتم تصميم أي منها من الداخل نحو الطبيب.",
-    statementSolution: "هوية رقمية موثوقة. صلاحيات قابلة للتحقق. أدوات تظهر عند الحاجة فقط. أنظمة تتحدث مع بعضها — بدون أن يكون الطبيب هو الجسر البشري بينها.",
-    statementWhyThis: "لأن الهوية الرقمية ليست مفتاح دخول. هي جواز سفر — تثبّت من أنت، ماذا لديك صلاحية، ومتى تظهر لك الأدوات. هذا ما يعيد التحكم إلى الطبيب.",
-    statementWhyNow: "لأن الأنظمة الصحية تنهار تحت وطأة التعقيد. لأن الذكاء الاصطناعي أصبح جاهزًا. لأن الطبيب لن ينتظر بعد.",
-    heroCtaRegistry: "ماذا يفعل BPR",
-    registryBadge: "BPR",
-    registryStatusTitle: "منصة OV",
-    registryKeys: {
-      provider: "المزوّد",
-      network: "الشبكة",
-      region: "المنطقة",
-      layer: "الطبقة"
-    },
-    aboutHeroLabel: "منظومة الرعاية التجديدية",
-    aboutHeroTitle: "من الطبيب المستخدم للنظام",
-    aboutHeroSubtitle: "إلى الطبيب الذي يُشغّل النظام",
-    aboutHeroDesc: [
-      "هوية رقمية موثوقة. صلاحيات قابلة للتحقق. أدوات تظهر حسب السياق.",
-      "ذكاء اصطناعي يراقب النقص قبل أن يتحول إلى رفض.",
-      "أنظمة تتحدث مع بعضها بدل أن يكون الطبيب هو الجسر البشري بينها."
-    ],
-    aboutHeroCta: "استكشف السجل",
-    aboutIntro: "أنا الدكتور محمد الفاضل.",
-    aboutStory: [
-      {
-        lines: ["طبيب. ومؤسس برينسايت."]
-      },
-      {
-        lines: [
-          "قبل أن أتحدث عن الذكاء الاصطناعي، أو الأنظمة الصحية، أو مستقبل عمل الأطباء…",
-          "أريد أن أوضح شيئًا مهمًا:"
-        ]
-      },
-      {
-        lines: [
-          "أنا لا أتحدث عن هذه الأشياء من خلف مكتب بعيد عن المستشفى.",
-          "ولا من شاشة تعرض أرقامًا جميلة في عرض تقديمي."
-        ],
-        highlight: true
-      },
-      {
-        lines: [
-          "من المناوبات. من الطوارئ. من القلق. من التعب. من ضغط المرضى.",
-          "من الملفات. من أنظمة المستشفيات. من المطالبات.",
-          "ومن تلك اللحظة التي ينتهي فيها يوم الطبيب… لكن العمل لا ينتهي."
-        ],
-        cta: true
-      },
-      {
-        lines: [
-          "ثم جاءت كوفيد-19.",
-          "كوفيد لم يكن مجرد أزمة صحية — كان اختبار ضغط كامل لكل الأنظمة الصحية في العالم.",
-          "وفي وسط كل ذلك… كان الطبيب في الصف الأول."
-        ]
-      },
-      {
-        lines: [
-          "إذا كان الطبيب هو من يقف في الخط الأول عند أصعب الأزمات…",
-          "فلماذا لا تكون التقنية مبنية حوله؟",
-          "لماذا نطلب منه أن يتكيف دائمًا مع أنظمة لم تُصمم له؟"
-        ]
-      },
-      {
-        lines: ["من هنا بدأت رؤية برينسايت.", "نظام يعمل حول الطبيب — ليس الطبيب حول النظام."],
-        cta: true
-      }
-    ],
-    nav: {
-      bpr: "BPR",
-      about: "نبذة",
-      journey: "الرحلة",
-      services: "الخدمات",
-      registry: "السجل",
-      impact: "الأثر",
-      experience: "الخبرة",
-      skills: "المهارات",
-      projects: "المشاريع",
-      ecosystem: "المنظومة",
-      contact: "تواصل"
-    },
-    levels: {
-      Expert: "خبير",
-      Advanced: "متقدم",
-      Intermediate: "متوسط",
-      Native: "لغة أم",
-      Fluent: "بارع"
-    },
-    statuses: {
-      Active: "نشط",
-      Maintained: "مُحدَّث",
-      Enterprise: "مؤسسي"
-    },
-    stats: [
-      { value: "+10", label: "سنوات سريرية وتقنية" },
-      { value: "+50k", label: "تنزيل مفتوح المصدر" },
-      { value: "3", label: "قارات وصل إليها الأثر" }
-    ],
-    experience: [
-      {
-        year: "2023 — الآن",
-        title: "المؤسس والرئيس التنفيذي",
-        org: "BrainSAIT",
-        desc: [
-          "قيادة تطوير منصة ذكاء اصطناعي صحية لدعم القرار السريري",
-          "بناء وكلاء ذكاء اصطناعي ثنائيي اللغة على مستوى المؤسسات للعمليات الصحية",
-          "نشر الحلول في أنظمة الرعاية الصحية بالسودان والسعودية"
-        ]
-      },
-      {
-        year: "2021 — 2023",
-        title: "مطوّر ذكاء اصطناعي صحي",
-        org: "مستشار مستقل",
-        desc: [
-          "تطوير حزم بايثون للذكاء الاصطناعي الصحي (PyHeart، PyBrain)",
-          "نشر أطر عمل طبية مفتوحة المصدر على PyPI",
-          "استشارات في تحسين سير العمل السريري وتكامل الذكاء الاصطناعي"
-        ]
-      },
-      {
-        year: "2021 — 2022",
-        title: "طبيب سريري",
-        org: "منشآت صحية، السودان",
-        desc: [
-          "تقديم رعاية للمرضى مع تحديد أوجه القصور في سير العمل",
-          "تصميم حلول رقمية للتوثيق السريري",
-          "التعاون مع فرق تقنية المعلومات في مشاريع تكامل السجلات الصحية"
-        ]
-      },
-      {
-        year: "2015 — 2021",
-        title: "دكتور في الطب (MD)",
-        org: "كلية الطب",
-        desc: [
-          "طب سريري بتركيز على تكامل تقنية الرعاية الصحية",
-          "بحث في المعلوماتية الطبية وتطبيقات الذكاء الاصطناعي"
-        ]
-      },
-      {
-        year: "2021 — 2024",
-        title: "تخصص في الذكاء الاصطناعي الصحي",
-        org: "تعلم ذاتي وتطوير مهني",
-        desc: [
-          "تدريب متقدم في الذكاء الاصطناعي السريري وتعلّم الآلة",
-          "شهادة في معايير التشغيل البيني FHIR/HL7"
-        ]
-      }
-    ],
-    skillCategories: [
-      {
-        name: "الذكاء الاصطناعي الصحي",
-        skills: [
-          { name: "دعم القرار السريري", level: "Expert" },
-          { name: "الترميز الطبي", level: "Expert" },
-          { name: "HL7 FHIR R4", level: "Expert" },
-          { name: "التوثيق التلقائي بالذكاء الاصطناعي", level: "Advanced" }
-        ]
-      },
-      {
-        name: "الذكاء الاصطناعي والتعلم الآلي",
-        skills: [
-          { name: "LLMs", level: "Expert" },
-          { name: "RAG", level: "Expert" },
-          { name: "Fine-tuning", level: "Advanced" },
-          { name: "PyTorch", level: "Advanced" }
-        ]
-      },
-      {
-        name: "البرمجة والتطوير",
-        skills: [
-          { name: "Python", level: "Expert" },
-          { name: "FastAPI", level: "Expert" },
-          { name: "React / Node.js", level: "Advanced" },
-          { name: "Docker / K8s", level: "Advanced" }
-        ]
-      },
-      {
-        name: "الامتثال الصحي",
-        skills: [
-          { name: "HIPAA", level: "Expert" },
-          { name: "NPHIES", level: "Expert" },
-          { name: "PDPL", level: "Advanced" },
-          { name: "SaMD", level: "Advanced" }
-        ]
-      },
-      {
-        name: "البيانات",
-        skills: [
-          { name: "Vector DBs", level: "Advanced" },
-          { name: "PostgreSQL", level: "Advanced" },
-          { name: "MongoDB", level: "Advanced" }
-        ]
-      },
-      {
-        name: "اللغات",
-        skills: [
-          { name: "العربية", level: "أصلية" },
-          { name: "الإنجليزية", level: "طلاقة" },
-          { name: "المصطلحات الطبية", level: "خبير" }
-        ]
-      }
-    ],
-    projects: [
-      {
-        name: "BrainSAIT Healthcare AI Platform",
-        status: "Active",
-        year: "2023–2024",
-        desc: "منصة ذكاء اصطناعي شاملة لدعم القرار السريري، والتحقق التلقائي من مطالبات NPHIES، وتكامل كامل مع HL7 FHIR R4.",
-        tech: ["Python", "OpenAI GPT", "FHIR R4"],
-        link: "https://github.com/Fadil369/brainsait-healthcare-ai"
-      },
-      {
-        name: "BrainSAIT LINC Agent",
-        status: "Active",
-        year: "2024",
-        desc: "وكيل ذكاء اصطناعي ثنائي اللغة على مستوى المؤسسات للعمليات الصحية — ترميز طبي، معالجة مطالبات، وفرز مرضى.",
-        tech: ["Qwen3-8B", "Arabic NLP"],
-        link: "https://github.com/Fadil369/brainsait-linc-docs"
-      },
-      {
-        name: "Neural Cloud Portal",
-        status: "Active",
-        year: "2024",
-        desc: "بوابة عيادات ثنائية اللغة وصوتية بالزمن الحقيقي، متكاملة مع الذكاء الاصطناعي الخلفي وسير العمل السريري.",
-        tech: ["React", "WebRTC"],
-        link: "https://elfadil.com/"
-      },
-      {
-        name: "AFHAM AI Studio & BrainSAIT Suite",
-        status: "Active",
-        year: "2024",
-        desc: "حزمة أدوات ذكاء اصطناعي شاملة لمقدمي الرعاية الصحية باستخدام RAG على Google Gemini.",
-        tech: ["Gemini", "RAG", "FastAPI"],
-        link: "https://github.com/Fadil369/brainsait-suite"
-      },
-      {
-        name: "PyHeart — Cardiac AI Analysis",
-        status: "Maintained",
-        year: "2023",
-        desc: "حزمة بايثون لتحليل بيانات القلب ودعم التشخيص بالذكاء الاصطناعي، منشورة على PyPI.",
-        tech: ["Python", "NumPy"],
-        link: "https://pypi.org/project/brainsait-pyheart/"
-      },
-      {
-        name: "PyBrain — Neural Intelligence",
-        status: "Maintained",
-        year: "2023",
-        desc: "إطار ذكاء اصطناعي عصبي متقدم لتطبيقات الرعاية الصحية ومعالجة البيانات الطبية.",
-        tech: ["TensorFlow", "Keras"],
-        link: "https://pypi.org/project/brainsait-pybrain/"
-      },
-      {
-        name: "Healthcare Interoperability Solutions",
-        status: "Enterprise",
-        year: "2023–2024",
-        desc: "حلول مؤسسية للتشغيل البيني الصحي مع التركيز على معايير FHIR/HL7 وامتثال NPHIES.",
-        tech: ["FHIR R4", "NPHIES", "OAuth2"],
-        link: "https://brainsait.de"
-      },
-      {
-        name: "Clinical Documentation Automation",
-        status: "Active",
-        year: "2024",
-        desc: "حل بالذكاء الاصطناعي لأتمتة التوثيق السريري وخفض إجهاد الأطباء بتقنية الاستماع الذكي.",
-        tech: ["Whisper", "GPT-4"],
-        link: "https://brainsait.de"
-      },
-      {
-        name: "DeepSeek Harness — Intelligent Agent Platform",
-        status: "Active",
-        year: "2024–2026",
-        desc: "منصة وكلاء ذكية — 9 مزودين (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ نموذج، تحويل تلقائي عند الاستهلاك، ALLAM و Orpheus Saudi TTS.",
-        tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
-        link: "https://agent.brainsait.de"
-      },
-      {
-        name: "ALLAM — Arabic LLM (SDAIA) & Saudi TTS",
-        status: "Active",
-        year: "2024–2026",
-        desc: "تكامل ALLAM 2-7B و Groq Orpheus Saudi (عبدالله/نورا) — واجهة صوتية سعودية، تحويل النص إلى كلام عربي فاخر.",
-        tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
-        link: "https://platforms.brainsait.de/v1/catalog"
-      },
-      {
-        name: "BrainSAIT Stores — gh.io + Shopify",
-        status: "Active",
-        year: "2024–2026",
-        desc: "متجران متكاملان — 40 كتاب تعليمي + 60 حل + حاضنة 16 يومًا، متزامنان مع Shopify store.brainsait.de (182/499/24k SAR).",
-        tech: ["fadil369.github.io", "Shopify", "MyFatoorah", "R2"],
-        link: "https://fadil369.github.io"
-      },
-      {
-        name: "Cloudflare Workers & Pages — 146 Workers",
-        status: "Active",
-        year: "2023–2026",
-        desc: "146 Worker + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.de، build-apply، store-delivery، platforms-dispatcher.",
-        tech: ["CF Workers", "KV", "R2", "D1", "AI"],
-        link: "https://platforms.brainsait.de/v1/projects"
-      },
-      {
-        name: "GitHub — 50+ Repos & Ecosystem",
-        status: "Active",
-        year: "2020–2026",
-        desc: "50+ مستودع — OID, HNH, GIVC, SBS, Momfood, NPHIES، وأكثر مع CI/CD و Canva/Airtable.",
-        tech: ["GitHub", "Git", "Actions", "Canva", "Airtable"],
-        link: "https://github.com/Fadil369"
-      },
-      {
-        name: "n8n Workflows — 20 Automated",
-        status: "Active",
-        year: "2024–2026",
-        desc: "20 سير عمل — Shopify Concierge، License Issuance، Order Fanout، Lark، Telegram، 3CX، مع تكامل Hermes و Hub.",
-        tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.de"
-      }
-    ],
-    ecosystem: [
-      {
-        "name": "ملفي في سجل BPR",
-        "urlLabel": "registry.brainsait.de/p/SA-PHY-000003",
-        "url": "https://registry.brainsait.de/p/SA-PHY-000003",
-        "badge": "✓",
-        "featured": true
-      },
-      {
-        "name": "ORCID",
-        "urlLabel": "orcid.org/0009-0003-7485-3575",
-        "url": "https://orcid.org/0009-0003-7485-3575"
-      },
-      {
-        "name": "مجتمع BPR على Zenodo",
-        "urlLabel": "zenodo.org/communities/bpr-doctors",
-        "url": "https://zenodo.org/communities/bpr-doctors/"
-      },
-      {
-        "name": "Hugging Face",
-        "urlLabel": "huggingface.co/Fadil369",
-        "url": "https://huggingface.co/Fadil369"
-      },
-      {
-        "name": "برينسايت",
-        "urlLabel": "brainsait.de",
-        "url": "https://brainsait.de"
-      },
-      {
-        "name": "المدونة",
-        "urlLabel": "brainsait369.blogspot.com",
-        "url": "https://brainsait369.blogspot.com/",
-        "badge": "✍️",
-        "featured": true
-      },
-      {
-        "name": "شبكة الصحة",
-        "urlLabel": "hnh.brainsait.de",
-        "url": "https://hnh.brainsait.de"
-      },
-      {
-        "name": "برينسايت سبارك",
-        "urlLabel": "spark.brainsait.de",
-        "url": "https://spark.brainsait.de"
-      },
-      {
-        "name": "برينسايت الحاضنة",
-        "urlLabel": "brainsait.de/incubator",
-        "url": "https://brainsait.de/incubator"
-      },
-      {
-        "name": "HIVI وكيل الصحة",
-        "urlLabel": "hivi.brainsait.de",
-        "url": "https://hivi.brainsait.de"
-      },
-      {
-        "name": "سوق برينسايت",
-        "urlLabel": "market.brainsait.de",
-        "url": "https://market.brainsait.de"
-      },
-      {
-        "name": "الملف السريري",
-        "urlLabel": "dr.elfadil.com",
-        "url": "https://dr.elfadil.com"
-      },
-      {
-        "name": "البوابة",
-        "urlLabel": "portal.elfadil.com",
-        "url": "https://portal.elfadil.com"
-      },
-      {
-        "name": "العمل",
-        "urlLabel": "work.elfadil.com",
-        "url": "https://work.elfadil.com"
-      },
-      {
-        "name": "أبنائي — إرثي",
-        "urlLabel": "son.elfadil.com",
-        "url": "https://son.elfadil.com"
-      },
-      {
-        "name": "GitHub",
-        "urlLabel": "github.com/Fadil369",
-        "url": "https://github.com/Fadil369",
-        "icon": "github"
-      },
-      {
-        "name": "LinkedIn",
-        "urlLabel": "linkedin.com/in/fadil369",
-        "url": "https://sa.linkedin.com/in/fadil369",
-        "icon": "linkedin"
-      },
-      {
-        "name": "X / Twitter",
-        "urlLabel": "x.com/Fadil369",
-        "url": "https://x.com/Fadil369",
-        "icon": "x"
-      }
-    ],
-    services: [
-      {
-        icon: "Brain",
-        title: "الاستشارات الاستراتيجية في الذكاء الاصطناعي",
-        desc: "جلسات استراتيجية ذكاء اصطناعي تحويلية مصممة لرؤية مؤسستك الصحية.",
-        features: ["توافق رؤية 2030", "تقييم جاهزية الذكاء الاصطناعي", "تصميم خارطة الطريق"]
-      },
-      {
-        icon: "Code",
-        title: "تطوير الذكاء الاصطناعي الصحي",
-        desc: "بناء أنظمة ذكاء اصطناعي أصلية مع FHIR/NPHIES، ودعم القرار السريري، وخطوط الأتمتة.",
-        features: ["تكامل FHIR R4", "توافق NPHIES", "وكلاء ذكاء اصطناعي سريريون"]
-      },
-      {
-        icon: "Briefcase",
-        title: "التدريب التنفيذي",
-        desc: "حلقات مخصصة وبرامج جماعية لقادة الأنظمة الصحية حول التحول بالذكاء الاصطناعي.",
-        features: ["حلقات تنفيذية سعودية", "برامج مدتها 90 يوماً", "شهادات معتمدة"]
-      },
-      {
-        icon: "Shield",
-        title: "التنظيم والامتثال",
-        desc: "تسجيل الجهات الرقابية، وامتثال HIPAA/SaMD، وتأهيل المناقصات العامة.",
-        features: ["تسجيل DGA", "هيئة التأمين", "المناقصات العامة"]
-      }
-    ],
-    testimonials: [],
-    socialLinks: [
-      { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
-      { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
-      { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
-    ]
+const LINKS = {
+  bpr: "https://registry.brainsait.de/p/SA-PHY-000003",
+  orcid: "https://orcid.org/0009-0003-7485-3575",
+  zenodo: "https://zenodo.org/communities/bpr-doctors/",
+  hf: "https://huggingface.co/Fadil369",
+  github: "https://github.com/Fadil369",
+  linkedin: "https://sa.linkedin.com/in/fadil369",
+  x: "https://x.com/Fadil369",
+  blog: "https://brainsait369.blogspot.com/"
+};
+
+const TECH = {
+  lincFhir: ["FHIR R4", "InterSystems", "Agents"],
+  masterlinc: ["Imaging", "PACS", "Orchestration"],
+  rcm: ["NPHIES", "FHIR R4", "TypeScript"],
+  mcp: ["MCP", "FHIR R4", "Audit"],
+  academy: ["Arabic", "English", "NPHIES / FHIR"]
+};
+
+const GH = "https://github.com/Fadil369";
+const EVIDENCE = {
+  gayanvoice: "https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/saudi_arabia.md",
+  committers: "https://committers.top/saudi_arabia",
+  digest: "https://community.intersystems.com/post/intersystems-open-exchange-applications-digest-june-2026",
+  contest: "https://openexchange.intersystems.com/contest/46"
+};
+
+// Peer-reviewed journal articles from the ORCID record (0009-0003-7485-3575), newest first.
+const PUBLICATIONS: PublicationItem[] = [
+  {
+    title: "The role of artificial intelligence in developing meal plans in outpatient dietetics: a feasibility and proof-of-concept study",
+    venue: "Nutrition in Clinical Practice",
+    year: "2026",
+    url: "https://doi.org/10.1002/ncp.70169"
   },
+  {
+    title: "Use of telemedicine to provide initial home parenteral nutrition training during the COVID-19 pandemic: a case series",
+    venue: "Nutrition and Health",
+    year: "2025",
+    url: "https://doi.org/10.1177/02601060251374384"
+  },
+  {
+    title: "Roles, responsibilities, and opportunities for the nutrition support physician working with adults: a critical review",
+    venue: "JPEN",
+    year: "2025",
+    url: "https://doi.org/10.1002/jpen.2790"
+  },
+  {
+    title: "Optimizing intravenous access for long-term parenteral nutrition",
+    venue: "Current Nutrition Reports",
+    year: "2024",
+    url: "https://doi.org/10.1007/s13668-024-00534-y"
+  },
+  {
+    title: "Patients' and caregivers' perspective on challenges and outcomes with tube feeding: analysis of home enteral nutrition survey data",
+    venue: "Clinical Nutrition ESPEN",
+    year: "2024",
+    url: "https://doi.org/10.1016/j.clnesp.2024.03.005"
+  },
+  {
+    title: "Safety and effectiveness of radiologic and endoscopic percutaneous gastrostomy placement: a randomized study",
+    venue: "JPEN",
+    year: "2022",
+    url: "https://doi.org/10.1002/jpen.2365"
+  },
+  {
+    title: "Use of telehealth in home nutrition support: challenges and advantages",
+    venue: "Nutrition in Clinical Practice",
+    year: "2021",
+    url: "https://doi.org/10.1002/ncp.10736"
+  },
+  {
+    title: "Myocardial injury is associated with higher morbidity and mortality in patients with 2019 novel coronavirus disease (COVID-19)",
+    venue: "SN Comprehensive Clinical Medicine",
+    year: "2020",
+    url: "https://doi.org/10.1007/s42399-020-00569-6"
+  }
+];
+
+export const CONTENT: Record<Lang, LangContent> = {
   en: {
     brand: "Dr. El Fadil",
     langToggle: "ع",
-    heroKicker: "Physician · Founder · Healthcare AI Innovator",
-    heroName: "Dr. Mohamed El Fadil",
-    heroTitle: "From the physician who uses the system… to the physician who runs it",
-    heroSubtitle: "Physician for years. Founder of BrainSAIT. We built a system around the doctor — not the doctor around the system.",
-    heroLocation: "Riyadh, Saudi Arabia  ·  Khartoum, Sudan",
-    heroCtaMeet: "Book a meeting",
-    bookModalTitle: "Book a meeting",
-    bookModalSubtitle: "Pick a time that works for you — instantly confirmed via Google Calendar.",
-    bookModalClose: "Close",
-    bookModalOpenExternal: "Open in a new tab ↗",
-    aboutKicker: "About",
-    aboutP1:
-      "I bridge clinical medicine and artificial intelligence — building systems that make healthcare smarter, faster, and more human across the Middle East and Africa.",
-    aboutP2:
-      "Over 10 years at the bedside — in ICUs, neurosurgery wards, and emergency rooms — gave me an insider’s grasp of what healthcare truly needs. Today, as Founder & CEO of BrainSAIT, I channel that clarity into AI products deployed in hospitals from Riyadh to Khartoum.",
-    expKicker: "Career",
-    expTitle: "Experience & Education",
-    skillsKicker: "Technical Expertise",
-    skillsTitle: "Skills",
-    projectsKicker: "Work",
-    projectsTitle: "Featured Projects",
-    ecosystemKicker: "Ecosystem",
-    ecosystemTitle: "Where to Find Me",
-    bprJourneyKicker: "The Journey",
-    bprJourneyTitle: "From User to Operator",
-    bprJourneySteps: [
-      {
-        title: "The Physician as User",
-        desc: "On the frontline with patients, then asked to navigate dozens of screens and systems that were never built for them."
-      },
-      {
-        title: "The Breaking Point",
-        desc: "COVID-19 and rejected claims revealed the truth: physicians are blamed for errors in systems they do not control."
-      },
-      {
-        title: "The Radical Question",
-        desc: "Why do we ask the physician to adapt to the system? Why not build the system around the physician?"
-      },
-      {
-        title: "The BrainSAIT Vision",
-        desc: "An identity and intelligent operating layer that knows the physician, protects them, and surfaces the right tools at the right moment."
-      }
-    ],
-    registryKicker: "Provider Registry",
-    registryTitle: "BRAINSAIT OID Provider Registry",
-    registryDesc: "A trusted identity for every healthcare provider. Verifiable credentials. Direct integration with the systems they need. Join the registry that returns control to the physician.",
-    registryCta: "Join the registry",
-    registryCtaSecondary: "Verify a Provider",
-    impactKicker: "Impact",
-    impactTitle: "What We Are Building Together",
-    impactStats: [
-      {
-        "value": "2010",
-        "label": "Clinical practice since"
-      },
-      {
-        "value": "20",
-        "label": "Works on ORCID"
-      },
-      {
-        "value": "10",
-        "label": "DOIs in the BPR community on Zenodo"
-      },
-      {
-        "value": "293",
-        "label": "Public GitHub repositories"
-      }
-    ],
-    contactKicker: "Let’s Talk",
-    contactTitle: "Have a healthcare AI project in mind?",
-    contactText:
-      "Open to collaborating with hospitals, developers, and investors working on healthcare technology across the Middle East and Africa.",
-    footerText: "© 2026 Dr. Mohamed El Fadil — Founder, BrainSAIT",
+    nav: { bpr: "BPR", why: "Why", founder: "Founder", research: "Research", work: "Work", contact: "Contact" },
     leveragePoint: "The Leverage Point",
-    workspaceCta: "Enter the 3D BPR workspace",
-    workspaceHint: "An interactive 3D desk that reads the live BPR registry",
-    workspaceExit: "Standard website",
-    workspaceBack: "Back to the scene",
-    workspaceStandard: "Close",
-    workspaceDock: { about: "About Me", projects: "Projects", collaborate: "Collaborate" },
-    servicesKicker: "The BPR Ecosystem",
-    servicesTitle: "Provider Registry Infrastructure",
-    servicesSubtitle:
-      "Where the physician goes from user to operator — identity, verification, and intelligent workflow.",
-    testimonialsKicker: "Voices",
-    testimonialsTitle: "What Partners Say",
-    newsletterKicker: "Stay Connected",
-    newsletterTitle: "Join the Pipeline",
-    newsletterDesc:
-      "Get early access to executive AI masterclasses, research publications, and partnership opportunities.",
-    newsletterBookCta: "Book a Meeting",
-    newsletterContactCta: "Get in Touch",
-    newsletterSocialTitle: "Follow the Work",
-    ecosystemSubtitle: "Live reachability across the BrainSAIT network.",
-    heroBadge: "OID Provider",
-    statementLabel: "THE PROBLEM",
-    statementProblem: "The physician stands on the front line with patients — then is asked to navigate dozens of screens and systems that were never built for them. Claims get rejected. Gaps are found too late. Systems talk to each other like guards, not colleagues.",
-    statementWhy: "Because healthcare tech was built for admin and billing, not for the clinician facing the patient. Every new system added another layer on top — none designed from the inside-out around the physician.",
-    statementSolution: "A trusted digital identity. Verifiable credentials. Tools that appear contextually. Systems that talk to each other — with the physician no longer as the human bridge between them.",
-    statementWhyThis: "Because digital identity isn't a login key. It's a passport — it proves who you are, what you're authorized to do, and when the right tools should appear. That returns control to the physician.",
-    statementWhyNow: "Because health systems are buckling under complexity. Because AI is finally ready. Because the physician won't wait anymore.",
-    heroCtaRegistry: "See what BPR does",
-    registryBadge: "BPR",
-    registryStatusTitle: "OV Platform",
-    registryKeys: {
-      provider: "Provider",
-      network: "Network",
-      region: "Region",
-      layer: "Layer"
-    },
-    aboutHeroLabel: "BPR Ecosystem",
-    aboutHeroTitle: "From the physician who uses the system",
-    aboutHeroSubtitle: "to the physician who runs it",
-    aboutHeroDesc: [
-      "A trusted digital identity. Verifiable credentials. Tools that appear contextually.",
-      "AI that watches for gaps before they become rejections.",
-      "Systems that talk to each other — instead of the physician being the human bridge between them."
-    ],
-    aboutHeroCta: "Explore Registry",
-    aboutIntro: "I am Dr. Mohamed El Fadil.",
-    aboutStory: [
+
+    heroKicker: "Physician · Founder of BrainSAIT",
+    heroName: "Dr. Mohamed El Fadil",
+    heroTitle: "I build BPR — a verifiable identity for every clinician.",
+    heroLead:
+      "The BrainSAIT Provider Registry gives each physician one signed, portable identity, and connects the records, research and tools that should follow it. Built from the bedside. Running today.",
+    heroLocation: "Riyadh, Saudi Arabia",
+    heroCtaMeet: "Book a meeting",
+    heroProofPending: "Verifying my BPR credential in your browser…",
+    heroProofOk: "My BPR credential was just verified in your browser",
+    heroProofFail: "Live check unavailable right now",
+
+    whyKicker: "Why BPR",
+    whyTitle: "Clinicians shouldn't be the glue between systems.",
+    whyBeats: [
       {
-        lines: ["A physician. And the founder of BrainSAIT."]
+        label: "The problem",
+        text: "Physicians move between dozens of systems built for billing, not care. Claims are rejected, gaps surface late, and the clinician ends up as the human bridge."
       },
       {
-        lines: [
-          "Before I talk about artificial intelligence, or health systems, or the future of how doctors work…",
-          "I want to make one thing clear:"
-        ]
+        label: "The idea",
+        text: "Start from identity: a signed record of who a clinician is and what they are credentialed for, so systems can trust it instead of asking again."
       },
       {
-        lines: [
-          "I am not talking about these things from a desk far away from the hospital.",
-          "Nor from a screen full of pretty numbers in a pitch deck."
-        ],
-        highlight: true
-      },
-      {
-        lines: [
-          "I speak from the on-call shifts. From the emergency room. From the worry. From the exhaustion. From the pressure of patients.",
-          "From the records. From the hospital systems. From the claims.",
-          "From that moment when the doctor's day ends… but the work does not.",
-          "I am talking from inside the experience."
-        ],
-        cta: true
-      },
-      {
-        lines: [
-          "Then came COVID-19.",
-          "COVID was not just a health crisis — it was a full stress test for every health system in the world.",
-          "And in the middle of it all… the physician was on the front line."
-        ]
-      },
-      {
-        lines: [
-          "If the physician is the one standing on the front line through the hardest crises…",
-          "then why isn't the technology built around them?",
-          "Why do we keep asking them to adapt to systems that were never designed for them?"
-        ]
-      },
-      {
-        lines: ["That is where the BrainSAIT vision began.", "A system built around the physician — not the physician around the system."],
-        cta: true
+        label: "Why now",
+        text: "FHIR R4 and W3C Verifiable Credentials are mature, NPHIES has put interoperability at the centre of Saudi healthcare, and AI can finally do the paperwork."
       }
     ],
-    nav: {
-      bpr: "BPR",
-      about: "About",
-      journey: "Journey",
-      services: "Services",
-      registry: "Registry",
-      impact: "Impact",
-      experience: "Experience",
-      skills: "Skills",
-      projects: "Projects",
-      ecosystem: "Ecosystem",
-      contact: "Contact"
-    },
-    levels: {
-      Expert: "Expert",
-      Advanced: "Advanced",
-      Intermediate: "Intermediate",
-      Native: "Native",
-      Fluent: "Fluent"
-    },
-    statuses: {
-      Active: "Active",
-      Maintained: "Maintained",
-      Enterprise: "Enterprise"
-    },
-    stats: [
-      { value: "10+", label: "Years Clinical & AI" },
-      { value: "50k+", label: "Open Source Downloads" },
-      { value: "3", label: "Continents Reached" }
+
+    registryJoin: "Join the registry",
+    registryVerify: "Verify a provider",
+
+    founderKicker: "Founder",
+    founderTitle: "Built from the bedside",
+    founderBio: [
+      "I'm a physician and the founder of BrainSAIT. I have practised medicine since 2010, including eight years in Riyadh's emergency, neurosurgery and intensive-care units — that is where I learned where healthcare workflows break: on-call nights, handovers, rejected claims.",
+      "COVID-19 made it plain: clinicians stand on the front line, yet the technology is built around everyone else. BrainSAIT starts from the other side — a system built around the physician, not the physician around the system.",
+      "Today I lead BrainSAIT Ltd from Riyadh, building AI-native healthcare infrastructure for Saudi Arabia and MENA: Arabic-native AI, interoperable data, trusted provider identity and accountable automation."
     ],
-    experience: [
-      {
-        year: "2023 — Present",
-        title: "Founder & CEO",
-        org: "BrainSAIT",
-        desc: [
-          "Leading development of an AI healthcare platform for clinical decision support",
-          "Built enterprise-grade bilingual AI agents for healthcare operations",
-          "Deployed solutions across Sudan and Saudi Arabia healthcare systems"
-        ]
-      },
-      {
-        year: "2021 — 2023",
-        title: "Healthcare AI Developer",
-        org: "Independent Consultant",
-        desc: [
-          "Developed Python packages for healthcare AI (PyHeart, PyBrain)",
-          "Published open-source medical AI frameworks on PyPI",
-          "Consulted on clinical workflow optimization and AI integration"
-        ]
-      },
-      {
-        year: "2021 — 2022",
-        title: "Clinical Physician",
-        org: "Healthcare Facilities, Sudan",
-        desc: [
-          "Provided patient care while identifying workflow inefficiencies",
-          "Designed digital solutions for clinical documentation",
-          "Collaborated with IT teams on EHR integration projects"
-        ]
-      },
-      {
-        year: "2015 — 2021",
-        title: "Medical Doctor (MD)",
-        org: "Medical School",
-        desc: [
-          "Clinical medicine with focus on healthcare technology integration",
-          "Research in medical informatics and AI applications"
-        ]
-      },
-      {
-        year: "2021 — 2024",
-        title: "Healthcare AI Specialization",
-        org: "Self-directed Learning & Development",
-        desc: [
-          "Advanced training in clinical AI and machine learning",
-          "FHIR/HL7 interoperability standards certification"
-        ]
-      }
+    impactStats: [
+      { value: "2010", label: "In clinical practice since" },
+      { value: "20", label: "Works on ORCID" },
+      { value: "10", label: "DOIs in the BPR community on Zenodo" },
+      { value: "293", label: "Public GitHub repositories" }
     ],
-    skillCategories: [
-      {
-        name: "Healthcare AI & Clinical Intelligence",
-        skills: [
-          { name: "Clinical Decision Support", level: "Expert" },
-          { name: "Medical Coding", level: "Expert" },
-          { name: "HL7 FHIR R4", level: "Expert" },
-          { name: "Ambient AI Documentation", level: "Advanced" }
-        ]
-      },
-      {
-        name: "AI & Machine Learning",
-        skills: [
-          { name: "LLMs", level: "Expert" },
-          { name: "RAG", level: "Expert" },
-          { name: "Fine-tuning", level: "Advanced" },
-          { name: "PyTorch", level: "Advanced" }
-        ]
-      },
-      {
-        name: "Programming & Development",
-        skills: [
-          { name: "Python", level: "Expert" },
-          { name: "FastAPI", level: "Expert" },
-          { name: "React / Node.js", level: "Advanced" },
-          { name: "Docker / K8s", level: "Advanced" }
-        ]
-      },
-      {
-        name: "Healthcare Compliance",
-        skills: [
-          { name: "HIPAA", level: "Expert" },
-          { name: "NPHIES", level: "Expert" },
-          { name: "PDPL", level: "Advanced" },
-          { name: "SaMD", level: "Advanced" }
-        ]
-      },
-      {
-        name: "Data & Databases",
-        skills: [
-          { name: "Vector DBs", level: "Advanced" },
-          { name: "PostgreSQL", level: "Advanced" },
-          { name: "MongoDB", level: "Advanced" }
-        ]
-      },
-      {
-        name: "Languages",
-        skills: [
-          { name: "Arabic", level: "Native" },
-          { name: "English", level: "Fluent" },
-          { name: "Medical Terminology", level: "Expert" }
-        ]
-      }
+    timelineTitle: "Path",
+    timeline: [
+      { year: "2019 — now", title: "Founder & CEO", org: "BrainSAIT Ltd · Riyadh", line: "Healthcare AI products, NPHIES-oriented claims workflows, the LINC agents and BPR" },
+      { year: "2021 — 2024", title: "Critical Care & ICU Physician", org: "Anfas Medical Care Hospital · Riyadh", line: "Critically ill patients; bedside documentation and handover turned into product requirements" },
+      { year: "2018 — 2021", title: "Physician, Neurosurgery Service", org: "Aster Sanad Hospital · Riyadh", line: "Multidisciplinary neurosurgical care and coordination across teams" },
+      { year: "2016 — 2018", title: "Emergency Medicine Physician", org: "Rafa Medical Center · Riyadh", line: "Acute care: rapid assessment and decisions under pressure" },
+      { year: "MBBS", title: "Bachelor of Medicine & Surgery", org: "International University of Africa", line: "Arabic native · English fluent" }
     ],
+    linksTitle: "Verify the work",
+    links: [
+      { label: "BPR profile", url: LINKS.bpr },
+      { label: "ORCID", url: LINKS.orcid },
+      { label: "Zenodo · BPR", url: LINKS.zenodo },
+      { label: "Hugging Face", url: LINKS.hf },
+      { label: "GitHub", url: LINKS.github },
+      { label: "LinkedIn", url: LINKS.linkedin },
+      { label: "X", url: LINKS.x },
+      { label: "Blog", url: LINKS.blog }
+    ],
+    recognitionTitle: "Public milestones",
+    recognition: [
+      { label: "Listed among Saudi Arabia's most active public GitHub contributors", source: "gayanvoice", url: EVIDENCE.gayanvoice },
+      { label: "Listed among Saudi Arabia's most active GitHub committers", source: "committers.top", url: EVIDENCE.committers },
+      { label: "BRAINSAIT-LINC-FHIR in the Open Exchange applications digest, June 2026", source: "InterSystems", url: EVIDENCE.digest },
+      { label: "Entered in the AI Agents for FHIR contest, 2026", source: "InterSystems", url: EVIDENCE.contest }
+    ],
+
+    researchKicker: "Research",
+    researchTitle: "Writing and research",
+    commonsTag: "Bilingual study · v1.2 · Zenodo",
+    commonsTitle: "The Clinical Commons",
+    commonsDesc:
+      "An institutional design for hospitals in which multidisciplinary clinical teams steward care, an accountable board manages resources, and community representatives oversee mission and equity — starting with a limited, reversible pilot and expanding only after independent evaluation.",
+    commonsStatus: "A proposal for discussion, not an established framework.",
+    commonsRead: { en: "Read in English", ar: "اقرأ بالعربية", record: "DOI record" },
+    publicationsTitle: "Peer-reviewed publications",
+    publications: PUBLICATIONS,
+
+    workKicker: "Work",
+    workTitle: "Selected work",
     projects: [
       {
-        name: "BrainSAIT Healthcare AI Platform",
+        name: "LINC FHIR",
         status: "Active",
-        year: "2023–2024",
-        desc: "Comprehensive AI healthcare platform for clinical decision support, automated NPHIES claims validation, and full HL7 FHIR R4 integration.",
-        tech: ["Python", "OpenAI GPT", "FHIR R4"],
-        link: "https://github.com/Fadil369/brainsait-healthcare-ai"
+        desc: "Bilingual healthcare agents and FHIR integration for the InterSystems ecosystem.",
+        tech: TECH.lincFhir,
+        link: `${GH}/brainsait-linc-fhir`
       },
       {
-        name: "BrainSAIT LINC Agent",
+        name: "BrainSAIT RCM",
         status: "Active",
-        year: "2024",
-        desc: "Enterprise-grade bilingual AI agent for healthcare operations — medical coding, claims processing, and patient triage.",
-        tech: ["Qwen3-8B", "Arabic NLP"],
-        link: "https://github.com/Fadil369/brainsait-linc-docs"
+        desc: "Saudi claims, rejection management and revenue-cycle automation, with NPHIES integration.",
+        tech: TECH.rcm,
+        link: `${GH}/brainsait-rcm`
       },
       {
-        name: "Neural Cloud Portal",
+        name: "MasterLinc",
         status: "Active",
-        year: "2024",
-        desc: "Bilingual, audio-ready clinic portal with real-time voice support, integrated with backend AI and clinical workflows.",
-        tech: ["React", "WebRTC"],
-        link: "https://elfadil.com/"
+        desc: "Orchestration for imaging — RadioLinc, PACS and viewers — and the communication around it.",
+        tech: TECH.masterlinc,
+        link: `${GH}/masterlinc`
       },
       {
-        name: "AFHAM AI Studio & BrainSAIT Suite",
+        name: "Healthcare MCP",
         status: "Active",
-        year: "2024",
-        desc: "Comprehensive AI tools suite for healthcare providers with RAG built on Google Gemini for clinical analytics.",
-        tech: ["Gemini", "RAG", "FastAPI"],
-        link: "https://github.com/Fadil369/brainsait-suite"
+        desc: "Healthcare tool connectors for AI assistants: FHIR operations, access controls and audit.",
+        tech: TECH.mcp,
+        link: `${GH}/brainsait-mcp-dxt`
       },
       {
-        name: "PyHeart — Cardiac AI Analysis",
-        status: "Maintained",
-        year: "2023",
-        desc: "Python package for cardiac data analysis and AI-powered diagnostic support, published on PyPI.",
-        tech: ["Python", "NumPy"],
-        link: "https://pypi.org/project/brainsait-pyheart/"
-      },
-      {
-        name: "PyBrain — Neural Intelligence",
-        status: "Maintained",
-        year: "2023",
-        desc: "Advanced neural intelligence framework for healthcare AI applications and medical data processing.",
-        tech: ["TensorFlow", "Keras"],
-        link: "https://pypi.org/project/brainsait-pybrain/"
-      },
-      {
-        name: "Healthcare Interoperability Solutions",
-        status: "Enterprise",
-        year: "2023–2024",
-        desc: "Enterprise solutions for healthcare data interoperability focused on FHIR/HL7 standards and NPHIES compliance.",
-        tech: ["FHIR R4", "NPHIES", "OAuth2"],
-        link: "https://brainsait.de"
-      },
-      {
-        name: "Clinical Documentation Automation",
+        name: "BrainSAIT Academy",
         status: "Active",
-        year: "2024",
-        desc: "AI-powered solution automating clinical documentation and reducing physician burnout with ambient listening.",
-        tech: ["Whisper", "GPT-4"],
-        link: "https://brainsait.de"
-      },
-      {
-        name: "DeepSeek Harness — Intelligent Agent Platform",
-        status: "Active",
-        year: "2024–2026",
-        desc: "Intelligent agent platform — 9 providers (Xkiro, Groq, Hetzner, CF, TeamoRouter) 40+ models, auto-failover, ALLAM & Orpheus Saudi TTS.",
-        tech: ["DeepSeek V4", "ALLAM", "Groq Orpheus", "Qwen3.8", "Muse Spark"],
-        link: "https://agent.brainsait.de"
-      },
-      {
-        name: "ALLAM — Arabic LLM & Saudi TTS",
-        status: "Active",
-        year: "2024–2026",
-        desc: "ALLAM 2-7B + Groq Orpheus Saudi (abdullah/noura) — premium Saudi voice, Arabic TTS.",
-        tech: ["ALLAM 2-7B", "Orpheus Arabic", "Groq LPU", "Whisper"],
-        link: "https://platforms.brainsait.de/v1/catalog"
-      },
-      {
-        name: "BrainSAIT Stores — gh.io + Shopify",
-        status: "Active",
-        year: "2024–2026",
-        desc: "Two integrated stores — 40 Learn + 60 Solutions + 16-day incubator, synced with Shopify store.brainsait.de (182/499/24k SAR).",
-        tech: ["fadil369.github.io", "Shopify", "MyFatoorah", "R2"],
-        link: "https://fadil369.github.io"
-      },
-      {
-        name: "Cloudflare Workers & Pages — 146 Workers",
-        status: "Active",
-        year: "2023–2026",
-        desc: "146 Workers + 74 KV + R2 + D1 + AI Gateway — hub.brainsait.de, build-apply, store-delivery, platforms-dispatcher.",
-        tech: ["CF Workers", "KV", "R2", "D1", "AI"],
-        link: "https://platforms.brainsait.de/v1/projects"
-      },
-      {
-        name: "GitHub — 50+ Repos & Ecosystem",
-        status: "Active",
-        year: "2020–2026",
-        desc: "50+ repos — OID, HNH, GIVC, SBS, Momfood, NPHIES with CI/CD & Canva/Airtable.",
-        tech: ["GitHub", "Git", "Actions", "Canva", "Airtable"],
-        link: "https://github.com/Fadil369"
-      },
-      {
-        name: "n8n Workflows — 20 Automated",
-        status: "Active",
-        year: "2024–2026",
-        desc: "20 workflows — Shopify Concierge, License Issuance, Order Fanout, Lark, Telegram, 3CX via Hermes & Hub.",
-        tech: ["n8n", "Hub", "Lark", "Telegram", "3CX"],
-        link: "https://hub.brainsait.de"
+        desc: "Practical bilingual learning where healthcare, AI, business and software development meet.",
+        tech: TECH.academy,
+        link: "https://brainsait.de/academy/"
       }
     ],
-    ecosystem: [
-      {
-        "name": "My BPR registry profile",
-        "urlLabel": "registry.brainsait.de/p/SA-PHY-000003",
-        "url": "https://registry.brainsait.de/p/SA-PHY-000003",
-        "badge": "✓",
-        "featured": true
-      },
-      {
-        "name": "ORCID",
-        "urlLabel": "orcid.org/0009-0003-7485-3575",
-        "url": "https://orcid.org/0009-0003-7485-3575"
-      },
-      {
-        "name": "BPR community on Zenodo",
-        "urlLabel": "zenodo.org/communities/bpr-doctors",
-        "url": "https://zenodo.org/communities/bpr-doctors/"
-      },
-      {
-        "name": "Hugging Face",
-        "urlLabel": "huggingface.co/Fadil369",
-        "url": "https://huggingface.co/Fadil369"
-      },
-      {
-        "name": "BrainSAIT",
-        "urlLabel": "brainsait.de",
-        "url": "https://brainsait.de"
-      },
-      {
-        "name": "The Blog",
-        "urlLabel": "brainsait369.blogspot.com",
-        "url": "https://brainsait369.blogspot.com/",
-        "badge": "✍️",
-        "featured": true
-      },
-      {
-        "name": "Health Network Hub",
-        "urlLabel": "hnh.brainsait.de",
-        "url": "https://hnh.brainsait.de"
-      },
-      {
-        "name": "BrainSAIT Spark",
-        "urlLabel": "spark.brainsait.de",
-        "url": "https://spark.brainsait.de"
-      },
-      {
-        "name": "BrainSAIT Incubator",
-        "urlLabel": "brainsait.de/incubator",
-        "url": "https://brainsait.de/incubator"
-      },
-      {
-        "name": "HIVI Health Agent",
-        "urlLabel": "hivi.brainsait.de",
-        "url": "https://hivi.brainsait.de"
-      },
-      {
-        "name": "BrainSAIT Market",
-        "urlLabel": "market.brainsait.de",
-        "url": "https://market.brainsait.de"
-      },
-      {
-        "name": "Clinical Profile",
-        "urlLabel": "dr.elfadil.com",
-        "url": "https://dr.elfadil.com"
-      },
-      {
-        "name": "Portal",
-        "urlLabel": "portal.elfadil.com",
-        "url": "https://portal.elfadil.com"
-      },
-      {
-        "name": "Work",
-        "urlLabel": "work.elfadil.com",
-        "url": "https://work.elfadil.com"
-      },
-      {
-        "name": "My Sons — A Legacy",
-        "urlLabel": "son.elfadil.com",
-        "url": "https://son.elfadil.com"
-      },
-      {
-        "name": "GitHub",
-        "urlLabel": "github.com/Fadil369",
-        "url": "https://github.com/Fadil369",
-        "icon": "github"
-      },
-      {
-        "name": "LinkedIn",
-        "urlLabel": "linkedin.com/in/fadil369",
-        "url": "https://sa.linkedin.com/in/fadil369",
-        "icon": "linkedin"
-      },
-      {
-        "name": "X / Twitter",
-        "urlLabel": "x.com/Fadil369",
-        "url": "https://x.com/Fadil369",
-        "icon": "x"
-      }
-    ],
-    services: [
-      {
-        icon: "Brain",
-        title: "AI Strategy & Consulting",
-        desc: "Transformative AI strategy sessions tailored to your healthcare organization's vision.",
-        features: ["Vision 2030 Alignment", "AI Readiness Assessment", "Roadmap Design"]
-      },
-      {
-        icon: "Code",
-        title: "Healthcare AI Development",
-        desc: "Building FHIR/NPHIES-native AI systems, clinical decision support, and automation pipelines.",
-        features: ["FHIR R4 Integration", "NPHIES Compliance", "Clinical AI Agents"]
-      },
-      {
-        icon: "Briefcase",
-        title: "Executive Training",
-        desc: "Bespoke masterclasses and cohort programs for health-system leaders on AI transformation.",
-        features: ["Saudi Executive Masterclasses", "90-Day Cohort Programs", "Certification"]
-      },
-      {
-        icon: "Shield",
-        title: "Regulatory & Compliance",
-        desc: "DGA and Insurance Authority registration, HIPAA/SaMD compliance, and public tender qualification.",
-        features: ["DGA Registration", "Insurance Authority", "Public Tenders"]
-      }
-    ],
-    testimonials: [],
-    socialLinks: [
-      { label: "GitHub", url: "https://github.com/Fadil369", icon: "github" },
-      { label: "LinkedIn", url: "https://sa.linkedin.com/in/fadil369", icon: "linkedin" },
-      { label: "X / Twitter", url: "https://x.com/Fadil369", icon: "x" },
-      { label: "Blog", url: "https://brainsait369.blogspot.com/", icon: "book" }
-    ]
-  }
-};
+    statuses: { Active: "Active", Maintained: "Maintained" },
 
-export const THEMES: Record<
-  ThemeName,
-  {
-    bg: string;
-    surface: string;
-    border: string;
-    text: string;
-    muted: string;
-    accent: string;
-    accentSoft: string;
-    accentSoft2: string;
-    glow: string;
-  }
-> = {
-  dark: {
-    bg: "#12141c",
-    surface: "rgba(35,37,50,.55)",
-    border: "rgba(233,233,237,.14)",
-    text: "#e9e9ed",
-    muted: "rgba(233,233,237,.62)",
-    accent: "#9184d9",
-    accentSoft: "rgba(145,132,217,.16)",
-    accentSoft2: "rgba(167,161,219,.12)",
-    glow: "0 8px 30px rgba(145,132,217,.35)"
+    contactKicker: "Contact",
+    contactTitle: "Building something with clinicians?",
+    contactText: "I work with hospitals, health-tech teams and investors across Saudi Arabia, the Gulf and Africa. The quickest way in is a short call.",
+    contactJoin: "Join BPR as a provider",
+    footerText: "© 2026 Dr. Mohamed El Fadil · BrainSAIT",
+
+    bookModalTitle: "Book a meeting",
+    bookModalSubtitle: "Pick a time that suits you — confirmed instantly via Google Calendar.",
+    bookModalClose: "Close",
+    bookModalOpenExternal: "Open in a new tab ↗",
+
+    workspaceCta: "Step into the BPR workspace",
+    workspaceHint: "A 3D desk that reads the live BPR registry",
+    workspaceExit: "Back to the site",
+    workspaceBack: "Back to the desk",
+    workspaceStandard: "Close",
+    workspaceDock: { about: "About", projects: "Work", collaborate: "Book a call" }
   },
-  light: {
-    bg: "#f3f5fe",
-    surface: "rgba(255,255,255,.6)",
-    border: "rgba(41,43,49,.12)",
-    text: "#20222b",
-    muted: "rgba(32,34,43,.62)",
-    accent: "#5d5294",
-    accentSoft: "rgba(93,82,148,.14)",
-    accentSoft2: "rgba(93,82,148,.1)",
-    glow: "0 8px 26px rgba(93,82,148,.25)"
+  ar: {
+    brand: "د. الفاضل",
+    langToggle: "EN",
+    nav: { bpr: "BPR", why: "لماذا", founder: "المؤسس", research: "الأبحاث", work: "الأعمال", contact: "تواصل" },
+    leveragePoint: "نقطة الرفع",
+
+    heroKicker: "طبيب · مؤسس برينسايت",
+    heroName: "د. محمد الفاضل",
+    heroTitle: "أبني BPR — هوية قابلة للتحقق لكل ممارس صحي.",
+    heroLead:
+      "يمنح سجل برينسايت لمقدمي الخدمة كل طبيب هوية واحدة موقّعة ينقلها معه، ويربط بها السجلات والأبحاث والأدوات التي ينبغي أن تتبعه. بُني من جوار سرير المريض، ويعمل اليوم.",
+    heroLocation: "الرياض، المملكة العربية السعودية",
+    heroCtaMeet: "احجز اجتماعًا",
+    heroProofPending: "جارٍ التحقق من شهادتي في BPR داخل متصفحك…",
+    heroProofOk: "تحقق متصفحك للتو من شهادتي في BPR",
+    heroProofFail: "الفحص المباشر غير متاح حاليًا",
+
+    whyKicker: "لماذا BPR",
+    whyTitle: "لا ينبغي أن يكون الطبيب حلقة الوصل بين الأنظمة.",
+    whyBeats: [
+      {
+        label: "المشكلة",
+        text: "يتنقّل الطبيب بين عشرات الأنظمة المصمَّمة للفوترة لا للرعاية. تُرفض المطالبات، وتُكتشف الثغرات متأخرة، ويبقى الطبيب هو الجسر البشري بينها."
+      },
+      {
+        label: "الفكرة",
+        text: "البداية من الهوية: سجل موقّع يثبت من هو الممارس وما الذي اعتُمد له، فتثق به الأنظمة بدل أن تطلب الإثبات من جديد."
+      },
+      {
+        label: "لماذا الآن",
+        text: "معايير FHIR R4 والشهادات القابلة للتحقق من W3C ناضجة، ومنصة نفيس جعلت التشغيل البيني في قلب الرعاية الصحية السعودية، والذكاء الاصطناعي قادر أخيرًا على تولّي الأعمال الورقية."
+      }
+    ],
+
+    registryJoin: "انضم إلى السجل",
+    registryVerify: "تحقق من مقدم خدمة",
+
+    founderKicker: "المؤسس",
+    founderTitle: "بُني من جوار سرير المريض",
+    founderBio: [
+      "أنا طبيب ومؤسس برينسايت. أمارس الطب منذ 2010، منها ثماني سنوات في أقسام الطوارئ وجراحة الأعصاب والعناية المركزة في الرياض — وهناك عرفت أين تتعطّل مسارات الرعاية: المناوبات الليلية، وتسليم المرضى، والمطالبات المرفوضة.",
+      "كشفت جائحة كوفيد-19 الحقيقة بوضوح: الطبيب في الصف الأول، لكن التقنية مبنية حول الجميع إلا هو. تبدأ برينسايت من الجهة الأخرى — نظام يعمل حول الطبيب، لا طبيب يعمل حول النظام.",
+      "أقود برينسايت اليوم من الرياض، وأبني بنية تحتية صحية أصيلة في الذكاء الاصطناعي للسعودية والشرق الأوسط وشمال أفريقيا: ذكاء اصطناعي يفهم العربية، وبيانات مترابطة، وهوية موثوقة لمقدمي الرعاية، وأتمتة قابلة للمساءلة."
+    ],
+    impactStats: [
+      { value: "2010", label: "في الممارسة السريرية منذ" },
+      { value: "20", label: "عملًا في سجل ORCID" },
+      { value: "10", label: "معرّف DOI في مجتمع BPR على Zenodo" },
+      { value: "293", label: "مستودعًا عامًا على GitHub" }
+    ],
+    timelineTitle: "المسار",
+    timeline: [
+      { year: "2019 — الآن", title: "المؤسس والرئيس التنفيذي", org: "برينسايت المحدودة · الرياض", line: "منتجات ذكاء اصطناعي صحي، ومسارات مطالبات موجّهة لنفيس، ووكلاء LINC، وسجل BPR" },
+      { year: "2021 — 2024", title: "طبيب عناية حرجة ومركزة", org: "مستشفى أنفاس للرعاية الطبية · الرياض", line: "رعاية الحالات الحرجة؛ وتحويل احتياجات التوثيق والتسليم إلى متطلبات منتج" },
+      { year: "2018 — 2021", title: "طبيب، خدمة جراحة الأعصاب", org: "مستشفى أستر سند · الرياض", line: "رعاية جراحية عصبية متعددة التخصصات وتنسيق بين الفرق" },
+      { year: "2016 — 2018", title: "طبيب طب طوارئ", org: "مركز رفاء الطبي · الرياض", line: "رعاية الحالات الحادة: تقييم سريع وقرارات تحت الضغط" },
+      { year: "MBBS", title: "بكالوريوس الطب والجراحة", org: "جامعة أفريقيا العالمية", line: "العربية لغة أم · الإنجليزية بطلاقة" }
+    ],
+    linksTitle: "تحقق من الأعمال",
+    links: [
+      { label: "ملف BPR", url: LINKS.bpr },
+      { label: "ORCID", url: LINKS.orcid },
+      { label: "Zenodo · BPR", url: LINKS.zenodo },
+      { label: "Hugging Face", url: LINKS.hf },
+      { label: "GitHub", url: LINKS.github },
+      { label: "LinkedIn", url: LINKS.linkedin },
+      { label: "X", url: LINKS.x },
+      { label: "المدونة", url: LINKS.blog }
+    ],
+    recognitionTitle: "محطات علنية",
+    recognition: [
+      { label: "ضمن أكثر المساهمين نشاطًا على GitHub في السعودية", source: "gayanvoice", url: EVIDENCE.gayanvoice },
+      { label: "ضمن أكثر المطورين التزامًا للشيفرة على GitHub في السعودية", source: "committers.top", url: EVIDENCE.committers },
+      { label: "BRAINSAIT-LINC-FHIR في ملخص تطبيقات Open Exchange، يونيو 2026", source: "InterSystems", url: EVIDENCE.digest },
+      { label: "مشارك في مسابقة وكلاء الذكاء الاصطناعي لـ FHIR، 2026", source: "InterSystems", url: EVIDENCE.contest }
+    ],
+
+    researchKicker: "الأبحاث",
+    researchTitle: "كتابات وأبحاث",
+    commonsTag: "دراسة ثنائية اللغة · الإصدار 1.2 · Zenodo",
+    commonsTitle: "المشاع السريري",
+    commonsDesc:
+      "تصميم مؤسسي للمستشفيات تتولى فيه الفرق السريرية متعددة التخصصات رعاية المرضى، ويدير مجلس خاضع للمساءلة الموارد، ويشرف ممثلو المجتمع على الرسالة والعدالة — بدءًا بتجربة محدودة قابلة للتراجع، والتوسع فقط بعد تقييم مستقل.",
+    commonsStatus: "مقترح للنقاش، وليس إطارًا معتمدًا.",
+    commonsRead: { en: "Read in English", ar: "اقرأ بالعربية", record: "سجل DOI" },
+    publicationsTitle: "أبحاث محكّمة",
+    publications: PUBLICATIONS,
+
+    workKicker: "الأعمال",
+    workTitle: "أعمال مختارة",
+    projects: [
+      {
+        name: "LINC FHIR",
+        status: "Active",
+        desc: "وكلاء صحيون ثنائيو اللغة وتكامل FHIR ضمن منظومة InterSystems.",
+        tech: TECH.lincFhir,
+        link: `${GH}/brainsait-linc-fhir`
+      },
+      {
+        name: "BrainSAIT RCM",
+        status: "Active",
+        desc: "مطالبات سعودية وإدارة الرفض وأتمتة دورة الإيرادات، مع تكامل نفيس.",
+        tech: TECH.rcm,
+        link: `${GH}/brainsait-rcm`
+      },
+      {
+        name: "MasterLinc",
+        status: "Active",
+        desc: "تنسيق خدمات التصوير الطبي — RadioLinc وأنظمة PACS والعارضات — والتواصل المرتبط بها.",
+        tech: TECH.masterlinc,
+        link: `${GH}/masterlinc`
+      },
+      {
+        name: "Healthcare MCP",
+        status: "Active",
+        desc: "موصلات أدوات صحية للمساعدين الذكيين: عمليات FHIR وضوابط الوصول والتدقيق.",
+        tech: TECH.mcp,
+        link: `${GH}/brainsait-mcp-dxt`
+      },
+      {
+        name: "أكاديمية برينسايت",
+        status: "Active",
+        desc: "تعلّم عملي ثنائي اللغة حيث تلتقي الرعاية الصحية والذكاء الاصطناعي والأعمال وتطوير البرمجيات.",
+        tech: TECH.academy,
+        link: "https://brainsait.de/academy/"
+      }
+    ],
+    statuses: { Active: "نشط", Maintained: "مُصان" },
+
+    contactKicker: "تواصل",
+    contactTitle: "تبني شيئًا مع الممارسين الصحيين؟",
+    contactText: "أعمل مع المستشفيات وفرق التقنية الصحية والمستثمرين في السعودية والخليج وأفريقيا. أسرع طريق للبدء مكالمة قصيرة.",
+    contactJoin: "انضم إلى BPR كمقدم خدمة",
+    footerText: "© 2026 د. محمد الفاضل · برينسايت",
+
+    bookModalTitle: "احجز اجتماعًا",
+    bookModalSubtitle: "اختر الوقت الأنسب لك — يُؤكَّد فورًا عبر تقويم Google.",
+    bookModalClose: "إغلاق",
+    bookModalOpenExternal: "فتح في نافذة جديدة ↗",
+
+    workspaceCta: "ادخل مساحة عمل BPR",
+    workspaceHint: "مكتب ثلاثي الأبعاد يقرأ سجل BPR مباشرة",
+    workspaceExit: "العودة إلى الموقع",
+    workspaceBack: "العودة إلى المكتب",
+    workspaceStandard: "إغلاق",
+    workspaceDock: { about: "عنّي", projects: "الأعمال", collaborate: "احجز مكالمة" }
   }
 };
