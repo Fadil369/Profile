@@ -1,129 +1,366 @@
 <!doctype html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#0d0f15" />
-    <meta name="color-scheme" content="dark" />
-    <title>د. محمد الفاضل — Dr. Mohamed El Fadil | Founder & CEO, BrainSAIT</title>
-    <meta
-      name="description"
-      content="Dr. Mohamed El Fadil — Physician, entrepreneur, and healthcare AI innovator. Founder & CEO of BrainSAIT. Building clinical decision support and interoperability systems across Saudi Arabia & the Middle East. NPHIES, FHIR, AI Strategy, Executive Training."
-    />
-    <meta name="keywords" content="healthcare AI, BrainSAIT, NPHIES, FHIR, Saudi Vision 2030, AI consulting, clinical decision support, Dr. Mohamed El Fadil" />
+    <!-- Before first paint: language from the address (/ar/ = Arabic), theme from the visitor's choice or system. -->
+    <script>
+      (function () {
+        var d = document.documentElement, ar = /^\/ar(\/|$)/.test(location.pathname), t = null;
+        d.lang = ar ? "ar" : "en";
+        d.dir = ar ? "rtl" : "ltr";
+        try { t = localStorage.getItem("elfadil-theme"); } catch (e) {}
+        if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        d.dataset.theme = t;
+      })();
+    </script>
+    <meta name="theme-color" content="#0d0f15" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#faf8f2" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Dr. Mohamed El Fadil — Physician, founder of BrainSAIT, builder of BPR</title>
+    <meta name="description" content="Physician and founder of BrainSAIT. I build BPR — the BrainSAIT Provider Registry: a signed, verifiable identity for every clinician, with FHIR R4, research and clinical tools around it." />
+    <meta name="author" content="Dr. Mohamed El Fadil" />
     <link rel="canonical" href="https://elfadil.brainsait.de/" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E" />
+    <link rel="alternate" hreflang="en" href="https://elfadil.brainsait.de/" />
+    <link rel="alternate" hreflang="ar" href="https://elfadil.brainsait.de/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://elfadil.brainsait.de/" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="author" href="/llms.txt" type="text/plain" title="Summary for AI assistants" />
 
-    <!-- Preconnect & DNS Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://api.dicebear.com" />
-    <link rel="dns-prefetch" href="https://platform.linkedin.com" />
-    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="preconnect" href="https://registry.brainsait.de" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Dr. Mohamed El Fadil — Founder, BrainSAIT" />
-    <meta property="og:description" content="Physician, entrepreneur, and healthcare AI innovator building clinical AI across the Middle East and Africa." />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Dr. Mohamed El Fadil" />
+    <meta property="og:title" content="Dr. Mohamed El Fadil — Physician, founder of BrainSAIT, builder of BPR" />
+    <meta property="og:description" content="Physician and founder of BrainSAIT. I build BPR — the BrainSAIT Provider Registry: a signed, verifiable identity for every clinician, with FHIR R4, research and clinical tools around it." />
     <meta property="og:url" content="https://elfadil.brainsait.de/" />
-    <meta property="og:image" content="https://elfadil.brainsait.de/assets/img/prof_pic.jpg" />
+    <meta property="og:image" content="https://elfadil.brainsait.de/og/og-en.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Dr. Mohamed El Fadil" />
+    <meta property="og:image:alt" content="Dr. Mohamed El Fadil — BPR: a verifiable identity for every clinician" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_SA" />
-    <meta property="site_name" content="Dr. Mohamed El Fadil" />
-
-    <!-- Twitter Card -->
+    <meta property="profile:first_name" content="Mohamed" />
+    <meta property="profile:last_name" content="El Fadil" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dr. Mohamed El Fadil — Founder, BrainSAIT" />
-    <meta name="twitter:description" content="Physician, entrepreneur, and healthcare AI innovator building clinical AI across the Middle East and Africa." />
-    <meta name="twitter:image" content="https://elfadil.brainsait.de/assets/img/prof_pic.jpg" />
     <meta name="twitter:site" content="@Fadil369" />
     <meta name="twitter:creator" content="@Fadil369" />
+    <meta name="twitter:title" content="Dr. Mohamed El Fadil — Physician, founder of BrainSAIT, builder of BPR" />
+    <meta name="twitter:description" content="Physician and founder of BrainSAIT. I build BPR — the BrainSAIT Provider Registry: a signed, verifiable identity for every clinician, with FHIR R4, research and clinical tools around it." />
+    <meta name="twitter:image" content="https://elfadil.brainsait.de/og/og-en.png" />
 
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dr. Mohamed El Fadil",
-  "jobTitle": "Founder & CEO, BrainSAIT",
-  "description": "Physician, entrepreneur, and healthcare AI innovator building clinical decision support and interoperability systems across the Middle East and Africa.",
-  "url": "https://elfadil.brainsait.de",
-  "image": "https://elfadil.brainsait.de/assets/img/prof_pic.jpg",
-  "birthPlace": "Khartoum, Sudan",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "BrainSAIT",
-    "url": "https://brainsait.de",
-    "description": "Healthcare AI platform for clinical decision support and interoperability"
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ProfilePage",
+   "@id": "https://elfadil.brainsait.de/#page",
+   "url": "https://elfadil.brainsait.de/",
+   "name": "Dr. Mohamed El Fadil",
+   "inLanguage": [
+    "en",
+    "ar"
+   ],
+   "mainEntity": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "about": {
+    "@id": "https://elfadil.brainsait.de/#bpr"
+   },
+   "dateModified": "2026-10-26"
   },
-  "sameAs": [
+  {
+   "@type": "Person",
+   "@id": "https://elfadil.brainsait.de/#person",
+   "name": "Dr. Mohamed El Fadil",
+   "alternateName": [
+    "د. محمد الفاضل",
+    "Mohamed El Fadil Abuagla",
+    "Mohamed Elfadil"
+   ],
+   "jobTitle": "Founder & CEO, BrainSAIT",
+   "description": "Physician and founder of BrainSAIT, building AI-native healthcare infrastructure for Saudi Arabia and MENA, including BPR — the BrainSAIT Provider Registry.",
+   "image": "https://elfadil.brainsait.de/assets/img/prof_pic.jpg",
+   "url": "https://elfadil.brainsait.de/",
+   "identifier": [
+    {
+     "@type": "PropertyValue",
+     "propertyID": "ORCID",
+     "value": "0009-0003-7485-3575"
+    },
+    {
+     "@type": "PropertyValue",
+     "propertyID": "BPR SPID",
+     "value": "SA-PHY-000003"
+    }
+   ],
+   "worksFor": {
+    "@id": "https://elfadil.brainsait.de/#brainsait"
+   },
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "International University of Africa"
+   },
+   "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Physician"
+   },
+   "homeLocation": {
+    "@type": "Place",
+    "name": "Riyadh, Saudi Arabia"
+   },
+   "knowsLanguage": [
+    "ar",
+    "en"
+   ],
+   "knowsAbout": [
+    "Healthcare AI",
+    "Provider identity",
+    "Verifiable credentials",
+    "HL7 FHIR R4",
+    "NPHIES",
+    "Clinical decision support",
+    "Revenue-cycle automation",
+    "Critical care",
+    "Emergency medicine"
+   ],
+   "sameAs": [
     "https://orcid.org/0009-0003-7485-3575",
     "https://registry.brainsait.de/p/SA-PHY-000003",
-    "https://zenodo.org/communities/bpr-doctors/",
+    "https://github.com/Fadil369",
     "https://huggingface.co/Fadil369",
-    "https://github.com/Fadil369",
-    "https://sa.linkedin.com/in/fadil369",
+    "https://zenodo.org/communities/bpr-doctors/",
+    "https://www.linkedin.com/in/fadil369",
     "https://x.com/Fadil369",
-    "https://brainsait.de"
-  ],
-  "knowsAbout": ["Healthcare AI", "NPHIES", "FHIR", "Clinical Decision Support", "AI Strategy", "Saudi Vision 2030"],
-  "knowsLanguage": ["Arabic", "English", "Medical Terminology"]
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "BrainSAIT",
-  "url": "https://brainsait.de",
-  "logo": "https://elfadil.brainsait.de/assets/img/prof_pic.jpg",
-  "description": "Healthcare AI platform for clinical decision support and interoperability systems",
-  "sameAs": [
+    "https://brainsait369.blogspot.com/"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://elfadil.brainsait.de/#brainsait",
+   "name": "BrainSAIT Ltd",
+   "alternateName": "برينسايت",
+   "url": "https://brainsait.de",
+   "founder": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "foundingDate": "2019",
+   "location": {
+    "@type": "Place",
+    "name": "Riyadh, Saudi Arabia"
+   },
+   "sameAs": [
     "https://github.com/Fadil369",
-    "https://sa.linkedin.com/in/fadil369",
-    "https://brainsait.de",
-    "https://hub.brainsait.de"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Riyadh",
-    "addressRegion": "Riyadh Region",
-    "addressCountry": "SA"
+    "https://brainsait.de"
+   ]
   },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "availableLanguage": ["Arabic", "English"]
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://elfadil.brainsait.de/#bpr",
+   "name": "BPR — BrainSAIT Provider Registry",
+   "applicationCategory": "HealthApplication",
+   "operatingSystem": "Web",
+   "url": "https://registry.brainsait.de/",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "publisher": {
+    "@id": "https://elfadil.brainsait.de/#brainsait"
+   },
+   "description": "Provider registry that issues W3C Verifiable Credentials signed with Ed25519 (did:web:registry.brainsait.de), keeps a public transparency log, and publishes providers as HL7 FHIR R4 resources. A registry record complements professional licensure; it does not replace it.",
+   "featureList": [
+    "W3C Verifiable Credentials 2.0 (VC-JOSE, EdDSA)",
+    "In-browser signature verification",
+    "Append-only signed transparency log",
+    "HL7 FHIR R4 API",
+    "DOI-matched research footprint",
+    "Specialty toolkit with clinical calculators",
+    "Per-provider OpenEMR"
+   ],
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "SAR",
+    "description": "Verification is free for anyone"
+   }
   },
-  "numberOfEmployees": {
-    "@type": "QuantitativeValue",
-    "minValue": "11",
-    "maxValue": "50"
+  {
+   "@type": "Report",
+   "name": "The Clinical Commons",
+   "version": "1.2",
+   "inLanguage": [
+    "en",
+    "ar"
+   ],
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "datePublished": "2026-10-23",
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.5281/zenodo.23606022"
+   },
+   "url": "https://doi.org/10.5281/zenodo.23606022",
+   "abstract": "A proposed institutional design for hospitals in which multidisciplinary clinical teams steward care, an accountable board manages resources, and community representatives oversee mission and equity, starting with a limited, reversible pilot."
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "The role of artificial intelligence in developing meal plans in outpatient dietetics: a feasibility and proof-of-concept study",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "Nutrition in Clinical Practice"
+   },
+   "datePublished": "2026",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1002/ncp.70169"
+   },
+   "url": "https://doi.org/10.1002/ncp.70169"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Use of telemedicine to provide initial home parenteral nutrition training during the COVID-19 pandemic: a case series",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "Nutrition and Health"
+   },
+   "datePublished": "2025",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1177/02601060251374384"
+   },
+   "url": "https://doi.org/10.1177/02601060251374384"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Roles, responsibilities, and opportunities for the nutrition support physician working with adults: a critical review",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "JPEN. Journal of Parenteral and Enteral Nutrition"
+   },
+   "datePublished": "2025",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1002/jpen.2790"
+   },
+   "url": "https://doi.org/10.1002/jpen.2790"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Optimizing intravenous access for long-term parenteral nutrition",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "Current Nutrition Reports"
+   },
+   "datePublished": "2024",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1007/s13668-024-00534-y"
+   },
+   "url": "https://doi.org/10.1007/s13668-024-00534-y"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Patients' and caregivers' perspective on challenges and outcomes with tube feeding: analysis of home enteral nutrition survey data",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "Clinical Nutrition ESPEN"
+   },
+   "datePublished": "2024",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1016/j.clnesp.2024.03.005"
+   },
+   "url": "https://doi.org/10.1016/j.clnesp.2024.03.005"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Safety and effectiveness of radiologic and endoscopic percutaneous gastrostomy placement: a randomized study",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "JPEN. Journal of Parenteral and Enteral Nutrition"
+   },
+   "datePublished": "2022",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1002/jpen.2365"
+   },
+   "url": "https://doi.org/10.1002/jpen.2365"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Use of telehealth in home nutrition support: challenges and advantages",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "Nutrition in Clinical Practice"
+   },
+   "datePublished": "2021",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1002/ncp.10736"
+   },
+   "url": "https://doi.org/10.1002/ncp.10736"
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "headline": "Myocardial injury is associated with higher morbidity and mortality in patients with 2019 novel coronavirus disease (COVID-19)",
+   "isPartOf": {
+    "@type": "Periodical",
+    "name": "SN Comprehensive Clinical Medicine"
+   },
+   "datePublished": "2020",
+   "author": {
+    "@id": "https://elfadil.brainsait.de/#person"
+   },
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.1007/s42399-020-00569-6"
+   },
+   "url": "https://doi.org/10.1007/s42399-020-00569-6"
   }
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Dr. Mohamed El Fadil",
-  "url": "https://elfadil.brainsait.de",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://elfadil.brainsait.de/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+ ]
 }
     </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript><p style="padding:24px;font-family:system-ui">Dr. Mohamed El Fadil — physician and founder of BrainSAIT. BPR, the BrainSAIT Provider Registry: <a href="https://registry.brainsait.de/">registry.brainsait.de</a> · ORCID <a href="https://orcid.org/0009-0003-7485-3575">0009-0003-7485-3575</a> · <a href="/llms.txt">Plain-text summary</a></p></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

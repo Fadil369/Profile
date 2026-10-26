@@ -295,7 +295,7 @@ export const BPR_TEXT = {
     projects: "Projects",
     collaborate: "Collaborate",
     home: "BPR home",
-    hint3d: "Click the monitor, the credential or any module",
+    hint3d: "Click the monitor, the credential or a module — or press 1–8",
     lamp: "Desk lamp — switch light / dark"
   },
   ar: {
@@ -358,7 +358,7 @@ export const BPR_TEXT = {
     projects: "مشاريعي",
     collaborate: "لنتعاون",
     home: "واجهة BPR",
-    hint3d: "انقر الشاشة أو الشهادة أو أي وحدة",
+    hint3d: "انقر الشاشة أو الشهادة أو أي وحدة — أو اضغط 1–8",
     lamp: "مصباح المكتب — بدّل المظهر الفاتح / الداكن"
   }
 };

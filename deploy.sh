@@ -26,6 +26,7 @@ npx tsc -b
 if [[ -f "$REGISTRY_TEST" ]]; then php "$REGISTRY_TEST" > /dev/null && echo "✓ registry eGFR regression test"; fi
 rm -rf dist
 npx vite build --logLevel error
+node scripts/prerender.mjs
 [[ -f dist/release.json && -f dist/bpr.php && -f dist/pulse.php ]] || { echo "✗ build is missing release.json / bpr.php / pulse.php" >&2; exit 1; }
 
 STAMP=$(date +%Y%m%d-%H%M%S)
@@ -49,6 +50,11 @@ check "served bundle matches the manifest hash" "[[ \"\$(curl -fsS $SITE/$JS | s
 for r in api research fhir; do check "bpr.php?r=$r" "curl -fsS -o /dev/null '$SITE/bpr.php?r=$r'"; done
 check "bpr.php refuses unknown routes" "[[ \$(curl -s -o /dev/null -w '%{http_code}' '$SITE/bpr.php?r=x') == 404 ]]"
 check "SPA fallback" "curl -fsS -o /dev/null $SITE/any/deep/link"
+check "/ar/ is prerendered Arabic" "curl -fsS $SITE/ar/ | grep -q 'hreflang=\"ar\"' && curl -fsS $SITE/ar/ | grep -q 'مركز رفاء الطبي'"
+check "/ is prerendered English" "curl -fsS $SITE/ | grep -q 'Rafa Medical Center'"
+check "sitemap.xml is XML" "curl -fsS -o /dev/null -w '%{content_type}' $SITE/sitemap.xml | grep -q xml"
+check "llms.txt is text" "curl -fsS -o /dev/null -w '%{content_type}' $SITE/llms.txt | grep -q text/plain"
+check "share card image" "[[ \$(curl -fsS -o /dev/null -w '%{content_type}' $SITE/og/og-en.png) == image/png ]]"
 check "the_leverage_point" "curl -fsS -o /dev/null $SITE/the_leverage_point"
 
 if (( fail )); then

@@ -94,7 +94,7 @@ export function DesktopShell({
 
       <div className={`desktop-canvas-area${activeApp ? "" : " is-home"}`}>
         {activeApp ? (
-          <AppWindow title={titleOf(activeApp)} onClose={() => setActiveApp(null)}>
+          <AppWindow title={titleOf(activeApp)} appId={activeApp} onClose={() => setActiveApp(null)}>
             <AppBody id={activeApp} />
           </AppWindow>
         ) : (

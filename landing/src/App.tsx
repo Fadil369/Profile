@@ -15,6 +15,8 @@ import { BookingModal } from "./components/BookingModal";
 import { BackToTop } from "./components/ScrollChrome";
 import { WorkspaceOverlay } from "./components/Workspace/WorkspaceOverlay";
 import { WorkspaceFab } from "./components/Workspace/WorkspaceFab";
+import { LangHint } from "./components/LangHint";
+import { SkipLink } from "./components/SkipLink";
 
 export default function App() {
   return (
@@ -22,9 +24,10 @@ export default function App() {
       <BookingProvider>
         <WorkspaceProvider>
           <div className="app-root">
+            <SkipLink />
             <OrbBackground />
             <Nav />
-            <main>
+            <main id="main" tabIndex={-1}>
               <Hero />
               <BprShowcase />
               <Why />
@@ -38,6 +41,7 @@ export default function App() {
             <WorkspaceOverlay />
             <WorkspaceFab />
             <BackToTop />
+            <LangHint />
           </div>
         </WorkspaceProvider>
       </BookingProvider>

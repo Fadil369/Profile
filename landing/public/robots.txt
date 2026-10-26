@@ -1,4 +1,6 @@
+# Everything here is public. Search engines and AI assistants are welcome.
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://elfadil.com/sitemap.xml
+Sitemap: https://elfadil.brainsait.de/sitemap.xml
+# Plain-text summary for AI assistants: https://elfadil.brainsait.de/llms.txt

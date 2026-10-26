@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <span>{t.footerText}</span>
-      <nav className="site-footer-links">
+      <nav className="site-footer-links" aria-label="Footer">
         <a href="/the_leverage_point.html" target="_blank" rel="noopener noreferrer">
           {t.leveragePoint}
         </a>

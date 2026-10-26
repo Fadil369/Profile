@@ -1,0 +1,23 @@
+{
+  "name": "Dr. Mohamed El Fadil · BPR",
+  "short_name": "Dr. El Fadil",
+  "description": "Physician and founder of BrainSAIT — BPR, a verifiable identity for every clinician.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0f15",
+  "theme_color": "#0d0f15",
+  "lang": "en",
+  "dir": "auto",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "العربية", "url": "/ar/" },
+    { "name": "Verify my BPR credential", "url": "/?open=verify" },
+    { "name": "BPR workspace (3D)", "url": "/?open=desk" }
+  ]
+}

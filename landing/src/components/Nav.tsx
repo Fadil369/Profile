@@ -8,7 +8,7 @@ import { withViewTransition } from "../viewTransition";
 const SECTION_IDS = ["bpr", "why", "founder", "research", "work", "contact"] as const;
 
 export function Nav() {
-  const { t, isDark, toggleLang, toggleTheme } = useAppState();
+  const { t, isAr, isDark, toggleLang, toggleTheme } = useAppState();
   const { open: openBooking } = useBooking();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +29,7 @@ export function Nav() {
 
   return (
     <>
-      <nav className={`nav${scrolled ? " nav--scrolled" : ""}`}>
+      <nav className={`nav${scrolled ? " nav--scrolled" : ""}`} aria-label={isAr ? "القائمة الرئيسية" : "Main"}>
         <button className="nav-brand" onClick={() => scrollToSection("top")}>
           {t.brand}
         </button>

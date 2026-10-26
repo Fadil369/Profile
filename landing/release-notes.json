@@ -2,6 +2,23 @@
   {
     "date": "2026-10-26",
     "en": [
+      "Readable without JavaScript: English at / and Arabic at /ar/ are prerendered, each with its own title, canonical and hreflang",
+      "Real sitemap.xml, robots.txt, llms.txt for AI assistants, a web-app manifest and 1200×630 share cards in both languages",
+      "Structured data for the profile, BrainSAIT, BPR, The Clinical Commons and eight peer-reviewed articles",
+      "Keyboard and screen-reader path through the 3D desk (module bar, keys 1–8); focus stays in the workspace; skip link",
+      "Shareable links to any BPR app (?open=verify), language follows the address, theme follows the system"
+    ],
+    "ar": [
+      "قابلة للقراءة دون جافاسكربت: الإنجليزية على / والعربية على /ar/ مُعدّتان مسبقًا، لكل منهما عنوان ورابط أساسي وhreflang",
+      "ملفات حقيقية: sitemap.xml وrobots.txt وllms.txt للمساعدين الذكيين، وبيان تطبيق ويب، وبطاقات مشاركة 1200×630 باللغتين",
+      "بيانات منظمة للملف الشخصي وبرينسايت وBPR و«المشاع السريري» وثماني مقالات محكّمة",
+      "مسار بلوحة المفاتيح وقارئ الشاشة عبر المكتب ثلاثي الأبعاد (شريط الوحدات والمفاتيح 1–8)، ويبقى التركيز داخل مساحة العمل، ورابط تخطٍ",
+      "روابط قابلة للمشاركة لأي تطبيق في BPR (?open=verify)، واللغة تتبع العنوان، والمظهر يتبع النظام"
+    ]
+  },
+  {
+    "date": "2026-10-26",
+    "en": [
       "Simpler page: six sections instead of seventeen, one story told once, copy rewritten in English and Arabic",
       "Founder timeline taken from the CV; peer-reviewed publications from ORCID; The Clinical Commons (v1.2) linked by DOI",
       "Work and public milestones from the GitHub profile, each with its evidence link; GitHub repo count read live",

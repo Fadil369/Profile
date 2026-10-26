@@ -1,0 +1,36 @@
+# Dr. Mohamed El Fadil — د. محمد الفاضل
+
+> Physician and founder of BrainSAIT Ltd (Riyadh, Saudi Arabia). He builds BPR — the BrainSAIT Provider Registry: a signed, verifiable identity for every clinician, with HL7 FHIR R4, research and clinical tools around it. Arabic and English.
+
+This file is a plain-text summary for AI assistants. Facts below come from his CV, his ORCID record (0009-0003-7485-3575), his GitHub profile (Fadil369) and the live registry.
+
+## Who he is
+- Physician; MBBS, International University of Africa. Arabic native, English fluent. In clinical practice since 2010.
+- Emergency Medicine Physician, Rafa Medical Center, Riyadh (2016–2018).
+- Physician, Neurosurgery Service, Aster Sanad Hospital, Riyadh (2018–2021).
+- Critical Care & ICU Physician, Anfas Medical Care Hospital, Riyadh (2021–2024).
+- Founder & CEO, BrainSAIT Ltd (2019–present): healthcare AI products, NPHIES-oriented claims workflows, the LINC agents and BPR.
+
+## BPR — BrainSAIT Provider Registry
+- Registry: https://registry.brainsait.de/ — his profile: https://registry.brainsait.de/p/SA-PHY-000003 (SPID SA-PHY-000003).
+- Each approved provider holds a W3C Verifiable Credential 2.0 (VC-JOSE, EdDSA/Ed25519) issued by did:web:registry.brainsait.de. Anyone can verify it in a browser: https://registry.brainsait.de/verify
+- Every issue, renewal and revocation is a line in a public, signed, append-only hash chain: https://registry.brainsait.de/transparency
+- Providers are published as HL7 FHIR R4 resources: https://registry.brainsait.de/fhir/metadata
+- Also: ORCID-linked identity, DOI-matched research footprint (ORCID × Zenodo × Hugging Face), a specialty toolkit (13 kits, 72 tools, 15 clinical calculators) and per-provider OpenEMR instances.
+- A registry record complements professional licensure; it does not replace it.
+
+## Research
+- The Clinical Commons (v1.2, bilingual report, a proposal for discussion): https://doi.org/10.5281/zenodo.23606022
+- Peer-reviewed co-authored articles include JPEN (2022, 2025), Nutrition in Clinical Practice (2021, 2026), Clinical Nutrition ESPEN (2024), Current Nutrition Reports (2024), Nutrition and Health (2025) and SN Comprehensive Clinical Medicine (2020). Full list: https://orcid.org/0009-0003-7485-3575
+
+## Open-source work (https://github.com/Fadil369)
+- LINC FHIR — bilingual healthcare agents and FHIR integration for the InterSystems ecosystem: https://github.com/Fadil369/brainsait-linc-fhir
+- BrainSAIT RCM — Saudi claims, rejection management and revenue-cycle automation: https://github.com/Fadil369/brainsait-rcm
+- MasterLinc — imaging orchestration (RadioLinc, PACS/viewers): https://github.com/Fadil369/masterlinc
+- Healthcare MCP — healthcare tool connectors, FHIR operations, access controls and audit: https://github.com/Fadil369/brainsait-mcp-dxt
+- BRAINSAIT-LINC-FHIR appeared in the InterSystems Open Exchange applications digest (June 2026).
+
+## Contact
+- Website: https://elfadil.brainsait.de/ (English) · https://elfadil.brainsait.de/ar/ (Arabic)
+- LinkedIn: https://www.linkedin.com/in/fadil369 · X: https://x.com/Fadil369 · BrainSAIT: https://brainsait.de
+- Book a meeting from the website.

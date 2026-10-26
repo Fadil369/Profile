@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Share-card template: render-assets.mjs opens it with ?lang=en|ar at 1200×630 and screenshots it. -->
+<html>
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@500;600&family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&family=Tajawal:wght@700&display=block" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #0d0f15; color: #f2f2f6; font-family: Inter, sans-serif;
+    background-image: radial-gradient(ellipse 60% 70% at 85% 30%, rgba(168,155,245,.28), transparent 70%), radial-gradient(ellipse 40% 50% at 0% 100%, rgba(125,211,192,.12), transparent 70%); }
+  .wrap { display: grid; grid-template-columns: 1fr 430px; gap: 56px; padding: 70px 72px; height: 100%; align-items: center; }
+  .kicker { font: 500 18px "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #a89bf5; }
+  h1 { font: 700 68px/1.02 "Space Grotesk", sans-serif; letter-spacing: -.02em; margin: 22px 0 22px; }
+  p { font: 600 30px/1.3 "Space Grotesk", sans-serif; color: #f2f2f6; max-width: 15em; }
+  .url { margin-top: 34px; font: 500 20px "IBM Plex Mono", monospace; color: rgba(235,236,240,.7); }
+  .card { border-radius: 26px; padding: 28px; border: 1px solid rgba(168,155,245,.45); background: linear-gradient(150deg, rgba(168,155,245,.22), rgba(27,30,42,.85) 55%);
+    box-shadow: 0 30px 80px rgba(0,0,0,.45); transform: perspective(900px) rotateY(-8deg) rotateX(3deg); }
+  .top { display: flex; justify-content: space-between; align-items: center; font: 500 13px "IBM Plex Mono"; letter-spacing: .08em; color: rgba(235,236,240,.7); }
+  .top b { font: 700 20px "Space Grotesk"; color: #b9aaf8; letter-spacing: 0; }
+  .seal { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #4fbf8b; border: 1px solid rgba(79,191,139,.6); background: rgba(79,191,139,.14); font-size: 20px; }
+  .id { display: flex; gap: 18px; align-items: center; margin: 26px 0 22px; }
+  .id img { width: 86px; height: 86px; border-radius: 20px; object-fit: cover; }
+  .name { font: 700 24px "Space Grotesk"; }
+  .ar { font: 600 19px "IBM Plex Sans Arabic"; color: rgba(235,236,240,.75); direction: rtl; text-align: left; }
+  .spid { font: 500 15px "IBM Plex Mono"; color: #a89bf5; margin-top: 6px; }
+  .rows { border-top: 1px solid rgba(235,236,240,.16); padding-top: 16px; display: grid; gap: 10px; font-size: 17px; }
+  .rows div { display: flex; justify-content: space-between; } .rows span:first-child { color: rgba(235,236,240,.7); } .rows span:last-child { font-family: "IBM Plex Mono"; color: #4fbf8b; }
+  body.ar .wrap { direction: rtl; } body.ar h1, body.ar p { font-family: Tajawal, sans-serif; } body.ar h1 { font-size: 76px; color: #ffffff; } body.ar p { font-size: 34px; line-height: 1.4; }
+  body.ar .kicker { font-family: "IBM Plex Sans Arabic"; letter-spacing: 0; font-size: 22px; } body.ar .card { direction: ltr; transform: perspective(900px) rotateY(8deg) rotateX(3deg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <div class="kicker" id="k"></div>
+    <h1 id="n"></h1>
+    <p id="t"></p>
+    <div class="url" id="u"></div>
+  </div>
+  <div class="card">
+    <div class="top"><span><b>BPR</b> · VERIFIABLE CREDENTIAL</span><span class="seal">✓</span></div>
+    <div class="id"><img src="../public/assets/img/prof_pic.jpg" alt="" />
+      <div><div class="name">Dr. Mohamed El Fadil</div><div class="ar">د. محمد الفاضل</div><div class="spid">SA-PHY-000003 · physician</div></div></div>
+    <div class="rows"><div><span>Ed25519 signature</span><span>✓ verifiable</span></div><div><span>Issuer</span><span>did:web:registry.brainsait.de</span></div></div>
+  </div>
+</div>
+<script>
+  const ar = new URLSearchParams(location.search).get("lang") === "ar";
+  const T = ar
+    ? { k: "طبيب · مؤسس برينسايت", n: "د. محمد الفاضل", t: "أبني BPR — هوية قابلة للتحقق لكل ممارس صحي.", u: "elfadil.brainsait.de/ar" }
+    : { k: "Physician · Founder of BrainSAIT", n: "Dr. Mohamed El Fadil", t: "I build BPR — a verifiable identity for every clinician.", u: "elfadil.brainsait.de" };
+  document.body.className = ar ? "ar" : "";
+  for (const id of ["k", "n", "t", "u"]) document.getElementById(id).textContent = T[id];
+</script>
+</body>
+</html>

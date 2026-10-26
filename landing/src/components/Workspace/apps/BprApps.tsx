@@ -31,7 +31,7 @@ function ModuleHead({ m }: { m: BprModule }) {
 
 function ModuleFoot({ m }: { m: BprModule }) {
   return (
-    <footer className="bpr-app-foot">
+    <div className="bpr-app-foot">
       <ul className="bpr-facts">
         {m.facts.map((f) => (
           <li key={f}>{f}</li>
@@ -45,7 +45,7 @@ function ModuleFoot({ m }: { m: BprModule }) {
           </a>
         ))}
       </div>
-    </footer>
+    </div>
   );
 }
 
