@@ -5,13 +5,15 @@
       "BPR OS: the 3D desk reads the live registry — signed credential, transparency log and eight module apps",
       "Credential signature and log head verified in your browser with WebCrypto Ed25519",
       "Registry toolkit eGFR corrected to CKD-EPI 2021 (registry commit 280bafe); this page uses the same equation",
-      "Every release now ships a manifest of file hashes that the page checks itself"
+      "Every release now ships a manifest of file hashes that the page checks itself",
+      "Page metadata (canonical, Open Graph, structured data) points at elfadil.brainsait.de again; unverifiable award claim removed"
     ],
     "ar": [
       "BPR OS: مكتب ثلاثي الأبعاد يقرأ السجل مباشرة — الشهادة الموقّعة وسجل الشفافية وثمانية تطبيقات",
       "يُتحقق من توقيع الشهادة ورأس السجل في متصفحك عبر WebCrypto Ed25519",
       "تصحيح حاسبة eGFR في عدّة السجل إلى CKD-EPI 2021 (التزام السجل 280bafe)؛ وهذه الصفحة تستخدم المعادلة نفسها",
-      "كل إصدار يحمل الآن بيانًا بتجزئات ملفاته تتحقق منه الصفحة بنفسها"
+      "كل إصدار يحمل الآن بيانًا بتجزئات ملفاته تتحقق منه الصفحة بنفسها",
+      "عادت بيانات الصفحة الوصفية (canonical وOpen Graph والبيانات المنظمة) إلى elfadil.brainsait.de؛ وأُزيلت دعوى جائزة غير قابلة للتحقق"
     ]
   }
 ]

@@ -10,6 +10,16 @@ Source for [elfadil.com](https://elfadil.com) — a bilingual (Arabic/English) p
 
 This repo previously also hosted a Jekyll-based academic site (blog, CV, publications, bibliography) alongside the React app. That Jekyll site has been removed — the React app in `landing/` is now the entire site.
 
+## Self-hosted copy: elfadil.brainsait.de
+
+The same build (`landing/dist/`) is also served by Apache at [elfadil.brainsait.de](https://elfadil.brainsait.de), deployed with
+[`deploy.sh`](./deploy.sh) (build, backup, sync, smoke tests; `deploy-cloudflare.sh` is the Workers deploy).
+There, [`landing/public/pulse.php`](./landing/public/pulse.php) replaces the worker's `/__pulse` endpoint (Apache rewrites `/__pulse` to it).
+Unlike the worker, it only probes https URLs on an allow-list of hosts, refuses private addresses, and reports
+`online` only when a site answers on its own host (a redirect to another host counts as `probe`).
+[`landing/public/bpr.php`](./landing/public/bpr.php) is a read-only, whitelisted proxy for the BPR registry endpoints that send no CORS headers.
+Each build writes `release.json` (commit + SHA-256 of every file), which the page checks in the browser.
+
 ## Local development
 
 ```bash
