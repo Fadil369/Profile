@@ -466,7 +466,6 @@ a {
   text-align: center;
   padding: 130px 6vw 80px;
   gap: 34px;
-  animation: heroIn 0.9s ease both;
   overflow: hidden;
 }
 .hero-bg-glow {
