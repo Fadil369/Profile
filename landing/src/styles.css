@@ -149,7 +149,7 @@ a {
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(40px);
+  will-change: transform;
 }
 .orb-a {
   top: -10%;
@@ -164,7 +164,6 @@ a {
   inset-inline-end: -5%;
   width: 600px;
   height: 600px;
-  filter: blur(50px);
   background: radial-gradient(circle, var(--accent-soft-2), transparent 70%);
   animation: orbFloat2 26s ease-in-out infinite;
 }
@@ -3558,4 +3557,17 @@ html[lang="ar"] .timeline-year {
 }
 main:focus {
   outline: none;
+}
+
+/* Frosted-glass blur is costly to paint on phones; there (and for anyone who asks for less
+   transparency) surfaces stay translucent without the blur, and the bar is a little more opaque. */
+@media (max-width: 900px), (prefers-reduced-transparency: reduce) {
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .nav--scrolled,
+  .nav {
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+  }
 }

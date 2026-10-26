@@ -49,6 +49,8 @@ for (const [path, file] of pages) {
     document.querySelectorAll(".lang-hint, .booking-backdrop, .workspace-overlay").forEach((n) => n.remove());
     document.querySelectorAll("[inert]").forEach((n) => n.removeAttribute("inert"));
     document.documentElement.removeAttribute("data-theme"); // the inline script sets it before paint
+    // the font stylesheet switched itself on while rendering here; ship it non-blocking again
+    document.querySelectorAll('link[rel="stylesheet"][onload]').forEach((l) => l.setAttribute("media", "print"));
     return "<!doctype html>\n" + document.documentElement.outerHTML;
   });
   out[file] = html;
